@@ -3,6 +3,7 @@
 #define max 25
 int main(){
     int n;
+
     do {
         printf("Ispisati duzinu niza ");
         scanf("%d", &n);
@@ -12,8 +13,7 @@ int main(){
     int nizB[max]={0};
 
     printf("Uneti elemente niza A ");
-    for (int i = 0; i < n; i++)
-    {
+    for (int i = 0; i < n; i++){
         scanf("%d",&nizA[i]);
     }
 
@@ -27,29 +27,15 @@ int main(){
     int proizvod=nizB[0];
 
     for (int i = 1; i < n; i++){
-        
         proizvod=nizB[i]*proizvod;
     }
 
     printf("Elementi niza B: ");
     for (int i = 0; i < n; i++){
-
         printf("%d ",nizB[i]);
-        
-        
     }
 
     printf("\nProizvod elemenata niza B je %d",proizvod);
-
-
-
-
-
-    
-    
-
-
-
 
     return 0;
 }
