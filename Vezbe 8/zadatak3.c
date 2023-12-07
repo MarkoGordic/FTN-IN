@@ -25,7 +25,7 @@ int main(){
         return -1;
 
     Pilot tmp;
-    Pilot* piloti;
+    Pilot* piloti = NULL;
     int brojac = 0;
 
     while(fscanf(pfile, "%s %s %d %d", tmp.ime, tmp.prezime, &tmp.br_godina, &tmp.br_koncerata) == 4){
