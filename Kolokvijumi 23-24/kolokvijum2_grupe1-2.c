@@ -120,5 +120,8 @@ int main(){
     for(int i = 0; i < 5; i++)
         printf("    %.1f %s\n", anime[i].ocena, anime[i].ime);
 
+    fclose(pnfile);
+    free(anime);
+
     return 0;
 }
