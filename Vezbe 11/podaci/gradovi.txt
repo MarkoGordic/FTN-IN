@@ -1,0 +1,16 @@
+Beograd 1400000
+Niš 260000
+Kragujevac 150000
+Leskovac 60000
+Subotica 100000
+Zrenjanin 75000
+Pančevo 90000
+Čačak 73000
+Smederevo 64000
+Kraljevo 58000
+Valjevo 90000
+Vranje 55000
+Šabac 53000
+Užice 78000
+Jagodina 76712
+Beograd 1550000
