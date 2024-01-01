@@ -78,6 +78,19 @@ void ispisiListu(node* lista){
     }
 }
 
+void unistiListu(node* lista){
+    if(lista == NULL){
+        return;
+    }
+
+    node* tmp = lista;
+    while(lista != NULL){
+        lista = lista->sledeci;
+        free(tmp);
+        tmp = lista;
+    }
+}
+
 int main(){
     node* glava = NULL;
     dodajNaKraj(&glava, 1);
@@ -87,6 +100,6 @@ int main(){
     ispisiListu(glava);
     obrisiCvor(&glava, 9);
     ispisiListu(glava);
-    free(glava);
+    unistiListu(glava);
     return 0;
 }
