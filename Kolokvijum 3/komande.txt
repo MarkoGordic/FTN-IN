@@ -1,0 +1,18 @@
+P susan
+K LUANN
+P MadeLENE
+K Adriene
+B MadeLENE
+P Barton
+P Joyce
+I susan AURelia
+K alverta
+B Adriene
+P AntoN
+P Rickey
+I LUANN theO
+P DeBBrA
+P CoraLIE
+B Rickey
+I Barton coy
+K ShaunDA
