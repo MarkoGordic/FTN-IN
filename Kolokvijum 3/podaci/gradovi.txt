@@ -1,0 +1,11 @@
+Bratislava 114
+Krakow 253
+Moscow 85
+Hong_Kong 107
+Taipei 37
+Tel_Aviv 64
+Salt_Lake_City 22
+Milano 177
+Katmandu 158
+Dhaka 308
+Sofia 69

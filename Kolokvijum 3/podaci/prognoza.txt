@@ -1,0 +1,6 @@
+Milano 2.3
+Bratislava 1.5
+Hong_Kong 6.7
+Dhaka 2.8
+Moscow 8.2
+Sofia 6.9
