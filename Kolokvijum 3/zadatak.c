@@ -121,13 +121,12 @@ FILE* open_file(char* name, char* mode){
 int main(){
     node* glava = NULL;
     
-    FILE* pfile = open_file("komande.txt", "r");
+    FILE* pfile = open_file("./podaci/komande.txt", "r");
     char komanda;
     char staroIme[31], novoIme[31];
     char ime[31];
 
     while(fscanf(pfile, " %c", &komanda) == 1){
-        printf("[DEBUG] : Komanda : %c\n", komanda);
         if(komanda == 'I'){
             fscanf(pfile, "%s %s ", staroIme, novoIme);
             izmeniIme(glava, staroIme, novoIme);
