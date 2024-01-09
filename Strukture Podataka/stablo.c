@@ -16,6 +16,8 @@ node* kreirajCvor(int podatak){
     novi->podatak = podatak;
     novi->levi = NULL;
     novi->desni = NULL;
+
+    return novi;
 }
 
 node* dodajCvor(node* koren, int podatak){

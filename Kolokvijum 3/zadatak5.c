@@ -14,12 +14,6 @@ typedef struct node {
     struct node* sledeci;
 } node;
 
-void zameni(node* a, node* b){
-    Vozilo tmp = a->podatak;
-    a->podatak = b->podatak;
-    b->podatak = tmp;
-}
-
 FILE* open_file(char* name, char* mode){
     FILE* pfile;
     pfile = fopen(name, mode);
