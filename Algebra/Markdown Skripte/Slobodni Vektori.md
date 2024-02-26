@@ -10,6 +10,8 @@
 
 - Skup svih klasa, tj. slobodnih vektora, obeležavaće se sa $V$.
 
+- Vektor je skup svih orijentisanih duži "strlica" koje su međusobno podudarne, paralelne i isto orijentisane. Vektor je takođe duž "strlica" koja, kada se pomeri paralelno samoj sebi, predstavlja isti vektor.
+
 - **Ort** je jedinični vektor (intenzitet mu je 1).
 
 - Dva vektora $\vec{a}$ i $\vec{b}$ su **kolinearna** ako i samo ako imaju isti pravac, tj. ako postoji skalar $\alpha \in \mathbb{R} \setminus \{0\}$ takav da je $\vec{a} = \alpha \vec{b}$.
@@ -19,6 +21,8 @@
 - Dva vektora su **ortogonalna** (**normalna**) ako im je **skalarni proizvod 0**.
 
 - $(V,+)$ je Abelova grupa.
+
+- Za sve vektore $\vec{x}$ i $\vec{n} \neq 0$ važi da je $\vec{x} - pr_{\vec{n}}(\vec{x}) \bot \vec{n}$
 
 Za svaka 2 nekolinearna vektora $\vec{a}$ i $\vec{b}$ važi $\quad \alpha\vec{a} + \beta\vec{b} = 0 \quad \Rightarrow \quad \alpha = \beta = 0$
 
@@ -78,7 +82,8 @@ $\vec{a}, \vec{b}, \vec{c}$ su **komplanarni** (leže u istoj ravni) ako je meš
 
 ## Projekcija vektora $\vec{x}$ na pravac vektora $\vec{a}$
 
-$pr_{\vec{a}}\vec{x} = |\vec{x}|\cos{\angle(\vec{a},\vec{x})} \cdot \frac{\vec{a}}{|\vec{a}|}$
+$pr_{\vec{a}}(\vec{x}) = |\vec{x}|\cos{\angle(\vec{a},\vec{x})} \cdot \frac{\vec{a}}{|\vec{a}|} = \frac{\vec{a}\vec{x}}{|\vec{a}|} \cdot \frac{\vec{a}}{|\vec{a}|} = \frac{\vec{a}\vec{x}}{|\vec{a}|^2} \vec{a}$  
+Ova jednačina se dobija uklapanjem početne u jednačinu skalarnog proizvoda dva vektora.
 
 Projekcija vektora $\vec{x}$ na pravac vektora $\vec{a}$ jeste vektor.
 
