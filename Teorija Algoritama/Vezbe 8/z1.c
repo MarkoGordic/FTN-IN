@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-#define VELICINA 10
+#define VELICINA 72
 
 typedef struct {
     int kljuc;
@@ -14,6 +14,7 @@ int hash_function(int); // Hash funkcija za odredjivanje indeksa (parametar je k
 void insert(ELEMENT[], int, char[]);
 int find(ELEMENT[], int);
 void delete(ELEMENT[], int);
+void printTable(ELEMENT[]);
 
 int main(){
     ELEMENT hash_mapa[VELICINA];
@@ -21,13 +22,14 @@ int main(){
     init(hash_mapa);
 
     //       MAPA    kljuc  podatak
-    insert(hash_mapa, 3, "Ana\0");
-    insert(hash_mapa, 3, "Aleksandra\0");
-    delete(hash_mapa, 3);
-    insert(hash_mapa, 3, "Nebojsa\0");
-    insert(hash_mapa, 3, "Radovan\0");
-    delete(hash_mapa, 5);
-    insert(hash_mapa, 3, "Mladen\0");
+    insert(hash_mapa, 43171, "Aleksandra");
+    insert(hash_mapa, 6969, "Nikola");
+    delete(hash_mapa, 31912);
+    insert(hash_mapa, 13531, "Nebojsa");
+    insert(hash_mapa, 6969, "Radovan");
+    insert(hash_mapa, 31912, "Mladen");
+    delete(hash_mapa, 31912);
+    insert(hash_mapa, 18131, "Nemanja");
 
     printTable(hash_mapa);
 
@@ -37,13 +39,13 @@ int main(){
 void init(ELEMENT tabela[]) {
     for(int i = 0; i < VELICINA; i++){
         tabela[i].kljuc = 0;
-        tabela[i].podatak[0] = "\0";
+        strcpy(tabela[i].podatak, "\0");
         tabela[i].status = 0;
     }
 }
 
 int hash_function(int kljuc) {
-    return kljuc;
+    return kljuc % 73;
 }
 
 int hash_collision(int index) {
@@ -54,17 +56,16 @@ void printTable(ELEMENT table[]) {
 	int i;
 	
 	for (i=0; i<VELICINA; i++) {
-		if (table[i].kljuc != -1) {
-			printf("(key=%d,  value=%s,  status=%d,  hash=%d)\n", 
-				table[i].status ? table[i].kljuc : -1, table[i].podatak, table[i].status, hash_function(table[i].kljuc));
-		} else {
-			puts("-------");
-		}
+        printf("[%d] : Kljuc: %d | Podatak: %s | Status: %d \n", i, table[i].kljuc, table[i].podatak, table[i].status);
 	}
+
+    return;
 }
 
 void insert(ELEMENT tabela[], int kljuc, char podatak[]){
     int index = hash_function(kljuc);
+    if(index <= 0 && index > VELICINA)
+        return;
 
     if(tabela[index].status == 0){
         tabela[index].kljuc = kljuc;
@@ -96,6 +97,8 @@ void insert(ELEMENT tabela[], int kljuc, char podatak[]){
 // find vraca INDEX u hash mapi a ne podatak
 int find(ELEMENT tabela[], int kljuc){
     int index = hash_function(kljuc);
+    if(index <= 0 && index > VELICINA)
+        return -1;
 
     if(tabela[index].status == 1 && tabela[index].kljuc == kljuc) {
         return index;
@@ -118,11 +121,13 @@ int find(ELEMENT tabela[], int kljuc){
 
 void delete(ELEMENT tabela[], int kljuc){
     int index = hash_function(kljuc);
+    if(index <= 0 && index > VELICINA)
+        return;
 
     if(tabela[index].status != 2){
         tabela[index].status = 2;
         tabela[index].kljuc = 0;
-        tabela[index].podatak[0] = "\0";
+        strcpy(tabela[index].podatak, "\0");
     } else {
         while(tabela[index].kljuc != kljuc && index <= 0 && index > VELICINA){
             if(tabela[index].status == 0){
@@ -138,6 +143,6 @@ void delete(ELEMENT tabela[], int kljuc){
         
         tabela[index].status = 2;
         tabela[index].kljuc = 0;
-        tabela[index].podatak[0] = "\0";
+        strcpy(tabela[index].podatak, "\0");
     }
 }
