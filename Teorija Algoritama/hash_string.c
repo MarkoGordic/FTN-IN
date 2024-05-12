@@ -5,7 +5,6 @@
 #define MAXK 100				// maksimalno karaktera u kljucu
 #define MAXL 128*MAXK			// maksimalan broj razlicitih vrednosti hash funkcije
 
-
 typedef struct {
 	char key[MAXK];
 	int data;
