@@ -39,9 +39,9 @@ petlja:
     je prva_cifra
 
     # ako smo pronasli, proveravamo min i max
-    cmpl %edx, %esi
+    cmpl %esi, %edx
     jl minimum
-    cmpl %edx, %edi
+    cmpl %edi, %edx
     ja maximum
 
 dalje:
