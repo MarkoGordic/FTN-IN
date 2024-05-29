@@ -94,5 +94,5 @@ kraj:
     int $0x80
 
     movl $1, %eax
-    movl $0, %ebx
+    movl %esi, %ebx
     int $0x80
