@@ -11,6 +11,8 @@ Zvanje koje se stiče: **Diplomirani inženjer informacionog inženjeringa (Dipl
 Ukupno ESPB: **240**  
 Trajanje (god/sem): **4/8**
 
+**NAPOMENA: Materijali su prikupljeni sa različitih izvora i mogu se razlikovati od zvaničnih materijala. Ovde su postavljeni isključivo u edukativne svrhe i ne zamenjuju zvanične materijale fakulteta. Ukoliko ste vlasnik autorskih prava na neke od ovih materijala i želite da ih uklonim, molim vas da me kontaktirate na `marko@gordic.rs`.**
+
 # Materijali
 
 ## [PRVI SEMESTAR](./1.%20Semestar/)
