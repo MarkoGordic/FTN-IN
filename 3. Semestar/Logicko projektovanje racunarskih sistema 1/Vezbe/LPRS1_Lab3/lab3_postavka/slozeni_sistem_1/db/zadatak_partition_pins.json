@@ -1,0 +1,105 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "oY[0]",
+					"strict" : false
+				},
+				{
+					"name" : "oY[1]",
+					"strict" : false
+				},
+				{
+					"name" : "oY[2]",
+					"strict" : false
+				},
+				{
+					"name" : "oY[3]",
+					"strict" : false
+				},
+				{
+					"name" : "oSEGM[0]",
+					"strict" : false
+				},
+				{
+					"name" : "oSEGM[1]",
+					"strict" : false
+				},
+				{
+					"name" : "oSEGM[2]",
+					"strict" : false
+				},
+				{
+					"name" : "oSEGM[3]",
+					"strict" : false
+				},
+				{
+					"name" : "oSEGM[4]",
+					"strict" : false
+				},
+				{
+					"name" : "oSEGM[5]",
+					"strict" : false
+				},
+				{
+					"name" : "oSEGM[6]",
+					"strict" : false
+				},
+				{
+					"name" : "oZERO",
+					"strict" : false
+				},
+				{
+					"name" : "iSEL[0]",
+					"strict" : false
+				},
+				{
+					"name" : "iB[0]",
+					"strict" : false
+				},
+				{
+					"name" : "iB[1]",
+					"strict" : false
+				},
+				{
+					"name" : "iA[3]",
+					"strict" : false
+				},
+				{
+					"name" : "iA[2]",
+					"strict" : false
+				},
+				{
+					"name" : "iA[4]",
+					"strict" : false
+				},
+				{
+					"name" : "iA[6]",
+					"strict" : false
+				},
+				{
+					"name" : "iA[7]",
+					"strict" : false
+				},
+				{
+					"name" : "iA[5]",
+					"strict" : false
+				},
+				{
+					"name" : "iSEL[1]",
+					"strict" : false
+				},
+				{
+					"name" : "iB[2]",
+					"strict" : false
+				},
+				{
+					"name" : "iA[1]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

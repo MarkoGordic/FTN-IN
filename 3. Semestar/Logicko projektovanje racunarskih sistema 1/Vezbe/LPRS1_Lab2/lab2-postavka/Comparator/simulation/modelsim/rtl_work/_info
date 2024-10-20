@@ -1,0 +1,143 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/NASTAVA/LPRS1/2022-23/labs/lab2/lab2-resenje/Comparator/simulation/modelsim
+Ecomparator
+Z1 w1665769534
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z4 8D:/NASTAVA/LPRS1/2022-23/labs/lab2/lab2-resenje/Comparator/Comparator.vhd
+Z5 FD:/NASTAVA/LPRS1/2022-23/labs/lab2/lab2-resenje/Comparator/Comparator.vhd
+l0
+L4
+VMD?bRO?oH;X5HE[C=TnJc1
+!s100 6f<zQ@jV4<[B@T0O<SI<=3
+Z6 OV;C;10.5b;63
+31
+Z7 !s110 1665784465
+!i10b 1
+Z8 !s108 1665784465.000000
+Z9 !s90 -reportprogress|300|-93|-work|work|D:/NASTAVA/LPRS1/2022-23/labs/lab2/lab2-resenje/Comparator/Comparator.vhd|
+Z10 !s107 D:/NASTAVA/LPRS1/2022-23/labs/lab2/lab2-resenje/Comparator/Comparator.vhd|
+!i113 1
+Z11 o-93 -work work
+Z12 tExplicit 1 CvgOpt 0
+Acases
+R2
+R3
+Z13 DEx4 work 10 comparator 0 22 MD?bRO?oH;X5HE[C=TnJc1
+l59
+L58
+VmL1Pe4Y:`8U@QhWEDAYzU2
+!s100 o;]h?0Dgg8;>;`bh3g:8m0
+R6
+31
+Z14 !s110 1665784466
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Aif_else
+R2
+R3
+R13
+l39
+L38
+VHVM2<<RH67M24i3aG^7zO2
+!s100 dMJM<Z?CLJBi0bUDTOIEg3
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Auslovna_dodela
+R2
+R3
+R13
+l27
+L26
+VXzBcRN5NEH6m>kL3SAbIo2
+!s100 IP>GHHWRJ7`dNQ5>dD[FB3
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Alogicka_kola
+R2
+R3
+R13
+l15
+L14
+VcW?iQ0D3hkOF3_b[A]_083
+!s100 Z^h4lE9oKMKET<W5REkNi0
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Ecomparator_tb
+Z15 w1665751999
+R2
+R3
+R0
+Z16 8D:/NASTAVA/LPRS1/2022-23/labs/lab2/lab2-resenje/Comparator/Comparator_tb.vhd
+Z17 FD:/NASTAVA/LPRS1/2022-23/labs/lab2/lab2-resenje/Comparator/Comparator_tb.vhd
+l0
+L5
+VhPRen;NL[ng@^ZWYSnk2R1
+!s100 LOYUgBTfPD<^cgFk]KKSg1
+R6
+31
+R14
+!i10b 1
+Z18 !s108 1665784466.000000
+Z19 !s90 -reportprogress|300|-93|-work|work|D:/NASTAVA/LPRS1/2022-23/labs/lab2/lab2-resenje/Comparator/Comparator_tb.vhd|
+Z20 !s107 D:/NASTAVA/LPRS1/2022-23/labs/lab2/lab2-resenje/Comparator/Comparator_tb.vhd|
+!i113 1
+R11
+R12
+Atest_tb
+R13
+R2
+R3
+DEx4 work 13 comparator_tb 0 22 hPRen;NL[ng@^ZWYSnk2R1
+l28
+L8
+VCh[``MD9a]gWTER0SQKKT1
+!s100 fN1GVQbme?oEj26nj7IaU2
+R6
+31
+R14
+!i10b 1
+R18
+R19
+R20
+!i113 1
+R11
+R12

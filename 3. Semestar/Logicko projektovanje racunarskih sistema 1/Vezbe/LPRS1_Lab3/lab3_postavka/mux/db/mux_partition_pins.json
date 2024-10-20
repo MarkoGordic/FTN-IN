@@ -1,0 +1,37 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "oY",
+					"strict" : false
+				},
+				{
+					"name" : "iX2",
+					"strict" : false
+				},
+				{
+					"name" : "iSEL[1]",
+					"strict" : false
+				},
+				{
+					"name" : "iX1",
+					"strict" : false
+				},
+				{
+					"name" : "iSEL[0]",
+					"strict" : false
+				},
+				{
+					"name" : "iX0",
+					"strict" : false
+				},
+				{
+					"name" : "iX3",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

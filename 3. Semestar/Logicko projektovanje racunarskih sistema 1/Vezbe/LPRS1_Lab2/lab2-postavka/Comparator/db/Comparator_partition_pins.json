@@ -1,0 +1,37 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "oLESS",
+					"strict" : false
+				},
+				{
+					"name" : "oGREAT",
+					"strict" : false
+				},
+				{
+					"name" : "oEQUAL",
+					"strict" : false
+				},
+				{
+					"name" : "iB[1]",
+					"strict" : false
+				},
+				{
+					"name" : "iB[0]",
+					"strict" : false
+				},
+				{
+					"name" : "iA[0]",
+					"strict" : false
+				},
+				{
+					"name" : "iA[1]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
