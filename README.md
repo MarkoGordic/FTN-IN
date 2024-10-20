@@ -29,3 +29,7 @@ Trajanje (god/sem): **4/8**
 2. [Arhitektura Racunara](./2.%20Semestar/Arhitektura%20Racunara/)
 3. [Osnove Finansijskog Inženjeringa 1](./2.%20Semestar/Osnove%20Finansijskog%20Inženjeringa%201/)
 4. [Teorija Algoritama](./2.%20Semestar/Teorija%20Algoritama/)
+
+## [TREĆI SEMESTAR](./3.%20Semestar/)
+
+1. [Logicko projektovanje racunarskih sistema 1](./3.%20Semestar/Logicko%20projektovanje%20racunarskih%20sistema%201/)
