@@ -38,6 +38,20 @@ begin
 	stimulus: process
 	begin
 	
+		sA <= "00000001";
+		sB <= "011";
+		
+		sSEL <= "00";
+		wait for 100 ns;
+		
+		sSEL <= "01";
+		wait for 100 ns;
+		
+		sSEL <= "10";
+		wait for 100 ns;
+		
+		sSEL <= "11";
+		wait for 100 ns;
 		
 		wait;
 	end process stimulus;
