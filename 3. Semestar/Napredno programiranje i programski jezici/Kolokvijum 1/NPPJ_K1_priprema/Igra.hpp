@@ -14,7 +14,7 @@ public:
     Igra(): igrac(), trenutnoStanje(NEPOZNAT_IGRAC) {}
     
     Igra(int brojPartija, int brojPoena, TrenutnoStanje stanjeIgre){
-        igrac = Igrac(brojPoena, brojPartija); // ovako?
+        igrac = Igrac(brojPoena, brojPartija);
         trenutnoStanje = stanjeIgre;
     }
 
@@ -96,6 +96,3 @@ public:
 };
 
 #endif // IGRA_HPP_INCLUDED
-
-
-// FALI ILI setter za broj partija, ili konstruktor sa brojem partija za igraca

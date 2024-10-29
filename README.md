@@ -33,3 +33,5 @@ Trajanje (god/sem): **4/8**
 ## [TREĆI SEMESTAR](./3.%20Semestar/)
 
 1. [Logicko projektovanje racunarskih sistema 1](./3.%20Semestar/Logicko%20projektovanje%20racunarskih%20sistema%201/)
+2. [Napredno programiranje i programski jezici](./3.%20Semestar/Napredno%20programiranje%20i%20programski%20jezici/)
+3. [Analiza 2](./3.%20Semestar/Analiza%202/)
