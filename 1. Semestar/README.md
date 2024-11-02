@@ -4,7 +4,7 @@
 
 Korisni linkovi:
 - [Sajt Predmeta](https://imft.ftn.uns.ac.rs/ljubo/IN_Algebra/IN_Algebra.html)
-- [FTN Predmet](http://www.ftn.uns.ac.rs/n1281885770/algebra)
+- [FTN Predmet](https://ftn.uns.ac.rs/stranice-predmeta/E213A/algebra)
 
 Profesor: **Nedović dr Ljubo**  
 Asistenti: **Kozić Božidar**
@@ -32,7 +32,7 @@ Ostalje detalje možete pronaći na [sajtu predmeta](https://imft.ftn.uns.ac.rs/
 Korisni linkovi:
 - [ACS Obaveštenja](http://www.acs.uns.ac.rs/sr/oppj)
 - [ACS Repozitorijum](http://www.acs.uns.ac.rs/sr/node/237/4648777)
-- [FTN Predmet](http://www.ftn.uns.ac.rs/n1781166568/osnovi-programiranja-i-programskih-jezika)
+- [FTN Predmet](https://ftn.uns.ac.rs/stranice-predmeta/IFE110/osnovi-programiranja-i-programskih-jezika)
  
 Profesor: **Dragan dr Dinu**  
 Asistenti: **Turović Radovan, Ristić Branislav**
@@ -62,7 +62,7 @@ Treći kolokvijum je i najteži, uključuje rad sa pokazivačima ali i strukture
 ## [IFE210] Uvod u informacioni i finansijski inženjering (3 ESPB)
 
 Korisni linkovi:
-- [FTN Predmet](http://www.ftn.uns.ac.rs/n1652083849/uvod-u-informacioni-i-finansijski-inzenjering)
+- [FTN Predmet](https://ftn.uns.ac.rs/stranice-predmeta/IFE210/uvod-u-informacioni-i-finansijski-inzenjering)
 
 Profesor: **Dimitrieski Vladimir**  
 Asistenti: **Akik Elena**
@@ -82,7 +82,7 @@ Ispit se polaže kroz 3 kolokvijuma, seminarskog rada i prezentacije. Seminarski
 ## [IFM101] Komunikologija (4 ESPB)
 
 Korisni linkovi:
-- [FTN Predmet](http://www.ftn.uns.ac.rs/1767014526/komunikologija)
+- [FTN Predmet](https://ftn.uns.ac.rs/stranice-predmeta/IFM101/komunikologija)
 
 Profesor: **Vrgović dr Petar**  
 Asistenti: **Vrgović dr Petar**
@@ -106,7 +106,7 @@ Ukoliko student ne položi ispit u predroku, polaže ga u normalnim rokovima, al
 ## [E104] Mehanika (5 ESPB)
 
 Korisni linkovi:
-- [FTN Predmet](http://www.ftn.uns.ac.rs/n58296112/mehanika)
+- [FTN Predmet](https://ftn.uns.ac.rs/stranice-predmeta/E104/mehanika)
   
 Profesor: **Mađarević dr Damir**  
 Asistenti: **Mađarević dr Damir**
@@ -114,7 +114,7 @@ Asistenti: **Mađarević dr Damir**
 ## [EJ02Z] Engleski Jezik - Niži srednji (2 ESPB)
 
 Korisni linkovi:
-- [FTN Predmet](http://www.ftn.uns.ac.rs/1316374965/engleski-jezik---nizi-srednji)
+- [FTN Predmet](https://ftn.uns.ac.rs/stranice-predmeta/EJ02Z/engleski-jezik---nizi-srednji)
 
 Profesor: **Bulatović Vesna**
 
