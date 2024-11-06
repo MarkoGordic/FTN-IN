@@ -71,6 +71,10 @@ Asistenti: **Akik Elena**
 ---
 Ispit se polaže kroz 3 kolokvijuma, seminarskog rada i prezentacije. Seminarski rad i prezentacija se rade u grupama od 4-5 studenata. **Svaki student mora da učestvuje u izradi seminarskog rada i prezentacije.**
 
+Prvi kolokvijum obuhvata uvod u SQL. Drugi i treći kolokvijum obuhvataju rad u Microsoft Excel-u.
+
+**Predavanja iz predmeta nisu neophodna za polaganje istog.** Na vežbe je poželjno ići redovno.
+
 | Aktivnost | Poeni |
 |------|-------|
 | Kolokvijum 1 | 15 |
@@ -83,6 +87,7 @@ Ispit se polaže kroz 3 kolokvijuma, seminarskog rada i prezentacije. Seminarski
 
 Korisni linkovi:
 - [FTN Predmet](https://ftn.uns.ac.rs/stranice-predmeta/IFM101/komunikologija)
+- [Sajt Predmeta](http://www.komunikologija.komuniciranje.rs/komunikologija-informacioni-inzenjering/)
 
 Profesor: **Vrgović dr Petar**  
 Asistenti: **Vrgović dr Petar**
@@ -91,6 +96,12 @@ Asistenti: **Vrgović dr Petar**
 ---
 
 Predmet se polaže kroz razne aktivnosti tokom semestra. **Prisustvo na predavanjima i vežbama je obavezno i nosi bodove.** Posećivanje vežbi je posebno važno, jer se na njima izvode praktične vežbe i simulacije koje ukupno nose 30 poena.
+
+Svaki ne dolazak i kašnjenje (veće) na vežbe se kažnjava oduzimanjem 3 poena.
+
+Celokupno gradivo koje se proverava na kolokvijumima i ispitu postoji u knjizi koja se koristi na predavanjima.
+
+Budite obavezno prisutni na pripremama za kolokvijume, jer će profesor tada naglasiti pitanja i teme koje dolaze u obzir. Profesor uvek ispoštuje dogovore sa predavanja.
 
 | Aktivnost | Poeni |
 |------|-------|
@@ -111,6 +122,24 @@ Korisni linkovi:
 Profesor: **Mađarević dr Damir**  
 Asistenti: **Mađarević dr Damir**
 
+Kolokvijum 1: Dva zadatka, prvi je iz modula 1,2,3,4,5 a drugi iz modula 6 i 7.
+
+Kolokvijum 2: Isto dva zadatka, informacije o modulima stoje na SOVI.
+
+Kolokvijumi se mogu raditi parcijalno, tj. svaki zadatak se može raditi zasebno. Pa je tako moguće popravljati jedan zadatak po roku. Svaki zadatak se boduje od 0 do 10 poena. Na ispitu se mogu raditi svi zadaci sa svih kolokvijuma. Minimalan broj poena za prolaz je 24 boda u zbiru na sva 4 zadatka.
+
+Usmeni ispit se polaže tako što se dobiju 3 pitanja (nasumično). Pre toga profesor objavi spisak sa svim mogućim ispitnim pitanjima. U opticaj dolazi gradivo tokom celog semestra.
+
+| Aktivnost | Poeni |
+|------|-------|
+| Kolokvijum 1 | 20 |
+| Kolokvijum 2 | 20 |
+| Prisustvo na vežbama | 10 |
+| Prisustvo na predavanjima | 10 |
+| Domaći Zadatak 1 | 10 |
+| Domaći Zadatak 2 | 10 |
+| Usmeni Ispit | 20 |
+
 ## [EJ02Z] Engleski Jezik - Niži srednji (2 ESPB)
 
 Korisni linkovi:
@@ -122,6 +151,12 @@ Profesor: **Bulatović Vesna**
 ---
 
 Predmet se polaže kroz kolokvijum i završni ispit. Kolokvijum može zameniti prezentacija, koja se takođe boduje. **Završni ispit se sastoji samo iz pisanog dela.**
+
+Ukoliko imate diplomu o položenom odgovarajućem nivou engleskog jezika, možete biti oslobođeni polaganja ovog predmeta.
+
+Poželjno je dolaziti na predavanja zbog 10 dodatnih poena. **5 dolazaka je obavezno**.
+
+Umesto kolokvijuma, moguće je prijaviti se da se održi prezentacija. Prezentacija se samostalno ili u grupama od dve osobe.
 
 | Aktivnost | Poeni |
 |------|-------|

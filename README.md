@@ -4,7 +4,7 @@
 
 ---
 
-<h1>Informacioni Inženjering - Materijali - Akreditacija 2020</h1>
+<h1>Materijali - Informacioni Inženjering - Akreditacija 2020</h1>
 
 Nivo Studija: **Osnovne akademske studije**  
 Zvanje koje se stiče: **Diplomirani inženjer informacionog inženjeringa (Dipl. inž. inf. inženj.)**  
