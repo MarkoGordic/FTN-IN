@@ -1,0 +1,18 @@
+Fitter Status : Successful - Sun Nov 13 22:51:55 2022
+Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+Revision Name : Brojac
+Top-level Entity Name : Brojac
+Family : MAX 10
+Device : 10M16SAU169C8G
+Timing Models : Final
+Total logic elements : 25 / 15,840 ( < 1 % )
+    Total combinational functions : 25 / 15,840 ( < 1 % )
+    Dedicated logic registers : 24 / 15,840 ( < 1 % )
+Total registers : 24
+Total pins : 27 / 130 ( 21 % )
+Total virtual pins : 0
+Total memory bits : 0 / 562,176 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 90 ( 0 % )
+Total PLLs : 0 / 1 ( 0 % )
+UFM blocks : 0 / 1 ( 0 % )
+ADC blocks : 0 / 1 ( 0 % )
