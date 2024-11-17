@@ -1,0 +1,238 @@
+ -- Copyright (C) 2018  Intel Corporation. All rights reserved.
+ -- Your use of Intel Corporation's design tools, logic functions 
+ -- and other software and tools, and its AMPP partner logic 
+ -- functions, and any output files from any of the foregoing 
+ -- (including device programming or simulation files), and any 
+ -- associated documentation or information are expressly subject 
+ -- to the terms and conditions of the Intel Program License 
+ -- Subscription Agreement, the Intel Quartus Prime License Agreement,
+ -- the Intel FPGA IP License Agreement, or other applicable license
+ -- agreement, including, without limitation, that your use is for
+ -- the sole purpose of programming logic devices manufactured by
+ -- Intel and sold by Intel or its authorized distributors.  Please
+ -- refer to the applicable agreement for further details.
+ -- 
+ -- This is a Quartus Prime output file. It is for reporting purposes only, and is
+ -- not intended for use as a Quartus Prime input file. This file cannot be used
+ -- to make Quartus Prime pin assignments - for instructions on how to make pin
+ -- assignments, please see Quartus Prime help.
+ ---------------------------------------------------------------------------------
+
+
+
+ ---------------------------------------------------------------------------------
+ -- NC            : No Connect. This pin has no internal connection to the device.
+ -- DNU           : Do Not Use. This pin MUST NOT be connected.
+ -- VCCINT        : Dedicated power pin, which MUST be connected to VCC  (1.2V).
+ -- VCCIO         : Dedicated power pin, which MUST be connected to VCC
+ --                 of its bank.
+ --                  Bank 1A:       3.3V
+ --                  Bank 1B:       2.5V
+ --                  Bank 2:       3.3V
+ --                  Bank 3:       2.5V
+ --                  Bank 5:       2.5V
+ --                  Bank 6:       2.5V
+ --                  Bank 8:       3.3V
+ -- GND           : Dedicated ground pin. Dedicated GND pins MUST be connected to GND.
+ --                  It can also be used to report unused dedicated pins. The connection
+ --                  on the board for unused dedicated pins depends on whether this will
+ --                  be used in a future design. One example is device migration. When
+ --                  using device migration, refer to the device pin-tables. If it is a
+ --                  GND pin in the pin table or if it will not be used in a future design
+ --                  for another purpose the it MUST be connected to GND. If it is an unused
+ --                  dedicated pin, then it can be connected to a valid signal on the board
+ --                  (low, high, or toggling) if that signal is required for a different
+ --                  revision of the design.
+ -- GND+          : Unused input pin. It can also be used to report unused dual-purpose pins.
+ --                  This pin should be connected to GND. It may also be connected  to a
+ --                  valid signal  on the board  (low, high, or toggling)  if that signal
+ --                  is required for a different revision of the design.
+ -- GND*          : Unused  I/O  pin. Connect each pin marked GND* directly to GND
+ --                  or leave it unconnected.
+ -- RESERVED      : Unused I/O pin, which MUST be left unconnected.
+ -- RESERVED_INPUT    : Pin is tri-stated and should be connected to the board.
+ -- RESERVED_INPUT_WITH_WEAK_PULLUP    : Pin is tri-stated with internal weak pull-up resistor.
+ -- RESERVED_INPUT_WITH_BUS_HOLD       : Pin is tri-stated with bus-hold circuitry.
+ -- RESERVED_OUTPUT_DRIVEN_HIGH        : Pin is output driven high.
+ ---------------------------------------------------------------------------------
+
+
+
+ ---------------------------------------------------------------------------------
+ -- Pin directions (input, output or bidir) are based on device operating in user mode.
+ ---------------------------------------------------------------------------------
+
+Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+CHIP  "Brojac"  ASSIGNED TO AN: 10M16SAU169C8G
+
+Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
+-------------------------------------------------------------------------------------------------------------
+GND                          : A1        : gnd    :                   :         :           :                
+RESERVED_INPUT               : A2        :        :                   :         : 8         :                
+RESERVED_INPUT               : A3        :        :                   :         : 8         :                
+RESERVED_INPUT               : A4        :        :                   :         : 8         :                
+RESERVED_INPUT               : A5        :        :                   :         : 8         :                
+RESERVED_INPUT               : A6        :        :                   :         : 8         :                
+RESERVED_INPUT               : A7        :        :                   :         : 8         :                
+oCNT[16]                     : A8        : output : 3.3-V LVTTL       :         : 8         : Y              
+oCNT[17]                     : A9        : output : 3.3-V LVTTL       :         : 8         : Y              
+oCNT[19]                     : A10       : output : 3.3-V LVTTL       :         : 8         : Y              
+oCNT[18]                     : A11       : output : 3.3-V LVTTL       :         : 8         : Y              
+RESERVED_INPUT               : A12       :        :                   :         : 6         :                
+GND                          : A13       : gnd    :                   :         :           :                
+RESERVED_INPUT               : B1        :        :                   :         : 1A        :                
+RESERVED_INPUT               : B2        :        :                   :         : 8         :                
+RESERVED_INPUT               : B3        :        :                   :         : 8         :                
+RESERVED_INPUT               : B4        :        :                   :         : 8         :                
+RESERVED_INPUT               : B5        :        :                   :         : 8         :                
+RESERVED_INPUT               : B6        :        :                   :         : 8         :                
+RESERVED_INPUT               : B7        :        :                   :         : 8         :                
+GND                          : B8        : gnd    :                   :         :           :                
+RESERVED_INPUT               : B9        :        :                   :         : 8         :                
+oCNT[20]                     : B10       : output : 3.3-V LVTTL       :         : 8         : Y              
+oCNT[5]                      : B11       : output : 2.5 V             :         : 6         : N              
+oCNT[11]                     : B12       : output : 2.5 V             :         : 6         : N              
+RESERVED_INPUT               : B13       :        :                   :         : 6         :                
+RESERVED_INPUT               : C1        :        :                   :         : 1A        :                
+RESERVED_INPUT               : C2        :        :                   :         : 1A        :                
+GND                          : C3        : gnd    :                   :         :           :                
+~ALTERA_nSTATUS~ / RESERVED_INPUT : C4        : input  : 3.3 V Schmitt Trigger :         : 8         : N              
+~ALTERA_CONF_DONE~ / RESERVED_INPUT : C5        : input  : 3.3 V Schmitt Trigger :         : 8         : N              
+VCCIO8                       : C6        : power  :                   : 3.3V    : 8         :                
+VCCIO8                       : C7        : power  :                   : 3.3V    : 8         :                
+VCCIO8                       : C8        : power  :                   : 3.3V    : 8         :                
+oCNT[21]                     : C9        : output : 3.3-V LVTTL       :         : 8         : Y              
+oCNT[22]                     : C10       : output : 3.3-V LVTTL       :         : 8         : Y              
+RESERVED_INPUT               : C11       :        :                   :         : 6         :                
+RESERVED_INPUT               : C12       :        :                   :         : 6         :                
+oCNT[1]                      : C13       : output : 2.5 V             :         : 6         : N              
+RESERVED_INPUT               : D1        :        :                   :         : 1A        :                
+ANAIN1                       : D2        :        :                   :         :           :                
+ADC_VREF                     : D3        :        :                   :         :           :                
+VCCA3                        : D4        : power  :                   : 3.0V/3.3V :           :                
+GND                          : D5        : gnd    :                   :         :           :                
+RESERVED_INPUT               : D6        :        :                   :         : 8         :                
+~ALTERA_CONFIG_SEL~ / RESERVED_INPUT : D7        : input  : 3.3-V LVTTL       :         : 8         : N              
+oCNT[23]                     : D8        : output : 3.3-V LVTTL       :         : 8         : Y              
+RESERVED_INPUT               : D9        :        :                   :         : 6         :                
+VCCA2                        : D10       : power  :                   : 3.0V/3.3V :           :                
+RESERVED_INPUT               : D11       :        :                   :         : 6         :                
+RESERVED_INPUT               : D12       :        :                   :         : 6         :                
+oCNT[0]                      : D13       : output : 2.5 V             :         : 6         : N              
+RESERVED_INPUT               : E1        :        :                   :         : 1A        :                
+REFGND                       : E2        :        :                   :         :           :                
+RESERVED_INPUT               : E3        :        :                   :         : 1A        :                
+RESERVED_INPUT               : E4        :        :                   :         : 1A        :                
+RESERVED_INPUT               : E5        :        :                   :         : 1B        :                
+RESERVED_INPUT               : E6        :        :                   :         : 8         :                
+~ALTERA_nCONFIG~ / RESERVED_INPUT : E7        : input  : 3.3 V Schmitt Trigger :         : 8         : N              
+RESERVED_INPUT               : E8        :        :                   :         : 8         :                
+oCNT[8]                      : E9        : output : 2.5 V             :         : 6         : N              
+RESERVED_INPUT               : E10       :        :                   :         : 6         :                
+GND                          : E11       : gnd    :                   :         :           :                
+oCNT[12]                     : E12       : output : 2.5 V             :         : 6         : N              
+oCNT[7]                      : E13       : output : 2.5 V             :         : 6         : N              
+iRST                         : F1        : input  : 3.3 V Schmitt Trigger :         : 1A        : Y              
+VCCIO1A                      : F2        : power  :                   : 3.3V    : 1A        :                
+GND                          : F3        : gnd    :                   :         :           :                
+RESERVED_INPUT               : F4        :        :                   :         : 1B        :                
+~ALTERA_TDI~ / RESERVED_INPUT_WITH_WEAK_PULLUP : F5        : input  : 2.5 V Schmitt Trigger :         : 1B        : N              
+~ALTERA_TDO~                 : F6        : output : 2.5 V             :         : 1B        : N              
+VCC_ONE                      : F7        : power  :                   : 3.0V/3.3V :           :                
+oCNT[6]                      : F8        : output : 2.5 V             :         : 6         : N              
+oCNT[10]                     : F9        : output : 2.5 V             :         : 6         : N              
+oCNT[2]                      : F10       : output : 2.5 V             :         : 6         : N              
+VCCIO6                       : F11       : power  :                   : 2.5V    : 6         :                
+oCNT[14]                     : F12       : output : 2.5 V             :         : 6         : N              
+oCNT[9]                      : F13       : output : 2.5 V             :         : 6         : N              
+~ALTERA_TMS~ / RESERVED_INPUT_WITH_WEAK_PULLUP : G1        : input  : 2.5 V Schmitt Trigger :         : 1B        : N              
+~ALTERA_TCK~ / RESERVED_INPUT : G2        : input  : 2.5 V Schmitt Trigger :         : 1B        : N              
+VCCIO1B                      : G3        : power  :                   : 2.5V    : 1B        :                
+RESERVED_INPUT               : G4        :        :                   :         : 1B        :                
+RESERVED_INPUT               : G5        :        :                   :         : 2         :                
+VCC_ONE                      : G6        : power  :                   : 3.0V/3.3V :           :                
+GND                          : G7        : gnd    :                   :         :           :                
+VCC_ONE                      : G8        : power  :                   : 3.0V/3.3V :           :                
+oCNT[15]                     : G9        : output : 2.5 V             :         : 6         : N              
+oCNT[13]                     : G10       : output : 2.5 V             :         : 6         : N              
+VCCIO6                       : G11       : power  :                   : 2.5V    : 6         :                
+oCNT[3]                      : G12       : output : 2.5 V             :         : 5         : N              
+RESERVED_INPUT               : G13       :        :                   :         : 5         :                
+RESERVED_INPUT               : H1        :        :                   :         : 1B        :                
+RESERVED_INPUT               : H2        :        :                   :         : 1B        :                
+RESERVED_INPUT               : H3        :        :                   :         : 1B        :                
+RESERVED_INPUT               : H4        :        :                   :         : 2         :                
+RESERVED_INPUT               : H5        :        :                   :         : 2         :                
+iCLK                         : H6        : input  : 3.3-V LVTTL       :         : 2         : Y              
+VCC_ONE                      : H7        : power  :                   : 3.0V/3.3V :           :                
+RESERVED_INPUT               : H8        :        :                   :         : 5         :                
+oCNT[4]                      : H9        : output : 2.5 V             :         : 5         : N              
+RESERVED_INPUT               : H10       :        :                   :         : 5         :                
+VCCIO5                       : H11       : power  :                   : 2.5V    : 5         :                
+GND                          : H12       : gnd    :                   :         :           :                
+RESERVED_INPUT               : H13       :        :                   :         : 5         :                
+RESERVED_INPUT               : J1        :        :                   :         : 2         :                
+RESERVED_INPUT               : J2        :        :                   :         : 2         :                
+VCCIO2                       : J3        : power  :                   : 3.3V    : 2         :                
+GND                          : J4        : gnd    :                   :         :           :                
+RESERVED_INPUT               : J5        :        :                   :         : 3         :                
+RESERVED_INPUT               : J6        :        :                   :         : 3         :                
+RESERVED_INPUT               : J7        :        :                   :         : 3         :                
+RESERVED_INPUT               : J8        :        :                   :         : 3         :                
+RESERVED_INPUT               : J9        :        :                   :         : 5         :                
+RESERVED_INPUT               : J10       :        :                   :         : 5         :                
+VCCIO5                       : J11       : power  :                   : 2.5V    : 5         :                
+RESERVED_INPUT               : J12       :        :                   :         : 5         :                
+RESERVED_INPUT               : J13       :        :                   :         : 5         :                
+RESERVED_INPUT               : K1        :        :                   :         : 2         :                
+RESERVED_INPUT               : K2        :        :                   :         : 2         :                
+VCCIO2                       : K3        : power  :                   : 3.3V    : 2         :                
+VCCA1                        : K4        : power  :                   : 3.0V/3.3V :           :                
+RESERVED_INPUT               : K5        :        :                   :         : 3         :                
+RESERVED_INPUT               : K6        :        :                   :         : 3         :                
+RESERVED_INPUT               : K7        :        :                   :         : 3         :                
+RESERVED_INPUT               : K8        :        :                   :         : 3         :                
+VCCA4                        : K9        : power  :                   : 3.0V/3.3V :           :                
+RESERVED_INPUT               : K10       :        :                   :         : 5         :                
+RESERVED_INPUT               : K11       :        :                   :         : 5         :                
+RESERVED_INPUT               : K12       :        :                   :         : 5         :                
+RESERVED_INPUT               : K13       :        :                   :         : 5         :                
+RESERVED_INPUT               : L1        :        :                   :         : 2         :                
+RESERVED_INPUT               : L2        :        :                   :         : 2         :                
+RESERVED_INPUT               : L3        :        :                   :         : 2         :                
+RESERVED_INPUT               : L4        :        :                   :         : 3         :                
+RESERVED_INPUT               : L5        :        :                   :         : 3         :                
+VCCIO3                       : L6        : power  :                   : 2.5V    : 3         :                
+VCCIO3                       : L7        : power  :                   : 2.5V    : 3         :                
+VCCIO3                       : L8        : power  :                   : 2.5V    : 3         :                
+GND                          : L9        : gnd    :                   :         :           :                
+RESERVED_INPUT               : L10       :        :                   :         : 3         :                
+RESERVED_INPUT               : L11       :        :                   :         : 3         :                
+RESERVED_INPUT               : L12       :        :                   :         : 5         :                
+RESERVED_INPUT               : L13       :        :                   :         : 5         :                
+RESERVED_INPUT               : M1        :        :                   :         : 2         :                
+RESERVED_INPUT               : M2        :        :                   :         : 2         :                
+iEN                          : M3        : input  : 3.3 V Schmitt Trigger :         : 2         : Y              
+RESERVED_INPUT               : M4        :        :                   :         : 3         :                
+RESERVED_INPUT               : M5        :        :                   :         : 3         :                
+GND                          : M6        : gnd    :                   :         :           :                
+RESERVED_INPUT               : M7        :        :                   :         : 3         :                
+RESERVED_INPUT               : M8        :        :                   :         : 3         :                
+RESERVED_INPUT               : M9        :        :                   :         : 3         :                
+RESERVED_INPUT               : M10       :        :                   :         : 3         :                
+RESERVED_INPUT               : M11       :        :                   :         : 3         :                
+RESERVED_INPUT               : M12       :        :                   :         : 3         :                
+RESERVED_INPUT               : M13       :        :                   :         : 3         :                
+GND                          : N1        : gnd    :                   :         :           :                
+RESERVED_INPUT               : N2        :        :                   :         : 2         :                
+RESERVED_INPUT               : N3        :        :                   :         : 2         :                
+RESERVED_INPUT               : N4        :        :                   :         : 3         :                
+RESERVED_INPUT               : N5        :        :                   :         : 3         :                
+RESERVED_INPUT               : N6        :        :                   :         : 3         :                
+RESERVED_INPUT               : N7        :        :                   :         : 3         :                
+RESERVED_INPUT               : N8        :        :                   :         : 3         :                
+RESERVED_INPUT               : N9        :        :                   :         : 3         :                
+RESERVED_INPUT               : N10       :        :                   :         : 3         :                
+RESERVED_INPUT               : N11       :        :                   :         : 3         :                
+RESERVED_INPUT               : N12       :        :                   :         : 3         :                
+GND                          : N13       : gnd    :                   :         :           :                

@@ -1,0 +1,92 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/NASTAVA/LPRS1/2022-23/labs/lab4/Lab4_resenja/zad3_24bit_brojac/simulation/modelsim
+Ebrojac
+Z1 w1668376698
+Z2 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z3 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z4 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z5 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z6 8D:/NASTAVA/LPRS1/2022-23/labs/lab4/Lab4_resenja/zad3_24bit_brojac/Brojac.vhd
+Z7 FD:/NASTAVA/LPRS1/2022-23/labs/lab4/Lab4_resenja/zad3_24bit_brojac/Brojac.vhd
+l0
+L5
+VHzBUWjn2CiUbVNlTI4HBF3
+!s100 VE;lTIC[Pg7KPzaSa2BOR3
+Z8 OV;C;10.5b;63
+31
+Z9 !s110 1668377052
+!i10b 1
+Z10 !s108 1668377050.000000
+Z11 !s90 -reportprogress|300|-93|-work|work|D:/NASTAVA/LPRS1/2022-23/labs/lab4/Lab4_resenja/zad3_24bit_brojac/Brojac.vhd|
+Z12 !s107 D:/NASTAVA/LPRS1/2022-23/labs/lab4/Lab4_resenja/zad3_24bit_brojac/Brojac.vhd|
+!i113 1
+Z13 o-93 -work work
+Z14 tExplicit 1 CvgOpt 0
+Abehavioral
+R2
+R3
+R4
+R5
+DEx4 work 6 brojac 0 22 HzBUWjn2CiUbVNlTI4HBF3
+l22
+L14
+VKWj;1ai8Xm2@QclPgAmKF1
+!s100 =4HE_9n3@lVCG=a@XbeBI0
+R8
+31
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+R14
+Ebrojac_tb
+Z15 w1668376984
+R4
+R5
+R0
+Z16 8D:/NASTAVA/LPRS1/2022-23/labs/lab4/Lab4_resenja/zad3_24bit_brojac/Brojac_tb.vhd
+Z17 FD:/NASTAVA/LPRS1/2022-23/labs/lab4/Lab4_resenja/zad3_24bit_brojac/Brojac_tb.vhd
+l0
+L4
+V16f_;H1?CZ<7idYLQcjY:0
+!s100 O=V<M^GQlDilH3_nbY;g10
+R8
+31
+R9
+!i10b 1
+Z18 !s108 1668377052.000000
+Z19 !s90 -reportprogress|300|-93|-work|work|D:/NASTAVA/LPRS1/2022-23/labs/lab4/Lab4_resenja/zad3_24bit_brojac/Brojac_tb.vhd|
+Z20 !s107 D:/NASTAVA/LPRS1/2022-23/labs/lab4/Lab4_resenja/zad3_24bit_brojac/Brojac_tb.vhd|
+!i113 1
+R13
+R14
+Atest
+R4
+R5
+DEx4 work 9 brojac_tb 0 22 16f_;H1?CZ<7idYLQcjY:0
+l26
+L7
+Vi1_?cd>8eB[Xol]<?lHGW3
+!s100 S<DSSQS@WFR_cD_94Gn5E1
+R8
+31
+R9
+!i10b 1
+R18
+R19
+R20
+!i113 1
+R13
+R14

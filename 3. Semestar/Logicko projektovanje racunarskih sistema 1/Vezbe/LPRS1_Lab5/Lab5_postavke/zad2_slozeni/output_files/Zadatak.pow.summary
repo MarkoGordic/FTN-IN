@@ -1,0 +1,12 @@
+Power Analyzer Status : Successful - Wed Dec 09 16:49:57 2020
+Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+Revision Name : Zadatak
+Top-level Entity Name : Zadatak
+Family : MAX 10
+Device : 10M16SAU169C8G
+Power Models : Final
+Total Thermal Power Dissipation : 220.47 mW
+Core Dynamic Thermal Power Dissipation : 0.00 mW
+Core Static Thermal Power Dissipation : 215.59 mW
+I/O Thermal Power Dissipation : 4.88 mW
+Power Estimation Confidence : Low: user provided insufficient toggle rate data

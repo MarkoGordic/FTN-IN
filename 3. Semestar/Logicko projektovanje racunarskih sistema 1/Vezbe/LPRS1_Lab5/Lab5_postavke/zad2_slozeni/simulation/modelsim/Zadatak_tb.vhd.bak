@@ -1,0 +1,70 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity Zadatak_tb is
+end Zadatak_tb;
+
+architecture Test_tb of Zadatak_tb is
+	signal sCLK 	: std_logic;
+	signal sRST 	: std_logic;
+	signal sEN 		: std_logic;
+	signal sSEL 	: std_logic_vector(1 downto 0);
+	signal sDATA 	: std_logic_vector(4 downto 0);
+	signal sRESULT : std_logic_vector(4 downto 0);
+
+component Zadatak is
+    Port ( iCLK    : in  std_logic;
+           iRST    : in  std_logic;
+           iEN     : in  std_logic;
+           iSEL    : in  std_logic_vector(1 downto 0);
+           iDATA   : in	 std_logic_vector(4 downto 0);
+			  oRESULT : out std_logic_vector(4 downto 0));
+end component;
+
+begin
+-- instanciranje i mapiranje glavnih portova i signala
+uut : MySecondDigitalSystem port map (
+	iX0 => sX0,
+	iX1 => sX1,
+	iX2 => sX2,
+	oY0 => sY0,
+	oY1 => sY1,
+	oY2 => sY2
+);
+
+stimulus : process
+begin
+	sX0 <= '0';
+	sX1 <= '0';
+	sX2 <= '0';
+	wait for 100 ns;
+	sX0 <= '0';
+	sX1 <= '0';
+	sX2 <= '1';
+	wait for 100 ns;
+	sX0 <= '0';
+	sX1 <= '1';
+	sX2 <= '0';
+	wait for 100 ns;
+	sX0 <= '0';
+	sX1 <= '1';
+	sX2 <= '1';
+	wait for 100 ns;
+	sX0 <= '1';
+	sX1 <= '0';
+	sX2 <= '0';
+	wait for 100 ns;
+	sX0 <= '1';
+	sX1 <= '0';
+	sX2 <= '1';
+	wait for 100 ns;
+	sX0 <= '1';
+	sX1 <= '1';
+	sX2 <= '0';
+	wait for 100 ns;
+	sX0 <= '1';
+	sX1 <= '1';
+	sX2 <= '1';
+	wait;
+end process stimulus;
+end architecture;

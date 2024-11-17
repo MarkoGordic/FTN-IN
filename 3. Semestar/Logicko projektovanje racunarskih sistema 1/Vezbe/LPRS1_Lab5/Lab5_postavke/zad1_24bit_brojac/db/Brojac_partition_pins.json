@@ -1,0 +1,145 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "o7SEGM[0]",
+					"strict" : false
+				},
+				{
+					"name" : "o7SEGM[1]",
+					"strict" : false
+				},
+				{
+					"name" : "o7SEGM[2]",
+					"strict" : false
+				},
+				{
+					"name" : "o7SEGM[3]",
+					"strict" : false
+				},
+				{
+					"name" : "o7SEGM[4]",
+					"strict" : false
+				},
+				{
+					"name" : "o7SEGM[5]",
+					"strict" : false
+				},
+				{
+					"name" : "o7SEGM[6]",
+					"strict" : false
+				},
+				{
+					"name" : "oCNT[0]",
+					"strict" : false
+				},
+				{
+					"name" : "oCNT[1]",
+					"strict" : false
+				},
+				{
+					"name" : "oCNT[2]",
+					"strict" : false
+				},
+				{
+					"name" : "oCNT[3]",
+					"strict" : false
+				},
+				{
+					"name" : "oCNT[4]",
+					"strict" : false
+				},
+				{
+					"name" : "oCNT[5]",
+					"strict" : false
+				},
+				{
+					"name" : "oCNT[6]",
+					"strict" : false
+				},
+				{
+					"name" : "oCNT[7]",
+					"strict" : false
+				},
+				{
+					"name" : "oCNT[8]",
+					"strict" : false
+				},
+				{
+					"name" : "oCNT[9]",
+					"strict" : false
+				},
+				{
+					"name" : "oCNT[10]",
+					"strict" : false
+				},
+				{
+					"name" : "oCNT[11]",
+					"strict" : false
+				},
+				{
+					"name" : "oCNT[12]",
+					"strict" : false
+				},
+				{
+					"name" : "oCNT[13]",
+					"strict" : false
+				},
+				{
+					"name" : "oCNT[14]",
+					"strict" : false
+				},
+				{
+					"name" : "oCNT[15]",
+					"strict" : false
+				},
+				{
+					"name" : "oCNT[16]",
+					"strict" : false
+				},
+				{
+					"name" : "oCNT[17]",
+					"strict" : false
+				},
+				{
+					"name" : "oCNT[18]",
+					"strict" : false
+				},
+				{
+					"name" : "oCNT[19]",
+					"strict" : false
+				},
+				{
+					"name" : "oCNT[20]",
+					"strict" : false
+				},
+				{
+					"name" : "oCNT[21]",
+					"strict" : false
+				},
+				{
+					"name" : "oCNT[22]",
+					"strict" : false
+				},
+				{
+					"name" : "oCNT[23]",
+					"strict" : false
+				},
+				{
+					"name" : "iCLK",
+					"strict" : false
+				},
+				{
+					"name" : "iRST",
+					"strict" : false
+				},
+				{
+					"name" : "iEN",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
