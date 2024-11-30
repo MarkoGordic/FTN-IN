@@ -28,7 +28,7 @@ begin
 	sCOMP <= (not iDATA) + 1;
 	
 	-- rotirajuci registar
-	process(iCLK, iRST) begin
+	process(iCLK) begin
 		if(rising_edge(iCLK)) then
 			if(iRST = '1') then
 				sROR <= (others => '0');
@@ -64,7 +64,7 @@ begin
 	end process;
 	
 	-- brojac za manje
-	process(iCLK, iRST) begin
+	process(iCLK) begin
 		if(rising_edge(iCLK)) then
 			if(iRST = '1') then
 				sCNTS <= (others => '0');
@@ -77,7 +77,7 @@ begin
 	end process;
 	
 	-- brojac za vece
-	process(iCLK, iRST) begin
+	process(iCLK) begin
 		if(rising_edge(iCLK)) then
 			if(iRST = '1') then
 				sCNTG <= (others => '0');

@@ -1,0 +1,92 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/NASTAVA/LPRS1/2021-22/labs/lab5/lab5_postavke/Semafor/simulation/modelsim
+Esemafor
+Z1 w1638055805
+Z2 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z3 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z4 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z5 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z6 8D:/NASTAVA/LPRS1/2021-22/labs/lab5/lab5_postavke/Semafor/Semafor.vhd
+Z7 FD:/NASTAVA/LPRS1/2021-22/labs/lab5/lab5_postavke/Semafor/Semafor.vhd
+l0
+L5
+VKzeA:4l3DOilPOFIzNgYd3
+!s100 ^]II`oJH60ME^0hOe:D@m0
+Z8 OV;C;10.5b;63
+31
+Z9 !s110 1638055856
+!i10b 1
+Z10 !s108 1638055856.000000
+Z11 !s90 -reportprogress|300|-93|-work|work|D:/NASTAVA/LPRS1/2021-22/labs/lab5/lab5_postavke/Semafor/Semafor.vhd|
+Z12 !s107 D:/NASTAVA/LPRS1/2021-22/labs/lab5/lab5_postavke/Semafor/Semafor.vhd|
+!i113 1
+Z13 o-93 -work work
+Z14 tExplicit 1 CvgOpt 0
+Abehavioral
+R2
+R3
+R4
+R5
+DEx4 work 7 semafor 0 22 KzeA:4l3DOilPOFIzNgYd3
+l18
+L15
+V0bXA]0>ZbfaZ_CY9@L2bK2
+!s100 VCLXoF60?2MXQ_S]KGUdm0
+R8
+31
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+R14
+Esemafor_tb
+Z15 w1638055813
+R4
+R5
+R0
+Z16 8D:/NASTAVA/LPRS1/2021-22/labs/lab5/lab5_postavke/Semafor/simulation/modelsim/Semafor_tb.vhd
+Z17 FD:/NASTAVA/LPRS1/2021-22/labs/lab5/lab5_postavke/Semafor/simulation/modelsim/Semafor_tb.vhd
+l0
+L4
+VGA2g76OThPfeUBUW?]N?c3
+!s100 7OaT_dh8>ZZeiC?7>Jno>1
+R8
+31
+R9
+!i10b 1
+R10
+Z18 !s90 -reportprogress|300|-93|-work|work|D:/NASTAVA/LPRS1/2021-22/labs/lab5/lab5_postavke/Semafor/simulation/modelsim/Semafor_tb.vhd|
+Z19 !s107 D:/NASTAVA/LPRS1/2021-22/labs/lab5/lab5_postavke/Semafor/simulation/modelsim/Semafor_tb.vhd|
+!i113 1
+R13
+R14
+Atest
+R4
+R5
+DEx4 work 10 semafor_tb 0 22 GA2g76OThPfeUBUW?]N?c3
+l35
+L7
+VhH9zF7G1cB61TXbG=emAe2
+!s100 ]g1P60haJoLKB;UcRZao_1
+R8
+31
+R9
+!i10b 1
+R10
+R18
+R19
+!i113 1
+R13
+R14

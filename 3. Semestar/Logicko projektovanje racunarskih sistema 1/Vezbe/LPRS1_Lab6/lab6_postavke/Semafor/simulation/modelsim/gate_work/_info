@@ -1,0 +1,143 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/NASTAVA/LPRS1/2020-21/labs/Uradjene vezbe/lab5/lab5_postavka/simulation/modelsim
+Ehard_block
+Z1 w1607596935
+Z2 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z3 DPx11 fiftyfivenm 21 fiftyfivenm_atom_pack 0 22 b:4^GQG9SgzacjAmO=9`O0
+Z4 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z5 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z6 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z7 DPx11 fiftyfivenm 22 fiftyfivenm_components 0 22 3g0@koWcWFU4ch:4ZJbzl1
+R0
+Z8 8Semafor.vho
+Z9 FSemafor.vho
+l0
+L34
+V;hd7E0Y^JGdPl8HZQR0Cc3
+!s100 ROH=D<N4CT6aCZ<37A[_?0
+Z10 OV;C;10.5b;63
+31
+Z11 !s110 1608107657
+!i10b 1
+Z12 !s108 1608107657.000000
+Z13 !s90 -reportprogress|300|-93|-work|work|Semafor.vho|
+Z14 !s107 Semafor.vho|
+!i113 1
+Z15 o-93 -work work
+Z16 tExplicit 1 CvgOpt 0
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+DEx4 work 10 hard_block 0 22 ;hd7E0Y^JGdPl8HZQR0Cc3
+l75
+L53
+V?Kz^?jU4>i?7i<f0L^z<G3
+!s100 zW6ML5NVY?Ai`]`n2XhME3
+R10
+31
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Esemafor
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+R0
+R8
+R9
+l0
+L88
+Vj7h<YH__ogh7L?>7JXTPF0
+!s100 0gim^?9D`A3?^Fb;n@gQ@3
+R10
+31
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+DEx4 work 7 semafor 0 22 j7h<YH__ogh7L?>7JXTPF0
+l146
+L110
+VUQN3_JdikF;[mP64?G0[13
+!s100 N9L8j3QOc@iZk9O]HGkcI2
+R10
+31
+Z17 !s110 1608107658
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Esemafor_tb
+Z18 w1607597433
+R5
+R6
+R0
+Z19 8D:/NASTAVA/LPRS1/2020-21/labs/Uradjene vezbe/lab5/lab5_postavka/simulation/modelsim/Semafor_tb.vhd
+Z20 FD:/NASTAVA/LPRS1/2020-21/labs/Uradjene vezbe/lab5/lab5_postavka/simulation/modelsim/Semafor_tb.vhd
+l0
+L4
+VGA2g76OThPfeUBUW?]N?c3
+!s100 7OaT_dh8>ZZeiC?7>Jno>1
+R10
+31
+R17
+!i10b 1
+Z21 !s108 1608107658.000000
+Z22 !s90 -reportprogress|300|-93|-work|work|D:/NASTAVA/LPRS1/2020-21/labs/Uradjene vezbe/lab5/lab5_postavka/simulation/modelsim/Semafor_tb.vhd|
+Z23 !s107 D:/NASTAVA/LPRS1/2020-21/labs/Uradjene vezbe/lab5/lab5_postavka/simulation/modelsim/Semafor_tb.vhd|
+!i113 1
+R15
+R16
+Abehavior
+R5
+R6
+DEx4 work 10 semafor_tb 0 22 GA2g76OThPfeUBUW?]N?c3
+l36
+L7
+V1h0:e;n`:PQEc39[bIn_d3
+!s100 Z<HJPjEf1PV<nNdzF5@k]3
+R10
+31
+R17
+!i10b 1
+R21
+R22
+R23
+!i113 1
+R15
+R16

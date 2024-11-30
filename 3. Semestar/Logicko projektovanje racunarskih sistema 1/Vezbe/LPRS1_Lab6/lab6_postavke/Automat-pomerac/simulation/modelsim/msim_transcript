@@ -1,0 +1,59 @@
+# Reading C:/intelFPGA_lite/18.0/modelsim_ase/tcl/vsim/pref.tcl
+# do automat_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/18.0/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {D:/NASTAVA/LPRS1/2021-22/labs/lab5/lab5_postavke/Automat-pomerac/automat.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:11:45 on Nov 28,2021
+# vcom -reportprogress 300 -93 -work work D:/NASTAVA/LPRS1/2021-22/labs/lab5/lab5_postavke/Automat-pomerac/automat.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity automat
+# -- Compiling architecture Behavioral of automat
+# End time: 00:11:45 on Nov 28,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vcom -93 -work work {D:/NASTAVA/LPRS1/2021-22/labs/lab5/lab5_postavke/Automat-pomerac/simulation/modelsim/automat_tb.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:11:46 on Nov 28,2021
+# vcom -reportprogress 300 -93 -work work D:/NASTAVA/LPRS1/2021-22/labs/lab5/lab5_postavke/Automat-pomerac/simulation/modelsim/automat_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity automat_tb
+# -- Compiling architecture Test of automat_tb
+# End time: 00:11:46 on Nov 28,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L fiftyfivenm -L rtl_work -L work -voptargs="+acc"  automat_tb
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L fiftyfivenm -L rtl_work -L work -voptargs=""+acc"" automat_tb 
+# Start time: 00:11:46 on Nov 28,2021
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.automat_tb(test)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.automat(behavioral)
+# ** Warning: (vsim-8683) Uninitialized out port /automat_tb/uut/oDATA(7 downto 0) has no driver.
+# This port will contribute value (UUUUUUUU) to the signal network.
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run 1 us
+# End time: 00:11:58 on Nov 28,2021, Elapsed time: 0:00:12
+# Errors: 0, Warnings: 1

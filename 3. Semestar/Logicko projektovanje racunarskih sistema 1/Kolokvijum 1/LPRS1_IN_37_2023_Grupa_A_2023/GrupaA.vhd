@@ -54,19 +54,19 @@ begin
 	end process;
 	
 	-- koder
-	sSEL <= "0000" when sSHIFT = "000000000001" else
-			  "0001" when sSHIFT = "000000000010" else
-			  "0010" when sSHIFT = "000000000100" else
-			  "0011" when sSHIFT = "000000001000" else
-			  "0100" when sSHIFT = "000000010000" else
-			  "0101" when sSHIFT = "000000100000" else
-			  "0110" when sSHIFT = "000001000000" else
-			  "0111" when sSHIFT = "000010000000" else
-			  "1000" when sSHIFT = "000100000000" else
-			  "1001" when sSHIFT = "001000000000" else
-			  "1010" when sSHIFT = "010000000000" else
-			  "1011" when sSHIFT = "100000000000" else
-			  "0000";
+	sSEL <= "1011" when sSHIFT(11) = '1' else
+			"1010" when sSHIFT(10) = '1' else
+			"1001" when sSHIFT(9) = '1' else
+			"1000" when sSHIFT(8) = '1' else
+			"0111" when sSHIFT(7) = '1' else
+			"0110" when sSHIFT(6) = '1' else
+			"0101" when sSHIFT(5) = '1' else
+			"0100" when sSHIFT(4) = '1' else
+			"0011" when sSHIFT(3) = '1' else
+			"0010" when sSHIFT(2) = '1' else
+			"0001" when sSHIFT(1) = '1' else
+			"0000" when sSHIFT(0) = '1' else
+			"0000";
 	
 	-- multiplekser
 	oTX <= '0' 		when sSEL = "0000" else
