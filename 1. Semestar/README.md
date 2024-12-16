@@ -21,11 +21,11 @@ Predmet se polaže kroz 2 kolokvijuma i usmeni ispit. Kolokvijumi se sastoje od 
 
 **Prvi kolokvijum obuhvata**: relacije, funkcije, Bulove algebre, grupoidi i grupe, prsteni i polja, konstrukcija konačnih polja, kompleksni brojevi, polinomi.
 
-**Drugi koloquijum obuhvata**: matrice, determinante, vektori, analitička geometrija, sistemi linearnih jednačina, vektorski prostori, linearne transformacije.
+**Drugi kolokvijum obuhvata**: matrice, determinante, vektori, analitička geometrija, sistemi linearnih jednačina, vektorski prostori, linearne transformacije.
 
-Kako bi se izašlo na usmeni deo ispita, potrebno je položiti oba kolokvijuma. **Kolokvijum se smatra položenim ukoliko je osvojeno najmanje 15 od 35 poena na zadacima.** Predispidne obaveze nemaju minimalan broj poena za prolaz.
+Kako bi se izašlo na usmeni deo ispita, potrebno je položiti oba kolokvijuma. **Kolokvijum se smatra položenim ukoliko je osvojeno najmanje 15 od 35 poena na zadacima.** Predispitne obaveze nemaju minimalan broj poena za prolaz.
 
-Ostalje detalje možete pronaći na [sajtu predmeta](https://imft.ftn.uns.ac.rs/ljubo/IN_Algebra/IN_Algebra.html).
+Ostale detalje možete pronaći na [sajtu predmeta](https://imft.ftn.uns.ac.rs/ljubo/IN_Algebra/IN_Algebra.html).
 
 ## [IFE110] Osnovi programiranja i programskih jezika (7 ESPB)
 

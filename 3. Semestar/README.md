@@ -5,6 +5,8 @@
 Korisni linkovi:
 - [Sajt Predmeta](https://sites.google.com/view/filiptomic/home/teaching/analiza-2-smer-informacioni-in%C5%BEenjering)
 - [FTN Predmet](https://ftn.uns.ac.rs/stranice-predmeta/E121/matematicka-analiza-2)
+- [Youtube Snimci - Predavanja](https://www.youtube.com/playlist?list=PLPYphqWwNORl3_6oLhjSsvdtdfdXhyd6x)
+- [Youtube Snimci - Vežbe](https://www.youtube.com/playlist?list=PLPYphqWwNORltUtlRJcDxyCXvGSW0Hlm5)
 
 Profesor: **Filip Tomić**  
 Asistenti: **Branka Milaković**
