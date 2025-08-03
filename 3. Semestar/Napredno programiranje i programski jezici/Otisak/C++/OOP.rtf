@@ -1,0 +1,69 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.14393}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\qc\b\f0\fs22\lang9 Objektno orijentisano programiranje\par
+
+\pard\sa200\sl276\slmult1\qj\b0\par
+\b Pokazivac \b0 je promenljiva koja sadrzi \b adresu\b0 , zauzima isto memorije kao i promenljiva ciju adresu sadrzi.\par
+U programskom jeziku c++ moze postojati jedna ili vise f-ja s \b istim \b0 imenom ali se one moraju \b razlikovati po broji i/ili tipovima argumenata\b0 .\par
+\b Klasa objekta \b0 jeste softverski model klasnog pojma. Ime klase je identifikator.\par
+Klasa ima \b deskriptivne \b0 (polja) i \b operativne \b0 (metode) osobine.\par
+\b Podaci-clanovi \b0 mogu biti bilo kojeg standarda ili programski definisanog tipa.\par
+\b Objekti-clanovi \b0 se deklarisu navodjenjem naziva njihove klase i nazivom ime objekta-clana.\par
+Podatke-clanove i objekte-clanoce jednim imenom zovemo \b polja\b0 .\b\par
+Prava pristupa clanu klase mogu biti:\line\b0 - private\line - public\line - protected\par
+
+\pard\sa200\sl276\slmult1\qc\b **DEFAULT PRAVO PRISTUPA JE PRIVATE**\b0\par
+
+\pard\sa200\sl276\slmult1\qj Clanu klase koji se nalazi u \b private\b0 -segmentu moze se pristupati samo iz unutrasnjosti klase (recimo preko metoda).\par
+Clanu klase koji se nalazi u \b public\b0 -segmentu moze se pristupati kako iz unutrasnjosti, tako i iz spoljasnjosti klase (npr. iz metoda, iz programa koji koristi tu klasu itd.).\par
+Clanu klase koji se nalazi u \b protected\b0 -segmentu moze se pristupati iz unutrasnjosti klase, njenih prijateljski funkcija i metoda njenih potklasa.\par
+Preporucuje se da polja budu private, a metode public.\par
+\b Konstruktor je metoda koja kreira objekat. Osobine konstruktora su sledece:\line - konstruktor ima isto ime kao i klasa\line - konstruktor moze i ne mora da ima parametre\line - konstruktor nikada ne vraca vrednost (nema tip i na kraju tela nema naredbu return)\par
+\b0 Postoje \b 4\b0  konstruktora:\line - \b prazan konstruktor \b0 kreira objekat i postavlja ga u inicijalno stanje koje je unapred odredio projektant klase\line - \b konstruktor s parametrima \b0 kreira objekat i postavlja ga u inicijalno stanje koje odredjuje korisnik klase\line\b - konstruktor kopije \b0 je metoda koja vrsi kreiranje objekta, njegovu inicijalizaciju kopiranjem sadrzaja drugog objekta iste klase, on ima parametar koji je referenca na objekat iste klase\line - \b ugradjeni konstruktor \b0 je metoda koja vrsi kreiranje objekta ali ne i njegovu inicijalizaciju, on postoji u svakoj klasi\b  (!!!)\par
+Destruktor je metoda koja unistava objekat i ima sledece karakteristike:\line - destruktor ima isto ime kao klasa i ispred obavezan znak ~ (tilda)\line - destruktor nema parametre\line - destruktor se ne poziva direktno, vec automatski u trenutku kada je potrebno unistiti objekat\line - postoji ugradjeni destruktor u svakoj klasi\par
+Modifikatori \b0 su metode koje menjaju stanje objekta npr set metoda.\par
+Metoda koja \b nije modifikator \b0 je get metoda.\b\par
+\b0 Oznaka \b const\b0  oznacava da metoda ne menja stanje objekta.\par
+:: je operator za razresenje dosega.\par
+\b Prijateljska funkcija \b0 jeste slobodna funkcija koja je unutar klase proglasena za prijatelja i time ona ima privilegiju da moze pristupati svim clanovima te klase, pa cak i onima koji se nalaze u private-segmentu.\line Neka slobofna funkcija se proglasava prijateljem klase tako sto se u definiciji klase navede njen prototip i ispred protoripa rec \b friend\b0 .\line Prijateljska funkcija nije metoda tj. nije clanica klase!!\par
+
+\pard\sa200\sl276\slmult1\qj\b Preklapanje operatora \b0 je mogucnost da se za vecinu standardnih operatora definise njihovo ponasanje za slucaj da su operandi klasnih tipova.\line Postoje odredjena \b ogranicenja\b0  prilikom definisanja novih ponasanja operatora:\line - ne mze se redefinisati ponasanje operatora za standardne tipove podataka\line - ne mogu se uvoditi novi simboli za operatore\line - ne mogu se preklapati operatori:\line\tab za pristup clanu klase \b .\line\b0\tab za razresenje dosega \b ::\b0\line\tab za uslovni izraz \b ?:\b0\line\tab za velicinu objekta \b sizeof\b0\line\tab za prijavljivanje izuzetka \b throw\b0\line - ne mogu se menjati prioriteti ni smerovi grupisanja pojedinih operatora \line Operatori se mogu preklopiti na dva nacina:\line\tab\b metodom\line\tab slobodno funkcijom \b0 (prijateljskom funkcijom)\par
+\b Razlika izmedju operatora + i += :\line\b0 - da bi se izvrsilo a+b potrebna nam je neka treca promenljiva c u koju cemo smestiti rezultat sabiranja, dok kod a+=b se rezultat sabiranja smesta u levu promenljivu, odnosno u a.\line (isto vazi i za *, *=, -, -=, /, /=)\par
+\b Razlika izmedju operatora = i == :\line\b0 - kada napisemo izraz a=b mi time promenljivoj a dodeljuje vrednost promeljive b, dok izrazom a==b mi poredimo da li su vrednosti a i b jedna\line - odnosno prvi je operator dodele dok je drugi operator poredjenja\par
+Podatak-clan \b this\b0  jeste pokazivac na klasu kojoj taj objekat pripada, on sadrzi adresu objekta kojem pripada. Javlja se kod preklapanja operatora koji nisu prijateljske funkcije.\par
+\b Razlika izmednju prefiksnog i postfiksnog inkrementiranja/dekrementiranja:\line\b0 - kod prefiksnog cemo prvo uvecati odnosno smanjiti vrednost promenljive i onda vratiti njenu vrednost, dok cemo kod postfiksnog prvo vratiti trenutnu vrednost pa tek onda uvecati/umanjiti njenu vrednost\par
+
+\pard\sa200\sl276\slmult1\qj const MyClass& operator++(); //\b prefiksno inkrementiranje\b0\line const MyClass operator++(int); //\b postfiksno inkrementiranje\par
+
+\pard\sa200\sl276\slmult1\qj\b0 Kada preklapamo operatore koji zahtevaju pomocni lokalni objekat za smestanje rezultata njihovog izvrsavanja kao sto su +, -, *, / moramo voditi racuna da nam povratni tip funkcije mora biti MyClass a ne MyClass&. Razlog za to je sto se ne moze vratiti referenca na \b lokalni \b0 objekat koji ce biti \b unisten\b0  po zavrsetku izvrsavanja funkcije.\par
+
+\pard\sa200\sl276\slmult1\qc\b **SVE STO JE LOKALNO BICE UNISTENO**\par
+
+\pard\sa200\sl276\slmult1\qj Operator indeksiranja []:\line\b0 char& operator[](int); //\b sluzi za upis u niz (dinamicki)\b0\line char operator[](int) const; //\b sluzi za citanje iz niza (staticki)\par
+Dinamicko alociranje memorije \b0 se vrsi uz pomoc reci \b new\b0 .\line Destruktor je \b obavezan \b0 ko dinamicke alokacije memorije .\line\tab delete[] text; //brise \b ceo \b0 niz karaktera a ne samo pokazivac na njegov pocetak\line Da nismo obrisali ceo niz doslo bi do \b curenja memorije \b0 tj zauzeca memorije kojoj ne bismo mogli pristupiti jer ne bismo vise znali gde se ona nalazi u memoriji.\line Konstruktor kopije je \b obavezan \b0 kod dinamicke alokacije memorije.\par
+Odnos medju pojmovima modelujemo vezama izmedju klasa:\par
+1. \b Klijentske veze \b0 u kojima klase-klijenti koriste usluge klasa-snabdevaca, a tu spadaju:\line - \b asocijacija \b0 koja obuhvata sirok spektar logickih relacija izmedju semanticki nezavisnih klasa\line - \b agregacija \b0 koja modeluje odnos celina-deo\line - \b kompozicija \b0 koja takodje modeluje odnos celina-deo ali uz uslov egzistencijalne zavisnosti dela od celine \line - \b veze koriscenja\b0\par
+2. \b Nasledjivanje\b0  koje podrazumeva kreiranje potklase na osnovu preuzimanja sadrzaja natklase uz mogucnost modifikacije preuzetih i dodavanja novih sadrzaja\par
+3. \b Veze zavisnosti \par
+Kompozicija \b0 modeluje odnos \b poseduje\b0 . U fazi realizacije klasa koja predstavlja celinu naziva se \b vlasnik\b0 , a klasa koja odgovara delu naziva se \b komponenta\b0 .\line Kompozicija jeste takva veza klasa, za koju vazi to da vlasnik \b poseduje \b0 komponentu, pri cemu komponenta ne moze postojati pre kreiranja i posle unistenja vlasnika. Drugim recima zivotni vek komponente \b sadrzan \b0 je u zivotnom veku vlasnika.\line Objekat-clan je komponenta koja ima jednog vlasnika.\par
+\b Nasledjivanje \b0 modeluje odnos \b izvodi se iz\b0 . \line Nasledjivanje je veza izmedju klasa koja podrazumeva preuzimanje sadrzaja osnovnih klasa tzv. \b roditelja \b0 i na taj nacin, uz pomoc modifikacije preuzetog sadrzaja i dodavanja novog dobija se izvedena klasa tzv. \b potomak\b0 .\line Klasa od koje se preuzima sadrzaj naziva se roditeljska klasa, klasa-predakm osnovna klasa, klasa-davalac ili potklasa.\line Klasa koja prima sadrzaj uz mogucnost modifikacije i u koju se pored toga moze jos i dodati nov sadrzaj naziva se klasa-potomak, klasa-primalac, izvedena klasa ili potklasa.\line Potklasa se moze izvesti iz jedne ili vise natklasa. Ukoliko se potklasa izvodi iz vise natklasa tada se takvo nasledjivanje naziva \b visestrukim\b0 .\line U svakom objektu potklase mozemo razlikovati \b roditeljksi deo \b0 i \b deo koji je specifican za samog potomka\b0 .\line Ponasanje clanova natklase se razlikuje u zavisnosti od \b nacina izvodjenja \b0 koji moze biti public, private ili protected.\par
+
+\pard\sa200\sl276\slmult1\qc\b **KONSTRUKTORI, DESTRUKTORI I PRIJATELJSTVA SE NE NASLEDJUJU**\par
+
+\pard\sa200\sl276\slmult1\qj\b0 Metode izvedene klase:\line - \b preuzete \b0 ili \b nasledjene \b0 metode, koje se bez modifikacija preuzimaju iz natklase\line - \b redefinisane \b0 metode, koje se sa modifikacijama preuzimaju iz natklase\line - \b dodate \b0 metode, koje se dodaju potklasi\par
+Metoda se redefinise tako sto se  potklasi napise metoda koja ima isto ime i istu listu parametara.\par
+Polja mogu biti \b preuzeta \b0 ili \b dodata\b0 .\par
+Ime objekta je simbolicki reprezent adrese tog objekta i odakle pocinje taj objekat.\par
+Konstruktori odnosno kreiranje objekata se izvrsava od glavne klase pa nadole, dok se unistavanje izvrsava obrnutim redosledo, odozdo pa nagore. \b (!!!)\par
+\b0 Razlikujemo \b virtuelne \b0 i \b staticke \b0 metode.\line Metoda se proglasava virtuelnom u roditeljskoj klasi tako sto se ispred tipa metode naiva rezervisana rec \b virtual\b0 .\line Metoda se proglasava virtuelno samo \b jedanput \b0 i to u roditeljskoj klasi i tada u svim klasama naslednicama ta metoda zadrzava osobinu virtuelnosti.\line Redefinisana virtuelna metoda mora imati isti prototip kao original.\line Kada se virtualna metoda redefinise u potomku ona biva zamenjena u \b roditeljskom delu potomacke klase \b0 sa potomkovom verzijom te metode, a \b nista se ne menja u roditeljskoj klasi\b0 . \par
+\b Apstraktna metoda \b0 je virtuelna metoda koja nema telo tj realizaciju (nema \{\} zagrade i unutar njih neke naredbe).\line\b Apstraktna klasa \b0 je klasa koja ima \b barem jednu \b0 apstraktnu metodu. \b (!!!)\b0\line Virtuelna metoda se proglasava apstraktnom tako sto se na kraju njenog prototipa napise =0.\line\tab virtual Tip_metode ime_metode(lista_parametara)=0;\line Apstraktna klase se ne moze instancirati odnosno ne moze se kreirati objekat apstraktne klase. \b (!!!)\b0\line Apstraktne klase sluze za pisanje necega sto ne mozemo da realizujemo u roditelju ali bismo mozda mogli u njegovom potomku.\par
+\b Zajednicki clan klase \b0 se dobija tako sto se ispred njegove deklaracije navede rezervisana rec \b static\b0 .\line Zajednicko polje je zajednicko za sve objekte date klase. To znaci da u svakom trenutku vrednost tog polja je jednaka za sve objekte date klase. \b (!!!)\line\b0 Pored deklarisanja statickog polja unutar klase ono se mora inicijalizovati odnosno postaviti na pocetnu vrednost \b VAN \b0 klase.\par
+U programskom jeziku C++ postoji mehanizam pomocu kojeg mozemo napisati \b sablon \b0 (template) kojim opisujemo opsti slucaj (bez upotrebe konkretnih tipova).\line Klasa koja je napisana pomocu sablona naziva se \b genericka klasa\b0 . Kada se sablonu navedu konkretni tipovi dobijamo \b konkretne klase\b0 .\b\par
+\b0\line\par
+
+\pard\sa200\sl276\slmult1\qj\par
+\par
+\par
+\par
+}
+ 

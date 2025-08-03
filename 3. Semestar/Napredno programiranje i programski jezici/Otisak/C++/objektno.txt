@@ -1,0 +1,698 @@
+*****TEST 1*****
+
+***1.
+
+//T.hpp
+#include<iostream>
+using namespace std;
+class T
+{
+	private:
+	   static int x, y;
+	public:
+	   T(){++x; y++;}
+	   ~T(){x--; --y;}
+	   void dodaj(int i){cout << x << y;}
+	   friend ostream operator<<(ostream & out, const T& t)
+	   {
+	   	out<<t.x<<t.y;
+		return out;
+	   }
+}
+
+//T.cpp
+#include "T.hpp"
+int T::x = 0;
+int T::y = 0;
+
+//main.cpp
+#include "T.hpp"
+int main()
+{
+	a.dodaj(i);
+	cout<<a<<endl;
+	return 0;
+}
+
+@@@Odgovor: Program se nece izvrsiti jer cemo dobiti upozorenje o gresci
+
+***2.
+
+Date su recenice:
+1. Konstruktor je metoda koja kreira objekat.
+2. Mogu se preklopiti operatori samo za klasne tipove.
+3. Operatori se preklapaju putem operatorskih metoda.
+4. Podrazumevani konstruktor je metoda koja samo kreira objekat.
+
+Tacne recenice su:
+@@@Odgovor: Sve recenice.
+
+***3.
+
+//main.cpp
+#include<iostream>
+using namespace std;
+class A
+{
+	public:
+	   int x, y;
+	public:
+	   A(){x=1; y=2;}
+	   ~A(){cout<<x<<y;}
+	   friend ostream& operator<<(ostream &out, const A& a)
+	   {
+	   	out<<a.x<<a.y;
+		return out;
+	   }
+};
+
+void fun2(A a){a.x=2; a.y=2;}
+void fun1(A& a){a.x=1; a.y=1;}
+
+int main()
+{
+	A a;
+	fun1(a);
+	cout<<a;
+	fun2(a);
+	return 0;
+}
+
+@@@Odgovor: 112211
+
+***4.
+
+//main.cpp
+#include<iostream>
+using namespace std;
+class A
+{
+	private:
+	   int x, y;
+	public:
+	   A(){x=5; y=5;}
+	   void petlja(int n){for(int i=0; i<n; i++) {x+=y; y+=x;}}
+	   friend ostream& operator<<(ostream &out, const A& a)
+	   {
+		out<<a.x<<a.y<<endl;
+		return out;
+	   }
+};
+
+int main()
+{
+	A a;
+	a.petlja(3);
+	cout<<a;
+	return 0;
+}
+
+@@@Odgovor: 2025
+
+***5.
+
+//main.cpp
+#include<iostream>
+using namespace std
+class X
+{
+	private:
+	   int *a;
+	public:
+	   double *b, *c;
+	protected:
+	   char *d;
+	public:
+	   X(){a=new int[5]; b=new double[1]; c=new double; d=new char[3];}
+	   ~X(){delete[] a; delete[] b; delete c; delete[] d;}
+};
+
+class Y
+{
+	private:
+	   int f;
+	public:
+	   Y(){f=1;}
+};
+
+Ispravni destruktori za klasu Y su:
+1. ~Y(){delete[] a, delete[] b, delete c, delete[] d, delete[] f}
+2. ~Y(){delete[] f}
+3. ~Y(){delete[] a, delete[] b, delete c, delete[] d, delete f}
+4. ~Y(){delete f}
+5. ~Y(){}
+
+@@@Odgovor: Samo ~Y(){}
+
+***6.
+
+//main.cpp
+#include<iostream>
+using namespace std;
+
+enum Stanje{ON, OFF};
+
+class Masina
+{
+	private:
+	   Stanje stanje;
+	public:
+	   Masina(){stanje=OFF;}
+	   Masina(Stanje s){stanje=s;}
+	   Masina(const Masina &m){stanje=m.stanje;}
+	   ~Masina(){stanje=OFF;}
+	   friend ostream& operator<<(ostream &out, const Masina &m)
+	   {
+		out<<m.stanje;
+		return out;
+	   }
+};
+
+int main()
+{
+	Masina m1, m3(ON), m2(m3);
+	cout<<m1<<m2<<m3<<endl;
+	return 0;
+}
+
+@@@Odgovor: 100
+
+***7.
+
+Koje su tacne recenice:
+1. Postoje pokazivaci na reference.
+2. Ne postoje pokazivaci na reference.
+3. Referenca je alternativno ime za neki podatak.
+4. Postoje nizovi referenci.
+
+@@@Odgovor: 2. i 3.
+
+***8.
+
+//main.cpp
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int a, b, c;
+	int &rs=a, &rb=b,&rc=c;
+	a=1;
+	b=8;
+	c=9;
+	int *p=&rb;
+	*p=15;
+	cout<<a<<b<<c<<"\n";
+	return 0;
+}
+
+@@@Odgovor: 1159
+
+***9.
+
+(Java)Koje su tacne recenice:
+1. Java podrzava direktno visestruko implementiranje sadrzaja interfejsa.
+2. Java ne podrzava direktno visestruko implementiranje interfejsa.
+3. Java podrzava direktno visestruko nasledjivanje sadrzaja klasa(natklasa).
+4. Java ne podrzava direktno visestruko nasledjivanje sadrzaja klasa(natklasa).
+
+@@@Odgovor: 1. i 4.
+
+***10.
+
+(Java)Ispravni iskazi su:
+1. int[] n1=new int[];
+2. int[][] n2=new int[3][3];
+3. int[3][3] n3=new int[][];
+4. int[3][] n4=new int[][3];
+5. int[][3] n5=new int[3][];
+
+@@@Odgovor: samo 2.
+
+
+*****TEST 2*****
+
+***1.
+
+#include<iostream>
+using namespace std;
+
+class A
+{
+	private:
+	   int a, b;
+	public:
+	   A(){a=1; b=2;}
+	   A(int aa=1, int bb=2){a=aa; b=bb;}
+	   A(const A& aa){a=aa.a; b=aa.b;}
+	   void ispis()
+	   {cout<<++a<<b++;}	
+};
+
+int main()
+{
+	A a, a2(3,4), a3(a2);
+	a.ispis();
+	a1.ispis();
+	a3.ispis();
+}
+
+@@@Odgovor: Program se nece izvrsiti jer cemo dobiti upozorenje o gresci.
+
+***2.
+
+#include<iostream>
+using namespace std;
+
+class A
+{
+	public:
+	   virtual int oduzimanje()=0;
+	   virtual int sabiranje()=0;
+};
+
+class B : public A
+{
+	private:
+	   int a, b;
+	public:
+	   B(){a=2; b=++a;}
+	   int oduzimanje(){return a-b;}
+	   int mnozenje(){return a*b;}
+};
+
+int main()
+{
+	B b;
+	cout<<b.oduzimanje()<<b.mnozenje();
+}
+
+@@@Odgovor: Program se nece izvrsiti jer cemo dobiti upozorenje o gresci.
+
+***3.
+
+#include<iostream>
+using namespace std;
+
+class A
+{
+	public:
+	   virtual void p(){cout<<"B";}
+};
+
+class B : public A
+{
+	public:
+	   void p(){cout<<"A";}
+};
+
+void f(A& a){ra.p();}
+
+int main()
+{
+	B b;
+	b.p();
+	f(b);
+	return 0;
+}
+
+@@@Odgovor: AA
+
+***4.
+
+Koje su tacne recenice:
+1. C++ program mora da ima tacno jednu main metodu.
+2. U C++u postoji obrada izuzetaka (try-catch blok).
+3. U C++u postoje interfejsi.
+4. U C++u svaka napisana klasa mora biti u zasebnom fajlu.
+
+@@@Odgovor: ???
+
+***5.
+
+#include<iostream>
+using namespace std;
+
+void c(int &r){r=1;}
+void e(int r){r=2;}
+void c(int *p){*p=3;}
+
+int main()
+{
+	int a=4;
+	c(a);
+	cout<<a;
+	c(a);
+	cout<<a;
+	return 0;
+}
+
+@@@Odgovor: 11
+
+***6.
+
+#include<iostream>
+using namespace std;
+
+class A
+{
+	public:
+	   int a;
+	   static int b;
+	   A(){a=1;}
+	   A(int aa){a=aa;}
+	   int getA() const{return a;}
+	   int getB() const{return b;}
+};
+
+int A::b=2;
+
+int main()
+{
+	A a(3), b;
+	a.a += b.b;
+	a.b += b.a;
+	b.a += a.b;
+	b.b += a.a;
+	cout<<a.a<<a.b<<b.a<<b.b;
+}
+
+@@@Odgovor: 5848
+
+***7.
+
+#include<iostream>
+using namespace std;
+
+class A
+{
+	A(int xx){x=xx;}
+	A& operator++()
+	{
+		x++;
+		A temp(++x);
+		temp.x = ++x;
+		return *this;
+	}
+	A operator++(int i)
+	{
+		A temp(x);
+		x++;
+		cout<<"B";
+		return temp;
+	}
+};
+
+int main()
+{
+	A a(6);
+	++a;
+	return 0;
+}
+
+@@@Odgovor: Program ce se izvrsiti, ali nece nista ispisati.
+
+***8.
+
+(Java)
+
+public class Test
+{
+	private double r=3;
+	public Test(double r){this.r=r++;}
+	public double getR(){return ++r;}
+}
+
+public static void main(String[] args)
+{
+	Test t=new Test(1);
+	System.out.printin(t.getR());
+}
+
+@@@Odgovor: Program se nece izvrsiti jer cemo dobiti upozorenje o gresci.
+
+***9.
+
+(Java)
+
+public class Test
+{
+	public static void main(String[] args)
+	{
+		String s="Pera;;Ana;;Jovan";
+		String parts[] = s.split(";");
+		System.out.println(parts.length);
+	}
+}
+
+@@@Odgovor: 5
+
+***10.
+
+#include<iostream>
+using namespace std;
+
+class A
+{
+	public:
+	   A(){cout<<"AK";}
+	   ~A(){cout<<"AD";}
+};
+
+class B : public A
+{
+	public:
+	   B() : A(){cout<<"BK";}
+	   ~B(){cout<<"BD";}
+};
+
+class C : public A
+{
+	private:
+	   B b;
+	public:
+	   C(){cout<<"CK";}
+	   ~C(){cout<<"CD";}
+};
+
+int main()
+{
+	B b;
+	C c;
+	return 0;
+}
+
+@@@Odgovor: AK BK AK AK BK CK CD BD AD AD BD AD
+
+
+*****TEST 3*****
+
+***1.
+
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int a=1;
+	int b=1;
+	int *pa;
+	int *pb;
+
+	pa=&a;
+	pb=&b;
+	b=a++;
+	cout<<*pb;
+	cout<<++(*pa);
+	return 0;
+}
+
+@@@Odgovor: 13
+
+***2.
+
+#include<iostream>
+using namespace std;
+
+class A
+{
+	protected:
+	   int a;
+	public:
+	   A(){a=0;}
+	   A(int aa) : a(aa){}
+	   int getA(){return a;}
+};
+
+class B
+{
+	private:
+	   int b;
+	public:
+	   B(){b=1;}
+	   B(int bb) : b(bb){}
+	   int getB(){return b;}
+};
+
+class C : public B
+{
+	private:
+	   B b;
+	   int c;
+	public:
+	   C() : b(2){c=2;}
+	   C(int cc) : b(cc){a=1; c=cc;}
+	   void print(){cout<<a<<c<<b.getB();}
+};
+
+int main()
+{
+	C c1(2), c2;
+	c1.print();
+	c2.print();	
+}
+
+@@@Odgovor: 122022
+
+***3.
+
+#include<iostream>
+using namespace std;
+
+class A
+{
+	public:
+	   vitural void f(){cout<<"A";}
+};
+
+class B : public A
+{
+	public:
+	   void f(){cout<<"B";}
+};
+
+int main()
+{
+	A a;
+	B b;
+	A* pa;
+	B* pb;
+	pa=&b;
+	pb=&a;
+	a.f();
+	b.f();
+	pa->f();
+	pb->f();
+	return 0;
+}
+
+@@@Odgovor: Program se nece izvrsiti jer cemo dobiti upozorenje o gresci.
+
+***4.
+
+#include<iostream>
+using namespace std;
+
+class A
+{
+	protected:
+	   int x, y;
+	protected:
+	   A(int xx=1, int yy=1) : x(xx), y(yy){}
+	   int pomnozi(){return x*y;}
+	   int saberi(){return x+y;}
+};
+
+class B : public A
+{
+	private:
+	   int z;
+	public:
+	   B(int xx=1, int yy=2, int zz=3) : z(zz){}
+	   int pomnozi(){return x*y*z;}
+};
+
+int main()
+{
+	B b1, b2(1,2,3);
+	cout<<b1.saberi()<<b2.pomnozi();
+	return 0;
+}
+
+@@@Odgovor: Program se nece izvrsiti jer cemo dobiti upozorenje o gresci.
+
+***5.
+
+class A
+{
+	public:
+	   int x;
+	   int y;
+	   A(int xx=1, int yy=2) : x(xx), y(yy){}
+	   void print(){cout<<x<<y;}
+};
+
+void f(A &a)
+{
+	a.x++;
+	a.y++;
+}
+
+int main()
+{
+	A a1, a2;
+	f(a1);
+	a2=a1;
+	f(a1);
+	f(a2);
+	a1.print();
+	a2.print();
+	return 0;
+}
+
+@@@Odgovor: 3434
+
+***5.
+
+(Java)
+//file A.java
+
+public class A
+{
+	public int a;
+}
+
+//file Test.java
+
+public class Test
+{
+	private static void ispisiListu(ArrayList<A> lista)
+	{
+		for(A item : lista)
+		{
+			System.out.print(item.a);
+		}
+	}
+	
+	public static void main(String[] args)
+	{
+		A a1=new A();
+		A a2=new A();
+		A a3=new A();
+		A a4=new A();
+		ArrayList<A> lista=new ArrayList<A>();
+		lista.add(a1);
+		a2.a=a1.a+1;
+		lista.add(a2);
+		a3=a2;
+		lista.add(a4);
+		ispisiListu(lista);
+		a1.a=1;
+		a2.a=2;
+		a3.a=3;
+		a4.a=4;
+		ispisiListu(lista);
+	}
+}
+
+@@@Odgovor: 01121334
