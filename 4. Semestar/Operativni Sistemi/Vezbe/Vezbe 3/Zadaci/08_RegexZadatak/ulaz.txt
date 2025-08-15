@@ -1,0 +1,3 @@
+Gorana,Goranovic,V=68&P=22,Ponistena ocena
+Filip,Filipovic,V=42&P=16,Upisuje ocenu
+Petar,Petrovic,V=70&P=16,Radi seminarski

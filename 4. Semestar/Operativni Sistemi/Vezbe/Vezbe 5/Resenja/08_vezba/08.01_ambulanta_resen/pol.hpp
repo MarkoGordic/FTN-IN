@@ -1,0 +1,6 @@
+#ifndef POL_HPP_INCLUDED
+#define POL_HPP_INCLUDED
+
+enum Pol {MUSKI=0, ZENSKI};
+
+#endif // POL_HPP_INCLUDED
