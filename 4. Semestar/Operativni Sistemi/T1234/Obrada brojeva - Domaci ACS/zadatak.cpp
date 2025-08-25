@@ -321,7 +321,6 @@ int main() {
     thread nit_stampac(stampac_nit, std::ref(izlaz));
 
 
-
     nit_citac.join();
     
     for(int i = 0; i < BROJ_RADNIKA; i++) radnici[i].join();
