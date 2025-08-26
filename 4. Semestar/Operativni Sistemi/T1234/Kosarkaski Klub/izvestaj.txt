@@ -1,0 +1,14 @@
+307:Sara Nikolic:1:19:3
+101:Anja Obradovic:2:44
+712:Filip Knezevic:4
+529:Milica Stankovic:6
+221:Andrej Lukic:6
+356:Petar Ilic:7
+909:Teodora Jovic:9
+214:Vuk Milosevic:5
+487:Lea Marinkovic:3:13:14:15:19:25
+118:Marko Petrovic:3:7:11:14:16:19:23
+273:Nemanja Djordjevic:1:11:3
+638:Ivana Popovic:2:27
+442:Jelena Radic:4
+305:Milan Vukovic:5
