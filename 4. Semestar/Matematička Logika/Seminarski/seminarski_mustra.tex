@@ -1,0 +1,702 @@
+\documentclass[12pt, a4paper, titlepage, twoside]{article}
+\usepackage{graphicx}
+\usepackage{amssymb, amsfonts, amsmath, amsthm}
+\usepackage[margin=3cm]{geometry}
+\usepackage{forest}
+%\usepackage[linguistics]{forest}
+\usepackage{sectsty}
+\usepackage{graphicx}
+
+\sectionfont{\fontsize{16}{15}\selectfont}
+
+\renewcommand{\refname}{Literatura}
+
+\renewcommand{\contentsname}{Sadr\v zaj}
+
+\newtheorem{theorem}{Teorema}[section]
+\newtheorem{lemma}[theorem]{Lema}
+
+\theoremstyle{definition}
+
+\newtheorem{defn}[theorem]{Definicija}
+\newtheorem{pr}{\sc Primer}
+
+
+\renewcommand*{\proofname}{Dokaz}
+
+
+\def\dj{d\kern-0.4em\char"16\kern-0.1em}
+\def\Dj{\mbox{\raise0.3ex\hbox{-}\kern-0.4em D}}
+\def\zn{,\kern-0.09em,}
+
+
+\author{XXX YYY}
+
+\begin{document}
+
+
+\begin{titlepage}
+
+
+\begin{center}
+%\includegraphics[height=2cm]{logoUUNS}
+\includegraphics[height=2cm]{uns_ftn_logo}
+\end{center}
+
+\begin{center}
+\large UNIVERZITET U NOVOM SADU \\
+\large FAKULTET TEHNI\v CNIH NAUKA\\[3.5cm]
+\end{center} 
+
+
+\begin{flushleft}
+\large XXX YYY\\[3.5cm]
+\end{flushleft}
+
+\begin{center}
+\huge  Matemati\v cka logika\\
+%\huge  Metod rezolucije u iskaznoj logici\\
+\large - seminarski rad - \\[3.5cm]
+\end{center}
+
+\begin{flushleft}
+\large Profesor: dr Silvia Gilezan \\
+\large Asistent: Simona Ka\v sterovi\'c \\[4.5cm]
+\end{flushleft}
+
+\begin{center}
+\large Novi Sad, 2022.
+\end{center}
+
+\end{titlepage}
+
+\tableofcontents
+
+\newpage
+
+
+\section{Uvod}
+\vspace{1cm} \hspace{0.5cm}
+Ponekad je te\v sko prona\'ci dokazni niz u iskaznom ra\v cunu za neku formulu, 
+jer dokazni niz se \zn ne vidi$"$ iz same formule koju treba
+dokazati, nego se \v cesto treba ne\v cega \zn dosetiti$"$. Prema tome, nije lako sprovesti
+na ra\v cunaru traganje za dokazom u Hilbertovom deduktivnom
+sistemu. \emph{Metod rezolucije} je postupak za dokazivanje da li je neka iskazna
+(ili predikatska) formula zadovoljiva, a koji se mo\v ze lak\v se sprovesti na
+ra\v cunaru. Kako je formula tautologija (odnosno valjana) akko njena negacija
+nije zadovoljiva, metod rezolucije se mo\v ze koristiti za dokazivanje da li je neka
+formula tautologija (odnosno da li je valjana). Tako\dj{}e, kako je formula B
+semanti\v cka posledica kona\v cnog skupa formula {$A_1, A_2, \dots , A_n$} akko je formula 
+$A_1 \land A_2 \land \dots \land A_n \Rightarrow B$ 
+tautologija (odnosno valjana), metod rezolucije
+je primenljiv i za ispitivanje da li je neka formula B semanti\v cka posledica
+nekog kona\v cnog skupa hipoteza.
+
+
+Metod rezolucije formulisao je \emph{Alan Robinson\footnote{D\v zon Alan Robinson 
+(John Alan Robinson) (9. mart 1930. - 5. avgust 2016.) bio je filozof, matemati\v car 
+i kompjuterski nau\v cnik. Bio je profesor na Univerzitetu u Sirakuzi. }} 1965. godine (u radu
+pod naslovom \zn A machine oriented logic based on the resolution principle$"$), oslanjaju\'ci se na 
+mnogobrojne rezultate koji su prethodili tom otkri\'cu. 
+
+\newpage
+\section{Konjunktivna normalna forma i pravilo rezolucije}
+\vspace{1cm}\hspace{0.5cm}
+Metod rezolucije primenjuje se na iskazne formule koje su u konjunktivnoj
+normalnoj formi, tj. za formule koje su konjunkcije nekih disjunkcija. Za svaku iskaznu 
+formulu postoji njoj ekvivalentna formula koja je u konjunktivnoj normalnoj formi. 
+
+
+Algoritam za dobijanje konjunktivne normalne forme neke iskazne formule
+dakle ima slede\'ce korake:
+\begin{itemize}
+	\item eliminisati veznike $\Rightarrow$ i $\Leftrightarrow$, kori\v s\'cenjem relacija $A \Rightarrow B \equiv \neg A \lor B$ i $A \Leftrightarrow B \equiv (A \Rightarrow B) \land (B \Rightarrow A)$
+	\item kori\v s\'cenjem De Morganovih zakona \emph{\zn gurati negacije dublje"} tj. relacije $\neg (A \land B) \equiv (\neg A \lor \neg B)$ ili $\neg (A \lor B) \equiv (\neg A \land \neg B)$ koristiti \emph{s leva na desno}
+	\item eliminisati duple negacije $\neg \neg A \equiv A$
+	\item koristiti zakon distributivnosti $A \lor (B \land C) \equiv (A \lor B) \land (A \lor C)$
+\end{itemize}
+
+
+Pretpostavimo da je formula koju \v zelimo ispitati u konjunktivnoj normalnoj formi. Dakle, 
+formula je konjunkcija nekih disjunkcija, i to disjunkcija nekih iskaznih slova ili 
+negacija iskaznih slova. Rezolucijsko pravilo mo\v ze se primeniri samo na disjunkcije, 
+pa premise trebaju biti u obliku disjunkcije tj. trebaju biti klauze.
+
+
+\begin{defn}
+Neka je $S$ skup iskaznih slova. Literal je svako iskazno slovo ili negacija iskaznog slova, tj. 
+svaki $p$ odnosno $\neg p$, gde $p \in S$. Literal suprotan literalu $p$ jeste literal $\neg p$, 
+i obrnuto.
+\end{defn}
+
+
+\begin{defn}
+Klauza je disjunkcija literala. Prazna klauza, u oznaci $\square$, je klauza koja ne sadr\v zi 
+nijedan literal.
+\end{defn}
+
+
+Zbog asocijativnosti i komutativnosti konjunkcije i disjunkcije,
+formulu koja je u konjunktivnoj normalnoj formi mo\v zemo smatrati multiskupom
+klauza, pri \v cemu svaku klauzu mo\v zemo smatrati multiskupom literala.
+Na osnovu logi\v ckih ekvivalencija $A \land A \equiv A$ i $A \lor A \equiv A$
+mogu se eliminisati
+vi\v sestruka pojavljivanja jedne klauze u formuli i vi\v sestruka pojavljivanja
+jednog literala u klauzi. Time formula kao multiskup klauza od kojih je svaka
+multiskup literala mo\v ze da se zameni (logi\v cki ekvivalentnom) formulom koja
+je skup klauza od kojih je svaka skup literala. Metod rezolucije ispituje da li je
+zadat skup klauza zadovoljiv.
+
+
+Klauza je zadovoljiva ako postoji valuacija u kojoj je bar jedan literal iz
+te klauze ta\v can. Klauza je pobijena valuacijom u kojoj su svi literali neta\v cni.
+Prazna klauza, u oznaci $\square$ , ne sadr\v zi nijedan literal i nije zadovoljiva. Formula
+koja je skup klauza je zadovoljiva ako postoji valuacija u kojoj su sve klauze te
+formule ta\v cne, a ina\v ce je nezadovoljiva.
+
+
+Jednostavnosti radi, sve klauze koje sadr\v ze logi\v cke konstante $\top$ ili $\bot$ mogu
+biti eliminisane ili zamenjene tako da se ne promeni zadovoljivost polaznog
+skupa klauza. Klauza koja sadr\v zi literal $\top$ je u svakoj valuaciji ta\v cna, pa mo\v ze 
+biti eliminisana (jer ne uti\v ce na zadovoljivost polaznog skupa klauza). Ako
+klauza $C$ sadr\v zi literal $\bot$, onda taj literal mo\v ze biti obrisan, daju\'ci novu klauzu
+$C'$ (jer je u svakoj valuaciji klauza $C$ ta\v cna ako i samo ako je ta\v cna klauza $C'$).
+Dakle, mo\v ze se smatrati da je u svim klauzama svaki literal ili iskazno slovo
+ili negacija iskaznog slova. Ako je literal $l$ jednak iskaznom slovu $p$, onda
+sa $\overline{l}$ ozna\v cavamo literal $\neg p$; ako je literal $l$ jednak negaciji iskaznog 
+slova $p$ (tj. literalu $ \neg p $), onda sa $\overline{l}$ ozna\v cavamo literal $p$. Za 
+literale $l$ i $\overline{l}$ ka\v zemo da su me\dj{}usobno komplementni.
+
+
+Ako su $C'$ i $C"$ klauze, onda se pravilom rezolucije iz klauza $C' \lor l$ i 
+$C" \lor \overline{l}$ izvodi klauza $C' \lor C"$. Pravilo rezolucije mo\v ze se prikazati 
+u slede\'cem obliku:
+$$\frac{C' \lor l \quad C" \lor \overline{l}}{C' \lor C"}$$
+Klauzu $C' \lor C"$ zovemo rezolventom klauza $C' \lor l$ i $C" \lor \overline{l}$,
+a klauze $C' \lor l$ i $C" \lor \overline{l}$ roditeljima rezolvente. Ka\v zemo da klauze 
+$C' \lor l$ i $C" \lor \overline{l}$ rezolviramo pravilom rezolucije.
+
+
+Pravilo rezolucije intuitivno mo\v ze biti shva\'ceno na slede\'ci na\v cin: klauza $C' \lor p$ 
+logi\v cki je ekvivalentna formuli $\neg C' \Rightarrow p$, klauza $C" \lor \neg p$ 
+logi\v cki je ekvivalentna formuli $p \Rightarrow C"$, a formule $\neg C' \Rightarrow p$ i 
+$p \Rightarrow C"$ imaju logi\v cku posledicu $\neg C' \Rightarrow C"$ koja je logi\v cki 
+ekvivalentna klauzi $C' \lor C"$.
+
+
+Ako je dat skup klauza $S$, pravilom rezolucije se roditelji rezolvente ne zamenjuju
+rezolventom, ve\'c se rezolventa dodaje u skup $S$.
+
+
+Metod rezolucije je postupak za ispitivanje zadovoljivosti skupa klauza koji
+se sastoji od uzastopnog primenjivanja pravila rezolucije, tj. metod rezolucije se sastoji 
+od niza primena pravila rezolucije na skupu klauza. Neka je $S$ po\v cetni
+skup, neka je $S_0 = S$ i neka je $S_{i+1}$ rezultat primene pravila rezolucije na skup
+$S_i$. Postupak se zaustavlja na jedan od slede\'ca dva na\v cina: 
+\begin{itemize}
+	\item ako u nekom koraku skup $S_i$ sadr\v zi praznu klauzu ($\square$ ), onda zaustavi
+primenu procedure i vrati odgovor da je skup klauza $S$ nezadovoljiv;
+	\item ako ne postoji mogu\'cnost da se primeni pravilo rezolucije tako da se
+skupovi $S_i$ i $S_{i+1}$ razlikuju, onda zaustavi primenu procedure i vrati
+odgovor da je skup klauza $S$ zadovoljiv.
+\end{itemize}
+
+
+Niz klauza (polaznih i izvedenih) ozna\v cava\'cemo obi\v cno sa $C_i$ ($i = 1, 2,\dots$).
+Iza izvedene klauze zapisiva\'cemo oznake klauza iz kojih je ona izvedena, kao
+i redne brojeve literala nad kojim je primenjeno pravilo rezolucije. Literale u
+klauzama razdvaja\'cemo obi\v cno simbolom \zn ~, $"$ (umesto simbolom \zn $ \lor $ $"$).
+
+
+\begin{pr}
+Metodom rezolucije se iz skupa \{\{$\neg p, \neg q, r$\}, \{$\neg p, q$\}, \{$p$\}, \{$\neg r$\}\}
+mo\v ze izvesti prazna klauza:
+\begin{center}
+\begin{tabular}{l l l}
+	
+	$C_1 :$ & $\neg p, \neg q, r$  \\
+	
+	$C_2 :$ & $\neg p, q$  \\
+	
+	$C_3 :$ & $p$  \\
+	
+	$C_4 :$ & $\neg r$ \\ \hline
+	
+	$C_5 :$ & $\neg p, r$ & $(C1, 2; C2, 2)$ \\
+	
+	$C_6 :$ & $\neg p$ & $(C4, 1; C5, 2)$ \\
+	
+	$C_7 :$ & $\square$ &  $(C3, 1; C6, 1)$ 
+	
+\end{tabular}
+\end{center}
+Skup klauza \{\{$\neg p, \neg q, r$\}, \{$\neg p, q$\}, \{$p$\}, \{$\neg r$\}\} je, 
+dakle, nezadovoljiv.
+\end{pr}
+
+
+\begin{pr}
+Metodom rezolucije se iz skupa $\{\{\neg p, \neg q, r\}, \{\neg p, q\}, \{p\}\}$ ne mo\v ze
+izvesti prazna klauza. Ovaj skup klauza je, dakle, zadovoljiv.
+\begin{center}
+\begin{tabular}{l l l}
+	
+	$C_1 :$ & $\neg p, \neg q, r$  \\
+	
+	$C_2 :$ & $\neg p, q$  \\
+	
+	$C_3 :$ & $p$  \\ \hline
+	
+	$C_4 :$ & $\neg p, r$ & $(C1, 2; C2, 2)$ \\
+	
+	$C_5 :$ & $r$ & $(C3, 1; C4, 1)$ \\
+
+\end{tabular}
+\end{center}
+
+\end{pr}
+
+\vspace{0.2cm}
+\begin{theorem}[Zaustavljanje metoda rezolucije]
+Metod rezolucije se zaustavlja.
+\end{theorem}
+
+\vspace{0.2cm}
+\begin{proof}
+U svakom koraku metoda rezolucije teku\'cem skupu se dodaje nova
+klauza.
+
+\noindent
+Klauze su skupovi literala, pa nije bitan poredak literala u njima, a vi\v sestruka 
+pojavljivanja literala u klauzi nisu mogu\'ca. Nad skupom od $n$
+iskaznih slova ima $2n$ razli\v citih literala (za svako iskazno slovo $p$ postoje
+literali $p$ i $\neg p$) i svaki od njih mo\v ze da se pojavljuje ili ne pojavljuje u
+{klauzi\footnote{Ukoliko bi bilo uvedeno ograni\v cenje da klauzula ne mo\v ze da sadr\v zi 
+i neko iskazno slovo i njegovu negaciju (takva klauzula je u svakoj valuaciji ta\v cna), 
+onda bi nad $n$ iskaznih slova bilo $3^n$ razli\v citih klauzula (jer svako iskazno slovo 
+$p$ mo\v ze da se ne pojavljuje u klauzuli, da se pojavljuje u vidu literala $p$ ili 
+da se pojavljuje u okviru literala $\neg p$).}}, te razli\v citih klauza ima $2^{2n} = 4^n$.
+
+\noindent
+Dakle, metod rezolucije se zaustavlja u kona\v cno mnogo koraka, jer se iz
+literala iz skupa $S$ mo\v ze izvesti samo kona\v can broj (novih) klauza. (Taj
+broj me\dj{}utim mo\v ze biti eksponencijalno veliki (u funkciji broja literala u
+$S$) i primena procedure rezolucije mo\v ze da se sastoji od veoma velikog
+broja koraka.) 
+\end{proof}
+
+\vspace{0.2cm}
+\begin{theorem}[Saglasnost pravila rezolucije]
+Neka je skup klauza $S'$ dobijen od skupa klauza $S$ primenom pravila rezolucije. 
+Ako neka valuacija zadovoljava skup $S$, onda ona zadovoljava i skup $S'$.
+\end{theorem}
+
+\vspace{0.2cm}
+\begin{proof}
+Pretpostavimo da valuacija $v$ zadovoljava sve klauze iz skupa $S$. Doka\v zimo da ona 
+zadovoljava i sve klauze iz skupa $S'$. 
+
+\noindent
+Pretpostavimo da je
+pravilo rezolucije primenjeno na klauze $C_a$ i $C_b$ i da je njihova rezolventa
+klauza $C_r$. Jedina klauza koja pripada skupu $S'$, a mogu\'ce ne pripada
+skupu $S$ je klauza $C_r$. Doka\v zimo da valuacija $v$ zadovoljava klauzu $C_r$.
+
+\noindent
+Pretpostavimo da klauza $C_a$ sadr\v zi literal $l$, a klauza $C_b$ literal $\overline{l}$. Ako je
+literal $l$ ta\v can u valuaciji $v$, onda je literal $\overline{l}$ neta\v can, pa u 
+klauzi $C_b$ mora
+da postoji neki literal (razli\v cit od $\overline{l}$) koji je ta\v can u valuaciji $v$. Taj literal
+je i element klauze $C_r$, pa je i ona zadovoljiva u valuaciji $v$. Ako je literal
+$l$ neta\v can u valuaciji $v$, onda u klauzi $C_a$ mora da postoji neki literal 
+(razli\v cit od $l$) koji je ta\v can u valuaciji $v$. Taj literal je i element klauze $C_r$, 
+pa je i ona zadovoljiva u valuaciji $v$. 
+
+\noindent
+Dakle, svaka klauza iz skupa $S'$ je ta\v cna
+u valuaciji $v$, odakle sledi tvr\dj{}enje teoreme.
+\end{proof}
+
+\vspace{0.2cm}
+\begin{theorem}[Saglasnost metoda rezolucije]
+Ako se iz skupa klauza $S$ mo\v ze izvesti prazna klauza, onda je $S$ nezadovoljiv skup klauza.
+\end{theorem}
+
+\vspace{0.2cm}
+\begin{proof}
+Na osnovu teoreme saglasnost pravila rezolucije (i na osnovu jednostavnog induktivnog argumenta),
+ako je skup klauza $S$ zadovoljiv, zadovoljiv je i svaki skup klauza
+$S'$, dobijen u nekoj iteraciji metoda. Obratno, skup klauza $S$ je nezadovoljiv
+ako je nezadovoljiv skup $S'$, dobijen u nekoj iteraciji metoda. 
+
+\noindent
+Dakle,mako metod rezolucije u nekom koraku doda praznu klauzu u teku\'ci skup
+klauza, sledi da je skup $S$ nezadovoljiv, \v sto je i trebalo dokazati.
+\end{proof}
+\vspace{0.2cm}
+
+Teorema o saglasnosti rezolucije tvrdi da iz zadovoljivog skupa ne mo\v ze
+biti izvedena prazna klauza. Pokaza\'cemo u nastavku da iz svakog nezadovoljivog
+skupa klauza mo\v ze biti izvedena prazna klauza. Razmatra\'cemo stablo
+sa mogu\'cim va\-lua\-ci\-ja\-ma fiksnog skupa iskaznih slova ${p_1, p_2,\dots , p_m}$.
+Zato najpre navodimo definiciju stabla.
+
+\vspace{1cm}
+\section{Stablo}
+\vspace{1cm}
+Rezolucijsko izvo\dj{}enje se ponekad prikazuje i u formi stabla.
+\begin{defn}
+Neure\dj{}eno stablo $T$ je par $(S, \prec)$ sa slede\'cim svojstvima:
+\begin{itemize}
+	\item $S$ je skup \v cije elemente zovemo \v cvorovima neure\dj{}enog stabla;
+	\item $\prec$ je binarna relacija nad $S$, $x \prec y$ \v citamo \v cvor $x$ je prethodnik
+(roditelj, direktni predak) \v cvora $y$ ili \v cvor $y$ je sledbenik (dete, direktni potomak)
+\v cvora $x$; ova relacija zadovoljava slede\'ce uslove:
+\begin{itemize}
+	\item[-] postoji jedinstven \v cvor koji nema prethodnika, taj \v cvor zovemo koren
+stabla;
+	\item[-] svaki \v cvor razli\v cit od korena ima ta\v cno jednog prethodnika;
+	\item[-] ne postoji niz \v cvor ova $x_1, x_2, \dots , x_n$ takav da va\v zi 
+$x_1 \prec x_2 \prec \dots \prec x_n \prec x_1$.
+\end{itemize}
+\end{itemize}
+
+
+Ako za niz \v cvorova $x_1, x_2,\dots, x_n$ va\v zi 
+$x_1 \prec x_2 \prec \dots \prec x_{n-1} \prec x_n$, 
+onda ka\v zemo da je \v cvor $x_1$ predak \v cvora $x_n$ i da je \v cvor $x_n$ 
+potomak \v cvora $x_1$.
+
+
+List stabla je  \v cvor koji nema sledbenika. Staza stabla (grana stabla) je 
+niz \v cvorova $x_1, x_2, \dots , x_n$, pri  \v cemu je $x_1$ koren stabla i  \v cvor $x_1$ je 
+prethodnik \v cvora $x_2$, \v cvor $x_2$ je prethodnik \v cvora $x_3,\dots,x_{n-1}$ je 
+prethodnik  \v cvora $x_n$. Maksimalna staza (maksimalna grana) je niz  \v cvorova 
+$x_1, x_2,\dots , x_n$, pri  \v cemu je $x_1$ koren stabla, $x_n$ je list stabla 
+i  \v cvor $x_1$ je prethodnik \v cvora $x_2$, \v cvor $x_2$ je prethodnik  \v cvora 
+$x_3,\dots,x_{n-1}$ je prethodnik \v cvora $x_n$.
+
+
+Ako je $x_1$ koren stabla i ako postoji niz  \v cvorova $x_1, x_2,\dots,x_k$ takav da va\v zi
+$x_1 \prec x_2 \prec \dots \prec x_{k-1} \prec x_k$, onda ka\v zemo da je visina  
+\v cvora $x_k$ jednaka $k$.
+
+
+Ako  \v cvor stabla ima (samo) direktne potomke $x_1, x_2, \dots , x_k$ ($k \geq 0$), onda
+ka\v zemo da je stepen tog  \v cvora jednak $k$.
+\end{defn}
+
+
+\begin{defn}
+Za stablo ka\v zemo da je binarno ako svaki \v cvor ima najvi\v se dva
+sledbenika. Za stablo ka\v zemo da je potpuno binarno ako postoji vrednost $k$
+takva da svaki \v cvor visine manje ili jednake $k$ ima po ta\v cno dva sledbenika i
+nijedan \v cvor visine $k + 1$ nema nijednog sledbenika.
+\end{defn}
+
+
+\begin{defn}
+Ure\dj{}eno stablo je neure\dj{}eno stablo za \v ciji je svaki \v cvor skup
+njegovih sledbenika ure\dj{}en. 
+\end{defn}
+
+
+\begin{center}
+\begin{forest}
+[$\epsilon$
+	[$p_1$
+		[$p_1 p_2$
+			[$p_1 p_2 p_3$]
+			[$p_1 p_2 \overline{p_3}$]
+		]
+		[$p_1 \overline{p_2}$
+			[$p_1 \overline{p_2} p_3$]
+			[$p_1 \overline{{p}_2 {p}_3}$]
+		]
+	]
+	[$\overline{p_1}$
+		[$\overline{p_1} p_2$
+			[$\overline{p_1} p_2 p_3$]
+		   	[$\overline{p_1} p_2 \overline{p_3}$]
+		]
+		[$\overline{{p}_1 {p}_2}$
+			[$\overline{{p}_1 {p}_2} p_3$]
+		   	[$\overline{{p}_1 {p}_2 {p}_3}$]
+		]
+	]
+]
+\end{forest}		\\					
+\vspace{0.2cm}
+Slika 1: Stablo valuacije za tri iskazna slova				
+\end{center}
+
+
+Stablo valuacija je ure\dj{}eno potpuno binarno stablo visine $m$, \v cijem je svakom
+\v cvoru pridru\v zeno dodeljivanje vrednosti $0$ ili $1$ iskaznim slovima iz zadatog
+skupa i dodeljivanje za svaki \v cvor (sem listova) je u njegovim direktnim potomcima
+pro\v sireno dodeljivanjem vrednosti $0$ i $1$ jo\v s jednom iskaznom slovu.
+U korenu stabla je prazna dodela (ozna\v cena sa $\epsilon$) koja ne pridru\v zuje vrednost
+nijednom iskaznom slovu. \v Cvoru stablu valuacija odgovara parcijalnoj dodeli
+vrednosti $0$ i $1$ iskaznim slovima iz nekog skupa. Parcijalne dodele mogu biti
+dovoljne za utvr\dj{}ivanje istinitosne vrednosti neke formule. Mo\v ze se govoriti
+o parcijalnim dodelama koje pro\v siruju druge dodele. Parcijalna dodela koja
+odgovara nekom \v cvoru stabla valuacije je pro\v sirenje svake dodele koje odgovara
+prethodnicima tog \v cvora. Stablo valuacija ima $2^m$ listova, po jedan za
+svaku od mogu\'cih valuacija. Parcijalne valuacije zapisujemo kratko kao niske
+znakova iz skupa znakova od $p_1$ do $p_m$ i od $\overline{p_1}$ do $\overline{p_m}$. 
+Sa $p$ ozna\v cavamo da valuacija iskaznom slovu $p$ dodeljuje vrednost $1$, a sa $\overline{p}$ 
+da valuacija iskaznom slovu $p$ dodeljuje vrednost $0$. Slika 1 ilustruje stablo valuacija za 
+tri iskazna slova.
+
+
+Neka je $S$ skup klauza i neka je $S_k$ poslednji skup klauza dobijen metodom
+rezolucije. Klauza $C$ pokriva \v cvor $n$ u stablu valuacija ako ona zadovoljava
+slede\'ce uslove:
+\begin{itemize}
+	\item klauza $C$ je element skupa $S_k$;
+	\item iskazna slova koja se pojavljuju u $C$ su me\dj{}u slovima kojima su dodeljene
+vrednosti u \v cvoru $n$;
+	\item klauza $C$ je neta\v cna u valuaciji koja odgovara \v cvoru $n$.
+\end{itemize}
+
+
+Na osnovu drugog i tre\'ceg uslova sledi da je klauza $C$ koja pokriva \v cvor
+$n$ neta\v cna i u svakoj valuaciji koja pro\v siruje valuaciju koja odgovara \v cvoru $n$
+(tj. neta\v cna i u svakoj valuaciji koja odgovara nekom potomku \v cvora $n$). Neki
+\v cvorovi mogu biti pokriveni od strane vi\v se klauza, dok neki ne moraju biti
+pokriveni. Prazna klauza je jedina klauza koja mo\v ze pokriti koren stabla valuacije.
+Dodatno, prazna klauza mo\v ze pokriti bilo koji \v cvor stabla valuacije.
+
+\vspace{0.2cm}
+\begin{lemma}
+Ako su, za skup klauza dobijen metodom rezolucije iz skupa klauza
+$S$, oba deteta \v cvora stabla valuacija pokrivena, onda je i taj \v cvor pokriven.
+\end{lemma}
+
+\vspace{0.2cm}
+\begin{proof}
+Pretpostavimo da je $n$ \v cvor \v cija su oba deteta pokrivena i neka je $v$ valuacija
+koja mu je pridru\v zena. Neka su \v cvorovi $n_1$ i $n_2$ dva deteta \v cvora $n$,
+neka su im pridru\v zene valuacije $vp$ i $v\overline{p}$ i neka su $C_1$ i $C_2$ klauze koje,
+redom, pokrivaju ta dva \v cvora. Ako se iskazno slovo $p$ ne pojavljuje u
+$C_1$, onda $C_1$ pokriva \v cvor $n$. Sli\v cno, ako se iskazno slovo $p$ ne pojavljuje
+u $C_2$, onda $C_2$ pokriva \v cvor $n$. Ako se iskazno slovo $p$ pojavljuje i u $C_1$
+i u $C_2$, onda $C_1$ sadr\v zi literal $\neg p$, a klauza $C_2$ literal $p$. Zaista, \v cvoru 
+$n_1$ odgovara valuacija koja dodeljuje iskaznom slovu $p$ vrednost $1$, pa literal
+$p$ ne mo\v ze da se pojavljuje u $C_1$ (jer bi klauza $C_1$ tada bila ta\v cna u valuaciji
+koja odgovara \v cvoru $n_1$). Analogno, klauza $C_2$ sadr\v zi literal $p$. Na klauze
+$C_1$ i $C_2$ se, dakle, mo\v ze primeniti pravilo rezolucije (po iskaznom slovu
+$p$). Neka je $C_r$ rezolventa ove dve klauze (po iskaznom slovu $p$). Ukoliko je iz skupa $S$ 
+izvedena prazna klauza, onda je ona klauza koja
+pokriva \v cvor $n$. Doka\v zimo da, ako prazna klauza nije izvedena, onda
+klauza $C_r$ pokriva \v cvor $n$. Potrebno je dokazati tri svojstva klauze $C_r$.
+\begin{itemize}
+	\item Ako, kao \v sto je pretpostavljeno, prazna klauza nije izvedena iz $S$,
+onda skup $S_k$ sadr\v zi sve mogu\'ce rezolvente izvedene iz skupa $S$, pa
+je i klauza $C_r$ element skupa $S_k$.
+	\item Iskazna slova koja se pojavljuju u klauzi $C_r$ su slova koja se pojavljuju
+u klauzi $C_1$ ili klauzi $C_2$. Za svako slovo koje se pojavljuje u
+ovim dvema klauzama va\v zi ili da mu je dodeljena vrednost u \v cvoru
+$n$ ili da je ono upravo iskazno slovo $p$. Dovoljno je, dakle, pokazati
+da iskazno slovo $p$ ne pripada klauzi $C_r$. Literal $p$ mo\v ze da pripada
+klauzi $C_r$ samo ako pripada i klauzi $C_1$. Me\dj{}utim, ako bi literal
+$p$ pripadao klauzi $C_1$, ta klauza bi sadr\v zala literale $p$ i $\neg p$, pa bi
+bila ta\v cna u svakoj valuaciji, \v sto je u suprotnosti sa \v cinjenicom da
+je klauza $C_1$ neta\v cna u valuaciji $vp$. Dakle, literal $p$ ne pripada klauzi
+$C_1$ i, analogno, literal $\neg p$ ne pripada klauzi $C_2$. Odatle sledi da se
+iskazno slovo $p$ ne pojavljuje u klauzi $C_r$, pa su sva slova koja se pojavljuju
+u $C_r$ me\dj{}u slovima kojima su dodeljene vrednosti u \v cvoru
+$n$.
+	\item Klauza $C_1$ pokriva \v cvor $n_1$, pa svi njeni literali imaju vrednost $0$ u
+valuaciji $vp$. Klauza $C_1$, kao \v sto je pokazano, ne sadr\v zi literal $p$, pa
+je svaki literal iz skupa $C_1 \setminus \{\neg p\}$ neta\v can u valuaciji $v$. Analogno,
+svaki literal iz skupa $C_2 \setminus \{p\}$ je neta\v can u valuaciji $v$. Dakle, svaki
+literal klauze $C_r$ (koja je unija skupova $C_1 \setminus \{\neg p\}$ i $C_2 \setminus \{p\}$) 
+je neta\v can u valuaciji $v$.
+\end{itemize} \end{proof}
+
+
+\vspace{0.2cm}
+\begin{pr}
+Primer 1 u obliku stabla.
+\begin{center}
+\begin{forest}
+for tree={grow=north}
+[$\square$
+	[$\{p\}$]
+	[$\{\neg p\}$
+		[$\{\neg r\}$]
+		[$\{\neg p ; r\}$
+			[$\{\neg p; q\}$]
+		   	[$\{\neg p ; \neg q ; r\}$]
+		]
+	]
+]
+\end{forest}	
+\end{center}
+\end{pr}
+
+\vspace{1cm}
+\section{Potpunost i teorema o metodu rezolucije}
+\vspace{1cm}
+\begin{theorem}[Potpunost metoda rezolucije]
+Ako je $S$ nezadovoljiv skup klauza,
+onda se iz njega mo\v ze izvesti prazna klauza.
+\end{theorem}
+
+\vspace{0.2cm}
+\begin{proof}
+Neka je $S_k$ poslednji skup dobijen metodom rezolucije od nezadovoljivog
+skupa $S$. Neka je $T$ stablo valuacija za iskazna slova iz skupa $S$.
+Kako je skup $S$ nezadovoljiv, on je neta\v can u svakoj valuaciji, tj. u svakoj
+valuaciji $v$ bar jedna klauza iz $S$ je neta\v cna, te ona pokriva list stabla $T$
+koji odgovara valuaciji $v$. Dakle, svaki list stabla $T$ je pokriven nekom
+klauzom iz skupa $S$. Primenom leme 3.4 i na osnovu jednostavnog induktivnog
+argumenta sledi da su svi \v cvorovi stabla $T$ pokriveni elementima
+skupa $S_k$. Specijalno, i koren stabla $T$ mora biti pokriven, a prazna
+klauza je jedina klauza koja mo\v ze da pokrije koren. Dakle, prazna klauza
+je izvedena rezolucijom iz skupa $S$, \v sto je i trebalo dokazati.  
+\end{proof}
+
+\vspace{0.2cm}
+Metod rezolucije se uvek zaustavlja (teorema 2.3), pa na osnovu dokaza
+prethodne teoreme sledi da se iz svakog nezadovoljivog skupa klauza nu\v zno
+mora izvesti prazna klauza bez obzira na izbor klauza za rezolviranje u pojedinim
+koracima. Pa bi prethodna teorema glasila:
+
+
+\zn Ako je $S$ nezadovoljiv skup klauza,
+onda se iz njega mora izvesti prazna klauza.$"$ \\
+
+
+Dodatno, iz toga sledi i da ukoliko za neki skup klauza
+metod staje bez izvo\dj{}enja prazne klauze, onda je taj skup zadovoljiv.
+
+\noindent
+Na osnovu prethodnih teorema sledi naredno tvrdenje.
+
+\vspace{0.2cm}
+\begin{theorem}[Teorema o metodu rezolucije]
+Metod rezolucije se zaustavlja za svaku iskaznu formulu i u zavr\v snom skupu klauza 
+postoji prazna klauza ako i samo ako je polazna formula nezadovoljiva.
+\end{theorem}
+
+\newpage
+Metod rezolucije mo\v ze biti modifikovan tako da bude efikasniji. Modifikacije
+metoda mogu biti zasnovane na slede\'cim \v cinjenicama: 
+\begin{itemize}
+	\item ako je klauza $C$ tautologija, onda je skup $S$ zadovoljiv ako i samo ako je
+skup $S \setminus \{C\}$ zadovoljiv;
+	\item ako skup $S$ sadr\v zi jedini\v cnu klauzu \{$l$\}, onda je skup $S$ zadovoljiv ako
+i samo ako je zadovoljiv skup dobijen od $S$ brisanjem svih klauza koje
+sadr\v ze literal $l$ i, zatim, brisanjem svih pojavljivanja literala $\overline{l}$;
+	\item ako se u skupu klauza $S$ pojavljuje literal $l$, a ne i literal $\overline{l}$, 
+onda je skup $S$ zadovoljiv ako i samo ako je skup $T$ zadovoljiv, gde je skup $T$ skup svih
+klauza iz $S$ koje ne sadr\v ze $l$;
+	\item ako skup $S$ sadr\v zi klauze $C_0$ i $C_1$ i ako je klauza $C_0$ podskup klauze $C_1$,
+onda je skup $S$ zadovoljiv ako i samo ako je zadovoljiv skup $S \setminus \{C_1\}$ (pravilo
+subsumption).
+\end{itemize}
+
+
+Primetimo da su navedene \v cinjenice sli\v cne koracima {DPLL procedure\footnote
+{Dejvis-Patnam-Logman-Loveladova procedura (DPLL procedura) vr\v si ispitivanje zadovoljivosti 
+iskaznih formula. Ona se primenjuje na iskazne formule u konjunktivnoj normalnoj formi. 
+Predstavljena je 1962. godine od strane Martina Dejvisa, Hilari Patnama, D\v zord\v za 
+Logmana i Donalda Lovelanda i ona je usavr\v senje ranije Dejvis-Patnamove procedure, koja je 
+razvijena od strane Dejvisa i Patnama 1960. godine.}}.
+Za efikasnu primenu metoda rezolucije veoma je, u svakom koraku, bitan i
+izbor para klauza nad kojima se primenjuje pravilo rezolucije.
+
+\newpage
+\section{Zaklju\v cak}
+\vspace{1cm}\hspace{0.5cm}
+U svom osnovnom obliku, metod rezolucije proverava da li je dati skup
+klauza (ne)zadovoljiv. Me\dj{}utim, metod rezolucije mo\v ze se koristiti i za ispitivanje
+va\-lja\-no\-sti. Naime, ako je potrebno ispitati da li je formula $A$ valjana,
+dovoljno je metodom rezolucije utvrditi da li je formula $\neg A$ nezadovoljiva (pri
+\v cemu je potrebno najpre formulu $\neg A$ transformisati u konjuktivnu normalnu
+formu). Ovaj vid dokazivanja da je formula $A$ valjana zovemo dokazivanje pobijanjem.
+Za metod rezolucije primenjen na ovaj na\v cin, saglasnost govori da
+nije mogu\'ce rezolucijom pogre\v sno utvrditi (pobijanjem) da je neka formula valjana,
+a potpunost govori da je za svaku valjanu formulu metodom rezolucije
+mogu\'ce dokazati (pobijanjem) da je valjana.
+
+
+Metodom rezolucije mo\v ze se ispitati i da li va\v zi $A_1, A_2,\dots , A_n \models B$. Ovo
+tvr\dj{}enje je ta\v cno ako i samo ako je formula 
+$A_1 \land A_2 \land \dots \land A_n \Rightarrow B$ valjana. 
+Formula $A_1 \land A_2 \land \dots \land A_n \Rightarrow B$ je valjana 
+ako i samo ako je formula $\neg (A_1 \land A_2 \land \dots \land A_n \Rightarrow B)$ 
+nezadovoljiva, tj. ako i samo ako je formula
+$\neg (\neg (A_1 \land A_2 \land \dots \land A_n) \lor B)$ tj. 
+$A_1 \land A_2 \land\dots \land A_n \land \neg B$ nezadovoljiva. Ukoliko su formule 
+$A_i$ u konjunktivnoj normalnoj formi, da bi na navedenu formulu bio primenjen metod rezolucije,
+dovoljno je transformisati formulu $\neg B$ u konjunktivnu normalnu formu.
+
+
+\begin{pr}
+Va\v zi
+$$(\neg p \lor \neg q \lor r) \land (\neg p \lor q) \land p \models r$$\\
+ako i samo ako je skup klauza $\{\{\neg p, \neg q, r\}, \{\neg p, q\}, \{p\}, \{\neg r\}\}$ 
+nezadovoljiv. U primeru 1 je pokazano da je taj skup klauza nezadovoljiv.
+\end{pr}
+
+
+Metoda rezolucije je po svojoj prirodi mehani\v cka, odnosno orijentisana ka ra\-\v cu\-nar\-skom
+izvr\v savanju, \v sto se lako uo\v cava kod primene na ve\'ce skupove formula kada se pojavljuje 
+ogroman broj klauza. \v Covek se tada te\v sko snalazi pretra\v zuju\'ci klauze koje treba 
+rezolvirati. Naime, tokom rezolviranja od klauza roditelja se \v cesto dobijaju klauze koje nisu 
+u polaznom skupu, niti su deo nekih klauza polaznog skupa, \v sto ima za posledicu potencijalno 
+eksplozivni rast broja klauza. 
+
+Deo materijala je preuzet iz \cite{gilezan2020logika}.
+
+
+\newpage
+\begin{thebibliography}{100}
+
+
+\bibitem{1}
+{J. A. Robinson.}
+\newblock {\em A machine oriented logic based on the resolution principle}.
+\newblock J. Assoc. Comput. Mach., 1965.
+
+\bibitem{2}
+{Jean H. Gallier.}
+\newblock {\em Logic for computer science: Foundations of Automatic Theorem Proving.}.
+\newblock New York, 1986.
+
+\bibitem{gilezan2020logika}
+{Silvia Gilezan, Simona Ka\v sterovi\'c.}
+\newblock {\em Matemati\v cka logika, predavanja i ve\v zbe.}.
+\newblock Fakultet tehni\v ckih nauka, Novi Sad, 2020.
+
+\bibitem{3}
+{Predrag Jani\v ci\'c.}
+\newblock {\em Matemati\v cka logika u ra\v cunarstvu}.
+\newblock Matemati\v cki fakultet, Beograd, 2008.
+
+\bibitem{4}
+{Rozalia Madaras Sila\dj{}i}
+\newblock {\em Matemati\v cka logika}.
+\newblock Prirodno-matemati\v cki fakultet, Novi Sad, 2012.
+
+\bibitem{5}
+{Gradimir Vojvodi\'c.}
+\newblock {\em Predavanja iz matemati\v cke logike}.
+\newblock Prirodno-matemati\v cki fakultet, Novi Sad, 2007.
+
+\bibitem{6}
+{Kosta Do\v sen}
+\newblock {\em Osnovna logika}.
+\newblock Beograd, 2013.
+
+\bibitem{7}
+{Zoran Ognjanovi\'c, Nenad Krd\v zavac}
+\newblock {\em Uvod u teorijsko ra\v cunarstvo}.
+\newblock Beograd - Kragujevac, 2004.
+
+\end{thebibliography}
+
+\end{document}

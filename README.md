@@ -41,3 +41,4 @@ Trajanje (god/sem): **4/8**
 
 1. [Operativni Sistemi](./4.%20Semestar/Operativni%20Sistemi/)
 2. [Web Programiranje](./4.%20Semestar/Web%20Programiranje/)
+3. [Matematička Logika](./4.%20Semestar/Matematicka%20Logika/)
