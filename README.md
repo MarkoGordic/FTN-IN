@@ -11,7 +11,7 @@ Zvanje koje se stiče: **Diplomirani inženjer informacionog inženjeringa (Dipl
 Ukupno ESPB: **240**  
 Trajanje (god/sem): **4/8**
 
-**NAPOMENA: Materijali su prikupljeni sa različitih izvora i mogu se razlikovati od zvaničnih materijala. Ovde su postavljeni isključivo u edukativne svrhe i ne zamenjuju zvanične materijale fakulteta. Ukoliko ste vlasnik autorskih prava na neke od ovih materijala i želite da ih uklonim, molim vas da me kontaktirate na `marko@gordic.rs`.**
+**NAPOMENA: Materijali su prikupljeni sa različitih izvora i mogu se razlikovati od zvaničnih materijala. Ovde su postavljeni isključivo u edukativne svrhe i ne zamenjuju zvanične materijale fakulteta. Ukoliko ste vlasnik autorskih prava na neke od ovih materijala i želite da ih uklonim, molim vas da me kontaktirate na `ftn@gordic.ch`.**
 
 # Materijali
 
@@ -36,3 +36,8 @@ Trajanje (god/sem): **4/8**
 2. [Logicko projektovanje racunarskih sistema 1](./3.%20Semestar/Logicko%20projektovanje%20racunarskih%20sistema%201/)
 3. [Napredno programiranje i programski jezici](./3.%20Semestar/Napredno%20programiranje%20i%20programski%20jezici/)
 4. [Osnove teorije grafova i kombinatorike](./3.%20Semestar/Osnove%20teorije%20grafova%20i%20kombinatorike/)
+
+## [ČETVRTI SEMESTAR](./4.%20Semestar/)
+
+1. [Operativni Sistemi](./4.%20Semestar/Operativni%20Sistemi/)
+2. [Web Programiranje](./4.%20Semestar/Web%20Programiranje/)
