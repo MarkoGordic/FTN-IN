@@ -1,0 +1,40 @@
+Instalirati node.js: https://nodejs.org/en/download
+Kada se instalira proveriti verziju node-a: node --version
+Proveriti verziju npm-a: npm --version
+Ako vam ispiše verzije, sve u redu.
+
+U folderu gde želite da napravite Vue projekat pokrenite:
+npm create vue@latest naziv-projekta
+
+Podešavanja koja treba izabrati prilikom kreiranja:
+Dodatke birate sa SPACE. Kada sve odaberete kliknite ENTER da nastavite dalje
+
+--- OBAVEZNI ---
+- Router (SPA development) - Za rad sa više stranica u aplikaciji
+
+--- Preporuka ---
+- Pinia (state management) - Pozeljno za lakšu komunikaciju između komponenti
+- ESLint (error prevention) - ukazuje na statičke greške u kodu
+- Prettier (code formatting) - automatski formatira kod (npr. razmaci, navodnici)
+- TypeScript - dodaje tipove u JavaScript (preporuka da učite, ali nije obavezno)
+
+--- Nema potrebe ---
+- Viitest i End-to-End testing - za testiranje (nije obavezno)
+- JSX Support - sintaksa nalik na React, ne preporučuje se
+
+
+Nakon kreiranja projekta, uđite u njegov folder i instalirajte zavisnosti:
+
+cd naziv-projekta
+npm install
+
+Pokrenite aplikaciju
+npm run dev
+
+Otvorite u browseru sajt na putanji http://localhost:5173
+Da zaustavite frontend aplikaciju, unesite u konzolu Ctrl+C
+
+
+# Korisne napomene
+npm install – instalira sve biblioteke u node_modules folder (obavezno kod prvog pokretanja projekta).
+Zaustavljanje servera – u terminalu pritisnite Ctrl + C.
