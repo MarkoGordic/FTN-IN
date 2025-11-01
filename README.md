@@ -11,9 +11,11 @@ Zvanje koje se stiče: **Diplomirani inženjer informacionog inženjeringa (Dipl
 Ukupno ESPB: **240**  
 Trajanje (god/sem): **4/8**
 
-**NAPOMENA: Materijali su prikupljeni sa različitih izvora i mogu se razlikovati od zvaničnih materijala. Ovde su postavljeni isključivo u edukativne svrhe i ne zamenjuju zvanične materijale fakulteta. Ukoliko ste vlasnik autorskih prava na neke od ovih materijala i želite da ih uklonim, molim vas da me kontaktirate na `ftn@gordic.ch`.**
+**NAPOMENA: Materijali su prikupljeni sa različitih izvora i mogu se razlikovati od zvaničnih materijala. Ovde su postavljeni isključivo u edukativne svrhe i ne zamenjuju zvanične materijale fakulteta. Ukoliko ste vlasnik autorskih prava na neke od ovih materijala i želite da ih uklonim, molim vas da me kontaktirate na `ftn@gordic.rs`.**
 
 # Materijali
+
+Klikom na naziv semestra otvoriće vam se stranica sa detaljnim pregledom svih predmeta, profesora i načinom polaganja svakog kursa, uz poneki koristan savet. Tamo možete pronaći i linkove ka snimcima predavanja, vežbi ili dodatnim materijalima, ako su dostupni.
 
 ## [PRVI SEMESTAR](./1.%20Semestar/)
 
@@ -43,3 +45,4 @@ Trajanje (god/sem): **4/8**
 2. [Web Programiranje](./4.%20Semestar/Web%20Programiranje/)
 3. [Matematička Logika](./4.%20Semestar/Matematička%20Logika/)
 4. [Osnove Finansijskog Inženjeringa 2](./4.%20Semestar/Osnove%20Finansijskog%20Inženjeringa%202/)
+5. [Verovatnoća i slučajni procesi](./4.%20Semestar/Verovatnoća%20i%20slučajni%20procesi/)
