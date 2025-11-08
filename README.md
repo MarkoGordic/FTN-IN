@@ -46,3 +46,7 @@ Klikom na naziv semestra otvoriće vam se stranica sa detaljnim pregledom svih p
 3. [Matematička Logika](./4.%20Semestar/Matematička%20Logika/)
 4. [Osnove Finansijskog Inženjeringa 2](./4.%20Semestar/Osnove%20Finansijskog%20Inženjeringa%202/)
 5. [Verovatnoća i slučajni procesi](./4.%20Semestar/Verovatnoća%20i%20slučajni%20procesi/)
+
+## [PETI SEMESTAR](./5.%20Semestar/)
+
+1. [Baze Podataka 1](./5.%20Semestar/Baze%20Podataka%201/)
