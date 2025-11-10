@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1634335264 source:c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\priprema k2\moje resenje\dinstring.cpp
+	"dinstring.hpp"
+
+1634335270 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\priprema k2\moje resenje\dinstring.hpp
+	<iostream>
+
+1701016523 source:c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\priprema k2\moje resenje\main.cpp
+	<iostream>
+	"dinstring.hpp"
+	"list.hpp"
+	"dete.hpp"
+	"paketic.hpp"
+	"novogodisnjipaketic.hpp"
+	"dedamraz.hpp"
+
+1634335278 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\priprema k2\moje resenje\list.hpp
+	<stdlib.h>
+	<iostream>
+
+1701012655 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\priprema k2\moje resenje\dete.hpp
+
+1701015262 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\priprema k2\moje resenje\paketic.hpp
+
+1701016513 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\priprema k2\moje resenje\novogodisnjipaketic.hpp
+
+1701016458 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\priprema k2\moje resenje\dedamraz.hpp
+

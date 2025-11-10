@@ -1,0 +1,13 @@
+package novogodisnja_rasveta;
+
+import java.util.ArrayList;
+
+public class NovogodisnjaRasveta {
+	private ArrayList<Lampion> lampioni;
+	private int kapacitet = 5;
+	
+	public NovogodisnjaRasveta() {
+		super();
+		lampioni = new ArrayList<Lampion>();
+	}
+}

@@ -1,0 +1,8 @@
+package novogodisnja_rasveta;
+
+public class Test {
+	Lampion l1 = new Lampion(11, "plava", 89, true);
+	Lampion l2 = new Lampion(l1);
+	Lampion l3 = new Lampion(12, "plava", 69, false);
+	Lampion l4 = new Lampion(13, "plava", 189, true);
+}

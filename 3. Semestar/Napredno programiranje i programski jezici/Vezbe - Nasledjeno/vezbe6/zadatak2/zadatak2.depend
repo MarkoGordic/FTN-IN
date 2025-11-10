@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1634403222 source:/home/stud/in17-2022/Desktop/nppj/vezbe6/zadatak2/dinstring.cpp
+	"dinstring.hpp"
+
+1634403228 /home/stud/in17-2022/Desktop/nppj/vezbe6/zadatak2/dinstring.hpp
+	<iostream>
+
+1700050451 source:/home/stud/in17-2022/Desktop/nppj/vezbe6/zadatak2/main.cpp
+	<iostream>
+	"dinstring.hpp"
+	"computer.hpp"
+	"application.hpp"
+
+1700049138 /home/stud/in17-2022/Desktop/nppj/vezbe6/zadatak2/computer.hpp
+
+1700050963 /home/stud/in17-2022/Desktop/nppj/vezbe6/zadatak2/application.hpp
+

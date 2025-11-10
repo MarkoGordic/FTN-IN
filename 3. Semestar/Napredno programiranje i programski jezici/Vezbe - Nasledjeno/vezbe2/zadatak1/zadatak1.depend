@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1697626812 source:/home/stud/in17-2022/Desktop/nppj/vezbe2/zadatak1/main.cpp
+	<iostream>
+	"kocka.hpp"
+
+1697625587 /home/stud/in17-2022/Desktop/nppj/vezbe2/zadatak1/kocka.hpp
+
+1697625595 source:/home/stud/in17-2022/Desktop/nppj/vezbe2/zadatak1/kocka.cpp
+	<cstdlib>
+	"kocka.hpp"
+

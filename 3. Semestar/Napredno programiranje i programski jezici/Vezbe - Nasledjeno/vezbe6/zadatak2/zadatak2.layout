@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<FileVersion major="1" minor="0" />
+	<ActiveTarget name="Debug" />
+	<File name="computer.hpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="658" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="androidapp.hpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="718" topLine="8" />
+		</Cursor>
+	</File>
+	<File name="main.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1855" topLine="38" />
+		</Cursor>
+	</File>
+	<File name="application.hpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="890" topLine="0" />
+		</Cursor>
+	</File>
+	<EditorTabsLayout layout="a105ec406554ae4f13899e6f00000002=*0;zadatak2:main.cpp,1;zadatak2:computer.hpp,2;zadatak2:application.hpp,3;zadatak2:androidapp.hpp,4;zadatak2:desktopapp.hpp@layout2|name=dummy;caption=;state=2098174;dir=3;layer=0;row=0;pos=0;prop=100000;bestw=357;besth=365;minw=357;minh=365;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=a105ec406554ae4f13899e6f00000002;caption=;state=2098172;dir=5;layer=0;row=0;pos=0;prop=100000;bestw=200;besth=200;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|dock_size(5,0,0)=202|" />
+</CodeBlocks_layout_file>

@@ -1,0 +1,19 @@
+package novogodisnja_rasveta;
+
+public class Test {
+	public static void main(String[] args) {
+		Lampion l1 = new Lampion(11, "plava", 89, true);
+		Lampion l2 = new Lampion(l1);
+		Lampion l3 = new Lampion(12, "plava", 69, false);
+		Lampion l4 = new Lampion(13, "plava", 189, true);
+		
+		System.out.println(l3);
+		System.out.println(l3.popravi());
+		System.out.println(l3);
+		System.out.println(l1.popravi());
+		
+		NovogodisnjaRasveta rasveta = new NovogodisnjaRasveta();
+		System.out.println(rasveta);
+		rasveta.dodaj(l1);
+	}
+}

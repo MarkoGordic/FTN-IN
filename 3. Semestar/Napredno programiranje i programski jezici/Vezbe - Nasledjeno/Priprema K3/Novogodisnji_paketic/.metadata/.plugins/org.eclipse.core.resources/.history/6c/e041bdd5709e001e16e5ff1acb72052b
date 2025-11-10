@@ -1,0 +1,113 @@
+package novogodisnji_paketic;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class DedaMraz {
+	private HashMap<String, NovogodisnjiPaketic> paketici;
+	
+	public DedaMraz() {
+		super();
+		paketici = new HashMap<String, NovogodisnjiPaketic>();
+	}
+	
+	public boolean pripremiZaIsporuku(NovogodisnjiPaketic paketic, String str) {
+		if (!paketic.spakuj()) {
+			return false;
+		}
+		paketic.setOpis(str);
+		paketic.setSpremanZaIsporuku(true);
+		System.out.println("Novogodisnji paketic je spreman za isporuku.");
+		return true;
+	}
+	
+	public boolean dodaj(NovogodisnjiPaketic paketic) {
+		if (!paketic.isSpremanZaIsporuku()) {
+			return false;
+		}
+		if (paketici.containsKey(paketic.getOpis().substring(0, 3) + ":" + paketic.getMinimalanUzrast())) {
+			return false;
+		}
+		if (paketici.put(paketic.getOpis().substring(0, 3) + ":" + paketic.getMinimalanUzrast(), paketic) == null) {
+			return true;
+		}
+		else {
+			return false;
+		}
+		// mada je verovatno i dovoljno samo .put; i nakon cega vratiti samo true
+	}
+	
+	public NovogodisnjiPaketic izbaci(String opis, int minUzrast) {
+		return paketici.remove(opis.substring(0, 3) + ":" + minUzrast);
+	}
+	
+	public double prosecniMinimalanUzrast() {
+		int prosek = 0;
+		for (NovogodisnjiPaketic paket : paketici.values()) {
+			prosek += paket.getMinimalanUzrast();
+		}
+		return prosek / paketici.size();
+	}
+
+	@Override
+	public String toString() {
+		String str = "************ DedaMraz *************\n";
+		if (paketici.isEmpty()) {
+			str += "Vreca je prazna!";
+			return str;
+		}
+		for (NovogodisnjiPaketic paket : paketici.values()) {
+			str += paket;
+			str += "\n";
+		}
+		str += "***********************************";
+		return str;
+	}
+	
+	public ArrayList<String> sifrujNamenjen() {
+		ArrayList<String> sifrovano = new ArrayList<String>();
+		for (NovogodisnjiPaketic paket : paketici.values()) {
+			String temp = new String(paket.getOpis());
+			temp = temp.trim();
+			temp = temp.toUpperCase();
+			if (temp.length() > 5) {
+				temp = temp.charAt(temp.length() - 1) + temp.substring(1, temp.length() - 1) + temp.charAt(0);
+			}
+			else if (temp.length() <= 5) {
+				// stavljao sam velika slova jer string svakako u uppercase
+				temp = temp.replace('A', 'E');
+				temp = temp.replace('E', 'I');
+				temp = temp.replace('I', 'O');
+			}
+			sifrovano.add(temp);
+		}
+		
+		return sifrovano;
+	}
+	
+	public static void main(String[] args) {
+		NovogodisnjiPaketic np1 = new NovogodisnjiPaketic("mali voz", "za decaka", false, 4, true, true);
+		NovogodisnjiPaketic np2 = new NovogodisnjiPaketic("mala lutka", "za devojcicu", false, 2, false, false);
+		NovogodisnjiPaketic np3 = new NovogodisnjiPaketic("mali bager", "za decaka", true, 3, true, true);
+
+		System.out.println(np1.spakuj());
+		System.out.println(np2.spakuj());
+		System.out.println(np3.spakuj());
+		
+		System.out.println(np1);
+		System.out.println(np2);
+		
+		DedaMraz dm = new DedaMraz();
+		dm.pripremiZaIsporuku(np2, "mala lutka")
+		System.out.println(dm);
+		dm.dodaj(np1);
+		dm.dodaj(np1);
+		dm.dodaj(np2);
+		dm.dodaj(np3);
+		System.out.println(dm);
+		
+		dm.izbaci("mala lutka", 2);
+		System.out.println(dm);
+		System.out.println(dm.prosecniMinimalanUzrast());
+	}
+}

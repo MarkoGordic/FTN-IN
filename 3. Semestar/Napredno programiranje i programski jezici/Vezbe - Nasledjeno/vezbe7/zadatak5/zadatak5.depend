@@ -1,0 +1,29 @@
+# depslib dependency file v1.0
+1634335264 source:c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak5\dinstring.cpp
+	"dinstring.hpp"
+
+1634335270 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak5\dinstring.hpp
+	<iostream>
+
+1700941615 source:c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak5\main.cpp
+	<iostream>
+	<ctime>
+	"list.hpp"
+	"dinstring.hpp"
+	"test.hpp"
+	"kolokvijum.hpp"
+	"predmet.hpp"
+	"student.hpp"
+
+1700941674 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak5\test.hpp
+
+1700932064 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak5\kolokvijum.hpp
+
+1634335278 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak5\list.hpp
+	<stdlib.h>
+	<iostream>
+
+1700941759 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak5\predmet.hpp
+
+1700941627 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak5\student.hpp
+

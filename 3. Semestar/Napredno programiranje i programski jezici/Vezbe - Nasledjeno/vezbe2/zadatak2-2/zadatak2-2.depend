@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1697889439 source:c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe2\zadatak2-2\televizor.cpp
+	"televizor.hpp"
+
+1697885987 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe2\zadatak2-2\televizor.hpp
+
+1697889509 source:c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe2\zadatak2-2\main.cpp
+	<iostream>
+	"televizor.hpp"
+

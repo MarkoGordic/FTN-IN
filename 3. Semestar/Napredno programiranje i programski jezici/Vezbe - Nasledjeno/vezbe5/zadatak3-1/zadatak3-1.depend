@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1699807281 source:c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe5\zadatak3-1\main.cpp
+	<iostream>
+	"pravougaonik.hpp"
+	"elipsa.hpp"
+	"kvadrat.hpp"
+	"krug.hpp"
+	"oblik.hpp"
+	"pravilanoblik.hpp"
+
+1699802484 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe5\zadatak3-1\pravougaonik.hpp
+	"figura.hpp"
+
+1699801644 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe5\zadatak3-1\figura.hpp
+
+1699805095 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe5\zadatak3-1\elipsa.hpp
+	"figura.hpp"
+	<math.h>
+
+1699804210 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe5\zadatak3-1\kvadrat.hpp
+
+1699804378 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe5\zadatak3-1\krug.hpp
+
+1699806943 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe5\zadatak3-1\oblik.hpp
+
+1699807198 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe5\zadatak3-1\pravilanoblik.hpp
+

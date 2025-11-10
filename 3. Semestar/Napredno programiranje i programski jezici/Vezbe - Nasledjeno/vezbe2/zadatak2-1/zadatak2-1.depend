@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1697885534 source:c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe2\zadatak2-1\main.cpp
+	<iostream>
+	"machine.hpp"
+
+1697884753 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe2\zadatak2-1\machine.hpp
+
+1697887003 source:c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe2\zadatak2-1\machine.cpp
+	"machine.hpp"
+

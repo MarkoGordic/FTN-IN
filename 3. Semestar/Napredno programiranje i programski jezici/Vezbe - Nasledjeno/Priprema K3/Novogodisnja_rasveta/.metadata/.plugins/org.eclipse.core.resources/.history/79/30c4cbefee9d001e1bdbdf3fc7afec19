@@ -1,0 +1,90 @@
+package novogodisnja_rasveta;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+
+public class NovogodisnjaRasveta {
+	private ArrayList<Lampion> lampioni;
+	private int kapacitet = 5;
+	
+	public NovogodisnjaRasveta() {
+		super();
+		lampioni = new ArrayList<Lampion>();
+	}
+	
+	public boolean dodaj(Lampion l) {
+		if (lampioni.size() >= kapacitet || !l.isIspravan()) {
+			return false;
+		}
+		for (Lampion lamp : lampioni) {
+			if (lamp.getSifra() == l.getSifra()) {
+				return false;
+			}
+		}
+		return lampioni.add(l);
+	}
+	
+	public Lampion pronadji(double cena, String boja) {
+		for (Lampion lamp : lampioni) {
+			if (lamp.getCena() > cena && lamp.getBoja().equals(boja)) {
+				return lamp;
+			}
+		}
+		return null;
+	}
+	
+	public boolean postaviAkciju() {
+		if (lampioni.isEmpty()) {
+			return false;
+		}
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int broj = 0;
+		try {
+			System.out.println("Molimo vas unesite akcijsku cenu: ");
+			String str = br.readLine();
+			broj = Integer.parseInt(str);
+		} catch (IOException ioe) {
+			System.out.println("Greska prilikom unosa!");
+		} catch (NumberFormatException nfe) {
+			System.out.println("Los format broja!");
+		} catch (Exception e) {
+			System.out.println("Neka cudna greska!");
+		} finally {
+			try {
+				br.close();
+			} catch (Exception e2) {
+				System.out.println("Greska prilikom zatvaranja!");
+			}
+		}
+		
+		Lampion max = lampioni.get(0);
+		for (Lampion lamp : lampioni) {
+			if (lamp.getCena() > max.getCena()) {
+				max = lamp;
+			}
+		}
+		
+		if (broj > max.getCena()) {
+			max.setCena(broj);
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public String toString() {
+		String str = "**** NovogodisnjaRasveta ****\n";
+		if (lampioni.isEmpty()) {
+			str += "Nema lampiona!";
+			return str;
+		}
+		for (Lampion l : lampioni) {
+			str += l;
+			str += "\n";
+		}
+		str += "*********************";
+		return str;
+	}
+}

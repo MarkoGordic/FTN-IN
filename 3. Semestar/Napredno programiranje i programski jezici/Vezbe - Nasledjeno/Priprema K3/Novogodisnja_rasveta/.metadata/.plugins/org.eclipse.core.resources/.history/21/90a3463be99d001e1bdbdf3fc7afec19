@@ -1,0 +1,11 @@
+package novogodisnja_rasveta;
+
+public class Lampion implements Popravka {
+
+	@Override
+	public boolean popravi() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}
