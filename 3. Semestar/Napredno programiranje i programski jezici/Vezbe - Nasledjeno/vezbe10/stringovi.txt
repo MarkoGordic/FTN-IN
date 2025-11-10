@@ -1,0 +1,170 @@
+--- Unos stringa BufferedReader 
+BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+// u osnovi u BufferedReader ce nam biti ono sto je korisnik preko terminala uneo
+// kako bismo u BufferedReader stavili unetu vrednost koristimo prvo objekat InputStreamReader koji cita sta se nalazi na System.in
+
+String procitano = br.readLine(); // deo koji ide u try
+// ako je neophodno da jos iz tog String izvucemo broj na primer int moze se javiti NumberFormatException
+int id = Integer.parseInt(procitano); // primer pretvaranja Stringa u int
+// preporuka je da se prenos u String radi u trycatch bloku jer .readLine moze izazvati IOException
+
+// u catch delu ispisujemo gresku na neki od ovih nacina
+e.printStackTrace();				// ispisuje sam stek - nije najlepse za koristiti zbog otkrivanja sistema korisniku
+System.out.println("navesti gresku ovde!");	// mi biramo sta ispisujemo
+System.out.println(e.getMessage());		// ispisuje neku poruku od strane kompajlera
+
+// u finally delu imacemo zatvaranje BufferedReader
+// zatvaranje se najcesce radi tako sto unutar finally stavimo novi trycatch blok
+try {
+	br.close();
+} catch (IOException e) {
+	e.printStackTrace(); // izbacuje informacije o samom exception-u, nije dobro ovo ispisivati korisniku zbog odavanja info o sistemu
+}
+// samo zatvaranje takodje moze uzrokovati IOException stoga je ono u svom try catch bloku
+// nakon svega ovoga, ostatak koda se moze pisati van finally :)
+
+
+--- Unos stringa Scanner
+Scanner s = new Scanner(System.in);	// pravimo jedan objekat kojem kazemo odakle ce citati (sa terminala)
+String name = s.nextLine();		// ovaj deo bismo stavili u trycatch iz razloga sto .nextLine moze baciti sledece Exception
+					// NoSuchElementException - if no line was found
+					// IllegalStateException - if this scanner is closed
+// takodje, moguce je isto uraditi ono parseInt kao i u prethodnom primeru
+// catch deo za obradu gresaka bi verovatno ima neki od narednih Exceptions: NoSuchElementException, IllegalStateException i Exception
+// u finally delu bismo takodje mogli na isti nacin kao i u prethodnom nacinu zatvoriti, mada bismo proveravali IllegalStateException da li se desio
+// mozda nije neophodno sve ovo u trycatch ali svakako navodim :)
+
+
+--- U osnovi razlika
+Kod BufferedReader sve osim pravljenja objekta ide u try-catch koji proverava NumberFormatException i IOException
+Kod Scanner nema potrebe da ista osim samog parsovanja ide u trycatch zbog NumberFormatException
+
+
+--- Inicijalizacija stringa
+	String name = "Scala"; //prvi String objekat
+	String name_1 = "Scala"; //isti objekat kao prvi, dodeljena mu samo referenca na postojeci (strelica pokazuje na isto sto i samo name)
+	String name_2 = new String("Scala"); //novi String objekat
+		
+	// ako name dobije novu vrednost, onda ce samo name pokazivati na novu stvar, dok ce name_1 ostati na staroj, sto bi mogla videti po onim strelicama	
+	char[] nameArray = { 'S', 'c', 'a', 'l', 'a'};
+	String name_3 = new String(nameArray);  
+
+
+--- Poredjenje stringova
+U osnovi najbitnije je da znas da == poredi adrese dok .equals poredi upravo same vrednosti. Stoga je .equals izbor koji koristimo kad trebaju stringovi da se poklapaju u zadatku.
+
+//vratice true
+if(name==name_1){ //poredi adrese }
+
+//vratice false
+if(name==name_2){ //poredi adrese }
+		
+		//vratice true
+		if(name.equals(name_1)){ //poredi sadrzaj stringova
+			System.out.println("name and name_1 are equal String by equals method");
+		}
+
+		//vratice true
+		if(name.equals(name_2)){  //poredi sadrzaj stringova
+			System.out.println("name and name_2 are equal String by equals method");
+		}
+
+--- Konkatenacija stringova
+String s2 = name.concat(name_2); // concat metoda
+String s3 = name + " " + name_2; // + konkatenacija
+
+Osnovne razlike (https://www.geeksforgeeks.org/difference-between-concat-and-operator-in-java/):
+concat: uzima samo jedan string i poredi ga sa drugim
+	moze da radi samo sa stringovima konkatenaciju
+	baca NullPointerException ako konkatenaciju radimo sa null
+	vraca novi string samo ako je duzina veca od jednog konkateniranog, u suprotnom vraca isti objekat nad kojim je pozvan (ovim stedi memoriju)
+	concat() metod je bolji od '+' jer kreira novi objekat samo kad je duzina stringa veca od 0 i koristi manje memorije
++ operator: konkatenira koliko god zelimo stringova
+	    konkatenira string sa bilo kojim drugim tipom
+	    ne baca NullPointerException
+	    stalno pravi novi String objekat bez obzira na duzinu za razliku od concat
+
+
+--- Metode indexOf, lastIndexOf i matches
+String str = "Java is a programming language";
+
+if(str.indexOf("Java") != -1){ // vraca kad pocinje taj podstring ili -1 ako se podstring ne nalazi u str }
+
+// matches se koristi kako bi se videlo da li nas string u sebi ima zadati regex
+if(str.matches("J.*")){ // . oznacava bilo koji karakter (ne i enter), a * oznacava da se pojavljuje vise puta
+
+if(str.lastIndexOf("Java") != -1){ // pronalazi poslednje javljanje podstringa "Java" unutar str ili vraca -1 ako ga ne moze naci }
+
+
+--- substring
+// vratice deo stringa str od indeksa 0 do 12 (poslednja pozicija sa koje uzima je 11)
+String subString = str.substring(0, 12);
+// moze se i ovako koristiti, gde on uzima sve od indeksa 2 do kraja stringa kao podstring
+String subString = str.substring(2);
+
+
+--- string trim
+String str2 = "   String Trim Example "; 
+System.out.println("Original String :" + str2); 
+System.out.println("After trim :" + str2.trim()); // koristi se kako bi se resio space-ova na kraju i na pocetku stringa
+// mozes ga upamtiti da brise space-ove iako zapravo brise sve te kao blank karaktere poput tab, space itd
+
+
+--- Upotreba replace
+//zamena karaktera karakterom
+String str3 = new String("Welcome to Tutorialspoint.com");
+System.out.println("Return Value :" + str3.replace('o', 'T')); // na prvom mestu pri pozivu navodimo koji karakter trazimo, a na drugom cime ga menjamo
+
+String replaceSample = "String replace Example of replacing Character Sequence";
+System.out.println("Return Value :" + replaceSample.replace("re", "RE")); // na prvom mestu je podstring koji trazimo, a na drugom cime ga menjamo
+// moguce je uraditi replace i sa praznim stringom
+// NAPOMENA: ne moze se na jednom mestu naci karakter, a na drugom string, oba parametra moraju biti istog tipa (ili oba string ili oba karakter)
+
+// nije bitno ali svakako stavljam
+// replaceAll se koristi kako bi svaki podstring koji ispunjava regex zamenio nekim drugim stringom
+//replaceAll(String regex, String replacement)
+String replaceSample2 = "String replace Example with regular expreSsion";
+System.out.println("Return Value :" + replaceSample2.replaceAll("^S","R"));
+
+// replaceFirst koristimo kako bismo promenili prvo pojavljivanje podstringa
+// na primer ako se podstring "re" pojavljuje 3 puta, a zelimo 2 puta da ga promenimo, napisemo zaredom 2 puta replaceFirst
+// replaceFirst(String regex, String replacement)
+String replaceSample3 = "String replace Example with replaceFirst";
+System.out.println("Return Value :" + replaceSample3.replaceFirst("re","RE"));
+
+// pretvaranje velikih slova u mala i malih u velika
+// radimo sa toLowerCase() i toUpperCase()
+// NAPOMENA: kako bismo zaista videli promenu velicine slova neophodno je da prihvatimo izlaz iz toLowerCase metode to jest
+// ako menjamo neki string str u sva mala slova u kodu da bi se videla promena mora se pisati: str = str.toLowerCase();
+
+-- Metoda split()
+// koristimo je kako bismo razdvojili string u niz malih podstringova (povratna vrednost metode je niz stringova)
+String assetClasses = "Gold:Stocks:Fixed Income:Commodity:Interest Rates";
+String[] splits = assetClasses.split(":");
+// ako je : na kraju stringa onda on to zanemari, na pocetku ili u sredini gleda kao prazan string
+// za dobijanje duzine niza podstringova koristimo splits.length u ovom slucaju gde se niz zove splits
+// NAPOMENA: ako koristimo specijalne karaktere, neophodno je da izgubimo prvo njihovo znacenje, 
+// to jest umesto na primer .split("|") moramo pisati .split("\\|")
+// neophodna je upotreba \\ jer samo \ ocekuje nesto poput t ili n kako bi napravilo \n ili \t
+// to \\ se koristi za gubljenje znacenja specijalnih karaktera: ( ) { } \ | . i tako dalje
+
+String places = "London.Switzerland.Europe.Australia";
+String[] placeSplits = places.split("\\.", 2); // ogranicava se da uradi samo na 2 stringa
+// mozemo ograniciti i na koliko maksimalno podstringova zelimo da podelimo nas string
+// ako bismo imali manje podstringova od ogranicenja, onda ce on svakako samo ispisati te koje ima
+
+
+--- Testitanje formatiranja stringa
+// moguce je koristiti klasican C ispis sa printf
+System.out.printf("The value of the float variable is " +
+		  "%f, while the value of the integer " +
+		  "variable is %d, and the string " +
+		  "is %s" + "\n", floatVar, intVar, stringVar);
+
+// ili koristiti klasican System.out.println() ako smo string pre toga formatirali
+String fs;
+fs = String.format("The value of the float variable is " +
+		   "%f, while the value of the integer " +
+		   "variable is %d, and the string " +
+		   "is %s", floatVar, intVar, stringVar);
+System.out.println(fs);

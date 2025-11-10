@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1697631558 source:/home/stud/in17-2022/Desktop/nppj/vezbe2/zadatak3/main.cpp
+	<iostream>
+	"xnay.hpp"
+
+1697631711 /home/stud/in17-2022/Desktop/nppj/vezbe2/zadatak3/xnay.hpp
+
+1697631784 source:/home/stud/in17-2022/Desktop/nppj/vezbe2/zadatak3/xnay.cpp
+	"xnay.hpp"
+	<cmath>
+

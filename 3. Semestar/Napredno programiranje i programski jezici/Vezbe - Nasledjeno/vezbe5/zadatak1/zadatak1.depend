@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1699792313 source:c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe5\zadatak1\main.cpp
+	<iostream>
+	"trougao.hpp"
+	"jktrougao.hpp"
+	"jstrougao.hpp"
+
+1699792102 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe5\zadatak1\trougao.hpp
+	<math.h>
+
+1699792342 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe5\zadatak1\jktrougao.hpp
+
+1699794359 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe5\zadatak1\jstrougao.hpp
+

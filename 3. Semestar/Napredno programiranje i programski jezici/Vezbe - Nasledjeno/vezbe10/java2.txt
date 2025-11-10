@@ -1,0 +1,39 @@
+
+emonstrira rad sa obradom izuzetaka -> nacin na koji se obezbedi izvrsavanje programa iako kod mozda ima neke greske(nor pristuoanje elementu niza koji ne postoji)
+nacini za unos teksta:
+skener
+buffer reader
+
+//ovde se mogu naci izuzetci
+				
+//oni se stavljaju u try catch blok
+
+kad god radimo sa baferom moramo da ga zatvorimo,  to se radi u finalu delu
+
+
+
+STA DOLAZI NA KOLOKVIJUM :
+unos sa tastature
+koliko ima godina(unos godina sa tastature) ->pretvaramo string u broj (integer.parse ... mora imati  try catch deo zbog izuzetaka)
+to string metoda, ali izmenjena -> npr ---CD DISK ---
+					id: 
+					Naziv: 
+					Izvodjac:
+					To radimotako sto samo izmenimo telo metode
+					
+one metode sa stringovima : ) bice kao jedna metoda da se iskuca		
+					
+					
+postoji skracena verzija fora - > for each
+for(CDDisk cd : arhiva){
+	ret += cd;
+}
+ovo radi samo za kolekcije
+
+menjanje imena klase :
+desni klik -> refactor -> rename 
+
+kada poredimo stringove -> koristimo equals
+
+
+kod splitovanja ako stavimo ::na pocetku racunamo da postoji praazan string, ako je na sredini -> prazan str, dok ako stavimo : aa kraju ne uzimamo prazan string

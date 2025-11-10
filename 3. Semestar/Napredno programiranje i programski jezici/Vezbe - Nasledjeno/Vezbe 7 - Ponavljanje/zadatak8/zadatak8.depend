@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1634335264 source:c:\users\necal\desktop\vezbe 7 - ponavljanje\zadatak8\dinstring.cpp
+	"dinstring.hpp"
+
+1634335270 c:\users\necal\desktop\vezbe 7 - ponavljanje\zadatak8\dinstring.hpp
+	<iostream>
+

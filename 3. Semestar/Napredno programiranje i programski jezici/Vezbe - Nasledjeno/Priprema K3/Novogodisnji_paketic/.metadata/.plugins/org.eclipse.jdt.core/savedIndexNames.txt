@@ -1,0 +1,4 @@
+INDEX VERSION 1.134+C:\Users\necal\Desktop\Semestar III\Napredno programiranje i programski jezici\Vezbe\Priprema K3\Novogodisnji_paketic\.metadata\.plugins\org.eclipse.jdt.core
+3425246826.index
+1865797976.index
+1688264425.index

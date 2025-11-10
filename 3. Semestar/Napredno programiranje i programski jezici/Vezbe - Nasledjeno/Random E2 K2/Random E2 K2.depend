@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1634335264 source:c:\users\necal\desktop\random e2 k2\dinstring.cpp
+	"dinstring.hpp"
+
+1634335270 c:\users\necal\desktop\random e2 k2\dinstring.hpp
+	<iostream>
+
+1701203101 source:c:\users\necal\desktop\random e2 k2\main.cpp
+	<iostream>
+	"dinstring.hpp"
+	"list.hpp"
+	"regrut.hpp"
+	"strelac.hpp"
+	"macevalac.hpp"
+	"ceta.hpp"
+
+1634335278 c:\users\necal\desktop\random e2 k2\list.hpp
+	<stdlib.h>
+	<iostream>
+
+1701202758 c:\users\necal\desktop\random e2 k2\regrut.hpp
+
+1701200718 c:\users\necal\desktop\random e2 k2\strelac.hpp
+
+1701201025 c:\users\necal\desktop\random e2 k2\macevalac.hpp
+
+1701203290 c:\users\necal\desktop\random e2 k2\ceta.hpp
+

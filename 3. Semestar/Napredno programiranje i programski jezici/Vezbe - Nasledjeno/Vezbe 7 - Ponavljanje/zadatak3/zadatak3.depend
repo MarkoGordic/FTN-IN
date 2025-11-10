@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1634335264 source:c:\users\necal\desktop\vezbe 7 - ponavljanje\zadatak3\dinstring.cpp
+	"dinstring.hpp"
+
+1634335270 c:\users\necal\desktop\vezbe 7 - ponavljanje\zadatak3\dinstring.hpp
+	<iostream>
+
+1701189014 source:c:\users\necal\desktop\vezbe 7 - ponavljanje\zadatak3\main.cpp
+	<iostream>
+	"dinstring.hpp"
+	"list.hpp"
+	"osoba.hpp"
+	"student.hpp"
+	"profesor.hpp"
+
+1634335278 c:\users\necal\desktop\vezbe 7 - ponavljanje\zadatak3\list.hpp
+	<stdlib.h>
+	<iostream>
+
+1701188602 c:\users\necal\desktop\vezbe 7 - ponavljanje\zadatak3\osoba.hpp
+
+1701188760 c:\users\necal\desktop\vezbe 7 - ponavljanje\zadatak3\student.hpp
+
+1701188988 c:\users\necal\desktop\vezbe 7 - ponavljanje\zadatak3\profesor.hpp
+

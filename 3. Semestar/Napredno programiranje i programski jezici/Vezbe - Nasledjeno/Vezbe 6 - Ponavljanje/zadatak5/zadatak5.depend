@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1634367222 source:c:\users\necal\desktop\vezbe 6 - ponavljanje\zadatak5\dinstring.cpp
+	"dinstring.hpp"
+
+1634367228 c:\users\necal\desktop\vezbe 6 - ponavljanje\zadatak5\dinstring.hpp
+	<iostream>
+
+1701111712 source:c:\users\necal\desktop\vezbe 6 - ponavljanje\zadatak5\main.cpp
+	<iostream>
+	"dinstring.hpp"
+	"trezor.hpp"
+	"dijamant.hpp"
+
+1701111736 c:\users\necal\desktop\vezbe 6 - ponavljanje\zadatak5\trezor.hpp
+
+1701111304 c:\users\necal\desktop\vezbe 6 - ponavljanje\zadatak5\dijamant.hpp
+

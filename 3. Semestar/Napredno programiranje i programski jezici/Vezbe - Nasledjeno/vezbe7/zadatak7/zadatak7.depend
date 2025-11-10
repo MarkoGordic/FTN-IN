@@ -1,0 +1,31 @@
+# depslib dependency file v1.0
+1634335264 source:c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak7\dinstring.cpp
+	"dinstring.hpp"
+
+1634335270 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak7\dinstring.hpp
+	<iostream>
+
+1701003337 source:c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak7\main.cpp
+	<iostream>
+	"dinstring.hpp"
+	"list.hpp"
+	"proizvod.hpp"
+	"voce.hpp"
+	"odeca.hpp"
+	"prodavnica.hpp"
+	"grad.hpp"
+
+1634335278 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak7\list.hpp
+	<stdlib.h>
+	<iostream>
+
+1701003600 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak7\proizvod.hpp
+
+1700997852 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak7\voce.hpp
+
+1701003608 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak7\odeca.hpp
+
+1701003664 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak7\prodavnica.hpp
+
+1701003848 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak7\grad.hpp
+

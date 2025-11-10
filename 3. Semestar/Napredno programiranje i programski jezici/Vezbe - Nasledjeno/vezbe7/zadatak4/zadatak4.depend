@@ -1,0 +1,49 @@
+# depslib dependency file v1.0
+1634371264 source:/home/stud/in17-2022/Desktop/nppj/vezbe7/zadatak4/dinstring.cpp
+	"dinstring.hpp"
+
+1634371270 /home/stud/in17-2022/Desktop/nppj/vezbe7/zadatak4/dinstring.hpp
+	<iostream>
+
+1700658966 source:/home/stud/in17-2022/Desktop/nppj/vezbe7/zadatak4/main.cpp
+	<iostream>
+	"dinstring.hpp"
+	"list.hpp"
+	"artikal.hpp"
+	"lek.hpp"
+	"evidencijalekova.hpp"
+
+1700657238 /home/stud/in17-2022/Desktop/nppj/vezbe7/zadatak4/artikal.hpp
+
+1634371278 /home/stud/in17-2022/Desktop/nppj/vezbe7/zadatak4/list.hpp
+	<stdlib.h>
+	<iostream>
+
+1700657218 /home/stud/in17-2022/Desktop/nppj/vezbe7/zadatak4/lek.hpp
+
+1700659179 /home/stud/in17-2022/Desktop/nppj/vezbe7/zadatak4/evidencijalekova.hpp
+
+1634335264 source:c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak4\dinstring.cpp
+	"dinstring.hpp"
+
+1634335270 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak4\dinstring.hpp
+	<iostream>
+
+1700627068 source:c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak4\main.cpp
+	<iostream>
+	"dinstring.hpp"
+	"list.hpp"
+	"artikal.hpp"
+	"lek.hpp"
+	"evidencijalekova.hpp"
+
+1634335278 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak4\list.hpp
+	<stdlib.h>
+	<iostream>
+
+1700624838 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak4\artikal.hpp
+
+1700624818 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak4\lek.hpp
+
+1700626778 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak4\evidencijalekova.hpp
+

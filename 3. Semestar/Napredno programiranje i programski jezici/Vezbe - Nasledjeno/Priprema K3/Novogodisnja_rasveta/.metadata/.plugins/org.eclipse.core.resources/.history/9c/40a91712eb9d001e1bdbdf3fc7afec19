@@ -1,0 +1,25 @@
+package novogodisnja_rasveta;
+
+import java.util.ArrayList;
+
+public class NovogodisnjaRasveta {
+	private ArrayList<Lampion> lampioni;
+	private int kapacitet = 5;
+	
+	public NovogodisnjaRasveta() {
+		super();
+		lampioni = new ArrayList<Lampion>();
+	}
+	
+	public boolean dodaj(Lampion l) {
+		if (lampioni.size() >= 5 || !l.isIspravan()) {
+			return false;
+		}
+		for (Lampion lamp : lampioni) {
+			if (lamp.getSifra() == l.getSifra()) {
+				return false;
+			}
+		}
+		return lampioni.add(l);
+	}
+}

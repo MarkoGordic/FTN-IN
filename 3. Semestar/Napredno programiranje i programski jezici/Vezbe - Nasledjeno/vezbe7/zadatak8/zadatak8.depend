@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1634335264 source:c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak8\dinstring.cpp
+	"dinstring.hpp"
+
+1634335270 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak8\dinstring.hpp
+	<iostream>
+
+1701009022 source:c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak8\main.cpp
+	<iostream>
+	"dinstring.hpp"
+	"list.hpp"
+	"karta.hpp"
+	"putnik.hpp"
+	"putnikdete.hpp"
+	"zicara.hpp"
+
+1634335278 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak8\list.hpp
+	<stdlib.h>
+	<iostream>
+
+1701004501 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak8\karta.hpp
+
+1701005768 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak8\putnik.hpp
+
+1701005890 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak8\putnikdete.hpp
+
+1701009055 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak8\zicara.hpp
+

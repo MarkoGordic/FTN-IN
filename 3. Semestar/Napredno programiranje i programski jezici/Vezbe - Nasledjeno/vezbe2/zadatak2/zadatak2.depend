@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1697629354 source:/home/stud/in17-2022/Desktop/nppj/vezbe2/zadatak2/rerna.cpp
+	"rerna.hpp"
+
+1697630742 source:/home/stud/in17-2022/Desktop/nppj/vezbe2/zadatak2/main.cpp
+	<iostream>
+	"rerna.hpp"
+
+1697628968 /home/stud/in17-2022/Desktop/nppj/vezbe2/zadatak2/rerna.hpp
+

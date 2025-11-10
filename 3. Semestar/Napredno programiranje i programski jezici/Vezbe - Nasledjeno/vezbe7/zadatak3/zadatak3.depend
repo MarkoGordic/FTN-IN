@@ -1,0 +1,57 @@
+# depslib dependency file v1.0
+1700653568 source:/home/stud/in17-2022/Desktop/nppj/vezbe7/zadatak3/main.cpp
+	<iostream>
+	"list.hpp"
+	"osoba.hpp"
+	"student.hpp"
+	"profesor.hpp"
+	"ucionica.hpp"
+
+1634371264 source:/home/stud/in17-2022/Desktop/nppj/vezbe7/zadatak3/dinstring.cpp
+	"dinstring.hpp"
+
+1634371270 /home/stud/in17-2022/Desktop/nppj/vezbe7/zadatak3/dinstring.hpp
+	<iostream>
+
+1634371278 /home/stud/in17-2022/Desktop/nppj/vezbe7/zadatak3/list.hpp
+	<stdlib.h>
+	<iostream>
+
+1700651074 /home/stud/in17-2022/Desktop/nppj/vezbe7/zadatak3/osoba.hpp
+	"dinstring.hpp"
+
+1700651935 /home/stud/in17-2022/Desktop/nppj/vezbe7/zadatak3/student.hpp
+
+1700652000 /home/stud/in17-2022/Desktop/nppj/vezbe7/zadatak3/profesor.hpp
+
+1700653687 /home/stud/in17-2022/Desktop/nppj/vezbe7/zadatak3/ucionica.hpp
+	"list.hpp"
+
+1634335264 source:c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak3\dinstring.cpp
+	"dinstring.hpp"
+
+1634335270 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak3\dinstring.hpp
+	<iostream>
+
+1700932818 source:c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak3\main.cpp
+	<iostream>
+	"list.hpp"
+	"osoba.hpp"
+	"student.hpp"
+	"profesor.hpp"
+	"ucionica.hpp"
+
+1634335278 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak3\list.hpp
+	<stdlib.h>
+	<iostream>
+
+1700618674 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak3\osoba.hpp
+	"dinstring.hpp"
+
+1700619534 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak3\student.hpp
+
+1700619600 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak3\profesor.hpp
+
+1700621286 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak3\ucionica.hpp
+	"list.hpp"
+

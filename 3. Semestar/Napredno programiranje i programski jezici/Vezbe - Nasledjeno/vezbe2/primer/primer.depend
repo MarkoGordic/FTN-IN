@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1697624779 source:/home/stud/in17-2022/Desktop/nppj/vezbe2/primer/main.cpp
+	<iostream>
+	"student.hpp"
+
+1697624898 /home/stud/in17-2022/Desktop/nppj/vezbe2/primer/student.hpp
+
+1697624900 source:/home/stud/in17-2022/Desktop/nppj/vezbe2/primer/student.cpp
+	"student.hpp"
+	<iostream>
+

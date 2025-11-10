@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1698232984 source:/home/stud/in17-2022/Desktop/nppj/vezbe3/zadatak2/main.cpp
+	<iostream>
+	"menjac.hpp"
+	"skoljka.hpp"
+	"automobil.hpp"
+
+1698232774 /home/stud/in17-2022/Desktop/nppj/vezbe3/zadatak2/menjac.hpp
+
+1698232485 /home/stud/in17-2022/Desktop/nppj/vezbe3/zadatak2/skoljka.hpp
+
+1698233127 /home/stud/in17-2022/Desktop/nppj/vezbe3/zadatak2/automobil.hpp
+

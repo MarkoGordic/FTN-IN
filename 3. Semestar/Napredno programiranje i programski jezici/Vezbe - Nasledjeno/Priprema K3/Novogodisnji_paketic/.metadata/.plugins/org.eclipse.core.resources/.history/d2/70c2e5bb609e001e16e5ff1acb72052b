@@ -1,0 +1,11 @@
+package novogodisnji_paketic;
+
+public class NovogodisnjiPaketic extends Pakovanje {
+
+	@Override
+	public boolean spakuj() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

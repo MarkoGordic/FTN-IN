@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1634335264 source:c:\users\necal\desktop\vezbe 7 - ponavljanje\zadatak6\dinstring.cpp
+	"dinstring.hpp"
+
+1634335270 c:\users\necal\desktop\vezbe 7 - ponavljanje\zadatak6\dinstring.hpp
+	<iostream>
+
+1701116455 source:c:\users\necal\desktop\vezbe 7 - ponavljanje\zadatak6\main.cpp
+	<iostream>
+	"dinstring.hpp"
+	"list.hpp"
+	"component.hpp"
+	"checkbox.hpp"
+	"label.hpp"
+	"panel.hpp"
+
+1634335278 c:\users\necal\desktop\vezbe 7 - ponavljanje\zadatak6\list.hpp
+	<stdlib.h>
+	<iostream>
+
+1701115299 c:\users\necal\desktop\vezbe 7 - ponavljanje\zadatak6\component.hpp
+
+1701116629 c:\users\necal\desktop\vezbe 7 - ponavljanje\zadatak6\checkbox.hpp
+
+1701116572 c:\users\necal\desktop\vezbe 7 - ponavljanje\zadatak6\label.hpp
+
+1701116688 c:\users\necal\desktop\vezbe 7 - ponavljanje\zadatak6\panel.hpp
+

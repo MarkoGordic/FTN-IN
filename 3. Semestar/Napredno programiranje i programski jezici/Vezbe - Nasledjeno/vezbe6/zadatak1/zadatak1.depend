@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1634403222 source:/home/stud/in17-2022/Desktop/nppj/vezbe6/zadatak1/dinstring.cpp
+	"dinstring.hpp"
+
+1634403228 /home/stud/in17-2022/Desktop/nppj/vezbe6/zadatak1/dinstring.hpp
+	<iostream>
+
+1700046649 source:/home/stud/in17-2022/Desktop/nppj/vezbe6/zadatak1/main.cpp
+	<iostream>
+	"dinstring.hpp"
+	"artikal.hpp"
+
+1700046728 /home/stud/in17-2022/Desktop/nppj/vezbe6/zadatak1/artikal.hpp
+
+1634367222 source:c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe6\zadatak1\dinstring.cpp
+	"dinstring.hpp"
+
+1634367228 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe6\zadatak1\dinstring.hpp
+	<iostream>
+
+1700014944 source:c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe6\zadatak1\main.cpp
+	<iostream>
+	"dinstring.hpp"
+	"artikal.hpp"
+
+1700015110 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe6\zadatak1\artikal.hpp
+

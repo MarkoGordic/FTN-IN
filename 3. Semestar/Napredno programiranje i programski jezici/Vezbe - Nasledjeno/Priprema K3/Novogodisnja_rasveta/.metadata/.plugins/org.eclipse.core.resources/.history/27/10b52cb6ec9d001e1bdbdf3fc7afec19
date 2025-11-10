@@ -1,0 +1,49 @@
+package novogodisnja_rasveta;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+
+public class NovogodisnjaRasveta {
+	private ArrayList<Lampion> lampioni;
+	private int kapacitet = 5;
+	
+	public NovogodisnjaRasveta() {
+		super();
+		lampioni = new ArrayList<Lampion>();
+	}
+	
+	public boolean dodaj(Lampion l) {
+		if (lampioni.size() >= 5 || !l.isIspravan()) {
+			return false;
+		}
+		for (Lampion lamp : lampioni) {
+			if (lamp.getSifra() == l.getSifra()) {
+				return false;
+			}
+		}
+		return lampioni.add(l);
+	}
+	
+	public Lampion pronadji(double cena, String boja) {
+		for (Lampion lamp : lampioni) {
+			if (lamp.getCena() > cena && lamp.getBoja().equals(boja)) {
+				return lamp;
+			}
+		}
+		return null;
+	}
+	
+	public boolean postaviAkciju() {
+		if (lampioni.isEmpty()) {
+			return false;
+		}
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		try {
+			System.out.println("Molimo vas unesite akcijsku cenu: ");
+			String str = br.readLine();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+}

@@ -1,0 +1,4 @@
+INDEX VERSION 1.134+D:\sve sa faksa\Semestar III\Napredno programiranje i programski jezici\Vezbe\vezbe9\.metadata\.plugins\org.eclipse.jdt.core
+4260233728.index
+3425246826.index
+1865797976.index

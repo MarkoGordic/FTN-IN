@@ -1,0 +1,57 @@
+# depslib dependency file v1.0
+1634371264 source:/home/stud/in17-2022/Desktop/nppj/vezbe7/zadatak2-1/dinstring.cpp
+	"dinstring.hpp"
+
+1634371270 /home/stud/in17-2022/Desktop/nppj/vezbe7/zadatak2-1/dinstring.hpp
+	<iostream>
+
+1700653171 source:/home/stud/in17-2022/Desktop/nppj/vezbe7/zadatak2-1/main.cpp
+	<iostream>
+	"list.hpp"
+	"osoba.hpp"
+	"student.hpp"
+	"profesor.hpp"
+	"ucionica.hpp"
+
+1634371278 /home/stud/in17-2022/Desktop/nppj/vezbe7/zadatak2-1/list.hpp
+	<stdlib.h>
+	<iostream>
+
+1700651074 /home/stud/in17-2022/Desktop/nppj/vezbe7/zadatak2-1/osoba.hpp
+	"dinstring.hpp"
+
+1700651935 /home/stud/in17-2022/Desktop/nppj/vezbe7/zadatak2-1/student.hpp
+
+1700652000 /home/stud/in17-2022/Desktop/nppj/vezbe7/zadatak2-1/profesor.hpp
+
+1700653411 /home/stud/in17-2022/Desktop/nppj/vezbe7/zadatak2-1/ucionica.hpp
+	"list.hpp"
+
+1634335264 source:c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak2-1\dinstring.cpp
+	"dinstring.hpp"
+
+1634335270 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak2-1\dinstring.hpp
+	<iostream>
+
+1700932551 source:c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak2-1\main.cpp
+	<iostream>
+	"dinstring.hpp"
+	"list.hpp"
+	"osoba.hpp"
+	"student.hpp"
+	"profesor.hpp"
+	"ucionica.hpp"
+
+1634335278 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak2-1\list.hpp
+	<stdlib.h>
+	<iostream>
+
+1700932547 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak2-1\osoba.hpp
+
+1700619534 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak2-1\student.hpp
+
+1700619600 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak2-1\profesor.hpp
+
+1700621010 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak2-1\ucionica.hpp
+	"list.hpp"
+

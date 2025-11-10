@@ -1,0 +1,32 @@
+package novogodisnja_rasveta;
+
+public class Lampion implements Popravka {
+	private int sifra;
+	private String boja;
+	private boolean ispravan;
+	private double cena;
+	
+	public Lampion(int sifra, String boja, double cena, boolean ispravan) {
+		super();
+		this.sifra = sifra;
+		this.boja = boja;
+		this.cena = cena;
+		this.ispravan = ispravan;
+	}
+
+	public Lampion(Lampion l) {
+		super();
+		this.sifra = l.sifra;
+		this.boja = l.boja;
+		this.cena = l.cena;
+		this.ispravan = l.ispravan;
+	}
+	
+	
+
+	@Override
+	public boolean popravi() {
+		return false;
+	}
+
+}

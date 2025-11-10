@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1698229264 source:/home/stud/in17-2022/Desktop/nppj/vezbe3/zadatak1/main.cpp
+	<iostream>
+	"krug.hpp"
+	"pravougaonik.hpp"
+	"valjak.hpp"
+
+1698227599 /home/stud/in17-2022/Desktop/nppj/vezbe3/zadatak1/krug.hpp
+	<cmath>
+
+1698227591 /home/stud/in17-2022/Desktop/nppj/vezbe3/zadatak1/pravougaonik.hpp
+
+1698229335 /home/stud/in17-2022/Desktop/nppj/vezbe3/zadatak1/valjak.hpp
+	<cmath>
+

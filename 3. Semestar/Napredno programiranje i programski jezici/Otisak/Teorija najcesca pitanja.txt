@@ -1,0 +1,30 @@
+C++ :
+
+1. Destruktor, primer destruktora u klasi koja ima jedan clan, pokazivac. 
+2. Rukovanje izuzecima u C++ -u
+3. Konstruktori u C++ 
+4. Sintaksa ,primena i problemi kod visestrukog nasledjivanja
+5. Podela operacija nad objektima 
+6. Preklapanje aritmetickog operatora u C++
+7. Vrste polimorfizma 
+8. Apstraktne klase
+9. Upravljanje izuzecima kao vrednostima u C++ 
+10. Nasledjivanje u C++.
+11. Preklapanje operatora(osnovni operator dodele) 
+12. Preklapanje onog += operatora
+
+JAVA :
+
+1. Kontrole pristupa u Javi.
+2. Skokovi u Javi
+3. Slicnosti i razlike izmedju apstraktne klase(C++) i interfejsa(Java), paketi u Javi
+4. Objasniti mogucnost dodjele pretka potomku u Javi
+5. Primena interfejsa u Javi
+6. Apstraktne klase u JAVI
+7. izuzeci
+8. Uloga paketa
+9. Nizovi u Javi
+10. Sintaksa i primena interfejsa u JAVI.
+11. Rukovanje izuzecima u javi
+12. Unistavanje objekata u javi.
+13. Koercitivni polimorfizam (instanceof)

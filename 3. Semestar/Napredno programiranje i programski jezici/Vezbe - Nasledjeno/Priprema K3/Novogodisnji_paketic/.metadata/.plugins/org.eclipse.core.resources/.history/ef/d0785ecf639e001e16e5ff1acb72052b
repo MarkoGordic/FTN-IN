@@ -1,0 +1,50 @@
+package novogodisnji_paketic;
+
+import java.util.HashMap;
+
+public class DedaMraz {
+	private HashMap<String, NovogodisnjiPaketic> paketici;
+	
+	public DedaMraz() {
+		super();
+		paketici = new HashMap<String, NovogodisnjiPaketic>();
+	}
+	
+	public boolean pripremiZaIsporuku(NovogodisnjiPaketic paketic, String str) {
+		if (!paketic.spakuj()) {
+			return false;
+		}
+		paketic.setOpis(str);
+		paketic.setSpremanZaIsporuku(true);
+		System.out.println("Novogodisnji paketic je spreman za isporuku.");
+		return true;
+	}
+	
+	public boolean dodaj(NovogodisnjiPaketic paketic) {
+		if (!paketic.isSpremanZaIsporuku()) {
+			return false;
+		}
+		if (paketici.containsKey(paketic.getOpis().substring(0, 3) + ":" + paketic.getMinimalanUzrast())) {
+			return false;
+		}
+		if (paketici.put(paketic.getOpis().substring(0, 3) + ":" + paketic.getMinimalanUzrast(), paketic) == null) {
+			return true;
+		}
+		else {
+			return false;
+		}
+		// mada je verovatno i dovoljno samo .put; i nakon cega vratiti samo true
+	}
+	
+	public NovogodisnjiPaketic izbaci(String opis, int minUzrast) {
+		return paketici.remove(opis + ":" + minUzrast);
+	}
+	
+	public double prosecniMinimalanUzrast() {
+		int prosek = 0;
+		for (NovogodisnjiPaketic paket : paketici.values()) {
+			prosek += paket.getMinimalanUzrast();
+		}
+		return prosek / paketici.size();
+	}
+}

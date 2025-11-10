@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1698233377 source:/home/stud/in17-2022/Desktop/nppj/vezbe3/zadatak2-1/main.cpp
+	<iostream>
+	"menjac.hpp"
+	"skoljka.hpp"
+	"automobil.hpp"
+
+1698233481 /home/stud/in17-2022/Desktop/nppj/vezbe3/zadatak2-1/menjac.hpp
+
+1698233561 /home/stud/in17-2022/Desktop/nppj/vezbe3/zadatak2-1/skoljka.hpp
+
+1698234457 /home/stud/in17-2022/Desktop/nppj/vezbe3/zadatak2-1/automobil.hpp
+
+1698499587 source:c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe3\zadatak2-1\main.cpp
+	<iostream>
+	"menjac.hpp"
+	"skoljka.hpp"
+	"automobil.hpp"
+
+1698499166 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe3\zadatak2-1\menjac.hpp
+
+1698499148 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe3\zadatak2-1\skoljka.hpp
+
+1698499453 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe3\zadatak2-1\automobil.hpp
+

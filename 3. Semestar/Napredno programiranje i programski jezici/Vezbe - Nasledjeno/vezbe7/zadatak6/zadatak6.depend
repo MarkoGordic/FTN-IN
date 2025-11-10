@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1634335264 source:c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak6\dinstring.cpp
+	"dinstring.hpp"
+
+1634335270 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak6\dinstring.hpp
+	<iostream>
+
+1700944948 source:c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak6\main.cpp
+	<iostream>
+	"dinstring.hpp"
+	"list.hpp"
+	"component.hpp"
+	"checkbox.hpp"
+	"label.hpp"
+	"panel.hpp"
+
+1634335278 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak6\list.hpp
+	<stdlib.h>
+	<iostream>
+
+1700942007 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak6\component.hpp
+
+1701006555 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak6\checkbox.hpp
+
+1700943190 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak6\label.hpp
+
+1700945247 c:\users\necal\desktop\semestar iii\napredno programiranje i programski jezici\vezbe\vezbe7\zadatak6\panel.hpp
+
