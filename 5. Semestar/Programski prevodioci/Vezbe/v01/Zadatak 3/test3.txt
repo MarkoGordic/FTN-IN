@@ -1,0 +1,3 @@
+Normalna temperatura ljudskog tela je 98F.
+Temperatura od 50F je daleko ispod proseka za mesec maj.
+Voda kljuca na 212F.
