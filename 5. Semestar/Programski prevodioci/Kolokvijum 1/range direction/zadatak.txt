@@ -1,0 +1,30 @@
+================================================================================
+                         ZADATAK: range UP/DOWN
+================================================================================
+
+Proširiti miniC gramatiku naredbom za definisanje opsega literala sa smerom:
+
+    range smer : literal_lista;
+
+Gde je:
+- smer: ključna reč UP ili DOWN
+- literal_lista: dva ili više INT literala odvojenih zarezima
+
+Primeri korišćenja:
+    range UP : 1, 5, 10, 20;      // OK - rastući niz
+    range DOWN : 100, 50, 25, 0;  // OK - opadajući niz
+    range UP : 5, 3, 10;          // GREŠKA - nije rastući
+    range DOWN : 10, 20, 5;       // GREŠKA - nije opadajući
+
+================================================================================
+                           SEMANTIČKE PROVERE
+================================================================================
+
+1. Literal lista mora sadržati najmanje 2 literala.
+   U suprotnom javiti grešku: "range requires at least 2 literals"
+
+2. Ako je smer UP, literali moraju biti u strogo rastućem redosledu.
+   U suprotnom javiti grešku: "literals must be in ascending order"
+
+3. Ako je smer DOWN, literali moraju biti u strogo opadajućem redosledu.
+   U suprotnom javiti grešku: "literals must be in descending order"

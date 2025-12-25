@@ -1,0 +1,33 @@
+================================================================================
+                         ZADATAK: select ... in ...
+================================================================================
+
+Proširiti miniC gramatiku naredbom za selekciju promenljivih u opsegu:
+
+    select vars in (literal1, literal2, literal3);
+
+Gde je:
+- vars: može biti:
+    * simbol '*'
+    * jedan identifikator
+    * više identifikatora odvojenih zarezima
+- literal1, literal2, literal3: tri INT literala
+
+Primeri korišćenja:
+    select * in (0, 5, 10);           // wildcard
+    select a in (1, 5, 9);            // jedan ID  
+    select a, b, c in (0, 50, 100);   // više ID-ova
+
+================================================================================
+                           SEMANTIČKE PROVERE
+================================================================================
+
+1. Ako vars nije '*', svi identifikatori moraju biti prethodno deklarisani 
+   kao VAR ili PAR tipa INT.
+   U suprotnom javiti grešku: "'<id>' undeclared" ili "invalid type for '<id>'"
+
+2. Srednji literal (literal2) mora biti u opsegu između prvog i trećeg 
+   literala (literal1 <= literal2 <= literal3).
+   U suprotnom javiti grešku: "literals not in ascending order"
+
+3. Ukoliko broj literala nije tačno tri, javiti grešku: "expected 3 literals"

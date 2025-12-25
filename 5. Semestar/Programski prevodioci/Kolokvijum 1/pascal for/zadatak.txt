@@ -1,0 +1,32 @@
+NAPOMENE
+
+1. Obavezno upisati ime, prezime i broj indeksa u komentar na početku y fajla.
+2. Rešenje koje ne može da se kompajlira nosi 0 poena.
+3. Za vreme testa nema pauze. Izlazak iz učionice se smatra završetkom testa.
+4. Asistenti za vreme testa daju informacije vezane isključivo za razumevanje
+   teksta zadatka.
+5. Test se snima kamerama.
+6. Test traje 80 minuta.
+7. Urađen zadatak ostaviti u svom home direktorijumu.
+
+
+ZADATAK
+
+Proširiti miniC gramatiku for iskazom koji ima sledeći oblik:
+
+    for <for_variable> "=" <init_constant> "downto" <final_constant> "do" <for_body>
+
+gde je:
+<for_variable>   - promenljiva ili parametar
+<init_constant>, <final_constant>  - konstante
+<for_body> - statement
+
+Realizovati sledeće semantičke provere:
+1) <for_variable> mora biti prethodno deklarisana promenljiva ili parametar
+2) tipovi <init_constant> i <final_constant> moraju biti isti kao tip <for_variable>
+3) <init_constant> mora biti VEĆA od <final_constant> 
+
+Primer:
+
+for a = 8 downto 1 do
+	b = b + 1;

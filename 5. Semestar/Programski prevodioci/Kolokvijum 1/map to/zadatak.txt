@@ -1,0 +1,29 @@
+================================================================================
+                              ZADATAK: map ... to ...
+================================================================================
+
+Proširiti miniC gramatiku naredbom za mapiranje promenljivih na literale:
+
+    map id_lista to literal_lista;
+
+Primeri korišćenja:
+    map a to 1;
+    map a, b to 10, 20;
+    map x, y, z to 1, 2, 3;
+
+Gde je:
+- id_lista: jedan ili više identifikatora odvojenih zarezima
+- literal_lista: jedan ili više INT literala odvojenih zarezima
+
+================================================================================
+                           SEMANTIČKE PROVERE
+================================================================================
+
+1. Svi identifikatori u id_lista moraju biti prethodno deklarisani 
+   kao VAR ili PAR tipa INT.
+
+2. Broj literala u literal_lista mora biti jednak broju identifikatora 
+   u id_lista. U suprotnom javiti grešku.
+
+3. Svi literali u literal_lista moraju biti jedinstveni (različiti).
+   U suprotnom javiti grešku.
