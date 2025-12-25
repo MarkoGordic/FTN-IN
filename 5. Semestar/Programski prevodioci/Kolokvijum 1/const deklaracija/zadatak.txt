@@ -1,0 +1,40 @@
+NAPOMENE
+
+1. Obavezno upisati ime, prezime i broj indeksa u komentar na početku y fajla.
+2. Rešenje koje ne može da se kompajlira nosi 0 poena.
+3. Za vreme testa nema pauze. Izlazak iz učionice se smatra završetkom testa.
+4. Asistenti za vreme testa daju informacije vezane isključivo za razumevanje
+   teksta zadatka.
+5. Test se snima kamerama.
+6. Test traje 80 minuta.
+7. Urađen zadatak ostaviti u svom home direktorijumu.
+
+
+ZADATAK
+
+Proširiti miniC gramatiku konstantnom deklaracijom koja ima sledeći oblik:
+
+    const <type> <const_name> "=" <const_value> ";"
+
+gde je:
+<type>        - int ili unsigned
+<const_name>  - identifikator
+<const_value> - INT ili UINT konstanta
+
+Konstante se deklarišu na nivou funkcije (pre promenljivih).
+
+Realizovati sledeće semantičke provere:
+1) <const_name> ne sme biti prethodno deklarisan u istom opsegu (kao VAR, PAR ili CONST)
+2) tip <const_value> mora odgovarati deklarisanom <type>
+3) konstanta se NE SME koristiti na levoj strani dodele (ne sme joj se menjati vrednost)
+
+Primer:
+
+int main(){
+    const int MAX = 100;
+    const unsigned MIN = 0u;
+    int a;
+    a = MAX;    // OK - koriscenje konstante u izrazu
+    // MAX = 5; // GRESKA - konstanti se ne moze dodeliti vrednost
+    return a;
+}
