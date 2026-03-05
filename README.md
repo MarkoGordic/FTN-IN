@@ -50,3 +50,6 @@ Klikom na naziv semestra otvoriće vam se stranica sa detaljnim pregledom svih p
 ## [PETI SEMESTAR](./5.%20Semestar/)
 
 1. [Baze Podataka 1](./5.%20Semestar/Baze%20Podataka%201/)
+2. [Programski prevodioci](./5.%20Semestar/Programski%20prevodioci/)
+3. [Numerički algoritmi i numerički softver](./5.%20Semestar/Numerički%20algoritmi%20i%20numerički%20softver/)
+4. [Optimizacioni algoritmi i nelinearno programiranje](./5.%20Semestar/Optimizacioni%20algoritmi%20i%20nelinearno%20programiranje/)
