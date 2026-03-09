@@ -44,7 +44,7 @@ Klikom na naziv semestra otvoriće vam se stranica sa detaljnim pregledom svih p
 1. [Operativni Sistemi](./4.%20Semestar/Operativni%20Sistemi/)
 2. [Web Programiranje](./4.%20Semestar/Web%20Programiranje/)
 3. [Matematička Logika](./4.%20Semestar/Matematička%20Logika/)
-4. [Osnove Finansijskog Inženjeringa 2](./4.%20Semestar/Osnove%20Finansijskog%20Inženjeringa%202/)
+4. [Osnove Finansijskog Inženjeringa 2](./4.%20Semestar/Osnove%20finansijskog%20inženjeringa%202/)
 5. [Verovatnoća i slučajni procesi](./4.%20Semestar/Verovatnoća%20i%20slučajni%20procesi/)
 
 ## [PETI SEMESTAR](./5.%20Semestar/)
@@ -53,3 +53,13 @@ Klikom na naziv semestra otvoriće vam se stranica sa detaljnim pregledom svih p
 2. [Programski prevodioci](./5.%20Semestar/Programski%20prevodioci/)
 3. [Numerički algoritmi i numerički softver](./5.%20Semestar/Numerički%20algoritmi%20i%20numerički%20softver/)
 4. [Optimizacioni algoritmi i nelinearno programiranje](./5.%20Semestar/Optimizacioni%20algoritmi%20i%20nelinearno%20programiranje/)
+5. [Obrada vremenskih nizova podataka](./5.%20Semestar/Obrada%20vremenskih%20nizova%20podataka/)
+
+## [ŠESTI SEMESTAR](./6.%20Semestar/)
+
+1. [Interakcija čovek računar](./6.%20Semestar/Interakcija%20čovek%20računar/)
+2. [Internet mreže](./6.%20Semestar/Internet%20mreže/)
+3. [Metode i tehnike nauke o podacima](./6.%20Semestar/Metode%20i%20tehnike%20nauke%20o%20podacima/)
+4. [Paralelno računarstvo](./6.%20Semestar/Paralelno%20računarstvo/)
+5. [Praktikum iz statistike](./6.%20Semestar/Praktikum%20iz%20statistike/)
+6. [Specifikacija i modeliranje softvera](./6.%20Semestar/Specifikacija%20i%20modeliranje%20softvera/)
