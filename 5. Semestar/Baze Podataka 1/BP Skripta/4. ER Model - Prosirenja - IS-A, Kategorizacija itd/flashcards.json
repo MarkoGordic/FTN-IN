@@ -1,0 +1,314 @@
+{
+  "cards": [
+    {
+      "question": "Šta opisuje kardinalitet tipa poveznika $R(E_1(a_2, M) : E_2(a_1, N))$?",
+      "answer": "Opisuje **najopštiji slučaj** odnosa između dva tipa entiteta gde **jedan entitet klase $E_1$** može biti u vezi sa **$M$ (više od 1)** entiteta klase $E_2$, i obratno - jedan entitet klase $E_2$ može biti u vezi sa više entiteta klase $E_1$. To je odnos **više-prema-više** (M : N).",
+      "hint": "Najopštiji slučaj - obe strane mogu imati više veza"
+    },
+    {
+      "question": "Šta znači oznaka **M : N** u kontekstu odnosa između dva tipa entiteta?",
+      "answer": "Oznaka **M : N** označava odnos **više - prema - više**. To znači da između dva tipa entiteta ($E_1$ i $E_2$) važi da jedan entitet jedne klase može biti povezan sa **više entiteta** druge klase, i obratno. Oba maksimalna kardinaliteta su **veća od 1**.",
+      "hint": "Više-prema-više, oba maks. kardinaliteta > 1"
+    },
+    {
+      "question": "Šta znači kada su minimalni kardinaliteti $a_1 = 0$ i $a_2 = 0$ kod **M : N** odnosa?",
+      "answer": "Znači da **u obe klase mogu postojati entiteti koji nisu povezani sa bilo kojim entitetom druge klase**. Povezivanje nije obavezno ni sa jedne strane. Primer: mogu postojati radnici koji ne rade ni na jednom projektu, i projekti na kojima ne radi nijedan radnik.",
+      "hint": "Obe strane opcione - niko ne mora biti povezan"
+    },
+    {
+      "question": "Šta znači kada su minimalni kardinaliteti $a_1 = 1$ i $a_2 = 0$ kod **M : N** odnosa?",
+      "answer": "Znači da **svi entiteti jedne klase moraju biti povezani sa bar jednim entitetom druge klase**, dok entiteti druge klase ne moraju. **Egzistencija entiteta u jednoj klasi je uslovljena** njihovom povezanošću. Primer: svaki projekat mora imati bar jednog radnika ($a_1=1$), ali radnik ne mora raditi na projektu ($a_2=0$).",
+      "hint": "Jedna strana obavezna, druga opciona"
+    },
+    {
+      "question": "Šta znači kada su minimalni kardinaliteti $a_1 = 1$ i $a_2 = 1$ kod **M : N** odnosa?",
+      "answer": "To je **najstrože ograničenje**: svaki entitet jedne klase **mora** biti povezan sa bar jednim entitetom druge klase, i obratno. **Egzistencija entiteta u obe klase** je uslovljena njihovom međusobnom povezanošću. Primer: svaki radnik mora raditi na bar jednom projektu i svaki projekat mora imati bar jednog radnika.",
+      "hint": "Obe strane obavezne - najstrože M:N ograničenje"
+    },
+    {
+      "question": "Koliko slučajeva se razlikuje kod struktura sa kardinalitetima grupe **M : N**?",
+      "answer": "Razlikuju se **3 slučaja**, u zavisnosti od vrednosti minimalnih kardinaliteta $a_1$ i $a_2$:\n1. $a_1 = 0, a_2 = 0$ (obe strane opcione)\n2. $a_1 = 1, a_2 = 0$ ili $a_1 = 0, a_2 = 1$ (jedna strana obavezna)\n3. $a_1 = 1, a_2 = 1$ (obe strane obavezne)",
+      "hint": "Tri slučaja - zavise od minimalnih kardinaliteta"
+    },
+    {
+      "question": "Šta opisuje odnos **N : 1**?",
+      "answer": "Odnos **N : 1** (više-prema-jedan) opisuje situaciju kada **jedan entitet prve klase može biti povezan sa jednim entitetom druge klase** ($b_2 = 1$), a **svaki entitet druge klase može biti povezan sa više entiteta prve klase** ($b_1 = N$). Primer: radnik je raspoređen na *jedno* radno mesto, ali na jednom radnom mestu može biti *više* radnika.",
+      "hint": "Jedna strana maks. 1, druga strana maks. N"
+    },
+    {
+      "question": "Koje vrednosti imaju $b_1$ i $b_2$ kod struktura grupe **N : 1**?",
+      "answer": "$b_1 = N$ (maksimalni kardinalitet na jednoj strani je veći od 1) i $b_2 = 1$ (maksimalni kardinalitet na drugoj strani je tačno 1).",
+      "hint": "b₁ = N, b₂ = 1"
+    },
+    {
+      "question": "Koliko slučajeva se razlikuje kod struktura sa kardinalitetima grupe **N : 1**?",
+      "answer": "Razlikuju se **4 slučaja**, u zavisnosti od vrednosti parametara $a_1$ i $a_2$:\n1. $R(E_1(0,1) : E_2(0,N))$ - obe strane opcione\n2. $R(E_1(1,1) : E_2(0,N))$ - leva strana obavezna\n3. $R(E_1(0,1) : E_2(1,N))$ - desna strana obavezna\n4. $R(E_1(1,1) : E_2(1,N))$ - obe strane obavezne",
+      "hint": "Četiri slučaja - kombinacije minimalnih kardinaliteta 0 i 1"
+    },
+    {
+      "question": "Šta opisuje kardinalitet $R(E_1(0, 1) : E_2(0, N))$?",
+      "answer": "Opisuje **N:1** odnos gde **svaki entitet klase $E_1$ može biti povezan sa *najviše jednim* entitetom klase $E_2$** (ali ne mora), a **svaki entitet klase $E_2$ može biti povezan sa *više* entiteta klase $E_1$** (ali ne mora ni sa jednim). Obe strane su **opcione**. Primer: radnik *može* biti raspoređen na jedno radno mesto, a mogu postojati i prazna radna mesta.",
+      "hint": "N:1, obe strane opcione (min. kard. 0 i 0)"
+    },
+    {
+      "question": "Šta opisuje kardinalitet $R(E_1(1, 1) : E_2(0, N))$?",
+      "answer": "Opisuje **N:1** odnos gde **svaki entitet klase $E_1$ mora biti povezan sa tačno jednim entitetom klase $E_2$** (obavezno), dok entiteti klase $E_2$ ne moraju biti povezani ni sa jednim entitetom klase $E_1$. Primer: svaki radnik **mora** biti raspoređen na jedno radno mesto, ali mogu postojati radna mesta bez radnika.",
+      "hint": "N:1, leva strana obavezna (svaki E₁ mora imati vezu)"
+    },
+    {
+      "question": "Šta opisuje kardinalitet $R(E_1(0, 1) : E_2(1, N))$?",
+      "answer": "Opisuje **N:1** odnos gde entiteti klase $E_1$ ne moraju biti povezani (mogu postojati neraspoređeni), ali **svaki entitet klase $E_2$ mora biti povezan sa bar jednim entitetom klase $E_1$**. Primer: mogu postojati neraspoređeni radnici, ali **ne može postojati prazno radno mesto** - svako mora imati bar jednog radnika.",
+      "hint": "N:1, desna strana obavezna (svaki E₂ mora imati vezu)"
+    },
+    {
+      "question": "Šta opisuje kardinalitet $R(E_1(1, 1) : E_2(1, N))$?",
+      "answer": "Opisuje **najstrožu varijantu N:1** odnosa: **svaki entitet klase $E_1$ mora biti povezan sa tačno jednim entitetom klase $E_2$**, i **svaki entitet klase $E_2$ mora biti povezan sa bar jednim entitetom klase $E_1$**. Primer: svaki radnik mora biti raspoređen i nijedno radno mesto ne sme biti prazno.",
+      "hint": "N:1, obe strane obavezne - najstrože"
+    },
+    {
+      "question": "Šta opisuje odnos **1 : 1**?",
+      "answer": "Odnos **1 : 1** (jedan-prema-jedan) opisuje situaciju kada je $b_1 = 1$ i $b_2 = 1$, tj. **jedan entitet prve klase može biti povezan sa jednim entitetom druge klase, i jedan entitet druge klase sa jednim entitetom prve klase**. Oba maksimalna kardinaliteta su jednaka 1.",
+      "hint": "Oba maksimalna kardinaliteta = 1"
+    },
+    {
+      "question": "Koje vrednosti imaju $b_1$ i $b_2$ kod struktura grupe **1 : 1**?",
+      "answer": "Oba su jednaka **1**: $b_1 = 1$ i $b_2 = 1$. Svaki entitet sa obe strane može biti povezan sa **najviše jednim** entitetom druge klase.",
+      "hint": "b₁ = 1, b₂ = 1"
+    },
+    {
+      "question": "Koliko slučajeva se razlikuje kod struktura sa kardinalitetima grupe **1 : 1**?",
+      "answer": "Razlikuju se **3 slučaja**, u zavisnosti od vrednosti $a_1$ i $a_2$:\n1. $R(E_1(0,1) : E_2(0,1))$ - obe strane opcione\n2. $R(E_1(1,1) : E_2(0,1))$ - jedna strana obavezna\n3. $R(E_1(1,1) : E_2(1,1))$ - obe strane obavezne",
+      "hint": "Tri slučaja - zavise od minimalnih kardinaliteta"
+    },
+    {
+      "question": "Šta opisuje kardinalitet $R(E_1(0, 1) : E_2(0, 1))$?",
+      "answer": "Opisuje **1:1** odnos gde **svaki entitet jedne klase može biti povezan sa *najviše jednim* entitetom druge klase**, ali veza **nije obavezna ni sa jedne strane**. Primer: radnik *može* biti osiguranik (ali ne mora), i osiguranik *može* biti radnik (ali ne mora).",
+      "hint": "1:1, obe strane opcione"
+    },
+    {
+      "question": "Šta opisuje kardinalitet $R(E_1(1, 1) : E_2(0, 1))$?",
+      "answer": "Opisuje **1:1** odnos gde **svaki entitet klase $E_1$ mora biti povezan sa tačno jednim entitetom klase $E_2$** (obavezno), dok entiteti klase $E_2$ ne moraju biti povezani. Primer: svaki radnik **mora** biti osiguranik, ali osiguranici mogu biti i ljudi van kolektiva.",
+      "hint": "1:1, jedna strana obavezna"
+    },
+    {
+      "question": "Šta opisuje kardinalitet $R(E_1(1, 1) : E_2(1, 1))$?",
+      "answer": "Opisuje **najstrožu varijantu 1:1** odnosa: **svaki entitet jedne klase je povezan sa tačno jednim entitetom druge klase i obratno**. Ukazuje na **uzajamnu egzistencijalnu povezanost** - nijedan entitet ne može postojati bez svog para. U praksi se retko sreće. Primer: osiguravajuće društvo osigurava *isključivo* svoje radnike.",
+      "hint": "1:1, obe strane obavezne - uzajamna egzistencijalna zavisnost"
+    },
+    {
+      "question": "Šta ukazuje **uzajamna egzistencijalna povezanost** kod 1:1 odnosa?",
+      "answer": "Ukazuje da je kod kardinaliteta $R(E_1(1,1) : E_2(1,1))$ **svaki entitet jedne klase povezan sa jednim i samo jednim entitetom druge klase**, i to važi u oba smera. Ne može postojati entitet ni u jednoj klasi koji nema svog para u drugoj klasi. Obe klase su **međusobno potpuno uslovljene**.",
+      "hint": "Potpuna uslovljenost - svaki entitet mora imati tačno jedan par"
+    },
+    {
+      "question": "Šta je **rekurzivni tip poveznika**?",
+      "answer": "Rekurzivni tip poveznika predstavlja model relacije u jednom skupu - relacije koja **povezuje entitete jedne klase**. U ER strukturi, **isti tip entiteta reprezentuje i prvu i drugu klasu** realnih entiteta, jer jedna od tih klasa, po pravilu, predstavlja podskup druge. Entiteti posmatrane klase igraju **različite uloge** u svom odnosu. Kardinaliteti mogu uzimati sve moguće vrednosti.",
+      "hint": "Veza entiteta sa samim sobom - isti tip entiteta igra dve uloge"
+    },
+    {
+      "question": "Koje **uloge** igraju entiteti u rekurzivnoj vezi?",
+      "answer": "Entiteti posmatrane klase igraju **različite uloge** u svom odnosu. Na primer, kod tipa poveznika *Rukovodi* nad tipom entiteta *Radnik*, jedan radnik igra ulogu **podređenog**, a drugi ulogu **rukovodioca**. Kod *Sastavnice* nad tipom *Proizvod*, jedan proizvod igra ulogu **sklopa**, a drugi ulogu **komponente**.",
+      "hint": "Podređeni/rukovodilac, sklop/komponenta, roditelj/dete..."
+    },
+    {
+      "question": "Na šta ukazuje kardinalitet $Radnik(podređeni)(0, 1) : Radnik(rukovodi)(1, N)$?",
+      "answer": "Ukazuje da: **jedan rukovodni radnik rukovodi sa najmanje jednim podređenim radnikom** (min. kard. 1 na strani *rukovodi*), i **svaki radnik ima najviše jednog direktnog rukovodioca** (maks. kard. 1 na strani *podređeni*). Fraza \"najviše jedan\" (min. kard. 0) ukazuje da mogu postojati i radnici koji nemaju pretpostavljenih - što važi za direktora.",
+      "hint": "Rukovodilac ima 1+ podređenih, radnik ima 0 ili 1 šefa"
+    },
+    {
+      "question": "Šta je **model sastavnice** i kako se gradi putem rekurzivnog tipa entiteta?",
+      "answer": "Model sastavnice se gradi putem **rekurzivnog tipa entiteta** gde tip entiteta *Proizvod* i tip poveznika *Sastavnica* povezuju svaki proizvod sa njegovim **direktnim komponentama**. Pošto i sklopovi i delovi predstavljaju proizvode, pojave tipa entiteta *Proizvod* sadrže podatke o proizvodima, sklopovima i delovima. Kardinalitet je $Proizvod(0, N) : Proizvod(0, M)$.",
+      "hint": "Proizvod se sastoji od drugih proizvoda - rekurzivna veza"
+    },
+    {
+      "question": "Šta je **tip poveznika reda većeg od dva**?",
+      "answer": "To je tip poveznika koji može da poveže **više od dva tipa entiteta** (red $n > 2$). Kardinalitet se određuje uopštenjem postupka za red $n = 2$. Postupak se ponavlja $n$ puta, za svaki od povezanih tipova entiteta jedanput. Postoje **dva moguća pristupa** za njegovo određivanje.",
+      "hint": "Povezuje 3+ tipa entiteta, dva pristupa za kardinalitet"
+    },
+    {
+      "question": "Koji su **dva moguća pristupa** za određivanje kardinaliteta tipa poveznika reda $n > 2$?",
+      "answer": "**Prvi pristup:** Posmatra se jedan poveznik $(e_1, e_2, ..., e_{n-1})$ reda $n-1$ i određuje se koliko entiteta skupa $E_n$ može biti povezano sa tim poveznikom. Koristi formulu $R_{1,...,n-1}(E_n(a_n, b_n))$.\n\n**Drugi pristup:** Analizira se ceo skup poveznika $P = \\{(e_1, ..., e_n) | e_i \\in E_i\\}$ i utvrđuje se koliko puta se entitet $e_i \\in E_i$ može minimalno i maksimalno javiti kao komponenta u poveznicima skupa $P$.",
+      "hint": "1. Koliko E_n za dati (n-1)-torku? 2. Koliko puta se e_i javlja u celom skupu P?"
+    },
+    {
+      "question": "Šta je formula za kardinalitet preslikavanja u **prvom pristupu** kod tipa poveznika reda $n > 2$?",
+      "answer": "Formula je: $$R_{1,...,n-1}(E_n(a_n, b_n))$$\nGde se posmatra jedan poveznik $(e_1, e_2, ..., e_{n-1})$ reda $n-1$ (gde je $e_i \\in E_i$), i skup entiteta $E_n$ čiji entiteti nisu uključeni u taj poveznik. Zatim se identifikuju mogući kardinaliteti ($a_n$, $b_n$) podskupova skupa $E_n$ povezanih sa posmatranim poveznikom.",
+      "hint": "R sa indeksima 1 do n-1, od E_n sa parametrima (a_n, b_n)"
+    },
+    {
+      "question": "Kako se tumači formula $R_{1,...,n-1}(E_n(a_n, b_n))$?",
+      "answer": "Tumači se kao: za dati poveznik reda $n-1$ koji sadrži po jedan entitet iz tipova $E_1, E_2, ..., E_{n-1}$, **minimalno $a_n$ i maksimalno $b_n$ entiteta iz skupa $E_n$** može biti povezano sa tim poveznikom. To je kardinalitet preslikavanja (n-1)-torke na entitete tipa $E_n$.",
+      "hint": "Za datu (n-1)-torku: min aₙ, max bₙ entiteta tipa Eₙ"
+    },
+    {
+      "question": "U čemu je razlika između **prvog i drugog pristupa** za određivanje kardinaliteta?",
+      "answer": "**Prvi pristup** identifikuje koliko je entiteta skupa $E_n$ povezano **sa jednim poveznikom** $(e_1, e_2, ..., e_{n-1})$.\n\n**Drugi pristup** identifikuje koliko puta se neki entitet skupa $E_n$ javlja **kao komponenta u celom skupu poveznika** $P$.\n\nOba pristupa daju **istu ekstenziju**, ali mogu rezultirati **različitim kardinalitetima** jer posmatraju povezanost iz različitih uglova.",
+      "hint": "1. fokus na jednu (n-1)-torku; 2. fokus na ceo skup P - ista ekstenzija, različiti kardinaliteti"
+    },
+    {
+      "question": "Šta je **egzistencijalna zavisnost**?",
+      "answer": "Egzistencijalna zavisnost je ograničenje tipa $R(E_1(a_2, b_2) : E_2(1, b_1))$ koje ukazuje da u modelu, na nivou ekstenzije, **za svako $e_2$ iz $E_2$ postoji bar jedno $e_1$ iz $E_1$** takvo da su $e_1$ i $e_2$ međusobno povezani relacijom $R$. Entitet zavisnog tipa **ne može postojati** bez veze sa entitetom drugog tipa. Označava se slovom **$E$** u ER dijagramu.",
+      "hint": "Entitet ne može postojati bez veze - oznaka E"
+    },
+    {
+      "question": "Šta je **slabi tip entiteta**?",
+      "answer": "Slabi tip entiteta je tip entiteta koji je **egzistencijalno zavisan** od nekog drugog (regularnog) tipa entiteta. Dijagramski se označava **dvostrukim pravougaonikom**. Može biti egzistencijalno zavisan (oznaka $E$) ili i identifikaciono zavisan (oznaka $ID$). Slabi tip entiteta ne može postojati bez veze sa regularnim tipom entiteta od kojeg zavisi.",
+      "hint": "Dvostruki pravougaonik, zavisi od regularnog tipa entiteta"
+    },
+    {
+      "question": "Kako se **dijagramski označava** slabi tip entiteta?",
+      "answer": "Slabi tip entiteta se označava na tri načina:\n1. Naziv se upisuje u **dvostruki pravougaonik**\n2. Veliko slovo **$E$** (egzistencijalna zavisnost) ili **$ID$** (identifikaciona zavisnost) se navodi uz ograničenje\n3. **Poteg** koji povezuje geometrijsku sliku za slabi tip entiteta sa slikom za tip poveznika **se orijentiše ka slabom tipu entiteta** (strelica pokazuje ka slabom)",
+      "hint": "Dvostruki pravougaonik + E ili ID + poteg orijentisan ka slabom"
+    },
+    {
+      "question": "Šta je **slabi tip poveznika**?",
+      "answer": "Slabi tip poveznika je tip poveznika koji **povezuje neki slabi tip entiteta** sa regularnim tipom entiteta. Slabi tip poveznika **nema odgovarajuću relaciju** (za razliku od regularnog tipa poveznika).",
+      "hint": "Povezuje slabi tip entiteta - nema svoju relaciju"
+    },
+    {
+      "question": "Šta su **regularni tipovi entiteta**?",
+      "answer": "Regularni tipovi entiteta su tipovi entiteta koji **nisu slabi** - oni su **egzistencijalno nezavisni**. Takođe, tip poveznika koji povezuje samo egzistencijalno nezavisne tipove entiteta naziva se **regularnim** tipom poveznika.",
+      "hint": "Nisu slabi, egzistencijalno nezavisni"
+    },
+    {
+      "question": "Šta je **identifikaciona zavisnost**?",
+      "answer": "Identifikaciona zavisnost je ograničenje gde tip entiteta **ne poseduje sopstveni ključ** i ne može se identifikovati putem vrednosti svog obeležja. Entiteti takvog skupa se identifikuju **putem svojih povezanosti sa entitetima nekih drugih skupova**. Označava se sa **$ID$** u dijagramu. Identifikaciona zavisnost **automatski povlači** i egzistencijalnu zavisnost.",
+      "hint": "Nema sopstveni ključ, identifikuje se preko veza - oznaka ID"
+    },
+    {
+      "question": "Kako se dijagramski označava **identifikaciono zavisni** tip entiteta?",
+      "answer": "Predstavlja se veoma slično kao egzistencijalno zavisni tip entiteta (dvostruki pravougaonik, orijentisan poteg), ali umesto oznake **$E$** navodi se oznaka **$ID$** u geometrijskoj slici tipa poveznika.",
+      "hint": "Isto kao E-zavisnost, ali sa oznakom ID umesto E"
+    },
+    {
+      "question": "Da li **identifikaciona zavisnost** automatski povlači egzistencijalnu zavisnost?",
+      "answer": "**Da.** Identifikaciona zavisnost automatski povlači za sobom i egzistencijalnu zavisnost. Ako se entitet ne može identifikovati bez veze sa drugim entitetom, onda logično ne može ni postojati bez te veze.",
+      "hint": "Da - ID zavisnost → E zavisnost (uvek)"
+    },
+    {
+      "question": "Da li egzistencijalno zavisni tip entiteta **mora** biti i identifikaciono zavisan?",
+      "answer": "**Ne.** Egzistencijalno zavisni tip entiteta **ne mora biti** i identifikaciono zavisan. Entitet može zavisiti od drugog za svoje postojanje (E-zavisnost), ali se ipak može samostalno identifikovati putem sopstvenog ključa. Obratno od ID→E **ne važi**.",
+      "hint": "Ne - E zavisnost NE povlači ID zavisnost"
+    },
+    {
+      "question": "Šta je **ključ tipa entiteta** u kontekstu slabog tipa entiteta?",
+      "answer": "Ključ tipa entiteta predstavlja jedno od ograničenja u modelu entiteta i poveznika, ali se **ne mora definisati za svaki tip entiteta**. Tip entiteta koji ne poseduje ključ naziva se slabim (identifikaciono zavisnim), i definiše ograničenje **identifikacione zavisnosti**.",
+      "hint": "Nije obavezan za svaki tip - bez ključa = identifikaciona zavisnost"
+    },
+    {
+      "question": "Šta je **ekstenzija slabog tipa entiteta**?",
+      "answer": "Ekstenzija slabog tipa entiteta naziva se **slabom relacijom entiteta**. Tabelarni prikaz sadrži i obeležje $I$, čije vrednosti, zajedno sa vrednostima nekog podskupa $V$ obeležja slabog tipa, **jednoznačno određuju pojave** slabog tipa entiteta. Pošto slabi tip nema ključ, vrednosti skupa obeležja $I \\cup V$ igraju **ulogu vrednosti ključa**.",
+      "hint": "Slaba relacija - I ∪ V igra ulogu ključa"
+    },
+    {
+      "question": "Šta predstavlja skup obeležja $I$ kod slabog tipa entiteta?",
+      "answer": "Skup obeležja $I$ je skup čije vrednosti, zajedno sa vrednostima nekog podskupa $V$ obeležja slabog tipa entiteta, **jednoznačno identifikuju pojave** tog slabog tipa. Sadrži ključ regularnog tipa entiteta ($K$) i eventualno dodatna obeležja iz samog slabog tipa. Pošto slabi tip nema sopstveni ključ, $I \\cup V$ preuzima tu ulogu.",
+      "hint": "Identifikaciono obeležje - sadrži K regularnog tipa + eventualno dodatna obeležja"
+    },
+    {
+      "question": "Šta važi za relaciju $K \\subset I$ i $I \\setminus K \\subseteq \\{A_1, ..., A_w\\}$?",
+      "answer": "Ova formula važi za slučaj kada je $W$ slabi tip entiteta sa obeležjima $\\{A_1, ..., A_w\\}$ povezan sa jednim regularnim tipom $R$ čiji je ključ $K$. Znači:\n- **$K \\subset I$**: ključ regularnog tipa $K$ je **pravi podskup** identifikacionog skupa $I$\n- **$I \\setminus K \\subseteq \\{A_1, ..., A_w\\}$**: preostala obeležja iz $I$ (osim $K$) **pripadaju** skupu obeležja slabog tipa\n\nPrimer: za Dete ($W$) zavisan od Radnika ($R$), $K=\\{MBR\\}$, $I=\\{MBR, IMD\\}$, pa je $I \\setminus K = \\{IMD\\}$ što pripada obeležjima Deteta.",
+      "hint": "Ključ regularnog je podskup od I, ostatak I pripada obeležjima slabog tipa"
+    },
+    {
+      "question": "Šta važi za formulu $\\bigcup_{i=1}^{k} K_i I_i \\subset I$ kod slabog tipa entiteta povezanog sa više regularnih tipova?",
+      "answer": "Kada je slabi tip $W$ povezan sa $k$ regularnih tipova $R_1, ..., R_k$ (direktno ili posredstvom drugih slabih tipova), važi:\n- $\\bigcup_{i=1}^{k} K_i I_i \\subset I$ - unija svih ključeva ($K_i$) pomnoženih sa identifikacionim obeležjima ($I_i$) između svakog $R_i$ i $W$ je **pravi podskup** od $I$\n- $I \\setminus \\bigcup_{i=1}^{k} K_i I_i \\subseteq \\{A_1, ..., A_w\\}$ - ostatak pripada obeležjima slabog tipa\n\n($I_i$ može biti i prazan skup)",
+      "hint": "Uopštenje za više regularnih tipova - unija K_i*I_i ⊂ I"
+    },
+    {
+      "question": "Šta je oznaka **$E$** u ER dijagramu?",
+      "answer": "Oznaka $E$ u ER dijagramu označava **egzistencijalnu zavisnost**. Upisuje se uz tip poveznika koji povezuje slabi tip entiteta sa regularnim, i ukazuje da slabi tip entiteta **ne može postojati** bez veze sa regularnim tipom entiteta.",
+      "hint": "Egzistencijalna zavisnost - entitet ne može postojati bez veze"
+    },
+    {
+      "question": "Šta je oznaka **$ID$** u ER dijagramu?",
+      "answer": "Oznaka $ID$ u ER dijagramu označava **identifikacionu zavisnost**. Upisuje se umesto oznake $E$ kada slabi tip entiteta **nema sopstveni ključ** i identifikuje se putem veze sa regularnim tipom entiteta. ID zavisnost automatski povlači i egzistencijalnu zavisnost.",
+      "hint": "Identifikaciona zavisnost - entitet nema sopstveni ključ"
+    },
+    {
+      "question": "Kako se **orijentiše poteg** kod slabog tipa entiteta?",
+      "answer": "Poteg koji povezuje geometrijsku sliku za slabi tip entiteta sa geometrijskom slikom za odgovarajući tip poveznika **se orijentiše ka slabom tipu entiteta** - tj. strelica pokazuje **od poveznika ka slabom tipu entiteta**.",
+      "hint": "Strelica ide KA slabom tipu entiteta"
+    },
+    {
+      "question": "Šta je **hijerarhija slabih tipova entiteta**?",
+      "answer": "Hijerarhija slabih tipova entiteta opisuje strukturu gde postoji **regularni tip entiteta u korenu stabla** i više nivoa slabih tipova entiteta koji od njega zavise. Primer: *Preduzeće* (regularni) → *Sektor* (slabi, identifikuje se ključem preduzeća + rednim brojem sektora) → *Odeljenje* (slabi, identifikuje se ključem preduzeća + brojem sektora + brojem odeljenja).",
+      "hint": "Stablo sa regularnim tipom u korenu i slabim tipovima na granama"
+    },
+    {
+      "question": "Koji je primer za **N:1** odnos iz materijala?",
+      "answer": "Primer je odnos između tipova entiteta **Radnik** i **Radno_Mesto** sa tipom poveznika **Raspoređen**. Svaki radnik može biti raspoređen na *jedno* radno mesto (maks. kard. 1), ali na jednom radnom mestu može biti raspoređeno *više* radnika (maks. kard. N).",
+      "hint": "Radnik → Raspoređen → Radno_Mesto"
+    },
+    {
+      "question": "Koji je primer za **1:1** odnos iz materijala?",
+      "answer": "Primer je odnos između tipova entiteta **Radnik** i **Osiguranik** sa tipom poveznika **Je** u kontekstu osiguravajućeg društva. Svaki radnik može imati *najviše jednu* polisu osiguranja, i svaka polisa pripada *najviše jednom* radniku.",
+      "hint": "Radnik → Je → Osiguranik (u osiguravajućem društvu)"
+    },
+    {
+      "question": "Koji je primer za **rekurzivnu vezu** iz materijala?",
+      "answer": "Dva primera:\n1. **Radnik + Rukovodi**: radnik u ulozi podređenog i rukovodioca, kardinalitet $(0,1):(1,N)$\n2. **Proizvod + Sastavnica**: proizvod u ulozi sklopa i komponente, kardinalitet $(0,N):(0,M)$",
+      "hint": "Rukovodi (ko kome), Sastavnica (šta od čega)"
+    },
+    {
+      "question": "Koji je primer za **tip poveznika reda 3** iz materijala?",
+      "answer": "Primer je tip poveznika **Izvođenje_Nastave** koji povezuje tri tipa entiteta: **Student**, **Nastavnik** i **Predmet**. Opisuje ko sluša šta kod kog nastavnika.",
+      "hint": "Student + Nastavnik + Predmet = Izvođenje_Nastave"
+    },
+    {
+      "question": "Koji je primer za **identifikaciono zavisni** slabi tip entiteta iz materijala?",
+      "answer": "Primer je tip entiteta **Dete** koji je identifikaciono zavisan od tipa entiteta **Radnik** preko tipa poveznika **R_D**. Identifikacioni ključ je $I = \\{MBR, IMD\\}$, gde MBR dolazi iz ključa Radnika, a IMD je ime deteta. Pojave Deteta se određuju matičnim brojem radnika-roditelja i imenom deteta.",
+      "hint": "Dete zavisi od Radnika, I = {MBR, IMD}"
+    },
+    {
+      "question": "Koji je primer za **egzistencijalno zavisni** slabi tip entiteta iz materijala?",
+      "answer": "Primer je tip entiteta **Radnik** koji je slab u odnosu na tip entiteta **Radno_Mesto** preko tipa poveznika **Raspoređen** (Primer 2.31). Oznaka $E$ ukazuje da ne može postojati radnik u posmatranoj organizaciji a da nije raspoređen na neko radno mesto.",
+      "hint": "Radnik (slab) → E → Radno_Mesto"
+    },
+    {
+      "question": "Kod M:N odnosa, šta se dešava sa projektom kada prestane angažman poslednjeg radnika, ako je $a_1 = 1$?",
+      "answer": "Ako je $a_1 = 1$ (svaki projekat mora imati bar jednog radnika), onog trenutka kada prestane angažman **poslednjeg radnika** na projektu, **gasi se i projekat**. Projekat ne može postojati bez bar jednog angažovanog radnika.",
+      "hint": "Projekat se gasi - ne može postojati bez radnika"
+    },
+    {
+      "question": "Šta se dešava sa projektom koji nema nijednog radnika, ako je $a_1 = 1$ i $a_2 = 0$?",
+      "answer": "Takav projekat **ne može biti evidentiran** (ne može postojati u sistemu). Ako je $a_1 = 1$, to znači da se novi projekat ne može evidentirati ako nije određen bar jedan radnik da na njemu radi. Projekat bez radnika krši ograničenje minimalnog kardinaliteta.",
+      "hint": "Ne može se evidentirati - bar jedan radnik je obavezan"
+    },
+    {
+      "question": "Objasnite razliku između tri slučaja minimalnih kardinaliteta kod **M:N** odnosa i navedite konkretan primer za svaki.",
+      "answer": "Kod M:N odnosa, razlika leži u minimalnim kardinalitetima $a_1$ i $a_2$:\n\n- **$(0,0)$**: entiteti u obe klase ne moraju biti povezani. Primer: mogu postojati neangažovani radnici i prazni projekti.\n- **$(1,0)$ ili $(0,1)$**: entiteti jedne klase moraju biti povezani sa bar jednim entitetom druge (egzistencijalna zavisnost jedne strane). Primer: svaki projekat mora imati bar jednog radnika, ali radnik ne mora raditi na projektu.\n- **$(1,1)$**: obe strane obavezne. Primer: svaki radnik na bar jednom projektu *i* svaki projekat ima bar jednog radnika.",
+      "hint": "Šire pitanje - tri kombinacije min. kard., svaka sa različitom semantikom"
+    },
+    {
+      "question": "Koja je suštinska razlika između odnosa **N:1** i **1:1**? Ilustrujte primerom.",
+      "answer": "Kod **N:1**, entiteti jedne klase mogu biti povezani sa samo jednim entitetom druge klase, ali entiteti te druge klase mogu biti povezani sa **više** entiteta prve klase. Kod **1:1**, obe strane su ograničene na **najviše jednu** vezu.\n\nPrimer: *Radnik-Radno_Mesto* je **N:1** jer više radnika može biti na istom radnom mestu. *Radnik-Osiguranik* je **1:1** jer svaki radnik ima najviše jednu polisu i svaka polisa pripada najviše jednom radniku.",
+      "hint": "Šire pitanje - N:1 dozvoljava više na jednoj strani, 1:1 ne"
+    },
+    {
+      "question": "Objasnite razliku između **egzistencijalne** i **identifikacione** zavisnosti slabog tipa entiteta.",
+      "answer": "**Egzistencijalna zavisnost** (oznaka $E$): entitet slabog tipa ne može *postojati* bez veze sa entitetom regularnog tipa, ali može imati sopstveni ključ za identifikaciju.\n\n**Identifikaciona zavisnost** (oznaka $ID$): entitet slabog tipa ne može se *identifikovati* samostalno - koristi ključ regularnog tipa kao deo svoje identifikacije, nema sopstveni ključ.\n\nID zavisnost **automatski povlači** E zavisnost, ali **obratno ne važi**.",
+      "hint": "Šire pitanje - E = ne može postojati, ID = ne može se identifikovati. ID → E, ali E ↛ ID"
+    },
+    {
+      "question": "Na primeru Radnik (*MBR, IME, PRZ, GOD*) i Dete (*IMD, GRD*), objasnite kako se formira identifikacioni ključ slabog tipa entiteta.",
+      "answer": "**Dete** je identifikaciono zavisno jer se ne može identifikovati samo po *IMD* (ime deteta) - više radnika može imati dete istog imena.\n\nIdentifikacioni ključ: $I = \\{MBR, IMD\\}$\n- **MBR** dolazi iz ključa regularnog tipa *Radnik* ($K = \\{MBR\\}$)\n- **IMD** je obeležje samog slabog tipa *Dete*\n\nPrema formuli: $K \\subset I$ ($\\{MBR\\} \\subset \\{MBR, IMD\\}$) i $I \\setminus K = \\{IMD\\} \\subseteq \\{IMD, GRD\\}$ ✓",
+      "hint": "Šire pitanje - I = {MBR, IMD}, K ⊂ I, I\\K ⊆ obeležja Deteta"
+    },
+    {
+      "question": "Zašto se kod kardinaliteta $R(E_1(1,1) : E_2(1,1))$ kaže da je to **izuzetno strogo** ograničenje?",
+      "answer": "Zahteva da **svaki** entitet jedne klase bude povezan sa **tačno jednim** entitetom druge klase **i obratno** - obe klase su uzajamno egzistencijalno uslovljene. Ne dozvoljava **nijedan** nepovezan entitet ni sa jedne strane. U praksi se **retko sreće**, ali je neophodno kada realni sistem zahteva potpunu korespodenciju, npr. osiguravajuće društvo koje osigurava *isključivo* svoje radnike.",
+      "hint": "Šire pitanje - potpuna obaveznost u oba smera, retko u praksi"
+    },
+    {
+      "question": "U primeru sa **Izvođenje_Nastave** reda 3, objasnite kardinalitet $R_{np}(Nastavnik(0, 1))$.",
+      "answer": "Kardinalitet $R_{np}(Nastavnik(0, 1))$ znači: za dati par (**student** $s$, **predmet** $p$) postoji **najviše jedan nastavnik** $n$ koji tom studentu predaje taj predmet (maks. kard. 1), ali **ne mora postojati nijedan** (min. kard. 0).\n\nU realnom sistemu: student sluša predmet kod *najviše jednog* nastavnika, ali postoje kombinacije student-predmet za koje još nije definisan nastavnik.",
+      "hint": "Šire pitanje - za par (s,p) → 0 ili 1 nastavnik"
+    },
+    {
+      "question": "Objasnite razliku između **dva pristupa** za određivanje kardinaliteta tipa poveznika reda većeg od dva.",
+      "answer": "**Prvi pristup**: posmatra **jedan** poveznik reda $n-1$ i utvrđuje koliko entiteta tipa $E_n$ može biti povezano sa tim konkretnim poveznikom.\n\n**Drugi pristup**: posmatra **ceo skup poveznika** $P$ i utvrđuje koliko puta se entitet $e_i \\in E_i$ može pojaviti kao komponenta.\n\nOba daju **istu ekstenziju**, ali mogu rezultirati **različitim kardinalitetima** jer gledaju povezanost iz različitih uglova. Primer: kod *Izvođenje_Nastave*, prvi pristup koristi odnose 1, 2, 3, a drugi koristi odnose 2-7.",
+      "hint": "Šire pitanje - fokus na jednu torku vs. fokus na ceo skup P"
+    }
+  ]
+}

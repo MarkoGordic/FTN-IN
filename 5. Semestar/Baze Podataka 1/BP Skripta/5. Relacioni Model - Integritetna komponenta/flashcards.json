@@ -1,0 +1,584 @@
+{
+  "cards": [
+    {
+      "question": "Šta je **integritetna komponenta** relacionog modela podataka?",
+      "answer": "Integritetna komponenta definiše **skup tipova ograničenja** (uslova integriteta) koji služe za **modeliranje ograničenja nad podacima** u bazi podataka. Ona osigurava da podaci u BP uvek imaju smisla.",
+      "hint": "Jedna od tri komponente modela podataka - bavi se pravilima"
+    },
+    {
+      "question": "Koje su **tri komponente** modela podataka?",
+      "answer": "1. **Strukturalna komponenta** - primitivni i složeni koncepti, gradivni elementi modela\n2. **Operacijska komponenta** - upitni jezik (QL), DML, DDL\n3. **Integritetna komponenta** - skup tipova ograničenja (uslova integriteta)",
+      "hint": "Struktura, operacije, integritet"
+    },
+    {
+      "question": "Šta je **formalizam za zapisivanje** (definicija) tipa ograničenja?",
+      "answer": "To je **način na koji se ograničenje zapisuje** - svako ograničenje ima preciznu matematičku notaciju kojom se definiše.",
+      "hint": "Kako se ograničenje zapisuje na papiru"
+    },
+    {
+      "question": "Šta je **pravilo za interpretaciju** (validaciju) tipa ograničenja?",
+      "answer": "To je **postupak kojim se proverava** da li su podaci u skladu sa ograničenjem. SUBP koristi ovo pravilo da proveri da li je sve u redu pri unosu/izmeni podataka.",
+      "hint": "Provera validnosti podataka"
+    },
+    {
+      "question": "Šta je **oblast definisanosti** tipa ograničenja?",
+      "answer": "Tip logičke strukture **obeležja** nad kojom se ograničenje definiše - gde u šemi BP definišemo ograničenje.",
+      "hint": "Gde u šemi se ograničenje definiše"
+    },
+    {
+      "question": "Šta je **oblast interpretacije** tipa ograničenja?",
+      "answer": "Tip logičke strukture **podataka** nad kojom se ograničenje interpretira (proverava) - nad kojim konkretnim podacima se ograničenje proverava.",
+      "hint": "Nad kojim podacima se proverava"
+    },
+    {
+      "question": "Šta je **skup operacija** nad bazom podataka u kontekstu tipa ograničenja?",
+      "answer": "To je skup operacija nad BP koje **mogu dovesti do narušavanja** ograničenja datog tipa (npr. Add, Delete, Update).",
+      "hint": "Koje operacije mogu da naruše ograničenje"
+    },
+    {
+      "question": "Šta je **skup mogućih akcija** pri pokušaju narušavanja ograničenja?",
+      "answer": "To su akcije kojima se obezbeđuje **očuvanje validnosti** BP pri pokušaju narušavanja ograničenja. Definišu se **za svaku operaciju** koja može dovesti do narušavanja.",
+      "hint": "Šta SUBP radi kada se ograničenje naruši"
+    },
+    {
+      "question": "Kako **SUBP reaguje** kada se pokuša narušavanje ograničenja?",
+      "answer": "SUBP ima dve opcije:\n1. **Izaziva grešku** i prekida operaciju, prosleđuje poruku o grešci korisničkom programu\n2. **Aktivnim mehanizmom** automatski dovodi stanje BP u konzistentno stanje",
+      "hint": "Greška + prekid ILI automatska korekcija"
+    },
+    {
+      "question": "Da li kontrolu ograničenja na nivou SUBP-a može zaobići neki program ili korisnik?",
+      "answer": "**Ne.** Kontrola ograničenja implementiranih na nivou SUBP je **centralna** - ne može je zaobići ni jedan program niti korisnik. Korisnici nisu svesni postojanja ograničenja dok ne dođe do narušavanja.",
+      "hint": "Centralna kontrola - niko je ne može zaobići"
+    },
+    {
+      "question": "Šta je **vanrelaciono ograničenje**?",
+      "answer": "Ograničenje koje se definiše **izvan konteksta šeme relacije**. Primer: ograničenje domena je vanrelaciono jer domen postoji nezavisno od bilo koje šeme relacije.",
+      "hint": "Oblast definisanosti - izvan relacije"
+    },
+    {
+      "question": "Šta je **jednorelaciono** (unutarrelaciono, lokalno) ograničenje?",
+      "answer": "Ograničenje koje se definiše nad **tačno jednom šemom relacije**. Primer: ograničenje ključa u tabeli Radnik.",
+      "hint": "Oblast definisanosti - jedna relacija"
+    },
+    {
+      "question": "Šta je **višerelaciono ograničenje**?",
+      "answer": "Ograničenje koje se definiše nad **skupom ili nizom šema relacija koji sadrži bar dva člana**. Primer: ograničenje referencijalnog integriteta.",
+      "hint": "Oblast definisanosti - dve ili više relacija"
+    },
+    {
+      "question": "Šta je **ograničenje vrednosti** (oblast interpretacije)?",
+      "answer": "Ograničenje koje se interpretira nad **tačno jednom vrednošću** nekog obeležja. Primer: Ocena mora biti između 5 i 10.",
+      "hint": "Najuža oblast - jedna vrednost"
+    },
+    {
+      "question": "Šta je **ograničenje torke** (oblast interpretacije)?",
+      "answer": "Ograničenje koje se interpretira nad **jednom torkom** bilo koje relacije. Primer: Ako je ZAN='prg', onda BPJZ ne sme biti NULL.",
+      "hint": "Jedna torka, više obeležja"
+    },
+    {
+      "question": "Šta je **relaciono ograničenje** (oblast interpretacije)?",
+      "answer": "Ograničenje koje se interpretira nad **skupom torki** bilo koje relacije. Primer: jedinstvenost ključa.",
+      "hint": "Ceo skup torki jedne relacije"
+    },
+    {
+      "question": "Šta je **međurelaciono ograničenje** (oblast interpretacije)?",
+      "answer": "Ograničenje koje se interpretira nad **barem dve, bilo koje relacije**. Primer: referencijalni integritet.",
+      "hint": "Više relacija zajedno"
+    },
+    {
+      "question": "Šta znači napomena 'bilo koja relacija' u kontekstu oblasti interpretacije?",
+      "answer": "To može biti:\n1. Jedna relacija iz baze podataka, **ili**\n2. Relacija nastala primenom izraza **relacione algebre** nad jednom ili više relacija - **pogled** (view). Moguća je i primena operatora spajanja.",
+      "hint": "Konkretna relacija ILI pogled (view)"
+    },
+    {
+      "question": "Nabroj svih **8 tipova ograničenja** u relacionom modelu podataka.",
+      "answer": "1. Ograničenje domena\n2. Ograničenje vrednosti obeležja\n3. Ograničenje torke\n4. Integritet entiteta (ograničenje ključa)\n5. Ograničenje jedinstvenosti vrednosti obeležja\n6. Zavisnost sadržavanja\n7. Ograničenje referencijalnog integriteta\n8. Funkcionalna zavisnost",
+      "hint": "Domen - Vrednost - Torka - Ključ - Unique - Sadržavanje - Ref.int. - FZ"
+    },
+    {
+      "question": "Kako se formalno zapisuje **specifikacija domena**?",
+      "answer": "$D(\\text{id}(D), \\text{Predef})$\n\ngde je:\n- $D$ - naziv domena\n- $\\text{id}(D)$ - ograničenje (integritet) domena\n- $\\text{Predef}$ - predefinisana vrednost domena",
+      "hint": "Naziv, ograničenje, predefinisana vrednost"
+    },
+    {
+      "question": "Koje su **komponente ograničenja domena** $\\text{id}(D)$?",
+      "answer": "$\\text{id}(D) = (\\text{Tip}, \\text{Dužina}, \\text{Uslov})$\n\n- **Tip** - tip podatka (primitivni domen) ili oznaka prethodno definisanog domena\n- **Dužina** - dužina tipa podatka\n- **Uslov** - logički uslov koji svaka vrednost mora zadovoljiti",
+      "hint": "Tri komponente: Tip, Dužina, Uslov"
+    },
+    {
+      "question": "Šta je **Tip** u specifikaciji ograničenja domena?",
+      "answer": "Tip podatka (**primitivni domen**) ili oznaka prethodno definisanog domena. To je **jedina obavezna** komponenta specifikacije ograničenja domena.",
+      "hint": "Jedina obavezna komponenta - npr. String, Number, Date ili drugi domen"
+    },
+    {
+      "question": "Šta je **Dužina** u specifikaciji ograničenja domena?",
+      "answer": "Dužina tipa podatka. Navodi se **samo za primitivne domene** koji to zahtevaju. **Ne navodi se** za domene čiji tip ne predstavlja primitivni domen.",
+      "hint": "Nije uvek potrebna - samo za primitivne domene"
+    },
+    {
+      "question": "Šta je **Uslov** u specifikaciji ograničenja domena?",
+      "answer": "Logički uslov koji mora da ga zadovolji **svaka vrednost** iz skupa mogućih vrednosti domena. Primer: $d \\geq 5 \\land d \\leq 10$ za domen ocena.",
+      "hint": "Logički uslov nad vrednošću d"
+    },
+    {
+      "question": "Šta je **predefinisana vrednost (Predef)** domena?",
+      "answer": "Default vrednost domena koja se koristi kada konkretna vrednost nije zadata. Mora da zadovolji ograničenja **tipa, dužine i uslova**.",
+      "hint": "Default vrednost - mora zadovoljiti sva ograničenja"
+    },
+    {
+      "question": "Koja je **jedina obavezna** komponenta specifikacije ograničenja domena?",
+      "answer": "**Tip** - tip podatka (primitivni domen) ili oznaka prethodno definisanog domena.",
+      "hint": "Od tri komponente (Tip, Dužina, Uslov), samo jedna je obavezna"
+    },
+    {
+      "question": "Kako se označava **interpretacija ograničenja domena** za vrednost $d$?",
+      "answer": "$\\text{id}(D)(d)$ - čitamo: da li vrednost $d$ zadovoljava ograničenje domena $D$? Moguća je za bilo koju vrednost - konstantu $d$.",
+      "hint": "id(D)(d)"
+    },
+    {
+      "question": "Protumačite primer domena: $D_{Ocena}((Number, 2, d \\geq 5 \\land d \\leq 10), \\varepsilon)$",
+      "answer": "Domen **DOcena** definiše: Tip je *Number*, Dužina je *2 cifre*, Uslov je da vrednost mora biti **između 5 i 10** (uključujući). Predefinisana vrednost **nije zadata** ($\\varepsilon$).",
+      "hint": "Domen za ocene - Number, 2 cifre, 5 do 10"
+    },
+    {
+      "question": "Šta znači kada Tip domena **nije primitivni domen** već drugi domen? Daj primer.",
+      "answer": "To znači da domen **nasleđuje** ograničenja od drugog domena i može dodati svoja. Primer: $D_{PozOcena}((D_{Ocena}, \\varepsilon, d \\geq 6), 6)$ - nasleđuje od DOcena (Number, 5-10) i dodaje uslov $d \\geq 6$, sa Predef = 6.",
+      "hint": "Nasleđivanje domena - DPozOcena nasleđuje DOcena"
+    },
+    {
+      "question": "Šta je **nula (nedostajuća) vrednost**?",
+      "answer": "**Specijalna vrednost** koja označava da konkretna vrednost obeležja nedostaje ili je izostavljena. Označava se simbolima $\\omega$, ?, ili **NULL** (u SQL-u).",
+      "hint": "Specijalna vrednost - omega, ?, NULL"
+    },
+    {
+      "question": "Koji su mogući **simboli za označavanje** nula vrednosti?",
+      "answer": "- $\\omega$ (omega)\n- **?** (u literaturi)\n- **NULL** (u literaturi i SQL-u)",
+      "hint": "Tri oznake: omega, upitnik, NULL"
+    },
+    {
+      "question": "Koja su **tri moguća značenja** nula vrednosti?",
+      "answer": "1. **Nepoznata** - postojeća vrednost obeležja, ali trenutno nepoznata\n2. **Nepostojeća** - vrednost obeležja ne postoji za dati entitet\n3. **Neinformativna** - vrednost obeležja nema smisla u datom kontekstu",
+      "hint": "Nepoznata, nepostojeća, neinformativna"
+    },
+    {
+      "question": "Kako se skup mogućih vrednosti domena proširuje nula vrednošću?",
+      "answer": "$DOM \\cup \\{\\omega\\}$\n\nSkup mogućih vrednosti **svih** domena proširuje se nula vrednošću.",
+      "hint": "DOM unija {omega}"
+    },
+    {
+      "question": "Da li nula vrednost **zadovoljava** ograničenje domena?",
+      "answer": "**Da.** Nula vrednost **a priori zadovoljava** svako ograničenje domena. Ograničenje domena se proverava samo za konkretne (ne-nula) vrednosti.",
+      "hint": "Da - NULL uvek prolazi ograničenje domena"
+    },
+    {
+      "question": "Kako se formalno zapisuje **specifikacija obeležja** šeme relacije?",
+      "answer": "Za obeležje $A \\in R$ u šemi $N(R, O)$:\n\n$(\\text{id}(N, A), \\text{Predef})$\n\n- $\\text{id}(N, A)$ - ograničenje vrednosti obeležja\n- $\\text{Predef}$ - predefinisana vrednost obeležja",
+      "hint": "Ograničenje + predefinisana vrednost, za svako obeležje"
+    },
+    {
+      "question": "Koje su **komponente ograničenja vrednosti obeležja** $\\text{id}(N, A)$?",
+      "answer": "$\\text{id}(N, A) = (\\text{Domen}, \\text{Null})$\n\n- **Domen** - oznaka (naziv) domena obeležja *(obavezno)*\n- **Null** $\\in \\{T, \\bot\\}$ - ograničenje nula vrednosti *(obavezno)*",
+      "hint": "Dva obavezna dela: Domen i Null"
+    },
+    {
+      "question": "Šta znači $\\text{Null} = T$?",
+      "answer": "**Dozvola** dodele nula vrednosti obeležju u relaciji nad $N$. Obeležje **može** imati NULL.",
+      "hint": "T = True = dozvoljeno"
+    },
+    {
+      "question": "Šta znači $\\text{Null} = \\bot$?",
+      "answer": "**Zabrana** dodele nula vrednosti obeležju u relaciji nad $N$. Obeležje **ne sme** imati NULL.",
+      "hint": "Bot = zabranjeno"
+    },
+    {
+      "question": "Kako se određuje predefinisana vrednost (Predef) obeležja ako nije eksplicitno navedena?",
+      "answer": "Ako se ne navede na nivou obeležja, važeći je **Predef odgovarajućeg domena**, ili prvog sledećeg **nasleđenog domena** za koji je Predef definisan.",
+      "hint": "Nasleđuje se od domena"
+    },
+    {
+      "question": "Šta je **ograničenje torke** i kako se formalno zapisuje?",
+      "answer": "Izražava ograničenja na moguće vrednosti **unutar jedne torke**. Za šemu $N(R, O)$:\n\n$\\text{id}(N) = \\text{id}(R) = (\\{\\text{id}(N, A) \\ | \\ A \\in R\\}, \\text{Uslov})$\n\nTo je skup ograničenja vrednosti obeležja + **logički uslov** koji svaka torka mora zadovoljiti.",
+      "hint": "Skup ograničenja obeležja + Uslov nad celom torkom"
+    },
+    {
+      "question": "Šta je **Uslov** u ograničenju torke?",
+      "answer": "Logički uslov koji **svaka torka** u relaciji mora da zadovolji. Može u ulozi operanda da sadrži **bilo koje obeležje** date šeme relacije.\n\nPrimer: $ZAN = 'prg' \\Rightarrow BPJZ \\neq \\omega$",
+      "hint": "Logički uslov koji povezuje više obeležja unutar iste torke"
+    },
+    {
+      "question": "Protumačite ograničenje torke: $ZAN = 'prg' \\Rightarrow BPJZ \\neq \\omega$",
+      "answer": "Ako je zanimanje radnika **'prg' (programer)**, onda broj posedovanih programskih jezika (**BPJZ**) **ne sme biti nula vrednost** - mora biti poznat.",
+      "hint": "Programer mora imati poznat BPJZ"
+    },
+    {
+      "question": "Šta je **ključ** šeme relacije?",
+      "answer": "**Minimalni podskup** skupa obeležja šeme relacije, na osnovu kojeg se **jedinstveno može identifikovati** svaka torka relacije nad datom šemom.",
+      "hint": "Minimalni + jednoznačno identifikuje torku"
+    },
+    {
+      "question": "Koji su **dva formalna uslova** da $X$ bude ključ?",
+      "answer": "1. $(\\forall u, v \\in r(R))(u[X] = v[X] \\Rightarrow u = v)$ - **jedinstvenost**: ne postoje dve različite torke sa istom kombinacijom vrednosti ključa\n2. $(\\nexists Y \\subset X)$ za koje važi uslov 1 - **minimalnost**: ne postoji pravi podskup od $X$ sa istom osobinom",
+      "hint": "Jedinstvenost + minimalnost"
+    },
+    {
+      "question": "Šta znači **minimalnost** u definiciji ključa?",
+      "answer": "Ne postoji **pravi podskup** od $X$ koji takođe jedinstveno identifikuje svaku torku. Ne smemo moći da **izbacimo nijedno obeležje** iz ključa a da osobina jedinstvenosti ostane.",
+      "hint": "Nijedan pravi podskup nema osobinu jedinstvenosti"
+    },
+    {
+      "question": "Šta je šema relacije oblika $N(R, K)$?",
+      "answer": "Šema relacije gde se skup ograničenja zadaje **samo kao skup ključeva** $K$. Koristi se u početnim fazama projektovanja. $R$ je skup obeležja, $K$ je skup ključeva.",
+      "hint": "Skup ograničenja = samo ključevi"
+    },
+    {
+      "question": "Kako se zapisuje **ograničenje ključa** (integritet entiteta)?",
+      "answer": "Za šemu $N(R, K)$, ključ $X \\in K$, $X \\subseteq R$:\n\n$$Key(N, X)$$\n\nZa sva obeležja ključa, **nula vrednosti su zabranjene**:\n$(\\forall K_i \\in K)(\\forall A \\in K_i)(\\text{Null}(N, A) = \\bot)$",
+      "hint": "Key(N, X) - NULL zabranjen za sva obeležja svih ključeva"
+    },
+    {
+      "question": "Zašto su za **sva obeležja ključa** nula vrednosti zabranjene?",
+      "answer": "Jer ključ služi za **jednoznačnu identifikaciju** torke. Ako bi deo ključa bio NULL, ne bismo mogli pouzdano identifikovati torku niti je koristiti kao asocijativnu adresu.",
+      "hint": "Ne možeš identifikovati nešto čiji deo adrese ne znaš"
+    },
+    {
+      "question": "Da li svaka šema relacije **mora imati bar jedan ključ**? Zašto?",
+      "answer": "**Da**, $K \\neq \\emptyset$. Ovo proizilazi iz **definicije relacije** - relacija je *skup* torki, a u skupu **ne mogu postojati duplikati**, pa uvek postoji bar neki skup obeležja koji jedinstveno identifikuje torku.",
+      "hint": "Relacija je skup, nema duplikata, ključ uvek postoji"
+    },
+    {
+      "question": "Šta su **ekvivalentni ključevi**?",
+      "answer": "**Svi ključevi** iz skupa ključeva $K$ su ekvivalentni. Bilo koji od njih može poslužiti za identifikaciju torke.",
+      "hint": "Svi ključevi u K su ravnopravni"
+    },
+    {
+      "question": "Šta je **primarni ključ** i kako se označava?",
+      "answer": "**Jedan izabrani ključ** od svih ekvivalentnih ključeva. Označava se $K_p(N)$. Svaka šema relacije treba da poseduje **tačno jedan** primarni ključ.",
+      "hint": "Kp(N) - jedan izabrani od svih ekvivalentnih"
+    },
+    {
+      "question": "Za šta se **primarni ključ** koristi?",
+      "answer": "Koristi se u ulozi **asocijativne (simboličke) adrese** za **povezivanje podataka** u relacijama. Preko njega se torke iz jedne relacije referenciraju iz druge.",
+      "hint": "Simbolička adresa za povezivanje podataka"
+    },
+    {
+      "question": "Šta je **ograničenje jedinstvenosti** (Unique)?",
+      "answer": "Ograničenje $Unique(N, X)$ za šemu $N(R, O)$ zahteva da **ne-nula kombinacija** vrednosti obeležja $X \\subseteq R$ bude **jedinstvena** u relaciji.\n\n$(\\forall u, v \\in r(R))((\\forall A \\in X)(u[A] \\neq \\omega \\land v[A] \\neq \\omega) \\Rightarrow (u[X] = v[X] \\Rightarrow u = v))$",
+      "hint": "Jedinstvenost samo za ne-nula vrednosti"
+    },
+    {
+      "question": "Po čemu se razlikuje **ograničenje jedinstvenosti** od **ograničenja ključa**?",
+      "answer": "**Ključ** zahteva jedinstvenost i **zabranjuje NULL** za sva svoja obeležja.\n\n**Unique** zahteva jedinstvenost samo za **ne-nula** vrednosti - **dozvoljava NULL**. Više torki može imati NULL za Unique obeležja.",
+      "hint": "Ključ: NULL zabranjen. Unique: NULL dozvoljen."
+    },
+    {
+      "question": "Šta je **skup svih ograničenja jedinstvenosti** u šemi relacije?",
+      "answer": "$Uniq = \\{Unique(N, X) \\ | \\ X \\subseteq R\\}$\n\nSkup svih Unique ograničenja definisanih nad skupovima obeležja šeme relacije.",
+      "hint": "Uniq - skup svih Unique(N, X)"
+    },
+    {
+      "question": "Daj primer **ograničenja jedinstvenosti**.",
+      "answer": "Za **Radnik({MBR, IME, PRZ, DATR, JMBG}, O)**:\n\n$Unique(Radnik, JMBG)$ - ako radnik ima ne-nula vrednost za JMBG, ona mora biti **jedinstvena**. Ali JMBG sme biti NULL.",
+      "hint": "JMBG - jedinstven ako postoji, ali sme biti NULL"
+    },
+    {
+      "question": "Kako se zapisuje **kompletni skup ograničenja** šeme relacije za implementaciju?",
+      "answer": "$N(R, \\ K \\cup Uniq \\cup \\{\\text{id}(R)\\})$\n\nTo je unija:\n- **$K$** - skup ključeva\n- **$Uniq$** - ograničenja jedinstvenosti\n- **$\\{\\text{id}(R)\\}$** - ograničenje torke",
+      "hint": "Ključevi unija Unique unija Ograničenje torke"
+    },
+    {
+      "question": "Šta je **zavisnost sadržavanja**?",
+      "answer": "Ograničenje između dve šeme relacija koje zahteva da se ne-nula vrednosti obeležja iz jedne relacije moraju nalaziti među vrednostima odgovarajućih obeležja u drugoj relaciji.\n\nOznaka: $N_i[X] \\subseteq N_j[Y]$",
+      "hint": "Vrednosti iz jedne tabele moraju postojati u drugoj"
+    },
+    {
+      "question": "Kako se **formalno zapisuje** zavisnost sadržavanja?",
+      "answer": "$N_i[X] \\subseteq N_j[Y]$ važi ako:\n\n$(\\forall u \\in r)(\\exists v \\in s)(\\forall l \\in \\{1,...,n\\})(u[A_l] = \\omega \\lor u[A_l] = v[B_l])$\n\nZa svaku torku u $r$, ako vrednost nije NULL, mora postojati odgovarajuća torka u $s$ sa istom vrednošću.",
+      "hint": "Svaka ne-nula vrednost iz r mora imati par u s"
+    },
+    {
+      "question": "Šta znači **domenski kompatibilni** nizovi obeležja?",
+      "answer": "Nizovi obeležja $X = (A_1,...,A_n)$ i $Y = (B_1,...,B_n)$ su domenski kompatibilni ako:\n\n$(\\forall l \\in \\{1,...,n\\})(dom(A_l) \\cong dom(B_l))$\n\nOdgovarajuća obeležja moraju imati **kompatibilne domene**.",
+      "hint": "Isti ili kompatibilni domeni za odgovarajuće parove obeležja"
+    },
+    {
+      "question": "Koja je **oblast definisanosti** zavisnosti sadržavanja?",
+      "answer": "**Niz od dve šeme relacije** - $N_i$ i $N_j$.",
+      "hint": "Dve šeme relacija"
+    },
+    {
+      "question": "Koja je **oblast interpretacije** zavisnosti sadržavanja?",
+      "answer": "**Relacije** nad šemama $N_i$ i $N_j$.",
+      "hint": "Konkretne relacije (podaci) nad obe šeme"
+    },
+    {
+      "question": "Šta je **ograničenje referencijalnog integriteta**?",
+      "answer": "Specijalan slučaj **zavisnosti sadržavanja** $N_i[X] \\subseteq N_j[Y]$, pri čemu je $Y$ **ključ** šeme relacije $N_j(R_j, K_j)$.\n\n- $N_i$ - **referencirajuća** šema\n- $N_j$ - **referencirana** šema",
+      "hint": "Zavisnost sadržavanja gde je desna strana KLJUČ"
+    },
+    {
+      "question": "Šta je **referencirajuća** šema relacije?",
+      "answer": "Šema relacije $N_i$ u ograničenju $N_i[X] \\subseteq N_j[Y]$ - šema koja **sadrži obeležja koja upućuju** na drugu tabelu (strani ključ).",
+      "hint": "Tabela koja pokazuje na drugu - sadrži strani ključ"
+    },
+    {
+      "question": "Šta je **referencirana** šema relacije?",
+      "answer": "Šema relacije $N_j$ u ograničenju $N_i[X] \\subseteq N_j[Y]$ - šema na čiji **ključ** $Y$ se upućuje iz referencirajuće šeme.",
+      "hint": "Tabela na koju se pokazuje - sadrži primarni ključ"
+    },
+    {
+      "question": "Šta se dešava pri **unosu torke** u referencirajuću relaciju?",
+      "answer": "Proverava se da li referencirane vrednosti **postoje kao ključ** u referenciranoj relaciji. Ako ne postoje (i nisu NULL), **SUBP odbija unos**.\n\nPrimer: ne možemo angažovati radnika MBR=999 ako taj radnik ne postoji u tabeli Radnik.",
+      "hint": "Proverava se da li referencirana vrednost postoji"
+    },
+    {
+      "question": "Šta se dešava pri **brisanju torke** iz referencirane relacije?",
+      "answer": "Proverava se da li neka referencirajuća relacija **koristi tu vrednost**. Ako da, SUBP ili **odbija brisanje**, ili primenjuje korektivnu akciju (kaskadno brisanje, postavljanje na NULL, itd.).",
+      "hint": "Provera da li neko referencira torku koju brišemo"
+    },
+    {
+      "question": "U primeru sa tabelama Radnik, Projekat i Angažovanje, navedite sva ograničenja referencijalnog integriteta.",
+      "answer": "1. $Projekat[RUK] \\subseteq Radnik[MBR]$ - rukovodilac mora biti postojeći radnik\n2. $Angažovanje[MBR] \\subseteq Radnik[MBR]$ - angažovani radnik mora postojati\n3. $Angažovanje[SPR] \\subseteq Projekat[SPR]$ - projekat mora postojati",
+      "hint": "Tri ograničenja: RUK->MBR, Ang.MBR->Rad.MBR, Ang.SPR->Proj.SPR"
+    },
+    {
+      "question": "Šta je **funkcionalna zavisnost** (FZ)?",
+      "answer": "Izraz oblika $f: X \\rightarrow Y$, gde su $X, Y \\subseteq U$.\n\n**Semantika:** ako je poznata $X$ vrednost, poznata je i $Y$ vrednost. Svakoj $X$ vrednosti odgovara **samo jedna** $Y$ vrednost.",
+      "hint": "X -> Y: poznata X vrednost -> poznata Y vrednost"
+    },
+    {
+      "question": "Kako se **formalno definiše** da relacija zadovoljava FZ $X \\rightarrow Y$?",
+      "answer": "$(\\forall u, v \\in r)(u[X] = v[X] \\Rightarrow u[Y] = v[Y])$\n\nAko dve torke imaju **iste vrednosti** za obeležja iz $X$, moraju imati **iste vrednosti** i za obeležja iz $Y$.",
+      "hint": "Isti X -> isti Y, za svaki par torki"
+    },
+    {
+      "question": "Koja je **oblast interpretacije** funkcionalne zavisnosti?",
+      "answer": "Relacija $r(N)$ ili $r(U)$.",
+      "hint": "Relacija nad šemom ili nad skupom obeležja"
+    },
+    {
+      "question": "Šta je **trivijalna** funkcionalna zavisnost?",
+      "answer": "Svaka FZ koja je zadovoljena u **bilo kojoj relaciji**. To je svaka FZ $X \\rightarrow Y$ za koju važi $Y \\subseteq X$.",
+      "hint": "Y je podskup od X -> uvek važi"
+    },
+    {
+      "question": "Navedi primere **trivijalnih** FZ.",
+      "answer": "- $MBR \\rightarrow MBR$ ($Y = X$)\n- $MBR \\rightarrow \\emptyset$ ($Y = \\emptyset \\subseteq X$)\n- $AB \\rightarrow A$ ($A \\subseteq AB$)",
+      "hint": "MBR->MBR, MBR->prazan skup, AB->A"
+    },
+    {
+      "question": "Kako se identifikuju **važeće FZ** u realnom sistemu?",
+      "answer": "Na osnovu **odnosa i pravila poslovanja** koji postoje u realnom sistemu - ne samo gledanjem podataka u tabeli (jer se podaci menjaju).",
+      "hint": "Iz semantike realnog sistema, ne iz podataka"
+    },
+    {
+      "question": "Šta je **logička posledica** skupa FZ?",
+      "answer": "FZ $f$ je logička posledica skupa FZ $F$ (oznaka: $F \\models f$) ako **svaka relacija** $r$ koja zadovoljava $F$ zadovoljava i $f$.\n\n$(\\forall r \\in SAT(U))(r \\models F \\Rightarrow r \\models f)$",
+      "hint": "F |= f - svaka relacija koja zadovoljava F, zadovoljava i f"
+    },
+    {
+      "question": "Šta je **implikacioni problem**?",
+      "answer": "Utvrditi da li važi $F \\models f$ - da li je neka FZ **logička posledica** datog skupa FZ.",
+      "hint": "Da li F implicira f?"
+    },
+    {
+      "question": "Šta je **ekvivalentnost** dva skupa FZ?",
+      "answer": "Oznaka: $F_1 \\equiv F_2$. Važi ako:\n\n$F_1 \\models F_2 \\land F_2 \\models F_1$\n\nDva skupa su ekvivalentna ako svaki implicira drugi. Ekvivalentno: $F_1^+ = F_2^+$.",
+      "hint": "F1 |= F2 i F2 |= F1, tj. isti zatvarači"
+    },
+    {
+      "question": "Šta je **zatvarač (zatvorenje) skupa FZ**?",
+      "answer": "Oznaka: $F^+$. Skup koji sadrži **sve logičke posledice** od $F$:\n\n$F^+ = \\{f \\ | \\ F \\models f\\}$\n\nZa svaki $F$ važi $F \\subseteq F^+$.",
+      "hint": "F+ - sve što logički sledi iz F"
+    },
+    {
+      "question": "Navedi **tri osnovna Armstrongova pravila** izvođenja.",
+      "answer": "1. **Refleksivnost:** $Y \\subseteq X \\vdash X \\rightarrow Y$\n2. **Proširenje:** $X \\rightarrow Y, \\ W \\subseteq V \\vdash XV \\rightarrow YW$\n3. **Pseudotranzitivnost:** $X \\rightarrow Y, \\ YV \\rightarrow Z \\vdash XV \\rightarrow Z$",
+      "hint": "Refleksivnost, proširenje, pseudotranzitivnost"
+    },
+    {
+      "question": "Kako glasi pravilo **refleksivnosti**?",
+      "answer": "$Y \\subseteq X \\vdash X \\rightarrow Y$\n\nAko je $Y$ **podskup** od $X$, onda $X$ funkcionalno određuje $Y$. Daje trivijalne FZ.",
+      "hint": "Podskup -> trivijalna zavisnost"
+    },
+    {
+      "question": "Kako glasi pravilo **proširenja**?",
+      "answer": "$X \\rightarrow Y, \\ W \\subseteq V \\vdash XV \\rightarrow YW$\n\nAko $X \\rightarrow Y$, možemo **proširiti** levu stranu sa $V$ i desnu sa $W$ (gde $W \\subseteq V$).",
+      "hint": "Dodavanje obeležja na obe strane"
+    },
+    {
+      "question": "Kako glasi pravilo **pseudotranzitivnosti**?",
+      "answer": "$X \\rightarrow Y, \\ YV \\rightarrow Z \\vdash XV \\rightarrow Z$\n\nAko $X$ određuje $Y$ i $YV$ određuje $Z$, onda $XV$ određuje $Z$.",
+      "hint": "X->Y i YV->Z daju XV->Z"
+    },
+    {
+      "question": "Navedi **tri izvedena** pravila izvođenja.",
+      "answer": "1. **Uniranje desnih strana:** $X \\rightarrow Y, \\ X \\rightarrow Z \\vdash X \\rightarrow YZ$\n2. **Dekompozicija desnih strana:** $X \\rightarrow Y, \\ V \\subseteq Y \\vdash X \\rightarrow V$\n3. **Tranzitivnost:** $X \\rightarrow Y, \\ Y \\rightarrow Z \\vdash X \\rightarrow Z$",
+      "hint": "Uniranje, dekompozicija, tranzitivnost"
+    },
+    {
+      "question": "Kako glasi pravilo **uniranja desnih strana**?",
+      "answer": "$X \\rightarrow Y, \\ X \\rightarrow Z \\vdash X \\rightarrow YZ$\n\nAko $X$ određuje $Y$ i $X$ određuje $Z$, onda $X$ određuje **uniju** $YZ$.",
+      "hint": "Dve FZ sa istom levom stranom -> spoj desnih"
+    },
+    {
+      "question": "Kako glasi pravilo **dekompozicije desnih strana**?",
+      "answer": "$X \\rightarrow Y, \\ V \\subseteq Y \\vdash X \\rightarrow V$\n\nAko $X$ određuje $Y$ i $V$ je podskup $Y$, onda $X$ određuje $V$.",
+      "hint": "Podskup desne strane se može izdvojiti"
+    },
+    {
+      "question": "Kako glasi pravilo **tranzitivnosti**?",
+      "answer": "$X \\rightarrow Y, \\ Y \\rightarrow Z \\vdash X \\rightarrow Z$\n\nAko $X$ određuje $Y$ i $Y$ određuje $Z$, onda $X$ određuje $Z$.",
+      "hint": "Lanac: X->Y->Z daje X->Z"
+    },
+    {
+      "question": "Zašto **nije dozvoljeno** proizvoljno dekomponovanje levih strana FZ?",
+      "answer": "$\\{BRI+OZP \\rightarrow OCE\\} \\neq \\{BRI \\rightarrow OCE, \\ OZP \\rightarrow OCE\\}$\n\nKombinacija BRI+OZP određuje ocenu, ali **sam BRI** ne određuje ocenu (student ima više ocena), niti **sam OZP** ne određuje (na istom predmetu su različite ocene). Dekompozicija je dozvoljena **samo na desnoj** strani.",
+      "hint": "BRI+OZP->OCE nije isto što i BRI->OCE + OZP->OCE"
+    },
+    {
+      "question": "Koje su **tri osobine** sistema Armstrongovih pravila?",
+      "answer": "1. **Korektnost** (neprotivrečnost)\n2. **Kompletnost**\n3. **Neredundantnost** (minimalnost)",
+      "hint": "Korektan, kompletan, neredundantan"
+    },
+    {
+      "question": "Šta znači da je sistem AP **korektan**?",
+      "answer": "Svaka FZ koja se **izvede** primenom AP iz nekog skupa FZ predstavlja **logičku posledicu** tog skupa FZ. Ne možemo izvesti pogrešne zaključke.",
+      "hint": "Nema lažnih izvođenja"
+    },
+    {
+      "question": "Šta znači da je sistem AP **kompletan**?",
+      "answer": "Svaka **logička posledica** nekog skupa FZ **može se izvesti** primenom AP iz tog skupa. Ništa nam ne promiče.",
+      "hint": "Sve posledice su dostupne"
+    },
+    {
+      "question": "Šta znači da je sistem AP **neredundantan** (minimalan)?",
+      "answer": "Ne može se **eliminisati** kao suvišno ni jedno od tri pravila izvođenja, a da korektnost i kompletnost ostanu očuvane. Sva tri pravila su **neophodna**.",
+      "hint": "Nijedan od 3 aksioma se ne može izbaciti"
+    },
+    {
+      "question": "Šta je **nepotpuna** FZ?",
+      "answer": "FZ $X \\rightarrow Y \\in F$ je nepotpuna ako sadrži **logički suvišno obeležje na levoj strani**:\n\n$(\\exists X' \\subset X)(X' \\rightarrow Y \\in F^+)$\n\nPrimer: $BRI+IME \\rightarrow PRZ$ je nepotpuna jer važi $BRI \\rightarrow PRZ$.",
+      "hint": "Leva strana se može smanjiti - suvišno obeležje"
+    },
+    {
+      "question": "Šta je **tranzitivna** FZ?",
+      "answer": "FZ $X \\rightarrow Z$ je tranzitivna ako važi:\n- $X \\rightarrow Y \\in F^+$\n- $Y \\rightarrow Z \\in F^+$\n- **Ne važi** $Y \\rightarrow X \\in F^+$\n\nPrimer: $NAS \\rightarrow NAP$ je tranzitivna jer $NAS \\rightarrow OZP$, $OZP \\rightarrow NAP$, ali ne važi $OZP \\rightarrow NAS$.",
+      "hint": "X->Y->Z, ali Y ne određuje X"
+    },
+    {
+      "question": "Koji uslov **razlikuje tranzitivnu** FZ od obične tranzitivne posledice?",
+      "answer": "Uslov da **ne važi** $Y \\rightarrow X \\in F^+$. Bez ovog uslova, svaka posledica bi mogla biti nazvana tranzitivnom.",
+      "hint": "Y NE SME određivati X"
+    },
+    {
+      "question": "Kako se definiše **ključ šeme relacije** pomoću FZ?",
+      "answer": "$X$ je ključ šeme $(R, F)$ ako:\n1. $X \\rightarrow R \\in F^+$ - $X$ funkcionalno **određuje sva obeležja**\n2. $(\\nexists X' \\subset X)(X' \\rightarrow R \\in F^+)$ - $X$ je **minimalan**",
+      "hint": "X->R (sve) + X je minimalan"
+    },
+    {
+      "question": "Šta je **zatvarač (zatvorenje) skupa obeležja**?",
+      "answer": "Skup **svih obeležja** koja funkcionalno zavise od $X$ u odnosu na skup FZ $F$:\n\n$X_F^+ = \\{A \\in U \\ | \\ X \\rightarrow A \\in F^+\\}$",
+      "hint": "Sva obeležja koja X funkcionalno određuje"
+    },
+    {
+      "question": "Koji su **koraci algoritma** za izračunavanje zatvarača skupa obeležja $X_F^+$?",
+      "answer": "1. **Inicijalizacija:** $X_0 \\leftarrow X$\n2. **Iteracija:** $X_{i+1} \\leftarrow X_i \\cup \\{A \\in U \\ | \\ (\\exists V \\rightarrow W \\in F)(V \\subseteq X_i \\land A \\in W)\\}$\n3. **Zaustavljanje:** kad $X_{n+1} = X_n$, tada $X_F^+ = X_n$",
+      "hint": "Počni od X, iterativno dodaj obeležja dok se skup ne stabilizuje"
+    },
+    {
+      "question": "Kako se **generiše jedan ključ** šeme relacije?",
+      "answer": "1. Počni od $X \\leftarrow R$ (ceo skup obeležja)\n2. **Redukcija:** $(\\forall A \\in X)(A \\in (X \\setminus \\{A\\})_F^+ \\Rightarrow X \\leftarrow X \\setminus \\{A\\})$\n\nZa svako obeležje proveri da li ga ostatak može odrediti - ako da, izbaci ga.",
+      "hint": "Polazi od R, izbacuj obeležja koja su suvišna"
+    },
+    {
+      "question": "Šta je **redukcija** u kontekstu generisanja ključa?",
+      "answer": "Postupak gde za svako obeležje $A \\in X$ proveravamo da li $A$ pripada zatvaraču $(X \\setminus \\{A\\})_F^+$. Ako da, obeležje $A$ je **suvišno** i izbacujemo ga iz $X$.",
+      "hint": "Proveri da li se obeležje može ukloniti a da X i dalje određuje R"
+    },
+    {
+      "question": "Kako se **generišu svi alternativni ključevi**?",
+      "answer": "Polazi se od prvog ključa $X$, $K \\leftarrow \\{X\\}$:\n\n$(\\forall X \\in K)(\\forall V \\rightarrow W \\in F)(X \\cap W \\neq \\emptyset \\Rightarrow X_{newk} \\leftarrow (X \\setminus W) \\cup V)$\n\nZatim: $Red(X_{newk})$, pa $K \\leftarrow K \\cup \\{Red(X_{newk})\\}$",
+      "hint": "Zameni presek ključa i desne strane FZ sa levom stranom, pa redukuj"
+    },
+    {
+      "question": "Koliko ključeva ima šema **Student** za dati skup FZ?",
+      "answer": "**Četiri** ključa:\n- $K_1 = BRI + NAS$\n- $K_2 = IME + PRZ + NAS$\n- $K_3 = BRI + OZP$\n- $K_4 = IME + PRZ + OZP$",
+      "hint": "4 ključa - kombinacije BRI/IME+PRZ sa NAS/OZP"
+    },
+    {
+      "question": "Šta je **projekcija skupa FZ** na skup obeležja?",
+      "answer": "Za skup FZ $F$ i skup obeležja $X \\subseteq U$:\n\n$F|_X = \\{V \\rightarrow W \\ | \\ F \\models V \\rightarrow W \\land VW \\subseteq X\\}$\n\nSkup svih FZ koje **logički slede** iz $F$, a definisane su **isključivo u okviru** skupa obeležja $X$.",
+      "hint": "Samo one FZ iz F+ čija su sva obeležja u X"
+    },
+    {
+      "question": "Daj primer **projekcije** skupa FZ.",
+      "answer": "Za $F = \\{A \\rightarrow B, B \\rightarrow C, BE \\rightarrow F, A \\rightarrow D\\}$:\n\n$F|_{ACDEF} = \\{A \\rightarrow C, AE \\rightarrow F, A \\rightarrow D, \\text{trivijalne fz}\\}$\n\n$A \\rightarrow B$ ne ulazi jer $B \\notin ACDEF$, ali $A \\rightarrow C$ ulazi jer tranzitivno sledi.",
+      "hint": "B nije u ACDEF, ali A->C se dobija tranzitivno"
+    },
+    {
+      "question": "Šta je **formalno konzistentno** stanje baze podataka?",
+      "answer": "BP je u formalno konzistentnom stanju ako:\n1. Svaka relacija zadovoljava sva ograničenja svoje šeme $(R_i, O_i)$\n2. $RBP$ zadovoljava sva **međurelaciona ograničenja** iz $I$\n\nSUBP može kontrolisati formalnu konzistentnost.",
+      "hint": "Sva lokalna i međurelaciona ograničenja su zadovoljena"
+    },
+    {
+      "question": "Šta je **suštinski konzistentno** stanje baze podataka?",
+      "answer": "BP je u suštinski konzistentnom stanju ako:\n1. Se nalazi u **formalno konzistentnom** stanju, **i**\n2. Predstavlja **vernu sliku stanja realnog sistema**\n\nU praksi, nivo grešaka je sveden na ispod 2-3%.",
+      "hint": "Formalno konzistentno + verna slika realnosti"
+    },
+    {
+      "question": "Da li SUBP može kontrolisati **suštinsku konzistentnost**?",
+      "answer": "**Ne.** SUBP može kontrolisati samo **formalnu konzistentnost**. Suštinska konzistentnost zavisi od toga koliko verno podaci odražavaju stvarnost.",
+      "hint": "SUBP -> samo formalna. Suštinska -> odgovornost korisnika."
+    },
+    {
+      "question": "Objasnite razliku između **oblasti definisanosti** i **oblasti interpretacije**. Dajte primere.",
+      "answer": "**Oblast definisanosti** - gde u *šemi* BP se ograničenje definiše (vanrelaciono, jednorelaciono, višerelaciono).\n\n**Oblast interpretacije** - nad kojim *podacima* se proverava:\n1. **Ograničenje vrednosti** - jedna vrednost (npr. ocena 5-10)\n2. **Ograničenje torke** - jedna torka (npr. ZAN='prg' => BPJZ ne NULL)\n3. **Relaciono** - skup torki (npr. jedinstvenost ključa)\n4. **Međurelaciono** - 2+ relacija (npr. referencijalni integritet)",
+      "hint": "Definisanost = gde u šemi, Interpretacija = nad kojim podacima"
+    },
+    {
+      "question": "Objasnite razliku između **ključa** i **Unique** ograničenja na konkretnom primeru.",
+      "answer": "**Ključ:** jedinstvenost + **NULL zabranjen** za sva obeležja.\n**Unique:** jedinstvenost samo za **ne-nula** vrednosti, **NULL dozvoljen**.\n\nPrimer: MBR je ključ - mora biti jedinstven i ne-NULL. JMBG ima Unique - jedinstven ako postoji, ali može biti NULL za radnike čiji JMBG nije upisan.",
+      "hint": "Ključ: NULL zabranjen. Unique: NULL dozvoljen."
+    },
+    {
+      "question": "Za $F = \\{A \\rightarrow B, B \\rightarrow C, AC \\rightarrow D\\}$, izračunajte **zatvarač** $(A)_F^+$ korak po korak.",
+      "answer": "- $X_0 = \\{A\\}$\n- $A \\rightarrow B$: $A \\subseteq X_0$, dodaj $B$, $X_1 = \\{A, B\\}$\n- $B \\rightarrow C$: $B \\subseteq X_1$, dodaj $C$, $X_2 = \\{A, B, C\\}$\n- $AC \\rightarrow D$: $\\{A,C\\} \\subseteq X_2$, dodaj $D$, $X_3 = \\{A, B, C, D\\}$\n- Nema promena => $(A)_F^+ = \\{A, B, C, D\\}$",
+      "hint": "A -> +B -> +C -> +D, zatvarač = {A,B,C,D}"
+    },
+    {
+      "question": "Šta je **referencijalni integritet** i zašto je poseban slučaj zavisnosti sadržavanja?",
+      "answer": "Referencijalni integritet je zavisnost sadržavanja $N_i[X] \\subseteq N_j[Y]$ gde je $Y$ **ključ** šeme $N_j$. Poseban je jer garantuje da referencirane vrednosti **identifikuju konkretne torke**.\n\nPrimer: $Projekat[RUK] \\subseteq Radnik[MBR]$ - MBR je ključ Radnika, pa RUK uvek upućuje na tačno jednog radnika.",
+      "hint": "Zavisnost sadržavanja + desna strana je ključ"
+    },
+    {
+      "question": "Objasnite zašto je **proizvoljno dekomponovanje levih strana** FZ nedozvoljeno.",
+      "answer": "Iz $BRI+OZP \\rightarrow OCE$ **ne sledi** $BRI \\rightarrow OCE$ i $OZP \\rightarrow OCE$.\n\nStudent 159 ima ocene 09, 08, 10, 10 - sam BRI ne određuje ocenu. Predmet P1 ima ocene 09, 06, 09 - sam OZP ne određuje ocenu. Dekompozicija je dozvoljena **samo na desnoj strani**.",
+      "hint": "BRI+OZP->OCE ne znači BRI->OCE + OZP->OCE"
+    },
+    {
+      "question": "Objasnite pojmove **korektnosti, kompletnosti i neredundantnosti** Armstrongovih pravila.",
+      "answer": "**Korektnost:** svaka izvedena FZ je validna logička posledica - nema pogrešnih zaključaka.\n**Kompletnost:** svaka logička posledica se može izvesti - ništa ne promakne.\n**Neredundantnost:** nijedno od 3 pravila se ne može izbaciti a da sistem ostane korektan i kompletan - sva tri su neophodna.",
+      "hint": "Tačnost izvođenja + potpunost + minimalnost sistema"
+    },
+    {
+      "question": "Kako se kombinuju **ograničenje domena, vrednosti obeležja i torke**? Primer sa šemom Radnik.",
+      "answer": "1. **Domen ZAND:** Tip=String, Dužina=3 - definiše moguće vrednosti\n2. **Obeležje ZAN:** Domen=ZAND, Null=$\\bot$ - vezuje domen i zabranjuje NULL\n3. **Ograničenje torke:** $ZAN='prg' \\Rightarrow BPJZ \\neq \\omega$ - povezuje vrednosti više obeležja\n\nTri nivoa rade zajedno: domen ograničava vrednost, obeležje dodaje NULL pravilo, torka povezuje obeležja.",
+      "hint": "Domen -> Obeležje -> Torka: tri nivoa ograničenja"
+    },
+    {
+      "question": "Objasnite **algoritam za generisanje jednog i svih alternativnih ključeva**.",
+      "answer": "**Jedan ključ:** polazi od $R$, za svako obeležje proverava da li zatvarač ostatka pokriva $R$ - ako da, izbacuje ga (redukcija).\n\n**Alternativni:** za svaki ključ $X$ i FZ $V \\rightarrow W$, ako $X \\cap W \\neq \\emptyset$, pravi kandidata $(X \\setminus W) \\cup V$, redukuje ga i dodaje u $K$.\n\nPolazi se od $R$ jer sigurno $R \\rightarrow R$ važi.",
+      "hint": "Jedan: R -> redukcija. Više: zamena + redukcija."
+    },
+    {
+      "question": "Šta je **nula vrednost** i kako utiče na **ključ** i **Unique** ograničenje?",
+      "answer": "NULL može značiti: nepoznata, nepostojeća, neinformativna vrednost.\n\n**Ključ:** NULL je **strogo zabranjen** za sva obeležja svih ključeva.\n**Unique:** NULL je **dozvoljen** - jedinstvenost se proverava samo za ne-nula vrednosti.\n\nNULL a priori zadovoljava svako ograničenje domena.",
+      "hint": "Ključ: NULL zabranjen. Unique: NULL dozvoljen. Domen: NULL uvek prolazi."
+    },
+    {
+      "question": "Šta je **projekcija skupa FZ** i zašto je korisna?",
+      "answer": "$F|_X$ je skup svih FZ koje slede iz $F$ a definisane su isključivo u okviru $X$.\n\n**Korisna je** pri dekompoziciji šeme relacije - kad radimo sa podskupom obeležja, trebamo znati koja ograničenja važe nad tim podskupom. Može sadržati FZ koje nisu direktno u $F$ ali su logičke posledice.",
+      "hint": "FZ ograničene na podskup obeležja - bitno za dekompoziciju"
+    }
+  ]
+}

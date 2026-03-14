@@ -1,0 +1,414 @@
+{
+  "cards": [
+    {
+      "question": "Šta je **entitet**?",
+      "answer": "Entitet je \"nešto\" što se može **jednoznačno identifikovati**. Opisuje se i kao \"jedinica posmatranja\". Može se odnositi na svaki realni subjekat, objekat, događaj, pojavu ili neki apstraktni pojam.",
+      "hint": "Ključna reč: jednoznačna identifikacija"
+    },
+    {
+      "question": "Šta je **poveznik**?",
+      "answer": "Poveznik predstavlja **vezu između dva ili više entiteta**. Poveznik konstituišu (čine) povezani entiteti i opis njihove veze.",
+      "hint": "Ako je entitet \"stvar\", poveznik je \"odnos između stvari\""
+    },
+    {
+      "question": "Od čega se **sastoji** poveznik (šta ga konstituiše)?",
+      "answer": "Poveznik konstituišu **povezani entiteti** i **opis njihove veze**.",
+      "hint": "Dve komponente: ko je povezan + kako je povezan"
+    },
+    {
+      "question": "Koja su **dva osnovna koncepta** ER modela?",
+      "answer": "Dva osnovna koncepta su **entitet** i **poveznik**. Pomoću njih se može opisati realni svet (ili njegov deo, realni sistem).",
+      "hint": "E i R u \"ER model\""
+    },
+    {
+      "question": "Šta je **skup entiteta**? Napiši formalnu definiciju.",
+      "answer": "Skup entiteta je:\n$$E = \\{e \\mid P(e)\\}$$\ngde je $P(e)$ predikat čija istinitosna vrednost ukazuje da li $e$ pripada skupu $E$. Ako $e$ poseduje osobinu $P(e)$, tada $e$ pripada $E$.",
+      "hint": "Definiše se preko predikata P(e)"
+    },
+    {
+      "question": "Šta je **predikat** $P(e)$ u definiciji skupa entiteta?",
+      "answer": "$P(e)$ je predikat čija **istinitosna vrednost** ukazuje da li entitet $e$ pripada skupu $E$. To je pravilo ili uslov koji kaže \"da li je ovaj entitet član ovog skupa\".",
+      "hint": "Uslov za pripadnost skupu - true ili false"
+    },
+    {
+      "question": "Može li **isti entitet** pripadati **različitim skupovima** entiteta?",
+      "answer": "**Da.** Isti entitet $e$ može pripadati različitim skupovima entiteta. Na primer, student pripada i skupu $E$ (studenti) i skupu $E'$ (ljudska bića).",
+      "hint": "Primer 2.2 - student je i student i ljudsko biće"
+    },
+    {
+      "question": "Šta je **klasa entiteta**?",
+      "answer": "Klasa entiteta je **skup sličnih entiteta** koji poseduju bar jednu zajedničku osobinu, na osnovu koje su svrstani u istu klasu. U opštem slučaju, broj zajedničkih osobina je veći od jedan.",
+      "hint": "Sinonim za skup entiteta - grupišu se po zajedničkim osobinama"
+    },
+    {
+      "question": "Šta su **obeležja** (atributi)?",
+      "answer": "Obeležja su **zajedničke osobine** entiteta jedne klase. Svi entiteti jedne klase poseduju bar jednu zajedničku osobinu po kojoj su svrstani u istu klasu - te osobine se nazivaju obeležjima (atributima).",
+      "hint": "Osobine entiteta jedne klase"
+    },
+    {
+      "question": "Kako se **označavaju** obeležja?",
+      "answer": "Obeležja se označavaju:\n- **Velikim slovima** latinske azbuke (kad semantika nije važna)\n- **Skraćenim nazivom** - mnemonikom\n- **Punim nazivom**",
+      "hint": "Tri načina: velika slova, mnemonik, pun naziv"
+    },
+    {
+      "question": "Šta je **mnemonik**? Daj primer.",
+      "answer": "Mnemonik je **skraćeni naziv** obeležja koji pomaže da se brzo prepozna o čemu se radi. Na primer, za obeležje *MATIČNI_BROJ_RADNIKA* mnemonik je **MBR**.",
+      "hint": "Primer 2.3 - MATIČNI_BROJ_RADNIKA → MBR"
+    },
+    {
+      "question": "Šta je **elementarno obeležje**?",
+      "answer": "Elementarno obeležje je obeležje koje se **dalje ne može dekomponovati** (rastaviti na delove), ili koje se u posmatranom slučaju ne dekomponuje na komponente. Npr. *IME*, *BOJA_AUTOMOBILA*.",
+      "hint": "Ne može se rastaviti na manje delove"
+    },
+    {
+      "question": "Šta je **složeno obeležje**?",
+      "answer": "Složeno obeležje je **skup, niz, ili logički proizvod elementarnih obeležja** kome se može pridružiti neko ime. Npr. $ADRESA = \\{MESTO, ULICA, BROJ\\}$.",
+      "hint": "Sastavljen od više elementarnih obeležja"
+    },
+    {
+      "question": "Kako se **formalno zapisuje** složeno obeležje $X$?",
+      "answer": "$$X = \\{A_1, A_2, \\ldots, A_k\\}$$\ngde su $A_i$, $1 \\le i \\le k$, elementarna obeležja. Složeno obeležje $X$ može biti predstavljeno kao **niz** ili kao **skup**.",
+      "hint": "X = skup elementarnih obeležja A₁ do Aₖ"
+    },
+    {
+      "question": "Kojim slovima se obično označavaju **složena**, a kojim **elementarna** obeležja?",
+      "answer": "**Složena** obeležja se označavaju slovima sa **kraja abecede**: $X$, $Y$, $Z$.\n**Elementarna** obeležja se označavaju slovima sa **početka abecede**: $A$, $B$, $C$.",
+      "hint": "Kraj abecede = složena, početak = elementarna"
+    },
+    {
+      "question": "Šta je **domen obeležja**?",
+      "answer": "Domen obeležja je **skup svih mogućih vrednosti** koje to obeležje, u konkretnim slučajevima, može imati. Domen može posedovati i svoje posebno ime.",
+      "hint": "Sve dozvoljene vrednosti jednog obeležja"
+    },
+    {
+      "question": "Kako se **obeležava** domen obeležja $A$?",
+      "answer": "Domen obeležja $A$ se obeležava sa $dom(A)$.",
+      "hint": "dom( ) notacija"
+    },
+    {
+      "question": "Može li se **isti domen** pridružiti različitim obeležjima? Daj primer.",
+      "answer": "**Da.** Isti domen se može pridružiti većem broju različitih obeležja. Na primer, obeležjima *IME_STUDENTA* i *IME_NASTAVNIKA* se može pridružiti isti domen sa nazivom *IME*, koji sadrži sva moguća lična imena.",
+      "hint": "IME_STUDENTA i IME_NASTAVNIKA dele domen IME"
+    },
+    {
+      "question": "Šta je **tip entiteta**?",
+      "answer": "Tip entiteta je **model klase entiteta**, izgrađen od obeležja bitnih za realizaciju zadataka informacionog sistema. Označava se sa $N(A_1, \\ldots, A_n)$ gde je $N$ ime, a $A_1, \\ldots, A_n$ su obeležja.",
+      "hint": "Model = šablon klase entiteta za potrebe IS-a"
+    },
+    {
+      "question": "Napiši **Definiciju 2.1** (tip entiteta).",
+      "answer": "Izraz oblika $N(A_1, \\ldots, A_n)$ predstavlja model skupa entiteta $E = \\{e \\mid P(e)\\}$ i naziva se **tipom entiteta**, ako i samo ako $N$ predstavlja ime skupa $\\{e \\mid P(e)\\}$, a $A_1, \\ldots, A_n$ obeležja entiteta skupa $\\{e \\mid P(e)\\}$.",
+      "hint": "N = ime skupa, A₁...Aₙ = obeležja entiteta tog skupa"
+    },
+    {
+      "question": "Šta predstavlja $N$ u zapisu $N(A_1, \\ldots, A_n)$?",
+      "answer": "$N$ predstavlja **ime (naziv) tipa entiteta**, koje opisuje klasu realnih entiteta. To je semantička komponenta koja daje smisao nizu obeležja koji sledi.",
+      "hint": "Ime koje daje smisao celom tipu"
+    },
+    {
+      "question": "Šta predstavljaju $A_1, \\ldots, A_n$ u zapisu tipa entiteta?",
+      "answer": "$A_1, \\ldots, A_n$ predstavljaju **niz obeležja** koja opisuju osobine entiteta te klase. To je **podskup** svih mogućih osobina klase, izabran kao bitan za informacioni sistem.",
+      "hint": "Obeležja - izabrane osobine bitne za IS"
+    },
+    {
+      "question": "Šta je **skup poveznika** $R$? Napiši formalnu definiciju.",
+      "answer": "Skup poveznika $R$ predstavlja **relaciju** u matematičkom smislu, između $n$ ($n \\ge 2$) skupova entiteta:\n$$R = \\{(e_1, \\ldots, e_n) \\mid e_i \\in E_i, \\; i = 1, \\ldots, n\\}$$\nSvaka $n$-torka u $R$ predstavlja jedan poveznik.",
+      "hint": "Matematička relacija između n≥2 skupova entiteta"
+    },
+    {
+      "question": "Šta je **uloga** entiteta u povezniku?",
+      "answer": "Uloga je **funkcija ili pozicija** koju entitet $e_i$ ima u $n$-torki poveznika. Svaki entitet u torki ima svoju uloga. Ako se uloge eksplicitno navedu, redosled navođenja entiteta u torki postaje nevažan.",
+      "hint": "Npr. (Iva → rukovodilac, Aca → podčinjeni)"
+    },
+    {
+      "question": "Kada je **eksplicitno navođenje uloga** posebno važno?",
+      "answer": "Eksplicitno navođenje uloga je posebno važno kada su u pitanju skupovi poveznika između entiteta koji **pripadaju istim skupovima entiteta** (rekurzivni poveznici). Tada entiteti iz istog skupa igraju različite uloge.",
+      "hint": "Kad su entiteti iz istog skupa - inače se ne zna ko igra koju ulogu"
+    },
+    {
+      "question": "Šta je **rekurzivni** poveznik?",
+      "answer": "Rekurzivni poveznik je poveznik koji **povezuje entitete jednog (istog) skupa**. Na primer, *Rukovodi(Radnik, Radnik)* gde jedan radnik rukovodi drugim radnikom.",
+      "hint": "Povezuje entitete ISTOG skupa - npr. Radnik sa Radnikom"
+    },
+    {
+      "question": "Šta je **tip poveznika**?",
+      "answer": "Tip poveznika je **model skupa poveznika**, zapisan kao $N(E_1, \\ldots, E_n, B_1, \\ldots, B_k)$, gde je $N$ naziv, $E_1, \\ldots, E_n$ su povezani skupovi entiteta, a $B_1, \\ldots, B_k$ su sopstvena obeležja poveznika.",
+      "hint": "Model veze - ime + tipovi entiteta + obeležja veze"
+    },
+    {
+      "question": "Napiši **Definiciju 2.2** (tip poveznika).",
+      "answer": "Izraz oblika $N(E_1, \\ldots, E_n, B_1, \\ldots, B_k)$ predstavlja model skupa poveznika $R$ i naziva se **tipom poveznika**, ako i samo ako $N$ predstavlja naziv skupa poveznika $R$, $E_1, \\ldots, E_n$ su povezani skupovi entiteta, a $B_1, \\ldots, B_k$ obeležja poveznika skupa $R = \\{(e_1, \\ldots, e_n) \\mid e_i \\in E_i, \\; i = 1, \\ldots, n\\}$.",
+      "hint": "N = naziv, E-ovi = entiteti, B-ovi = obeležja poveznika"
+    },
+    {
+      "question": "Šta predstavljaju $B_1, \\ldots, B_k$ u zapisu tipa poveznika?",
+      "answer": "$B_1, \\ldots, B_k$ su **sopstvena obeležja poveznika** - osobine koje opisuju samu vezu, a ne entitete. Na primer, *DATUM_RASP* (datum raspoređivanja) u tipu poveznika *Raspoređen*.",
+      "hint": "Osobine same VEZE, ne entiteta"
+    },
+    {
+      "question": "Kako se crta **tip entiteta** u ER dijagramu?",
+      "answer": "Tip entiteta se crta kao **pravougaonik** sa upisanim nazivom (tipa entiteta).",
+      "hint": "Pravougaonik □"
+    },
+    {
+      "question": "Kako se crta **tip poveznika** u ER dijagramu?",
+      "answer": "Tip poveznika se crta kao **romb** sa upisanim nazivom (tipa poveznika). Od romba se crtaju neusmerni potezi do geometrijskih slika tipova entiteta koje povezuje.",
+      "hint": "Romb ◇ sa potezima ka pravougaonicima"
+    },
+    {
+      "question": "Kako se crtaju **skupovi vrednosti** (domeni) u ER dijagramu?",
+      "answer": "Skupovi vrednosti (domeni) se prikazuju kao **ovali** sa upisanim nazivom domena. Povezuju se **orijentisanim potegom** (usmerenim ka ovalu) sa odgovarajućim tipom entiteta ili tipom poveznika. Naziv obeležja se upisuje na poteg ako se razlikuje od naziva domena.",
+      "hint": "Ovali sa usmerenim potezima"
+    },
+    {
+      "question": "Koja su **dva nivoa detaljnosti** ER dijagrama?",
+      "answer": "1. **Nivo detaljnosti naziva** - pregledniji dijagrami (samo tipovi entiteta i poveznika)\n2. **Nivo detaljnosti obeležja** - dijagrami sa većom količinom informacija (uključuju obeležja i domene)\n\nU praksi se ova dva nivoa **kombinuju**.",
+      "hint": "Nazivi (pregledno) vs. Obeležja (detaljno)"
+    },
+    {
+      "question": "Šta čini **ekstenzionalne koncepte** ER modela podataka?",
+      "answer": "Ekstenzionalne koncepte čine:\n- **Pojava tipa entiteta**\n- **Skup pojava tipa entiteta**\n- **Pojava tipa poveznika**\n- **Skup pojava tipa poveznika**\n\n**Podatak** predstavlja primitivni koncept putem kojeg se komponuju ovi složeniji koncepti.",
+      "hint": "Pojave + skupovi pojava za entitete i poveznike, građeni od podataka"
+    },
+    {
+      "question": "Šta je **podatak**?",
+      "answer": "Podatak je **par (obeležje, vrednost)** o nekom entitetu ili povezniku, gde obeležje predstavlja osobinu posmatranog entiteta ili poveznika, a vrednost pripada domenu tog obeležja.",
+      "hint": "Par: obeležje + vrednost iz domena"
+    },
+    {
+      "question": "Napiši **Definiciju 2.3** (podatak).",
+      "answer": "Par (obeležje, vrednost) predstavlja **podatak** o nekom entitetu ili povezniku, ako **obeležje** predstavlja osobinu posmatranog entiteta ili poveznika, a **vrednost** pripada domenu tog obeležja.",
+      "hint": "Obeležje = osobina, vrednost ∈ dom(obeležje)"
+    },
+    {
+      "question": "Zašto **sama vrednost** (npr. broj 7) **nije podatak**?",
+      "answer": "Sama vrednost nije podatak jer joj je **smisao neodređen**. Broj 7 se može interpretirati na više načina: ocena studenta, starost deteta, broj predmeta... Tek kada se vrednost poveže sa obeležjem (npr. OCENA = 7), dobija semantiku i postaje podatak.",
+      "hint": "Nema kontekst - ne zna se na šta se odnosi"
+    },
+    {
+      "question": "Šta je **izvedeno obeležje**?",
+      "answer": "Izvedeno obeležje je obeležje čije se vrednosti dobijaju **primenom nekog algoritma na vrednosti drugih obeležja**. Njegove vrednosti se nazivaju izvedenim podacima.",
+      "hint": "Izračunava se iz drugih obeležja, npr. SREDNJA_OCENA"
+    },
+    {
+      "question": "Šta su **izvedeni podaci**?",
+      "answer": "Izvedeni podaci su **vrednosti izvedenih obeležja** - dobijaju se primenom nekog algoritma na vrednosti drugih obeležja. Npr. *SREDNJA_OCENA* se dobija sabiranjem svih *OCENA* i deljenjem sa *BROJ_POLOŽENIH_ISPITA*.",
+      "hint": "Rezultat izračunavanja nad drugim podacima"
+    },
+    {
+      "question": "Šta je **pojava tipa entiteta**?",
+      "answer": "Pojava tipa entiteta je **model jednog entiteta** - sadrži konkretne vrednosti obeležja za jedan entitet. To je $n$-torka $(a_1, \\ldots, a_n)$ gde je $a_i \\in dom(A_i)$. Tip entiteta je apstrakcija na višem nivou nego pojava.",
+      "hint": "Konkretan red u tabeli - vrednosti jednog entiteta"
+    },
+    {
+      "question": "Šta je **uređenje podataka** u modelu entiteta i čime je diktirano?",
+      "answer": "Uređenje podataka u modelu entiteta diktira se **uređenjem skupa obeležja u tipu entiteta**. Obeležjima u tipu entiteta odgovaraju vrednosti tih obeležja (podaci) u modelu entiteta **istim redom**. Uređenje u $n$-torki $(a_1, \\ldots, a_n)$ je bitno jer nosi informaciju o tome da je $a_i \\in dom(A_i)$.",
+      "hint": "Redosled vrednosti prati redosled obeležja u tipu"
+    },
+    {
+      "question": "Napiši funkciju koju obeležje $A$ predstavlja.",
+      "answer": "$$A : E \\to dom(A)$$\nObeležje $A$ je funkcija koja svakom entitetu $e_i \\in E$ pridružuje jednu vrednost iz $dom(A)$, tako da $A(e_i)$ predstavlja podatak o $e_i$ s obzirom na $A$.",
+      "hint": "A preslikava entitet u jednu vrednost iz svog domena"
+    },
+    {
+      "question": "Napiši funkciju $(A_1, \\ldots, A_n) : E \\to$ ?",
+      "answer": "$$(A_1, \\ldots, A_n) : E \\to dom(A_1) \\times \\ldots \\times dom(A_n)$$\nDefinisana je sa $(A_1, \\ldots, A_n)(e) = (A_1(e), \\ldots, A_n(e))$, gde $e \\in E$.",
+      "hint": "Preslikava entitet u n-torku vrednosti iz Dekartovog proizvoda domena"
+    },
+    {
+      "question": "Napiši **kvantifikatorsku formulu** $F$ za pojavu tipa entiteta.",
+      "answer": "$$F((a_1, \\ldots, a_n)) = (\\exists e \\in E)(\\forall i \\in \\{1, \\ldots, n\\})(a_i = A_i(e))$$\nTorka $(a_1, \\ldots, a_n)$ je pojava tipa entiteta ako **postoji entitet** $e$ u $E$ čije su vrednosti svih obeležja upravo $a_1, \\ldots, a_n$.",
+      "hint": "Postoji entitet e takav da su sve vrednosti aᵢ jednake Aᵢ(e)"
+    },
+    {
+      "question": "Napiši formulu za **skup pojava** $P$ tipa entiteta.",
+      "answer": "$$P = \\{(a_1, \\ldots, a_n) \\mid F((a_1, \\ldots, a_n))\\}$$\ngde je $F$ kvantifikatorska formula: $F((a_1, \\ldots, a_n)) = (\\exists e \\in E)(\\forall i \\in \\{1, \\ldots, n\\})(a_i = A_i(e))$.",
+      "hint": "Skup svih n-torki koje zadovoljavaju formulu F"
+    },
+    {
+      "question": "Šta je **ključ** tipa entiteta?",
+      "answer": "Ključ tipa entiteta je obeležje (ili skup obeležja) $X$ koje zadovoljava **dva uslova**:\n- **1° Jedinstvenost:** Nijedne dve različite pojave nemaju istu vrednost ključa\n- **2° Minimalnost:** Nijedno obeležje iz ključa se ne može izbaciti, a da jedinstvenost ostane",
+      "hint": "Jedinstvenost + Minimalnost"
+    },
+    {
+      "question": "Napiši **Definiciju 2.4** (ključ tipa entiteta).",
+      "answer": "Neka je $P = \\{p_i \\mid i = 1, \\ldots, k\\}$ skup pojava tipa entiteta $N(A_1, \\ldots, A_n)$, a $p[X]$ skup pojava $p$ na obeležje $X$. Obeležje $X$ predstavlja **ključ** ako važe:\n\n**1°** $(\\forall p_i, p_j \\in P)(p_i \\ne p_j \\Rightarrow p_i[X] \\ne p_j[X])$\n**2°** $(\\forall X' \\subset X)(\\neg 1°)$",
+      "hint": "Dva uslova: jedinstvenost (1°) i minimalnost (2°)"
+    },
+    {
+      "question": "Šta kaže **uslov 1°** (jedinstvenost) kod ključa?",
+      "answer": "**Uslov 1°:** $(\\forall p_i, p_j \\in P)(p_i \\ne p_j \\Rightarrow p_i[X] \\ne p_j[X])$\n\nAko su $p_i$ i $p_j$ **različite pojave**, onda moraju imati i **različite vrednosti ključa** $X$. Ne postoje dve pojave sa istom vrednošću ključa.",
+      "hint": "Različite pojave → različite vrednosti ključa"
+    },
+    {
+      "question": "Šta kaže **uslov 2°** (minimalnost) kod ključa?",
+      "answer": "**Uslov 2°:** $(\\forall X' \\subset X)(\\neg 1°)$\n\nZa **svaki pravi podskup** $X'$ od $X$ ne važi uslov jedinstvenosti. To znači da ključ **ne poseduje suvišna obeležja** - izbacivanjem bilo kog obeležja gubi se svojstvo jedinstvenosti.",
+      "hint": "Nijedan pravi podskup ključa ne garantuje jedinstvenost"
+    },
+    {
+      "question": "Šta je **superključ**?",
+      "answer": "Superključ je skup obeležja $X$ koji zadovoljava **samo uslov 1°** (jedinstvenost), bez obaveze da važi uslov 2° (minimalnost). Može sadržati suvišna obeležja.",
+      "hint": "Samo jedinstvenost, BEZ minimalnosti"
+    },
+    {
+      "question": "Koja je **razlika** između ključa i superključa?",
+      "answer": "**Ključ** = jedinstvenost (1°) **+** minimalnost (2°)\n**Superključ** = samo jedinstvenost (1°), može imati suvišna obeležja\n\nSvaki ključ **jeste** superključ, ali svaki superključ **nije** ključ.",
+      "hint": "Ključ je minimalan superključ"
+    },
+    {
+      "question": "Šta su **ekvivalentni ključevi**?",
+      "answer": "Ekvivalentni ključevi su **više različitih ključeva** koje jedan tip entiteta može posedovati. Svaki od njih ispunjava oba uslova (1° i 2°), ali se sastoji od različitih obeležja.",
+      "hint": "Tip entiteta može imati više ključeva - svi su ekvivalentni"
+    },
+    {
+      "question": "Šta je **primarni ključ**?",
+      "answer": "Primarni ključ je **jedan od ekvivalentnih ključeva** koji se bira kao glavni za identifikaciju pojava tipa entiteta. U notaciji, sva obeležja primarnog ključa se podvlače jednom, kontinualnom linijom.",
+      "hint": "Izabrani ključ - podvučen u notaciji"
+    },
+    {
+      "question": "Kako se **primarni ključ označava** u notaciji tipa entiteta?",
+      "answer": "Sva obeležja jednog (primarnog) ključa podvlače se **jednom, kontinualnom linijom** u zapisu tipa entiteta.",
+      "hint": "Podvučena obeležja u zapisu"
+    },
+    {
+      "question": "Šta je **pojava tipa poveznika**?",
+      "answer": "Pojava tipa poveznika je **jedna torka** iz skupa poveznika. Ako je tip poveznika binaran, pojava je **uređena trojka**: pojava prvog tipa entiteta + pojava drugog tipa entiteta + torka sopstvenih obeležja $(b_1, \\ldots, b_k)$.",
+      "hint": "Konkretna veza - torka sa entitetima i obeležjima veze"
+    },
+    {
+      "question": "Čime se **reprezentuje** pojava tipa entiteta unutar pojave tipa poveznika?",
+      "answer": "Pojava tipa entiteta se unutar pojave tipa poveznika reprezentuje **vrednošću primarnog ključa** tog tipa entiteta (umesto kompletne pojave).",
+      "hint": "Samo primarni ključ, ne cela pojava"
+    },
+    {
+      "question": "Napiši formulu za **obeležja tipa poveznika**:\n$\\{B_1, \\ldots, B_k\\} = $ ?",
+      "answer": "$$\\{B_1, \\ldots, B_k\\} = \\{A_1, \\ldots, A_m\\} \\setminus \\bigcup_{i=1}^{n} K_i$$\ngde je $\\{A_1, \\ldots, A_m\\}$ skup svih obeležja tipa poveznika, a $K_i$ su primarni ključevi povezanih tipova entiteta. Ovaj skup obeležja **može biti prazan**.",
+      "hint": "Sva obeležja MINUS unija ključeva = sopstvena obeležja veze"
+    },
+    {
+      "question": "Šta je **ključ tipa poveznika**?",
+      "answer": "Ključ $K$ tipa poveznika $R$ predstavlja **pravi ili nepravi podskup unije primarnih ključeva** povezanih tipova entiteta:\n$$K \\subseteq \\bigcup_{i=1}^{n} K_i$$",
+      "hint": "Podskup unije primarnih ključeva entiteta"
+    },
+    {
+      "question": "Napiši formulu za **ključ tipa poveznika** $K$.",
+      "answer": "$$K \\subseteq \\bigcup_{i=1}^{n} K_i$$\ngde $K_i$, $i = 1, \\ldots, n$, predstavljaju primarne ključeve povezanih tipova entiteta.",
+      "hint": "K je podskup unije svih primarnih ključeva"
+    },
+    {
+      "question": "Kako **izbor ključa** tipa poveznika utiče na **semantiku** modela?",
+      "answer": "Semantika modela **značajno zavisi** od odabranog ključa. Na primeru *Poveravanje(IDBROJ_NASTAVNIKA, IDBROJ_PREDMETA)*:\n- Ključ = IDBROJ_NASTAVNIKA → svakom nastavniku **jedan** predmet\n- Ključ = IDBROJ_PREDMETA → svaki predmet ima **jednog** nastavnika\n- Ključ = oba obeležja → N nastavnika : M predmeta",
+      "hint": "Primer 2.16 - Poveravanje - ključ definiše kardinalnost"
+    },
+    {
+      "question": "Kako se **predstavlja ekstenzija** ER modela?",
+      "answer": "Ekstenzija se predstavlja putem **tabela** (slično relacionom modelu). Svakom tipu entiteta ili tipu poveznika odgovara jedna tabela sa obeležjima u zaglavlju i podacima u vrstama.",
+      "hint": "Tabele = relacije entiteta i relacije poveznika"
+    },
+    {
+      "question": "Šta je **relacija entiteta**?",
+      "answer": "Relacija entiteta je **tabela** koja predstavlja model (ekstenziju) jednog skupa entiteta. Zaglavlje sadrži obeležja tipa entiteta, a vrste sadrže podatke o konkretnim entitetima.",
+      "hint": "Tabela za tip entiteta - zaglavlje + redovi"
+    },
+    {
+      "question": "Šta je **relacija poveznika**?",
+      "answer": "Relacija poveznika je **tabela** koja predstavlja model (ekstenziju) jednog skupa poveznika. Sadrži primarne ključeve povezanih tipova entiteta i eventualna sopstvena obeležja poveznika.",
+      "hint": "Tabela za tip poveznika - ključevi entiteta + obeležja veze"
+    },
+    {
+      "question": "Koji je **pouzdan kriterijum** za razlikovanje tipa entiteta od tipa poveznika?",
+      "answer": "Pouzdan kriterijum je pitanje: **da li postojanje pojave jednog tipa entiteta zavisi od postojanja pojave drugog?** Ako torke relacije mogu **samostalno da egzistiraju**, relacija predstavlja ekstenziju **tipa entiteta**. Inače je reč o **tipu poveznika**.",
+      "hint": "Samostalnost egzistencije - zavisi li od drugog tipa?"
+    },
+    {
+      "question": "Šta se dešava u **relaciji poveznika** ako se obriše odgovarajuća pojava iz **relacije entiteta**?",
+      "answer": "Torka u relaciji poveznika **gubi svaki smisao** jer referencira nepostojećeg entiteta. Npr. brisanjem (88, Eva, Pop, 1950) iz *Radnik*, torka (88, Daktilograf) u *Raspoređen* gubi smisao jer MBR = 88 više ne postoji. Ali **obrnuto ne važi** - brisanje iz relacije poveznika ne utiče na relacije entiteta.",
+      "hint": "Poveznik zavisi od entiteta, ne obrnuto"
+    },
+    {
+      "question": "Šta čini **intenziju** ER modela podataka?",
+      "answer": "Intenziju čine:\n- **Tip entiteta** $N(A_1, \\ldots, A_n)$\n- **Tip poveznika** $N(E_1, \\ldots, E_n, B_1, \\ldots, B_k)$\n- **Obeležja** (elementarna i složena)\n- **Domeni** obeležja\n- **ER dijagrami** (vizuelna reprezentacija)",
+      "hint": "Šablon/struktura - tipovi, obeležja, domeni"
+    },
+    {
+      "question": "Šta čini **ekstenziju** ER modela podataka?",
+      "answer": "Ekstenziju čine:\n- **Podatak** (par obeležje-vrednost)\n- **Pojava tipa entiteta** i skup pojava\n- **Ključ tipa entiteta**\n- **Pojava tipa poveznika** i skup pojava\n- **Ključ tipa poveznika**\n- **Tabele** (relacije) za predstavljanje",
+      "hint": "Konkretni podaci - pojave, ključevi, tabele"
+    },
+    {
+      "question": "Napiši formulu za **domen složenog obeležja** $X = \\{A_1, \\ldots, A_k\\}$.",
+      "answer": "$$dom(X) \\subseteq dom(A_1) \\times \\ldots \\times dom(A_k)$$\ntako da je $(a_1, \\ldots, a_k)$ jedna vrednost obeležja $X$, gde je za svako $i$, $a_i \\in dom(A_i)$.",
+      "hint": "Podskup Dekartovog proizvoda domena elementarnih obeležja"
+    },
+    {
+      "question": "Šta je **Primer 2.6** - koji tip entiteta je dat i šta reprezentuje?",
+      "answer": "*Student(BROJ_INDEKSA, IME, PREZIME, NAZIV_FAKULTETA)* - reprezentuje sve studente jednog univerziteta. *Student* je ime tipa ($N$), a obeležja su $A_1$ = BROJ_INDEKSA, $A_2$ = IME, $A_3$ = PREZIME, $A_4$ = NAZIV_FAKULTETA.",
+      "hint": "Klasičan primer tipa entiteta za studente"
+    },
+    {
+      "question": "U **Primeru 2.14**, koliko ključeva ima tip entiteta Student i koji su?",
+      "answer": "Tip entiteta *Student(BROJ_INDEKSA, IME, PREZIME, ADRESA, MATIČNI_BROJ_STANOVNIKA)* poseduje **dva ključa**: *BROJ_INDEKSA* i *MATIČNI_BROJ_STANOVNIKA*. Za fakultetski IS, *BROJ_INDEKSA* bi bio izabran za **primarni** ključ.",
+      "hint": "Dva ekvivalentna ključa - BROJ_INDEKSA je primarni"
+    },
+    {
+      "question": "U **Primeru 2.15**, koji je ključ tipa poveznika *Rad_Na_Projektu* i koji je ključ *Raspoređen*?",
+      "answer": "Ključ *Rad_Na_Projektu*: $K = \\{MBR, SPR\\}$ (složeni ključ)\nKljuč *Raspoređen*: $K = \\{MBR\\}$ (jednostavni ključ - pravi podskup unije ključeva entiteta)",
+      "hint": "Rad_Na_Projektu: MBR+SPR, Raspoređen: samo MBR"
+    },
+    {
+      "question": "Koji su **elementi ER dijagrama** i kojim geometrijskim oblicima se predstavljaju?",
+      "answer": "- **Tip entiteta** → **Pravougaonik** □\n- **Tip poveznika** → **Romb** ◇\n- **Domen (skup vrednosti)** → **Oval** ○\n- **Veze** → Neusmerni potezi (između romba i pravougaonika)\n- **Domeni** → Orijentisani potezi (usmereni ka ovalu)",
+      "hint": "Pravougaonik, Romb, Oval + potezi"
+    },
+    {
+      "question": "Objasni razliku između **intenzije** i **ekstenzije** ER modela i daj primer.",
+      "answer": "**Intenzija** je nivo opisa strukture - tipovi entiteta i poveznika (šablon). Npr. *Student(BROJ_INDEKSA, IME, PREZIME, NAZIV_FAKULTETA)*.\n**Ekstenzija** je nivo konkretnih podataka - pojave koje popunjavaju šablon. Npr. *(159, Ivo, Ban, FTN)*.\nIntenzija kaže *šta* se čuva, ekstenzija *šta je konkretno* sačuvano.",
+      "hint": "Šablon vs. popunjeni podaci"
+    },
+    {
+      "question": "Zašto vrednost *110451* sama po sebi **nije podatak**, a par *(MATIČNI_BROJ_RADNIKA, 110451)* jeste? Objasni korišćenjem **Definicije 2.3**.",
+      "answer": "Prema Definiciji 2.3, podatak je par (obeležje, vrednost) gde obeležje predstavlja osobinu entiteta, a vrednost pripada domenu tog obeležja. Sama vrednost 110451 nema smisao - može biti matični broj, telefon, poštanski broj. Tek uparivanjem sa obeležjem MATIČNI_BROJ_RADNIKA dobija **semantiku** i postaje podatak.",
+      "hint": "Definicija 2.3 - par daje smisao vrednosti"
+    },
+    {
+      "question": "Objasni razliku između **ključa** i **superključa**. Daj primer gde skup obeležja jeste superključ ali **nije** ključ.",
+      "answer": "**Ključ** = jedinstvenost (1°) + minimalnost (2°).\n**Superključ** = samo jedinstvenost (1°).\nPrimer: Za *Student*, skup {BROJ_INDEKSA, IME} je **superključ** (jedinstven jer BROJ_INDEKSA već jedinstven), ali **nije ključ** jer IME je suvišno - bez njega jedinstvenost i dalje važi.",
+      "hint": "Superključ može imati suvišna obeležja"
+    },
+    {
+      "question": "Na primeru *Poveravanje(IDBROJ_NASTAVNIKA, IDBROJ_PREDMETA)*, objasni kako **različiti izbori ključa** menjaju semantiku.",
+      "answer": "- Ključ = **IDBROJ_NASTAVNIKA** → svakom nastavniku se poverava tačno **jedan** predmet\n- Ključ = **IDBROJ_PREDMETA** → svaki predmet ima tačno **jednog** nastavnika\n- Ključ = **oba obeležja** → jedan nastavnik može predavati **više** predmeta i jedan predmet može imati **više** nastavnika\n\nIzbor ključa direktno definiše **kardinalnost** odnosa.",
+      "hint": "Ključ definiše 1:1, 1:N ili M:N odnos"
+    },
+    {
+      "question": "Ako se iz relacije *Radnik* obriše torka *(88, Eva, Pop, 1950)*, šta se dešava sa relacijom *Raspoređen*? A ako se iz *Raspoređen* obriše *(01, Programer)*?",
+      "answer": "Brisanjem iz *Radnik*: torka *(88, Daktilograf)* u *Raspoređen* **gubi smisao** jer referencira nepostojećeg radnika (MBR=88 više ne postoji).\nBrisanjem iz *Raspoređen*: **nema posledica** po *Radnik* i *Radno_Mesto* - radnik MBR=01 jednostavno više nije raspoređen na radno mesto programera.",
+      "hint": "Entitet → poveznik: zavisnost. Poveznik → entitet: nema zavisnosti."
+    },
+    {
+      "question": "Zašto je **granica** između obeležja, tipa entiteta i tipa poveznika često **nejasna**?",
+      "answer": "Jer isto pode modelovati na više načina zavisno od tačke gledišta. Npr:\n- *NARUČILAC* može biti **obeležje** tipa entiteta *Projekat*\n- *Naručilac* može biti **tip entiteta**, a *Projekat* postaje **tip poveznika** (spaja naručioca i projektanta)\n- *Rad_Na_Projektu* može biti **tip poveznika** ILI **tip entiteta** sa ključem IDBAK\n\nModelovanje zavisi od konteksta i zahteva IS-a.",
+      "hint": "Primer 2.18 - Projekat/Projektant/Naručilac - više tačaka gledišta"
+    },
+    {
+      "question": "Objasni **formalnu definiciju tipa entiteta** (Def. 2.1) na primeru *Student(BROJ_INDEKSA, IME, PREZIME, NAZIV_FAKULTETA)*.",
+      "answer": "Def. 2.1: $N(A_1, \\ldots, A_n)$ je tip entiteta ako $N$ predstavlja ime skupa $\\{e \\mid P(e)\\}$, a $A_1, \\ldots, A_n$ obeležja entiteta tog skupa.\n\n$N$ = **Student** (ime klase), $A_1$ = BROJ_INDEKSA, $A_2$ = IME, $A_3$ = PREZIME, $A_4$ = NAZIV_FAKULTETA. Ova četiri obeležja su izabrana od svih mogućih osobina studenata kao bitna za IS.",
+      "hint": "N je ime, A-ovi su izabrana obeležja klase"
+    },
+    {
+      "question": "Objasni **uslove 1° i 2°** iz Definicije 2.4 formalno i šta bi se desilo da važi **samo 1° bez 2°**?",
+      "answer": "**1°**: $\\forall p_i, p_j \\in P: p_i \\ne p_j \\Rightarrow p_i[X] \\ne p_j[X]$ - **jedinstvenost**\n**2°**: $\\forall X' \\subset X: \\neg 1°$ - **minimalnost**\n\nBez uslova 2° bismo imali **superključ** koji može sadržati nepotrebna obeležja, što komplikuje identifikaciju i zauzima više prostora. Npr. {BROJ_INDEKSA, IME} bi bio validan, iako je IME suvišno.",
+      "hint": "Bez minimalnosti = superključ sa suvišnim obeležjima"
+    },
+    {
+      "question": "Šta je **rekurzivni poveznik** i zašto su **uloge** posebno bitne? Daj primer.",
+      "answer": "Rekurzivni poveznik povezuje entitete **istog skupa**. Uloge su ključne jer se bez njih ne bi znalo koji entitet igra koju ulogu.\n\nPrimer: *Rukovodi(Radnik, Radnik)* - par *(Iva, Aca)* bez uloga ne govori ko je rukovodilac. Sa ulogama: *(Iva (rukovodilac), Aca (podčinjeni))* - značenje je jasno.",
+      "hint": "Isti skup entiteta - uloge razrešavaju dvosmislenost"
+    },
+    {
+      "question": "Objasni šta znači da obeležje $A$ predstavlja **funkciju** $A: E \\to dom(A)$ i kako se proširuje na $(A_1, \\ldots, A_n)$.",
+      "answer": "Obeležje $A$ je funkcija koja svakom entitetu $e \\in E$ pridružuje tačno jednu vrednost iz $dom(A)$, pa je $A(e)$ podatak o entitetu.\n\nZa $n$ obeležja: $(A_1, \\ldots, A_n): E \\to dom(A_1) \\times \\ldots \\times dom(A_n)$, gde $(A_1, \\ldots, A_n)(e) = (A_1(e), \\ldots, A_n(e))$. Ta $n$-torka je jedna **pojava tipa entiteta**.",
+      "hint": "Jedno obeležje = jedna vrednost; n obeležja = n-torka"
+    }
+  ]
+}

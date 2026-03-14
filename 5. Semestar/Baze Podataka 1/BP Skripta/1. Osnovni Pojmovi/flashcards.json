@@ -1,0 +1,489 @@
+{
+  "cards": [
+    {
+      "question": "Šta je **realni svet**?",
+      "answer": "Sve što nas okružuje i što možemo da **percipiramo kao realno**.",
+      "hint": "Najširi mogući pojam - obuhvata sve oko nas"
+    },
+    {
+      "question": "Šta je **sistem**?",
+      "answer": "**Strukturirani skup objekata** (činilaca, elemenata) **utvrđenog stanja i ponašanja**, koji se nalaze u **međusobnoj interakciji** da bi ostvarili **unapred zadate ciljeve**.",
+      "hint": "Četiri ključna dela definicije: struktura, stanje/ponašanje, interakcija, ciljevi"
+    },
+    {
+      "question": "Koja **četiri elementa** čine definiciju sistema?",
+      "answer": "1. **Strukturirani skup objekata** (organizovani činioci)\n2. **Utvrđeno stanje i ponašanje** (zna se šta svaki element radi)\n3. **Međusobna interakcija** (elementi komuniciraju)\n4. **Unapred zadati ciljevi** (postoji svrha postojanja)",
+      "hint": "Struktura + stanje + interakcija + ciljevi"
+    },
+    {
+      "question": "Šta je **realni sistem**?",
+      "answer": "Sistem kao **deo realnog sveta**. Poseduje: cilj delovanja, resurse (činioce), procese, strukturu i okruženje.",
+      "hint": "Sistem koji postoji u stvarnosti - npr. fakultet, fabrika, bolnica"
+    },
+    {
+      "question": "Kojih **pet karakteristika** poseduje realni sistem?",
+      "answer": "1. **Cilj delovanja** - zašto sistem postoji\n2. **Resursi (činioci)** - od čega se sastoji\n3. **Procesi** - šta se dešava\n4. **Struktura** - kako su elementi organizovani\n5. **Okruženje** - šta je oko sistema",
+      "hint": "Cilj, resursi, procesi, struktura, okruženje"
+    },
+    {
+      "question": "Šta je **apstraktni sistem**?",
+      "answer": "Sistem kao deo **apstraktnog (imaginarnog) sveta**, specificiran putem **matematičkih struktura**.",
+      "hint": "Suprotnost realnom sistemu - matematički model"
+    },
+    {
+      "question": "Šta je **informacioni sistem (IS)**?",
+      "answer": "**Model realnog sistema** (procesa i resursa).",
+      "hint": "IS je 'slika' realnog sistema, preslikana u podatke"
+    },
+    {
+      "question": "Koji je **cilj izgradnje IS**?",
+      "answer": "**Pružanje informacija** neophodnih za **funkcionisanje i upravljanje** realnim sistemom.",
+      "hint": "IS postoji da bi pružao informacije za upravljanje"
+    },
+    {
+      "question": "Kako se IS pozicionira u **realnom sistemu**?",
+      "answer": "IS je **infrastrukturna komponenta** realnog sistema, namenjena da **podrži upravljački sistem** realnog sistema.",
+      "hint": "IS nije sam sebi svrha - on podržava upravljanje"
+    },
+    {
+      "question": "Kojih **šest zadataka** obavlja IS?",
+      "answer": "1. **Obuhvat (akvizicija)** podataka\n2. **Skladištenje** podataka\n3. **Prenos** podataka\n4. **Prezentovanje** podataka\n5. **Obrada** podataka\n6. **Automatizacija** upravljačkih funkcija u RS",
+      "hint": "Obuhvat → Skladištenje → Prenos → Prezentovanje → Obrada → Automatizacija"
+    },
+    {
+      "question": "Koji su **činioci** informacionog sistema? (svih šest)",
+      "answer": "1. Računarsko-komunikaciona i **softverska infrastruktura**\n2. **Baza podataka** ('skladište' podataka)\n3. **Aplikacije** za rad s podacima\n4. **Projektna i korisnička dokumentacija**\n5. **Krajnji korisnici**\n6. **Tim za eksploataciju i održavanje**",
+      "hint": "Infrastruktura + BP + Aplikacije + Dokumentacija + Korisnici + Tim"
+    },
+    {
+      "question": "Zašto se kaže da je IS **dominantno softverski proizvod**?",
+      "answer": "Iako IS uključuje ljude i dokumentaciju, **srž IS-a čini softver** - računarsko-komunikaciona infrastruktura, baza podataka i aplikacije.",
+      "hint": "Softver je centralna komponenta IS-a"
+    },
+    {
+      "question": "Navesti **primer IS** iz domena *bankarstva*.",
+      "answer": "Bankovne aplikacije: upravljanje **tekućim računima**, **transakcijama**, **štednjom**, **klijentima** i **kreditima**.",
+      "hint": "Sve operacije koje obavljate u mobilnom bankarstvu"
+    },
+    {
+      "question": "Navesti **primer IS** iz domena *telekomunikacija*.",
+      "answer": "Podaci o **pozivima**, **telefonski računi**, **praćenje kvarova**, **model mreže**.",
+      "hint": "Telekom operater beleži svaki poziv"
+    },
+    {
+      "question": "Navesti **primer IS** iz domena *medicine*.",
+      "answer": "Podaci o **pacijentima**, **istorija bolesti**, **pomoć pri dijagnostikovanju**. Primer: **RFZO** (Republički fond za zdravstveno osiguranje).",
+      "hint": "RFZO je konkretan primer medicinskog IS-a"
+    },
+    {
+      "question": "Navesti **primer IS** iz domena *transporta*.",
+      "answer": "**Red vožnje/letenja**, **rezervacija i kupovina karata**, **odabir mesta za sedenje**.",
+      "hint": "Kupovina avionske karte online je korišćenje IS-a"
+    },
+    {
+      "question": "Šta su **sistemi za pomoć pri odlučivanju**?",
+      "answer": "IS koji sadrže podatke o **poslovanju**, generišu **izveštaje**, pružaju **višedimenzionalne poglede** i koriste **data mining** da pomognu menadžerima u donošenju odluka.",
+      "hint": "Pomažu menadžerima da donose bolje odluke"
+    },
+    {
+      "question": "Šta su **geoinformacioni sistemi (GIS)**?",
+      "answer": "IS za **upravljanje, pretraživanje, analizu, manipulisanje i prezentaciju geoinformacija**. Koriste se u: katastru, zaštiti životne sredine, upravljanju resursima.",
+      "hint": "Rad sa geografskim informacijama - katastar, ekologija"
+    },
+    {
+      "question": "Šta je **Industry 4.0** i koje napredne tehnologije uključuje?",
+      "answer": "**Pametne fabrike** (Smart factory) sa: **CPS** (Cyber-Physical Systems), **IoT** (Internet of Things), **WSN** (Wireless Sensor Network), pametni resursi (roboti, coboti, **AGV**), **RFID** senzori, pametni materijali, pametno skladištenje, pametni proizvodi. Zahtevaju inteligentne IS za **Big Data**.",
+      "hint": "Smart factory + IoT + Big Data"
+    },
+    {
+      "question": "Šta je **entitet** (realni entitet)?",
+      "answer": "**Jedinica posmatranja**, odnosno **činilac (resurs) poslovanja** u realnom sistemu.",
+      "hint": "Bilo šta što nas zanima u posmatranom sistemu - osoba, predmet, događaj"
+    },
+    {
+      "question": "Šta je **klasa realnih entiteta**?",
+      "answer": "Skup **'sličnih' entiteta**, odnosno skup entiteta koji poseduje **zajedničko svojstvo**.\n\nFormalno: $E = \\{e_i \\mid P(e_i)\\}$",
+      "hint": "Kategorija u koju spadaju slični entiteti - npr. svi studenti"
+    },
+    {
+      "question": "Kako se **formalno zapisuje** klasa realnih entiteta?",
+      "answer": "$E = \\{e_i \\mid P(e_i)\\}$\n\nGde je:\n- $E$ - klasa entiteta\n- $e_i$ - jedan entitet\n- $P(e_i)$ - predikat (zajedničko svojstvo)",
+      "hint": "Skup svih e_i koji zadovoljavaju predikat P"
+    },
+    {
+      "question": "Šta je **poveznik** (veza)?",
+      "answer": "Reprezentuje **odnos dva ili više realnih entiteta**, ili **prethodno uspostavljenih poveznika**.",
+      "hint": "Veza između entiteta - npr. 'Petar sluša BP1'"
+    },
+    {
+      "question": "Šta je **klasa poveznika** i kako se formalno zapisuje?",
+      "answer": "Skup **veza između klasa** realnih entiteta ili prethodno identifikovanih klasa poveznika. Skup poveznika koji poseduje **isto svojstvo**.\n\nFormalno: $S = \\{(e_1, \\ldots, e_m) \\mid P(e_1, \\ldots, e_m)\\}$\n\nGde je $e_i$ jedan realni entitet ili prethodno uspostavljeni poveznik.",
+      "hint": "Skup svih istovrsnih veza - npr. sve veze tipa 'Sluša'"
+    },
+    {
+      "question": "Šta je **obeležje (atribut)**?",
+      "answer": "**Osobina klase realnih entiteta ili poveznika**. Proističe iz semantike predikata $P(e_i)$.",
+      "hint": "Osobina koja opisuje entitet - npr. ime, prezime, JMBG"
+    },
+    {
+      "question": "Koje su **tri vrste obeležja** prema mogućnosti dekomponovanja?",
+      "answer": "1. **Elementarno** - ne dekomponuje se, atomična vrednost\n2. **Složeno** - može se dekomponovati na druga obeležja\n3. **Skupovno** - reprezentuje skup vrednosti istog tipa",
+      "hint": "Elementarno (atom), Složeno (sastavljen), Skupovno (skup)"
+    },
+    {
+      "question": "Šta je **elementarno obeležje**? Navesti primer.",
+      "answer": "Obeležje koje se **ne dekomponuje** dalje, reprezentuje **atomičnu (elementarnu) vrednost**.\n\nPrimer: *Grad*, *Ulica*, *Broj*, *Stan*",
+      "hint": "Ne može se razbiti na manje smislene delove"
+    },
+    {
+      "question": "Šta je **složeno obeležje**? Navesti primer.",
+      "answer": "Obeležje koje se **može dekomponovati** na druga obeležja, reprezentuje **složenu vrednost**.\n\nPrimer: *ADRESA = (Grad, Ulica, Broj, Stan)*",
+      "hint": "Može se rastaviti na manje delove - npr. adresa"
+    },
+    {
+      "question": "Šta je **skupovno obeležje**?",
+      "answer": "Obeležje koje reprezentuje **skup vrednosti istog tipa**.\n\nPrimer: obeležje 'Telefoni' jednog radnika može sadržati više telefonskih brojeva.",
+      "hint": "Jedna osobina sa više vrednosti - npr. više telefona"
+    },
+    {
+      "question": "Šta je **domen**?",
+      "answer": "**Specifikacija skupa mogućih vrednosti obeležja**, sa definisanim dozvoljenim **relacijama i operacijama** nad datim skupom.",
+      "hint": "Definiše koje vrednosti obeležje sme da ima"
+    },
+    {
+      "question": "Koje su **dve vrste domena** prema načinu nastanka?",
+      "answer": "1. **Predefinisani (primitivni)** - 'a priori' definisani (npr. celi brojevi, stringovi)\n2. **Korisnički definisani (izvedeni)** - definisani korišćenjem postojećih domena, primenom pravila",
+      "hint": "Primitivni (unapred dati) vs. Izvedeni (korisnik definiše)"
+    },
+    {
+      "question": "Šta je **predefinisani (primitivni) domen**?",
+      "answer": "Domen koji je **'a priori' definisan** - dolazi unapred. Primeri: celi brojevi, realni brojevi, stringovi.",
+      "hint": "Ugrađeni tipovi podataka"
+    },
+    {
+      "question": "Šta je **korisnički definisani (izvedeni) domen**?",
+      "answer": "Domen definisan **korišćenjem postojećih domena**, primenom **unapred utvrđenih pravila**.",
+      "hint": "Korisnik sam definiše na osnovu postojećih domena"
+    },
+    {
+      "question": "Šta označava $Dom(A)$, a šta $dom(A)$?",
+      "answer": "- $Dom(A)$ (veliko D) - **specifikacija domena** (pravilo/definicija) pridruženog obeležju $A$\n- $dom(A)$ (malo d) - **konkretni skup mogućih vrednosti** obeležja $A$\n\nPrimer: $Dom(Ocena) = D_{OCENA}$, dok $dom(OCENA) = \\{5,6,7,8,9,10\\}$",
+      "hint": "Veliko D = pravilo, Malo d = skup vrednosti"
+    },
+    {
+      "question": "Napisati primer **specifikacije domena** za ocenu.",
+      "answer": "$D_{OCENA} ::= \\{d \\in \\mathbb{N} \\mid d \\geq 5 \\land d \\leq 10\\}$\n\nPridruživanje: $Dom(Ocena) = D_{OCENA}$\n\nSkup vrednosti: $dom(OCENA) = \\{5, 6, 7, 8, 9, 10\\}$",
+      "hint": "Prirodni brojevi od 5 do 10"
+    },
+    {
+      "question": "Šta je **podatak** i od kojih **četiri komponenti** se sastoji?",
+      "answer": "**Uređena četvorka**: *(Entitet, Obeležje, Vreme, Vrednost)*\n\n- **Entitet** - identifikator entiteta\n- **Obeležje** - oznaka obeležja\n- **Vreme** - vremenska odrednica\n- **Vrednost** - jedna vrednost iz $dom(A)$",
+      "hint": "E + A + V + Vr = podatak"
+    },
+    {
+      "question": "Šta je **kontekst podatka**?",
+      "answer": "**Semantička (smisaona) komponenta** podatka. Trojka: *(Entitet, Obeležje, Vreme)*. Daje **smisao** podatku.",
+      "hint": "Kontekst = trojka bez Vrednosti - daje smisao"
+    },
+    {
+      "question": "Zašto sama **vrednost bez konteksta** nije podatak?",
+      "answer": "Jer **smisao nije određen**. Vrednost '9' sama po sebi ne znači ništa - može biti ocena, broj u adresi, ili bilo šta. Bez trojke *(Entitet, Obeležje, Vreme)* ne znamo na šta se vrednost odnosi.",
+      "hint": "Broj '9' bez konteksta NIJE podatak!"
+    },
+    {
+      "question": "Kada se komponenta **Vreme** može izostaviti iz podatka?",
+      "answer": "1. Ako se uvede **konvencija** da se podatak odnosi na vremenski trenutak u kojem se njime manipuliše\n2. Ako se identifikuje **posebno obeležje** čija vrednost predstavlja vremensku odrednicu",
+      "hint": "Dva slučaja: implicitno vreme ili posebno obeležje za vreme"
+    },
+    {
+      "question": "Podatak je **činjenica iz ___**.",
+      "answer": "Podatak je **činjenica iz realnog sistema**.",
+      "hint": "Svaki podatak reprezentuje nešto stvarno"
+    },
+    {
+      "question": "Šta je **tip entiteta (TE)**?",
+      "answer": "**Model klase realnih entiteta** u informacionom sistemu. Gradi se od **obeležja bitnih za realizaciju ciljeva IS**.",
+      "hint": "TE je preslikavanje klase realnih entiteta u IS"
+    },
+    {
+      "question": "Šta poseduje **tip entiteta**?",
+      "answer": "- **Naziv**: $N$\n- **Skup obeležja**: $Q = \\{A_1, \\ldots, A_n\\}$\n\nPrimer: $Radnik(\\{Mbr, Ime, Prz, Zan, JMBG\\})$",
+      "hint": "Naziv + skup obeležja"
+    },
+    {
+      "question": "Zašto je skup obeležja TE **podskup** skupa obeležja klase realnih entiteta?",
+      "answer": "Jer u realnom svetu entitet ima mnogo osobina (boja očiju, visina...), ali IS modelira samo one **bitne za realizaciju ciljeva IS**. Zato biramo podskup relevantnih obeležja.",
+      "hint": "Ne modeliramo SVE osobine, samo relevantne za IS"
+    },
+    {
+      "question": "Šta je **pojava tipa entiteta**?",
+      "answer": "**Model jednog realnog entiteta** u IS. Ako je TE 'šablon', pojava je jedan konkretan primerak po tom šablonu.",
+      "hint": "Jedna konkretna 'instanca' tipa entiteta - jedan red u tabeli"
+    },
+    {
+      "question": "Kako se **formalno zapisuje** skup pojava tipa entiteta?",
+      "answer": "$SP(N) = \\{p_i \\mid P(p_i)\\}$\n\nSvaka pojava $p_i \\in SP(N)$ reprezentuje **tačno jedan** realni entitet $e_i \\in E$.",
+      "hint": "SP(N) je skup svih pojava tipa entiteta N"
+    },
+    {
+      "question": "Šta je **pojava TE kao skup podataka**? Napisati formalnu definiciju.",
+      "answer": "$p(N) = \\{(A_1, a_1), \\ldots, (A_n, a_n)\\}$\n\nGde za svaki $A_i \\in Q$ važi da je $a_i \\in dom(A_i)$.\n\nPojava je skup parova *(obeležje, vrednost)*, gde svaka vrednost pripada domenu svog obeležja.",
+      "hint": "Skup parova (obeležje, vrednost) za svako obeležje iz Q"
+    },
+    {
+      "question": "Šta je **n-torka (torka)** u kontekstu pojave TE?",
+      "answer": "Kada se u skup atributa TE uvede **redosled** $(A_1, \\ldots, A_n)$, pojava se posmatra kao n-torka: $(a_1, \\ldots, a_n)$.\n\nPrimer: *(1040, Eva, Tot, Programer, 1304971720014)*",
+      "hint": "Uređena lista vrednosti - pojava sa uvedenim redosledom obeležja"
+    },
+    {
+      "question": "Šta je **identifikator tipa entiteta**?",
+      "answer": "Skup obeležja koji obezbeđuje način za **jedinstveno (nedvosmisleno) označavanje** bilo koje pojave TE. Vrednost identifikatora označava **najviše jednu** pojavu.",
+      "hint": "Ono što jednoznačno razlikuje jednu pojavu od druge"
+    },
+    {
+      "question": "Šta je **eksterni identifikator** TE? Navesti primere.",
+      "answer": "Identifikator koji **nije podskup** skupa obeležja TE - dolazi 'spolja'.\n\nPrimeri za Radnik({Mbr, Ime, Prz, JMBG}):\n- Redni broj pojave: $RBR \\in \\{1, \\ldots, n\\}$\n- Oznaka pojave: $\\{p_1, \\ldots, p_n\\}$\n- Memorijska adresa: $\\{a_1, \\ldots, a_n\\}$",
+      "hint": "NIJE među obeležjima TE - npr. redni broj, mem. adresa"
+    },
+    {
+      "question": "Šta je **interni identifikator** TE? Navesti primere.",
+      "answer": "Identifikator koji **jeste podskup** skupa obeležja TE.\n\nPrimeri za Radnik({Mbr, Ime, Prz, JMBG}):\n- *Mbr*\n- *JMBG*\n- *{Mbr, Ime, Prz, JMBG}* (ceo skup - identifikuje, ali nije minimalan)",
+      "hint": "JESTE među obeležjima TE - npr. Mbr, JMBG"
+    },
+    {
+      "question": "Šta je **ključ tipa entiteta**?",
+      "answer": "**Minimalni interni identifikator** tipa entiteta. Skup obeležja $X \\subseteq Q$ koji zadovoljava:\n\n**(1°)** Svojstvo **jednoznačne identifikacije** - ne postoje dve pojave s istom x-vrednošću\n**(2°)** Svojstvo **minimalnosti** - ne postoji $X' \\subset X$ za koji važi (1°)",
+      "hint": "Interni identifikator + minimalnost = ključ"
+    },
+    {
+      "question": "Koja **dva svojstva** mora da zadovolji ključ TE?",
+      "answer": "1. **Jednoznačna identifikacija (1°)** - ne postoje dve pojave s istom vrednošću ključa; svaka pojava mora imati zadatu vrednost ključa\n2. **Minimalnost (2°)** - ne postoji pravi podskup ključa koji sam zadovoljava (1°)",
+      "hint": "Jedinstvenost + Minimalnost"
+    },
+    {
+      "question": "Šta je **svojstvo jednoznačne identifikacije**?",
+      "answer": "Ne postoje **dve pojave TE** s **istom x-vrednošću** za ključ X, i svaka pojava TE **mora imati** zadatu x-vrednost.",
+      "hint": "Svaka pojava ima jedinstvenu vrednost ključa"
+    },
+    {
+      "question": "Šta je **svojstvo minimalnosti**?",
+      "answer": "**Ne postoji** pravi podskup $X' \\subset X$ za koji važi svojstvo jednoznačne identifikacije. Ne može se izbaciti nijedno obeležje iz ključa, a da identifikacija i dalje radi.",
+      "hint": "Ključ je 'najmanji mogući' - ništa se ne može izbaciti"
+    },
+    {
+      "question": "Kako se zapisuje **struktura TE sa ključem**? Šta je $N(Q, C)$?",
+      "answer": "$N(Q, C)$ gde je:\n- $N$ - naziv TE\n- $Q = \\{A_1, \\ldots, A_n\\}$ - skup obeležja\n- $C$ - skup ograničenja\n- $K = \\{K_1, \\ldots, K_m\\} \\subseteq C$ - skup ključeva ($K \\neq \\emptyset$)\n\nPrimer: $Radnik(\\{Mbr, Ime, Prz, JMBG\\}, \\{Mbr, JMBG\\})$",
+      "hint": "Naziv + obeležja + ograničenja (uključujući ključeve)"
+    },
+    {
+      "question": "Šta je **primarni ključ**?",
+      "answer": "**Jedan izabrani ključ** iz skupa ključeva TE. Kada TE ima više ključeva, biramo jedan kao 'glavni'. Često se označava **podvlačenjem**.\n\nPrimer: $Radnik(\\underline{Mbr}, Ime, Prz, JMBG)$",
+      "hint": "Izabrani ključ - u notaciji se podvlači"
+    },
+    {
+      "question": "Šta je **tip poveznika (TP)**?",
+      "answer": "Povezuje **dva ili više TE**, ili prethodno definisanih TP. Model **veza između pojava** povezanih TE ili TP.",
+      "hint": "Model veza u IS-u - npr. 'Sluša', 'Predaje'"
+    },
+    {
+      "question": "Kako se **formalno zapisuje** tip poveznika?",
+      "answer": "$N(N_1, N_2, \\ldots, N_m, Q, C)$\n\n- $N$ - naziv TP\n- $N_i$ - povezani tip (TE ili prethodni TP)\n- $Q = \\{B_1, \\ldots, B_n\\}$ - skup obeležja TP\n- $C$ - skup ograničenja TP\n- $K \\subseteq C$ - skup ključeva TP ($K \\neq \\emptyset$)",
+      "hint": "Naziv + povezani tipovi + obeležja + ograničenja"
+    },
+    {
+      "question": "Šta su **povezani tipovi** u TP?",
+      "answer": "$N_i$ $(i \\in \\{1, \\ldots, m\\})$ - to je **tip entiteta** ili **prethodno definisani tip poveznika** koji učestvuje u vezi.",
+      "hint": "TE ili TP koji su povezani ovim tipom poveznika"
+    },
+    {
+      "question": "Kako se zapisuje **skup pojava TP**?",
+      "answer": "$SP(N) = \\{(p_1, \\ldots, p_m) \\mid P(p_1, \\ldots, p_m)\\}$\n\nGde je $p_i$ jedna pojava TE ili TP $N_i$, a $P(p_1, \\ldots, p_m)$ je predikat TP.",
+      "hint": "Skup torki pojava povezanih tipova koje zadovoljavaju predikat"
+    },
+    {
+      "question": "Navesti **tri primera** tipova poveznika iz materijala.",
+      "answer": "1. $Sluša(Student, Predmet, \\{Semestar\\}, C_1)$ - TP nad dva TE\n2. $Predaje(Nastavnik, Predmet, \\{Datum\\}, C_2)$ - TP nad dva TE\n3. $PolažeIspit(Sluša, Predaje, \\{Ocena\\}, C_3)$ - TP nad **dva TP** (poveznik nad poveznicima!)",
+      "hint": "Sluša, Predaje, PolažeIspit - treći je poseban jer povezuje TP"
+    },
+    {
+      "question": "Šta je **pojava tipa poveznika**?",
+      "answer": "Reprezentuje **jedan poveznik** u realnom sistemu.\n\nOznaka: $p(N, Vreme)$ ili $p(N)$.\n\nPredstavlja skup podataka: $p(N) = (p_1, \\ldots, p_m)(N) = \\{(B_1, b_1), \\ldots, (B_k, b_k)\\}$\n\nGde $b_i \\in dom(B_i)$.",
+      "hint": "Jedan konkretan primerak veze - npr. 'Petar sluša BP1 u semestru 3'"
+    },
+    {
+      "question": "Šta je **identifikator tipa poveznika**?",
+      "answer": "Niz $(N_1, N_2, \\ldots, N_m)$ ili **neki njegov neprazan podniz**. Obezbeđuje **jedinstveno označavanje** bilo koje pojave TP. Vrednost $(p_1, \\ldots, p_m)$ označava **najviše jednu** pojavu TP.",
+      "hint": "Kombinacija ključeva povezanih tipova identifikuje pojavu veze"
+    },
+    {
+      "question": "Kako se izvodi **ključ tipa poveznika**?",
+      "answer": "Skup obeležja $X$, izveden na osnovu **ključeva povezanih tipova**.\n\nČesto: $X \\subseteq K_1 \\cup \\ldots \\cup K_m$\n\nMora zadovoljiti:\n**(1°)** Jednoznačnu identifikaciju\n**(2°)** Minimalnost",
+      "hint": "Unija ključeva povezanih tipova, uz jednoznačnost i minimalnost"
+    },
+    {
+      "question": "Kako **alternativna terminologija** naziva TE, pojavu TE, TP i pojavu TP?",
+      "answer": "- Tip entiteta → *Entitet*\n- Pojava tipa entiteta → *Instanca entiteta*\n- Tip poveznika → *Poveznik* ili *veza*\n- Pojava tipa poveznika → *Instanca poveznika*",
+      "hint": "TE→Entitet, Pojava TE→Instanca, TP→Veza, Pojava TP→Instanca poveznika"
+    },
+    {
+      "question": "Šta je **struktura podataka**? Kako se formalno definiše?",
+      "answer": "**Orijentisani graf** $G(V, \\Gamma)$\n\n- $V$ - skup čvorova (svaki reprezentuje podatke sa pridruženom semantikom)\n- $\\Gamma$ - skup grana ($\\Gamma \\subseteq V \\times V$, binarna relacija; svaka grana reprezentuje veze sa pridruženom semantikom)",
+      "hint": "Graf sa čvorovima (podaci) i granama (veze)"
+    },
+    {
+      "question": "Šta je $V$, a šta $\\Gamma$ u definiciji strukture podataka $G(V, \\Gamma)$?",
+      "answer": "- $V$ - **skup čvorova**: svaki čvor reprezentuje neke podatke, svakom je pridružena semantika\n- $\\Gamma$ - **skup grana**: $\\Gamma \\subseteq V \\times V$ (binarna relacija); svaka grana reprezentuje veze između podataka",
+      "hint": "V = čvorovi (podaci), Γ = grane (veze)"
+    },
+    {
+      "question": "Koje su vrste struktura podataka prema **nivou apstrakcije**?",
+      "answer": "1. **Logičke strukture obeležja** (najapstraktnije - odnosi između tipova)\n2. **Logičke strukture podataka** (srednji nivo - konkretni podaci)\n3. **Fizičke strukture podataka** (najkonkretnije - smeštanje na medijum)",
+      "hint": "LSO → LSP → FSP (od apstraktnog ka konkretnom)"
+    },
+    {
+      "question": "Koje su vrste struktura podataka prema **broju prethodnika i sledbenika**?",
+      "answer": "1. **Linearne** strukture\n   - *Cikličke* (poslednji → prvi)\n   - *Acikličke* (bez ciklusa)\n2. **Strukture tipa stabla** (drveta)\n3. **Mrežne** strukture",
+      "hint": "Linearne (cikličke/acikličke) + Stablo + Mreža"
+    },
+    {
+      "question": "Šta je **linearna struktura** podataka? Koje podvrste postoje?",
+      "answer": "Struktura gde svaki čvor ima **najviše jednog prethodnika i jednog sledbenika**.\n\nPodvrste:\n- **Cikličke** - poslednji element se vraća na prvi\n- **Acikličke** - nema ciklusa",
+      "hint": "Kao lanac - jedan za drugim, ciklički ili ne"
+    },
+    {
+      "question": "Šta je **struktura tipa stabla** (drveta)?",
+      "answer": "Struktura gde svaki čvor ima **tačno jednog prethodnika** (osim korena koji nema prethodnika), ali može imati **više sledbenika**.",
+      "hint": "Hijerarhija - kao porodično stablo"
+    },
+    {
+      "question": "Šta je **mrežna struktura** podataka?",
+      "answer": "Struktura gde čvorovi mogu imati **više prethodnika i više sledbenika**.",
+      "hint": "Najslobodnija struktura - svako sa svakim"
+    },
+    {
+      "question": "Šta je **logička struktura obeležja (LSO)**?",
+      "answer": "Struktura nad skupom **tipova entiteta, tipova poveznika i njihovih atributa**. Model dela realnog sistema (resursa).\n\nFormalno: $M = (S_{TE}, R_{TE})$",
+      "hint": "Šema - šablon koji opisuje tipove i njihove odnose"
+    },
+    {
+      "question": "Kako se formalno zapisuje LSO? Šta je $M = (S_{TE}, R_{TE})$?",
+      "answer": "- $S_{TE}$ - skup tipova (entiteta i/ili poveznika)\n- $R_{TE}$ - relacija koja $S_{TE}$ snabdeva strukturom; modelira odnose između realnih entiteta; svaka grana prikazuje vezu tipa sa njegovim povezanim tipom",
+      "hint": "S_TE = skup tipova, R_TE = relacija (struktura/veze)"
+    },
+    {
+      "question": "Koji su **dva pristupa** organizaciji LSO?",
+      "answer": "**Pristup (A)** - 'I TE i TP su čvorovi' (koristi se na predmetu)\n**Pristup (B)** - 'TE su čvorovi, a TP su grane' (istorijski stariji, ograničeniji)",
+      "hint": "A: svi su čvorovi | B: TE čvorovi, TP grane"
+    },
+    {
+      "question": "Opisati **pristup (A)** za organizaciju LSO.",
+      "answer": "**'I TE i TP su čvorovi'** u grafu:\n- $S_{TE}$ sadrži skup **svih TE i TP** modeliranog dela sistema\n- $R_{TE}$ sadrži grane koje prikazuju veze TP s povezanim tipovima\n- Simboli za TE i TP mogu, a ne moraju biti različiti\n\n*Koristi se na ovom predmetu.*",
+      "hint": "Fleksibilniji pristup - i TE i TP su ravnopravni čvorovi"
+    },
+    {
+      "question": "Opisati **pristup (B)** za organizaciju LSO.",
+      "answer": "**'TE su čvorovi, a TP su grane'**:\n- $S_{TE}$ sadrži samo **TE** modeliranog dela sistema\n- $R_{TE}$ sadrži grane koje prikazuju **TP i njihove veze**\n- Istorijski se prvi pojavio, ali ima ograničenja",
+      "hint": "Stariji pristup - TE su čvorovi, veze su grane"
+    },
+    {
+      "question": "Koja su **ograničenja pristupa (B)**?",
+      "answer": "1. TP **ne sme da sadrži** skup obeležja $Q$ i skup ograničenja $C$\n2. TP **ne može referencirati** drugi TP, već samo TE\n3. Menja se pogled na upotrebu koncepta TE\n4. Iskazivanje TP **reda većeg od 2** zahteva pojam **hipergrane** grafa",
+      "hint": "TP bez obeležja, bez TP→TP veza, problem sa vezama višeg reda"
+    },
+    {
+      "question": "Koji su **nivoi detaljnosti** vizuelnog prikaza LSO?",
+      "answer": "1. **Nivo tipova entiteta i tipova poveznika** (globalni prikaz) - samo tipovi i veze, bez obeležja\n2. **Nivo obeležja** (detaljni prikaz) - prikazuje i obeležja svakog tipa",
+      "hint": "Globalni (samo tipovi) vs. Detaljni (tipovi + obeležja)"
+    },
+    {
+      "question": "Šta je **logička struktura podataka (LSP)**?",
+      "answer": "Definiše se **nad skupom podataka**, putem posebne relacije. Definiše se **u granicama zadate LSO**. LSO predstavlja **kontekst (model)** za LSP.",
+      "hint": "LSO je šablon, LSP je šablon popunjen podacima"
+    },
+    {
+      "question": "Šta je **šema logičke strukture podataka**?",
+      "answer": "**LSO** nad kojom je definisana LSP. Drugim rečima, šema je sam 'šablon' po kome su podaci organizovani.",
+      "hint": "Šema = LSO koja je kontekst za LSP"
+    },
+    {
+      "question": "Šta je **tip sloga**?",
+      "answer": "**Linearna struktura skupa obeležja** datog TE u kontekstu LSP. To je 'zaglavlje tabele' - šablon po kome se unose podaci.\n\nPrimer: *(BRI, Ime, Prezime, DatumRođenja)*",
+      "hint": "Zaglavlje tabele - lista naziva obeležja"
+    },
+    {
+      "question": "Šta je **slog (n-torka)** u kontekstu LSP?",
+      "answer": "**Linearna struktura nad skupom podataka jednog entiteta** datog tipa. **Složeni podatak** nad složenim obeležjem iz skupa obeležja TE $Q$. To je jedan 'red u tabeli'.\n\nPrimer: *(5078, Sanja, Marić, 21.01.1997.)*",
+      "hint": "Jedan red u tabeli - konkretni podaci jednog entiteta"
+    },
+    {
+      "question": "Šta je **datoteka** u kontekstu LSP?",
+      "answer": "**Struktura podataka nad skupom pojava jednog TE**. Sadrži sve slogove istog tipa - cela 'tabela' za jedan tip entiteta.",
+      "hint": "Cela tabela jednog TE - skup svih slogova istog tipa"
+    },
+    {
+      "question": "Šta je **baza podataka** u kontekstu LSP?",
+      "answer": "**Logička struktura nad skupom pojava skupa TE i TP**. Obuhvata podatke o **svim** tipovima entiteta i tipovima poveznika sa svim međusobnim vezama.",
+      "hint": "Skup svih datoteka (tabela) + njihove veze = baza podataka"
+    },
+    {
+      "question": "Šta je **šema baze podataka**?",
+      "answer": "**Struktura nad skupom TE i TP** koja predstavlja kontekstnu LSO za bazu podataka.",
+      "hint": "LSO celog sistema - šablon za celu bazu"
+    },
+    {
+      "question": "Koji su **načini reprezentacije** LSP?",
+      "answer": "1. **Putem grafova** - čvorovi su slogovi, grane su veze\n2. **Putem tabela** - tabelarni prikaz (najpoznatiji iz relacionih BP)",
+      "hint": "Grafovi ili tabele"
+    },
+    {
+      "question": "Šta je **fizička struktura podataka (FSP)**?",
+      "answer": "**LSP smeštena na materijalni nosilac podataka** (memorijski medijum). Uključuje podatke o **samom načinu smeštanja** LSP na memorijski medijum.",
+      "hint": "Kako su podaci fizički zapisani na disku"
+    },
+    {
+      "question": "Nabrojati **osam pristupa/postupaka** koje FSP zahteva.",
+      "answer": "1. Upravljanje **slobodnim i zauzetim** memorijskim prostorom\n2. **Izbor lokacija** za smeštanje podataka\n3. **Kodiranje** podataka\n4. **Formatiranje i interpretacija** sadržaja lokacija\n5. **Memorisanje veza** u strukturi podataka\n6. **Kreiranje** fizičke strukture podataka\n7. **Pristupanje** podacima i njihovo selektovanje\n8. **Ažuriranje i reorganizovanje** strukture podataka",
+      "hint": "Prostor, lokacije, kodiranje, format, veze, kreiranje, pristup, ažuriranje"
+    },
+    {
+      "question": "Koja je razlika između **LSO**, **LSP** i **FSP**?",
+      "answer": "- **LSO** = šema/šablon (tipovi, obeležja, odnosi)\n- **LSP** = popunjen šablon (konkretni podaci organizovani po LSO)\n- **FSP** = LSP smeštena na fizički medijum (kako su podaci zapisani na disku)\n\nLSO je kontekst za LSP, a LSP se realizuje kroz FSP.",
+      "hint": "Šablon → Podaci → Disk"
+    },
+    {
+      "question": "Objasnite vezu: **realni sistem → IS → baza podataka**.",
+      "answer": "**Realni sistem** je deo realnog sveta sa ciljevima, resursima i procesima. **IS** je model tog sistema koji pruža informacije za upravljanje. **Baza podataka** je centralna komponenta IS-a - logička struktura nad pojava svih TE i TP. Preslikavanje: realni entiteti → TE, realne veze → TP, sve zajedno → BP.",
+      "hint": "Od stvarnosti, preko modela, do baze podataka"
+    },
+    {
+      "question": "Koja je razlika između **entiteta**, **klase entiteta**, **tipa entiteta** i **pojave TE**?",
+      "answer": "- **Entitet** = konkretan objekat u *realnom svetu* (student Petar)\n- **Klasa entiteta** = skup sličnih entiteta u *realnom svetu* (svi studenti)\n- **Tip entiteta** = model klase u *IS-u*, definisan nazivom i obeležjima\n- **Pojava TE** = model jednog entiteta u *IS-u* - jedan slog\n\nEntitet i klasa su u **realnom svetu**, TE i pojava su u **modelu (IS)**.",
+      "hint": "Realni svet: entitet/klasa | IS: tip/pojava"
+    },
+    {
+      "question": "Zašto svaki **ključ jeste** interni identifikator, ali **obrnuto ne važi**?",
+      "answer": "**Ključ = minimalni interni identifikator**. Svaki ključ zadovoljava jednoznačnu identifikaciju (pa je interni identifikator), ALI ne mora svaki interni identifikator biti minimalan.\n\nPrimer: {Mbr, Ime, Prz, JMBG} **jeste** interni identifikator, ali **NIJE** ključ jer Mbr sam dovoljno identifikuje.",
+      "hint": "Ključ dodaje uslov minimalnosti na interni identifikator"
+    },
+    {
+      "question": "Zašto je **PolažeIspit(Sluša, Predaje, {Ocena}, C₃)** poseban primer?",
+      "answer": "Jer je to tip poveznika čiji **povezani tipovi su sami TP** (Sluša i Predaje), a ne TE. To je **poveznik nad poveznicima**. Po definiciji, TP može povezivati ne samo TE, već i prethodno definisane TP.",
+      "hint": "Poveznik koji ne povezuje entitete, već druge poveznike"
+    },
+    {
+      "question": "Navedite svih **šest zadataka IS** na primeru *fakultetskog IS-a*.",
+      "answer": "1. **Obuhvat** - unos podataka o studentima pri upisu\n2. **Skladištenje** - čuvanje podataka u bazi\n3. **Prenos** - slanje obaveštenja studentima\n4. **Prezentovanje** - prikazivanje rezultata ispita\n5. **Obrada** - računanje proseka ocena, rang lista\n6. **Automatizacija** - automatsko generisanje izveštaja za dekanat",
+      "hint": "Upis → Baza → Obaveštenja → Rezultati → Prosek → Izveštaji"
+    },
+    {
+      "question": "Šta je **datoteka** vs. **baza podataka** u LSP?",
+      "answer": "- **Datoteka** = struktura podataka nad pojava **jednog TE** (jedna tabela)\n- **Baza podataka** = logička struktura nad pojava **više TE i TP** (sve tabele + veze)\n\nDatoteka pokriva jedan tip, BP pokriva ceo sistem.",
+      "hint": "Datoteka = jedna tabela | BP = sve tabele + veze"
+    },
+    {
+      "question": "Navesti primer iz materijala za **relacionu bazu podataka** sa tabelama.",
+      "answer": "Šest tabela:\n- **Radnik**(MBR, IME, PRZ, GRD, SEF)\n- **Poslovnica**(SPO, NAZ, DIR)\n- **Zgrada**(SZG, ADR, BRS)\n- **Zaposlen**(MBR, SPO) - TP\n- **Nalazi_se**(SPO, SZG) - TP\n- **Poseduje_Stan_u**(MBR, SZG) - TP\n\nPrve tri su TE, poslednje tri su TP.",
+      "hint": "Radnik, Poslovnica, Zgrada + tri tipa poveznika"
+    }
+  ]
+}

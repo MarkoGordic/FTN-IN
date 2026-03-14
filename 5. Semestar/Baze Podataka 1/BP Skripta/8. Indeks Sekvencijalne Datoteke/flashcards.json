@@ -1,0 +1,604 @@
+{
+  "cards": [
+    {
+      "question": "Šta su **indeksne datoteke** i koji problem rešavaju?",
+      "answer": "Indeksne datoteke su **kompromis** između sekvencijalnih i rasutih datoteka. One obezbeđuju solidnu podršku i za **direktnu** i za **redoslednu** obradu, kao i za obe vrste traženja (slučajno odabranog i logički narednog sloga). Koriste **indeks** - pomoćnu strukturu sa parovima *(vrednost ključa, adresa sloga)* za preslikavanje argumenta traženja u adresu sloga.",
+      "hint": "Pomisli na kompromis između sekvencijalne i rasute organizacije."
+    },
+    {
+      "question": "Na koje dve osnovne kategorije se dele indeksne datoteke?",
+      "answer": "Indeksne datoteke se dele na **statičke** i **dinamičke**. Statičke su istorijski starije i danas imaju samo didaktički značaj. Dinamičke se tokom životnog veka menjaju - i memorijski prostor i indeks se ažuriraju.",
+      "hint": "Podela po tome da li se indeks i memorijski prostor menjaju tokom životnog veka."
+    },
+    {
+      "question": "Zašto se statičke indeksne datoteke zovu *statičkim*? Navedi **dva razloga**.",
+      "answer": "1. Veličina dodeljenog **memorijskog prostora** se određuje prilikom projektovanja i kasnije se **ne menja**.\n2. **Indeks** se nakon formiranja praktično više **ne ažurira**.",
+      "hint": "Dva aspekta nepromenljivosti: prostor i indeks."
+    },
+    {
+      "question": "Od kojih **tri zone** se sastoji statička indeks-sekvencijalna datoteka?",
+      "answer": "1. **Primarna zona** (zona podataka) - sekvencijalna organizacija\n2. **Zona indeksa** - spregnuta organizacija (*n*-arno stablo)\n3. **Zona prekoračenja** - spregnuta organizacija (lanci prekoračilaca)",
+      "hint": "Tri 'prostorije biblioteke': gde su knjige, gde je katalog, gde je pomoćno skladište."
+    },
+    {
+      "question": "Kakvu organizaciju ima **primarna zona** IS datoteke?",
+      "answer": "Primarna zona ima **sekvencijalnu organizaciju** - slogovi su uređeni saglasno **rastućim vrednostima ključa** i grupisani u **blokove**. Poželjno je da faktor blokiranja bude što veći.",
+      "hint": "Slogovi poređani po ključu, kao u sekvencijalnoj datoteci."
+    },
+    {
+      "question": "Da li se primarna zona naknadno ažurira nakon formiranja IS datoteke?",
+      "answer": "**Ne.** Primarna zona se kreira u postupku formiranja statičke IS datoteke i **nikada se naknadno ne ažurira**. Jednom formirana, ostaje netaknuta. Novi slogovi se upisuju u **zonu prekoračenja**.",
+      "hint": "Ključna karakteristika statičke IS datoteke - nepromenljivost primarne zone."
+    },
+    {
+      "question": "Koji su **dva cilja** organizacije primarne zone IS datoteke?",
+      "answer": "1. **Iskoristiti** poželjne osobine sekvencijalne organizacije u **redoslednoj obradi** podataka.\n2. **Izbeći** efekat loših performansi **ažuriranja** sekvencijalno organizovane datoteke (gde bi svaki upis zahtevao pomeranje svih slogova sa većim ključem).",
+      "hint": "Jedan cilj je pozitivan (iskoristiti), drugi negativan (izbeći)."
+    },
+    {
+      "question": "Kakvu strukturu ima **zona indeksa** IS datoteke?",
+      "answer": "Zona indeksa ima strukturu **punog stabla traženja** (pristupa) reda $n$ ($n \\geq 2$) i visine $h$. Svaki čvor sadrži od **1** do **n** elemenata. Elementi su parovi $(k_e, A_e)$ uređeni saglasno rastućim vrednostima ključa.",
+      "hint": "n-arno puno stablo sa parovima (ključ, adresa)."
+    },
+    {
+      "question": "Šta predstavlja par $(k_e, A_e)$ u zoni indeksa?",
+      "answer": "$k_e = k(S)$ je **vrednost ključa** sloga $S$, a $A_e$ je **adresa bloka** primarne zone u kojem se nalazi slog $S$ (ako je element u listu), ili **adresa direktno podređenog čvora** stabla traženja koji sadrži $k_e$ (ako je element u unutrašnjem čvoru).",
+      "hint": "Značenje adrese zavisi od toga da li je element u listu ili u unutrašnjem čvoru."
+    },
+    {
+      "question": "Šta predstavlja adresa $A_e$ u **listu** stabla traženja?",
+      "answer": "$A_e$ u listu predstavlja **adresu bloka u zoni podataka** (primarnoj zoni) koji sadrži slog sa vrednošću ključa $k(S) = k_e$.",
+      "hint": "List → pokazuje na primarnu zonu."
+    },
+    {
+      "question": "Šta predstavlja adresa $A_e$ u **čvoru na višem nivou** hijerarhije stabla?",
+      "answer": "$A_e$ u čvoru na višem nivou predstavlja **adresu direktno podređenog čvora** u kojem se nalazi element sa vrednošću ključa $k_e$. Adrese $A_e$ se mogu nazivati i **pokazivačima**.",
+      "hint": "Viši nivo → pokazuje na podređeni čvor."
+    },
+    {
+      "question": "Koje vrednosti ključa se propagiraju u zonu indeksa?",
+      "answer": "U zonu indeksa se propagiraju ili **najveće** ili **najmanje** vrednosti ključa iz svakog bloka primarne zone. Elementi listova sadrže po jednu vrednost ključa iz svakog bloka, a elementi na višim nivoima po jednu vrednost iz svakog direktno podređenog čvora.",
+      "hint": "Dva izbora: max ili min iz svakog bloka."
+    },
+    {
+      "question": "Koja vrednost ključa se upisuje kao 'najveća' u stablo traženja pri propagaciji **najvećih** vrednosti?",
+      "answer": "U poslednji blok (krajnji desni element krajnjeg desnog lista) upisuje se **najveća dozvoljena vrednost ključa** (npr. 99), a ne stvarno najveća vrednost ključa u datoteci. Ovu vrednost upisuje metoda pristupa pri formiranju.",
+      "hint": "Poslednji blok dobija 'sentinel' vrednost, ne stvarni max."
+    },
+    {
+      "question": "Koja vrednost ključa se upisuje kao 'najmanja' u stablo traženja pri propagaciji **najmanjih** vrednosti?",
+      "answer": "Upisuje se vrednost **00** (ili 0), a ne stvarno najmanja vrednost ključa u datoteci. I ovu vrednost upisuje metoda pristupa pri formiranju datoteke.",
+      "hint": "Analogno max propagaciji, ali sa sentinel vrednošću 0."
+    },
+    {
+      "question": "Koliko direktno podređenih čvorova poseduje čvor koji sadrži $m$ elemenata ($1 \\leq m \\leq n$) i nije list?",
+      "answer": "Čvor koji nije list, a sadrži $m$ elemenata, poseduje tačno **$m$ direktno podređenih čvorova**.",
+      "hint": "Broj podčvorova = broj elemenata u čvoru."
+    },
+    {
+      "question": "Kako glasi formula za **visinu stabla** traženja $h$?",
+      "answer": "$$h = \\lceil \\log_n B \\rceil$$\ngde je $B$ broj blokova u primarnoj zoni, a $n$ red stabla (max broj elemenata u čvoru).",
+      "hint": "Logaritam po bazi n od broja blokova, zaokružen naviše."
+    },
+    {
+      "question": "Kako glasi formula za **broj čvorova** $C_i$ na $i$-tom nivou hijerarhije stabla?",
+      "answer": "$$C_i = \\left\\lceil \\frac{B}{n^{h-i+1}} \\right\\rceil$$\ngde je $i = 1, ..., h$. Za $i = 1$ (koren): $C_1 = \\lceil B / n^h \\rceil$.",
+      "hint": "B podeljeno sa n na stepen (h-i+1), zaokruženo naviše."
+    },
+    {
+      "question": "Kako glasi formula za **ukupni broj čvorova** stabla $C$?",
+      "answer": "$$C = \\sum_{i=1}^{h} \\left\\lceil \\frac{B}{n^{h-i+1}} \\right\\rceil$$\nSuma broja čvorova po svim nivoima hijerarhije.",
+      "hint": "Suma svih $C_i$ od nivoa 1 do nivoa h."
+    },
+    {
+      "question": "Šta je **kapacitet stabla** $K$ i kako se računa?",
+      "answer": "**Kapacitet stabla** $K = nC$ govori koliko se parova $(k_e, A_e)$ može upisati u čvorove stabla. Računa se kao proizvod reda stabla $n$ i ukupnog broja čvorova $C$.",
+      "hint": "Red stabla puta ukupan broj čvorova."
+    },
+    {
+      "question": "Kako glasi formula za **ukupni broj elemenata** $E$ u stablu pristupa?",
+      "answer": "$$E = \\sum_{i=1}^{h} \\left\\lceil \\frac{B}{n^{h-i}} \\right\\rceil$$",
+      "hint": "Slično formuli za C, ali sa stepenom h-i umesto h-i+1."
+    },
+    {
+      "question": "Za $B = 5$ i $n = 2$, koliko iznose $h$, $C$, $K$ i $E$?",
+      "answer": "$h = 3$, $C = 6$, $K = 12$, $E = 10$. (Primer 12.2 iz udžbenika.)",
+      "hint": "Primer 12.2 - vrednosti za stablo sa slika 12.1 i 12.2."
+    },
+    {
+      "question": "U kom opsegu se u praksi bira red stabla traženja $n$?",
+      "answer": "U praksi se red stabla traženja bira u opsegu od **50 do 100**. Male vrednosti $n$ (npr. 2) se koriste samo u didaktičke svrhe.",
+      "hint": "Mnogo veće vrednosti od didaktičkih primera."
+    },
+    {
+      "question": "Šta je **zona prekoračenja** i čemu služi?",
+      "answer": "Zona prekoračenja, kao i primarna zona, sadrži **kompletne slogove** datoteke. Slogovi se upisuju u nju tokom **ažuriranja**, preciznije prilikom **upisa novih slogova** u datoteku, kada su blokovi primarne zone puni.",
+      "hint": "Pomoćno skladište za nove slogove koji ne staju u primarnu zonu."
+    },
+    {
+      "question": "Šta su **prekoračioci**?",
+      "answer": "Prekoračioci su **slogovi** koji se nalaze u **zoni prekoračenja**. Nastaju kada se novi slog upisuje u datoteku, a odgovarajući blok primarne zone je **pun** ($m = n$). Svaki blok primarne zone može imati svoje prekoračioce.",
+      "hint": "Slogovi koji su se 'prelili' iz punog bloka primarne zone."
+    },
+    {
+      "question": "Šta se dešava pri upisu novog sloga kada blok primarne zone **nije kompletan** ($m \\neq n$)?",
+      "answer": "Upis dovodi samo do **pomeranja slogova unutar bloka**. Slogovi sa vrednošću ključa većom od $k(S)$ pomeraju se za jednu lokaciju ka kraju bloka. Slog se upisuje u blok, **nema prelivanja** u zonu prekoračenja.",
+      "hint": "Prost upis sa pomeranjem unutar bloka - nema prekoračenja."
+    },
+    {
+      "question": "Šta se dešava pri upisu novog sloga kada je blok primarne zone **kompletan** i važi $k(S) < k_{e(max)}$?",
+      "answer": "Novi slog se **upisuje u blok** na odgovarajuće mesto, svi slogovi sa većom vrednošću ključa se **pomeraju** za jednu lokaciju ka kraju bloka, a slog sa **do tada najvećom** vrednošću ključa $k_{e(max)}$ se **istiskuje u zonu prekoračenja**.",
+      "hint": "Novi ulazi u blok, stari max izlazi u prekoračenje."
+    },
+    {
+      "question": "Šta se dešava pri upisu novog sloga kada je blok primarne zone **kompletan** i važi $k(S) > k_{e(max)}$?",
+      "answer": "Novi slog se **direktno upisuje u zonu prekoračenja** jer ima vrednost ključa veću od trenutno maksimalne u bloku, pa ne pripada primarnoj zoni tog bloka.",
+      "hint": "Novi slog odmah ide u prekoračenje - veći je od svega u bloku."
+    },
+    {
+      "question": "Koja **dva osnovna postupka** povezivanja prekoračilaca sa listom stabla traženja postoje?",
+      "answer": "1. **Direktno povezivanje** - lanac prekoračilaca je putem pokazivača neposredno povezan sa elementom **lista stabla traženja**.\n2. **Indirektno povezivanje** - lanac prekoračilaca je povezan posredno, putem pokazivača u **bloku primarne zone**.",
+      "hint": "Razlika: gde je pokazivač na lanac prekoračilaca - u listu ili u bloku."
+    },
+    {
+      "question": "Kako funkcioniše **direktno povezivanje** prekoračilaca?",
+      "answer": "Kod direktnog povezivanja, informaciju o prekoračiocima sadrže **elementi listova stabla**. Element lista je **četvorka** $(k_e, A_e, k_z, A_z)$. Lanac prekoračilaca je putem pokazivača **neposredno povezan** sa odgovarajućim elementom lista stabla traženja.",
+      "hint": "List stabla ima četvorku sa info o prekoračiocima."
+    },
+    {
+      "question": "Šta predstavlja svaki element **četvorke** $(k_e, A_e, k_z, A_z)$ kod direktnog povezivanja?",
+      "answer": "- $k_e$ - **najveća** vrednost ključa iz bloka sa adresom $A_e$\n- $A_e$ - adresa bloka u primarnoj zoni\n- $k_z$ - **najveća** vrednost ključa prekoračioca iz tog bloka\n- $A_z$ - adresa lokacije prekoračioca koji ima **najmanju** vrednost ključa",
+      "hint": "ke i Ae su za blok, kz i Az su za prekoračioce."
+    },
+    {
+      "question": "Šta znači jednakost $A_e = A_z$ kod direktnog povezivanja prekoračilaca?",
+      "answer": "Jednakost $A_e = A_z$ ukazuje da iz bloka sa adresom $A_e$ **nema prekoračilaca**. To je inicijalno stanje nakon formiranja datoteke (važi i $k_e = k_z$).",
+      "hint": "Nema prekoračilaca - obe adrese pokazuju na isto mesto."
+    },
+    {
+      "question": "Kako funkcioniše **indirektno povezivanje** prekoračilaca?",
+      "answer": "Kod indirektnog povezivanja, svaki **blok primarne zone** je proširen jednim **poljem pokazivača**. Taj pokazivač predstavlja adresu lokacije u kojoj je smešten prekoračilac sa **najmanjom** vrednošću ključa iz posmatranog bloka.",
+      "hint": "Pokazivač na prekoračioce je u samom bloku primarne zone."
+    },
+    {
+      "question": "Šta je **fiktivni slog** sa vrednošću ključa 0 kod indirektnog povezivanja?",
+      "answer": "Pri formiranju IS datoteke sa indirektnim povezivanjem, metoda pristupa upisuje kao **prvi slog prvog bloka** primarne zone fiktivni slog sa vrednošću ključa **0**. Time se obezbeđuje mogućnost upisa u zonu prekoračenja slogova sa vrednošću ključa **manjom od inicijalno najmanje** u datoteci.",
+      "hint": "Sentinel slog na početku - obezbeđuje mesto za slogove sa vrlo malim ključem."
+    },
+    {
+      "question": "Koliko lanaca prekoračilaca može odgovarati jednom bloku primarne zone kod indirektnog povezivanja sa proširenim lokacijama?",
+      "answer": "Svakom bloku u primarnoj zoni može odgovarati od **0** do **$f$** lanaca u zoni prekoračenja (gde je $f$ faktor blokiranja u primarnoj zoni).",
+      "hint": "Svaki slog u bloku može imati svoj lanac prekoračilaca."
+    },
+    {
+      "question": "Zašto je faktor blokiranja u zoni prekoračenja najčešće jednak **1**?",
+      "answer": "Prekoračioci iz raznih blokova se upisuju slučajnim redom, tako da je **verovatnoća** da se dva logički susedna sloga nađu u **susednim lokacijama** zone prekoračenja **mala**. Kraći blok znači kraće vreme razmene podataka i manji prostor u operativnoj memoriji.",
+      "hint": "Logički susedni prekoračioci su retko fizički susedni."
+    },
+    {
+      "question": "Šta je **indeks slobodnih lokacija** $E$ u zoni prekoračenja?",
+      "answer": "Indeks slobodnih lokacija $E$ služi za **vođenje evidencije o prvoj slobodnoj lokaciji** u zoni prekoračenja. Koristi se za **dinamičko upravljanje slobodnim prostorom**. Slobodne lokacije nisu međusobno spregnute; $E$ sadrži relativnu adresu i samo se **povećava za jedan** pri svakom upisu.",
+      "hint": "Pokazivač na prvu slobodnu lokaciju u zoni prekoračenja."
+    },
+    {
+      "question": "Šta je **indeks-sekvencijalna metoda pristupa**?",
+      "answer": "To je skup programa u okviru operativnog sistema mainframe računara koji podržava standardizovano **formiranje, korišćenje, ažuriranje, proširivanje i reorganizaciju** IS datoteka. Omogućava **sekvencijalni, direktni i dinamički** način pristupa. Korisnički programi koriste njene usluge putem **makro naredbi** tipa READ, WRITE, REWRITE, DELETE i START.",
+      "hint": "Sistemski softver koji obavlja sve operacije nad IS datotekom."
+    },
+    {
+      "question": "Koje **makro naredbe** koriste korisnički programi za rad sa IS datotekom?",
+      "answer": "**READ**, **WRITE**, **REWRITE**, **DELETE** i **START**.",
+      "hint": "Pet naredbi: čitaj, piši, prepiši, briši, započni."
+    },
+    {
+      "question": "Kako se u **Cobolu** definiše indeks-sekvencijalna organizacija datoteke?",
+      "answer": "U SELECT rečenici sekcije FILE-CONTROL:\n```\nSELECT ime-datoteke\n  ASSIGN TO ime-uredjaja\n  [ACCESS MODE IS {SEQUENTIAL|RANDOM|DYNAMIC}]\n  ORGANIZATION IS INDEXED\n  ACTUAL KEY IS ime_kljuca\n```\nKljučna je klauzula `ORGANIZATION IS INDEXED`.",
+      "hint": "SELECT rečenica sa ORGANIZATION IS INDEXED."
+    },
+    {
+      "question": "Kakva mora biti ulazna datoteka za **formiranje** IS datoteke?",
+      "answer": "Ulazna datoteka mora biti **sekvencijalna** - slogovi moraju biti uređeni saglasno **rastućim vrednostima ključa**. Tok: SER datoteka → SORT → SEQ datoteka → Program za formiranje → IS datoteka.",
+      "hint": "Ulaz mora biti sortiran - sekvencijalna datoteka."
+    },
+    {
+      "question": "Opiši postupak **formiranja** zone indeksa IS datoteke.",
+      "answer": "Kako se koji blok upiše u primarnu zonu, metoda pristupa upiše u tekući list zone indeksa par $(k_e, A_e)$. Kada se svi slogovi prenesu, formiraju se viši nivoi stabla postupkom **s dna na gore** i **s leva na desno** po nivoima. U svaki čvor na $i$-tom nivou (osim krajnji desni) upisuju se vrednosti ključa iz $n$ sukcesivnih čvorova na nivou $i+1$ i njihove adrese.",
+      "hint": "Bottom-up formiranje: prvo listovi iz primarne zone, pa viši nivoi."
+    },
+    {
+      "question": "Koliko parova $(k_e, A_e)$ metoda pristupa upisuje u **krajnji desni čvor** na $i$-tom nivou?",
+      "answer": "$$\\left\\lceil \\frac{B}{n^{h-i}} \\right\\rceil - n\\left(\\left\\lceil \\frac{B}{n^{h-i+1}} \\right\\rceil - 1\\right)$$\nparova. Ovo je 'ostatak' koji ne popunjava ceo čvor.",
+      "hint": "Ostatak pri deljenju broja elemenata nivoa sa n."
+    },
+    {
+      "question": "Da li se pri formiranju datoteke upisuju slogovi u zonu prekoračenja?",
+      "answer": "**Ne.** Prilikom formiranja datoteke u zonu prekoračenja se slogovi **ne upisuju**. Zona prekoračenja se alocira kao prazna, a svi blokovi se sprežu u lanac slobodnih blokova.",
+      "hint": "Zona prekoračenja je inicijalno potpuno prazna."
+    },
+    {
+      "question": "Kako se vrši **traženje logički narednog sloga** u IS datoteci?",
+      "answer": "Vrši se **kombinovanom primenom** metode **linearnog traženja** i metode **traženja praćenjem pokazivača**. Počinje u prvom bloku primarne zone. Linearna metoda se koristi za traženje u bloku. Po dolasku do poslednjeg sloga bloka, traženje se nastavlja u **lancu prekoračilaca** metodom praćenja pokazivača.",
+      "hint": "Linearno u bloku + praćenje pokazivača u prekoračiocima."
+    },
+    {
+      "question": "Kako glasi formula **(12.2)** za interval broja pristupa pri traženju logički narednog sloga sa **direktnim** povezivanjem?",
+      "answer": "$$0 \\leq R \\leq B + \\left\\lceil \\frac{B}{n} \\right\\rceil + Z - (i + j + k)$$\ngde je $Z$ ukupni broj slogova u zoni prekoračenja, $i$ redni broj tekućeg bloka, $j = \\lceil i/n \\rceil$ redni broj tekućeg lista stabla, $k$ broj prekoračilaca kojima se već pristupilo.",
+      "hint": "Gornja granica uključuje B + ⌈B/n⌉ + Z jer se pristupa i listovima stabla."
+    },
+    {
+      "question": "Kako glasi formula **(12.3)** za interval broja pristupa pri traženju logički narednog sloga sa **indirektnim** povezivanjem?",
+      "answer": "$$0 \\leq R \\leq B + Z - (i + k)$$\ngde je $i$ redni broj tekućeg bloka, $k$ broj slogova prekoračenja kojima se već pristupilo. Nema člana $\\lceil B/n \\rceil$ jer se ne pristupa listovima stabla.",
+      "hint": "Nema ⌈B/n⌉ člana - to je razlika u odnosu na direktno."
+    },
+    {
+      "question": "Koje traženje logički narednog sloga je efikasnije - sa **direktnim** ili **indirektnim** povezivanjem?",
+      "answer": "Efikasnije je sa **indirektnim** povezivanjem prekoračilaca, jer formula (12.3) nema član $\\lceil B/n \\rceil$ koji predstavlja pristupe listovima stabla. Kod indirektnog povezivanja, pokazivači su direktno u blokovima primarne zone.",
+      "hint": "Indirektno je bolje za traženje logički narednog jer nema pristupa listovima."
+    },
+    {
+      "question": "Koliko pristupa čvorovima stabla je potrebno za **traženje u stablu** (formula 12.4)?",
+      "answer": "$$R = h$$\nPotrebno je $h$ pristupa čvorovima stabla (od korena do lista). To je **najpovoljniji slučaj** sa jednim baferom u operativnoj memoriji.",
+      "hint": "Tačno koliko je visina stabla - jedan pristup po nivou."
+    },
+    {
+      "question": "Šta se dešava ako metoda pristupa ima **dva bafera** umesto jednog?",
+      "answer": "Ako su na raspolaganju dva bafera, u jednom se stalno nalazi **koren stabla**, te je broj pristupa $R = h - 1$.",
+      "hint": "Koren se kešira, pa uštedimo jedan pristup."
+    },
+    {
+      "question": "Kako glasi interval broja pristupa za traženje **slučajno odabranog** sloga sa **direktnim** povezivanjem?",
+      "answer": "$$h + 1 \\leq R \\leq h + z$$\ngde je $z$ dužina lanca prekoračilaca za jedan blok primarne zone.",
+      "hint": "Minimum h+1 (stablo + blok), max h+z (stablo + ceo lanac)."
+    },
+    {
+      "question": "Kako glasi interval broja pristupa za traženje **slučajno odabranog** sloga sa **indirektnim** povezivanjem?",
+      "answer": "$$h + 1 \\leq R \\leq h + 1 + z$$\nDodatni '+1' u gornjoj granici u odnosu na direktno povezivanje.",
+      "hint": "Za jedan više od direktnog: stablo + blok + lanac."
+    },
+    {
+      "question": "Koje traženje slučajno odabranog sloga je efikasnije - sa **direktnim** ili **indirektnim** povezivanjem?",
+      "answer": "Efikasnije je sa **direktnim** povezivanjem. Gornja granica je $h + z$ umesto $h + 1 + z$. Razlog: kod direktnog povezivanja se već u **listu stabla** zna da li tražiti u primarnoj zoni ili u prekoračiocima, dok se kod indirektnog mora prvo pristupiti bloku pa tek onda eventualno prekoračiocima.",
+      "hint": "Direktno bolje za slučajno odabrani jer se odmah iz lista odlučuje kuda dalje."
+    },
+    {
+      "question": "Kako glasi formula **(12.5)** za verovatnoću $p_f$ da se traženi slog nalazi u **primarnoj zoni**?",
+      "answer": "$$p_f = \\frac{f}{f + z}$$\ngde je $f$ faktor blokiranja u primarnoj zoni, a $z$ broj prekoračilaca jednog bloka.",
+      "hint": "f od ukupno f+z slogova je u primarnoj zoni."
+    },
+    {
+      "question": "Kako glasi formula **(12.6)** za verovatnoću $p_z$ da se traženi slog nalazi u **zoni prekoračenja**?",
+      "answer": "$$p_z = \\frac{z}{f + z}$$\ngde je $z$ broj prekoračilaca jednog bloka, a $f$ faktor blokiranja.",
+      "hint": "z od ukupno f+z slogova je u zoni prekoračenja."
+    },
+    {
+      "question": "Kako glasi formula **(12.8)** za $\\overline{R_u}$ pri **uspešnom** traženju slučajno odabranog sloga sa **direktnim** povezivanjem?",
+      "answer": "$$\\overline{R_u} = h + \\frac{2f + z(z+1)}{2(f+z)}$$",
+      "hint": "h plus razlomak: (2f + z(z+1)) / (2(f+z))."
+    },
+    {
+      "question": "Kako glasi formula **(12.9)** za $\\overline{R_n}$ pri **neuspešnom** traženju slučajno odabranog sloga sa **direktnim** povezivanjem?",
+      "answer": "$$\\overline{R_n} = h + \\frac{2f + z(z+1)}{2(f+z)}$$\nIsta formula kao za uspešno traženje (12.8), jer je uvek $a < k_z$.",
+      "hint": "Identično sa formulom za uspešno traženje kod direktnog povezivanja!"
+    },
+    {
+      "question": "Kako glasi formula **(12.11)** za $\\overline{R_u}$ pri **uspešnom** traženju slučajno odabranog sloga sa **indirektnim** povezivanjem?",
+      "answer": "$$\\overline{R_u} = h + 1 + \\frac{z(z+1)}{2(f+z)}$$",
+      "hint": "h+1 (stablo + blok) plus z(z+1) / 2(f+z)."
+    },
+    {
+      "question": "Kako glasi formula **(12.12)** za verovatnoću $p_f$ kod **neuspešnog** traženja pri **indirektnom** povezivanju?",
+      "answer": "$$p_f = \\frac{f - 1}{f + z}$$\nJedan manje u brojiocu jer argument traženja **ne može** imati manju vrednost od najmanje vrednosti ključa u bloku, pa se neuspešno traženje ne može zaustaviti na **prvom slogu** bloka.",
+      "hint": "f-1 umesto f jer prvi slog nikad ne može biti mesto zaustavljanja neuspešnog traženja."
+    },
+    {
+      "question": "Kako glasi formula **(12.13)** za verovatnoću $p_z$ kod **neuspešnog** traženja pri **indirektnom** povezivanju?",
+      "answer": "$$p_z = \\frac{z + 1}{f + z}$$\nJedan više u brojiocu (z+1 umesto z).",
+      "hint": "z+1 umesto z u brojiocu."
+    },
+    {
+      "question": "Kako glasi formula **(12.15)** za raspodelu verovatnoće $p_i$ pri **indirektnom** povezivanju (neuspešno traženje)?",
+      "answer": "$$p_i = \\begin{cases} \\frac{1}{z+1} & \\text{za } 1 \\leq i \\leq z - 1 \\\\ \\frac{2}{z+1} & \\text{za } i = z \\end{cases}$$\nPoslednji prekoračilac ima **dvostruku** verovatnoću.",
+      "hint": "Poslednji prekoračilac ima duplu verovatnoću zaustavljanja."
+    },
+    {
+      "question": "Kako glasi formula **(12.16)** za $\\overline{R_n}$ pri **neuspešnom** traženju sa **indirektnim** povezivanjem?",
+      "answer": "$$\\overline{R_n} = h + 1 + \\frac{z(z+3)}{2(f+z)}$$\nRazlika od formule (12.11): u brojiocu je $z(z+3)$ umesto $z(z+1)$.",
+      "hint": "Kao formula za Ru kod indirektnog, ali sa z+3 umesto z+1 u brojiocu."
+    },
+    {
+      "question": "Šta nam pokazuje **Primer 12.10**? Izračunaj $\\overline{R_u}$ za $h=3$, $f=3$, $z=2$ (direktno povezivanje).",
+      "answer": "$\\overline{R_u} = 3 + \\frac{2 \\cdot 3 + 2 \\cdot 3}{2(3+2)} = 3 + \\frac{12}{10} = 3 + 1{,}2 = **4{,}2**$. Važi i $\\overline{R_n} = 4{,}2$.",
+      "hint": "Primer 12.10: blok A₄ᵖ sa dva prekoračioca."
+    },
+    {
+      "question": "Šta nam pokazuje **Primer 12.11**? Izračunaj $\\overline{R_u}$ za $h=3$, $f=3$, $z=2$ (indirektno povezivanje).",
+      "answer": "$\\overline{R_u} = 3 + 1 + \\frac{2 \\cdot 3}{2(3+2)} = 4 + \\frac{6}{10} = **4{,}6**$. $\\overline{R_n} = 3 + 1 + \\frac{2 \\cdot 5}{10} = 4 + 1 = **5**$.",
+      "hint": "Primer 12.11: indirektno daje veće R u oba slučaja."
+    },
+    {
+      "question": "Koji režimi obrade su mogući za IS datoteku?",
+      "answer": "IS datoteka se efikasno može obrađivati i u režimu **redosledne** i u režimu **direktne** obrade. To je **jedinstvena karakteristika** ove organizacije.",
+      "hint": "Oba režima - to je cela poenta IS organizacije."
+    },
+    {
+      "question": "Kako glasi formula **(12.17)** za ukupni broj pristupa pri **redoslednoj** obradi sa **direktnim** povezivanjem?",
+      "answer": "$$R_{uk} = B + Z + \\lceil B/n \\rceil$$\ngde je $B$ broj blokova primarne zone, $Z$ ukupni broj prekoračilaca, $\\lceil B/n \\rceil$ broj listova stabla.",
+      "hint": "B blokova + Z prekoračilaca + listovi stabla."
+    },
+    {
+      "question": "Kako glasi formula **(12.18)** za ukupni broj pristupa pri **redoslednoj** obradi sa **indirektnim** povezivanjem?",
+      "answer": "$$R_{uk} = B + Z$$\nNema člana $\\lceil B/n \\rceil$ jer se ne pristupa listovima stabla traženja.",
+      "hint": "Samo B + Z, bez listova."
+    },
+    {
+      "question": "Kako glasi formula **(12.19)** za očekivani broj pristupa $\\overline{R}$ po jednom traženju logički narednog sloga pri redoslednoj obradi sa **direktnim** povezivanjem?",
+      "answer": "$$\\overline{R} = \\frac{B + Z + \\lceil B/n \\rceil}{N_v}$$\ngde je $N_v$ broj slogova vodeće datoteke.",
+      "hint": "Ruk podeljen sa brojem slogova vodeće datoteke."
+    },
+    {
+      "question": "Kako glasi formula **(12.20)** za očekivani broj pristupa $\\overline{R}$ po jednom traženju logički narednog sloga pri redoslednoj obradi sa **indirektnim** povezivanjem?",
+      "answer": "$$\\overline{R} = \\frac{B + Z}{N_v}$$",
+      "hint": "(B + Z) / Nv - bez listova stabla."
+    },
+    {
+      "question": "Koja **redosledna** obrada IS datoteke je efikasnija?",
+      "answer": "Redosledna obrada sa **indirektnim** povezivanjem je efikasnija jer $R_{uk} = B + Z$ < $B + Z + \\lceil B/n \\rceil$. Razlika je $\\lceil B/n \\rceil$ pristupa, što je pri uobičajenim vrednostima reda stabla $n$ **neznatno**.",
+      "hint": "Indirektno bolje, ali razlika je mala pri velikom n."
+    },
+    {
+      "question": "Kako glasi formula za očekivani ukupni broj pristupa $\\overline{R_{uk}}$ pri **direktnoj obradi** IS datoteke?",
+      "answer": "$$\\overline{R_{uk}} = \\overline{R_u} N_v^u + \\overline{R_n} N_v^n$$\ngde je $N_v^u$ broj slogova vodeće datoteke koji iniciraju **uspešno** traženje, a $N_v^n$ broj koji inicira **neuspešno** traženje.",
+      "hint": "Suma: (prosečno uspešno × broj uspešnih) + (prosečno neuspešno × broj neuspešnih)."
+    },
+    {
+      "question": "Kako se izračunava **očekivani broj prekoračilaca** $\\overline{z}$ po jednom bloku primarne zone?",
+      "answer": "$$\\overline{z} = \\frac{Z}{B}$$\ngde je $Z$ ukupni broj prekoračilaca u celoj datoteci, a $B$ broj blokova primarne zone.",
+      "hint": "Prosto Z/B - ukupan broj prekoračilaca podeljen brojem blokova."
+    },
+    {
+      "question": "Kako glasi formula **(12.22)** za $\\overline{R_u}$ pri direktnoj obradi sa **direktnim** povezivanjem (sa $\\overline{z}$)?",
+      "answer": "$$\\overline{R_u} = h + \\frac{2f + \\overline{z}(\\overline{z} + 1)}{2(f + \\overline{z})}$$\nDobijena zamenom $z = \\overline{z}$ u formuli (12.8).",
+      "hint": "Kao (12.8) ali sa prosečnim z̄ umesto konkretnog z."
+    },
+    {
+      "question": "Kako glasi formula **(12.24)** za $\\overline{R_u}$ pri direktnoj obradi sa **indirektnim** povezivanjem (sa $\\overline{z}$)?",
+      "answer": "$$\\overline{R_u} = h + 1 + \\frac{\\overline{z}(\\overline{z} + 1)}{2(f + \\overline{z})}$$\nDobijena zamenom $z = \\overline{z}$ u formuli (12.11).",
+      "hint": "Kao (12.11) ali sa prosečnim z̄."
+    },
+    {
+      "question": "Kako glasi formula **(12.25)** za $\\overline{R_n}$ pri direktnoj obradi sa **indirektnim** povezivanjem (sa $\\overline{z}$)?",
+      "answer": "$$\\overline{R_n} = h + 1 + \\frac{\\overline{z}(\\overline{z} + 3)}{2(f + \\overline{z})}$$\nDobijena zamenom $z = \\overline{z}$ u formuli (12.16).",
+      "hint": "Kao (12.16) ali sa prosečnim z̄."
+    },
+    {
+      "question": "Koja **direktna** obrada IS datoteke je efikasnija?",
+      "answer": "Direktna obrada sa **direktnim** povezivanjem prekoračilaca je efikasnija. Posledica: efikasniji postupak traženja slučajno odabranog sloga, jer se u listu stabla odmah odlučuje o nastavku traženja.",
+      "hint": "Direktno je bolje za direktnu obradu (isti tip traženja - slučajno odabrani slog)."
+    },
+    {
+      "question": "Izračunaj podatke iz **Primera 12.13**: $N = 9000$, $f = 10$, $n = 50$, $Z = 1000$.",
+      "answer": "$B = 901$, $\\lceil B/n \\rceil = 19$, $h = \\lceil \\log_{50} 901 \\rceil$.\n**Direktno:** $R_{uk} = 901 + 1000 + 19 = **1920**$.\n**Indirektno:** $R_{uk} = 901 + 1000 = **1901**$.",
+      "hint": "B = N/f (zaokruženo), pa R_uk po formulama (12.17) i (12.18)."
+    },
+    {
+      "question": "Kako se vrši **ažuriranje** IS datoteke? U kom režimu?",
+      "answer": "Ažuriranje se vrši u režimu **direktne obrade**. Metoda pristupa koristi **stablo traženja** za utvrđivanje adrese bloka primarne zone kojem novi slog pripada ili u kojem se nalazi slog za brisanje.",
+      "hint": "Uvek direktna obrada za ažuriranje."
+    },
+    {
+      "question": "Opiši postupak **upisa novog sloga** u IS datoteku kada se neuspešno traženje zaustavilo u **bloku primarne zone**.",
+      "answer": "1. Pomeraju se slogovi sa većom vrednošću ključa za jednu lokaciju ka kraju bloka.\n2. Novi slog se upisuje na mesto sloga sa prvom većom vrednošću ključa.\n3. Slog sa do tada **najvećom** vrednošću ključa se upisuje u **zonu prekoračenja**.\n4. Prekoračilac se upisuje u lokaciju čiju adresu sadrži **indeks slobodnih lokacija** $E$.\n5. Povezuje se sa ostalim prekoračiocima iz bloka.",
+      "hint": "Pomeranje → upis novog → max ide u prekoračenje → povezivanje."
+    },
+    {
+      "question": "Šta se dešava pri upisu novog sloga kada se neuspešno traženje zaustavilo na **nekom od prekoračilaca**?",
+      "answer": "Novi slog se upisuje u **prvu slobodnu lokaciju** i **uvezuje** se sa ostalim prekoračiocima, kao u slučaju jednostruko spregnute datoteke.",
+      "hint": "Jednostavno uvezivanje u lanac prekoračilaca."
+    },
+    {
+      "question": "Kako glasi formula **(12.26)** za očekivani broj pristupa pri **upisu** jednog novog sloga sa **direktnim** povezivanjem?",
+      "answer": "$$\\overline{R_i} = \\overline{R_n} + 3p_f + 2p_z$$\ngde je $\\overline{R_n}$ iz (12.9), $p_f$ iz (12.5), $p_z$ iz (12.6).",
+      "hint": "Neuspešno traženje + pristupe za upis (3 sa verovatnoćom pf, 2 sa pz)."
+    },
+    {
+      "question": "Objasni **tri pristupa** sa verovatnoćom $p_f$ u formuli za upis (12.26) kod **direktnog** povezivanja.",
+      "answer": "Kada se traženje zaustavi u primarnoj zoni ($p_f$):\n1. *1 pristup* za upis bloka u primarnu zonu\n2. *1 pristup* za upis prekoračioca\n3. *1 pristup* za ažuriranje lista stabla traženja",
+      "hint": "Blok + prekoračilac + list stabla = 3 pristupa."
+    },
+    {
+      "question": "Objasni **dva pristupa** sa verovatnoćom $p_z$ u formuli za upis (12.26) kod **direktnog** povezivanja.",
+      "answer": "Kada se traženje zaustavi u zoni prekoračenja ($p_z$):\n1. *1 pristup* za upis prekoračioca\n2. *1 pristup* za upis logički prethodnog prekoračioca sa izmenjenim pokazivačem (ili ažuriranog lista stabla ako novi slog ima najmanji ključ u lancu)",
+      "hint": "Prekoračilac + prethodni prekoračilac (ili list) = 2 pristupa."
+    },
+    {
+      "question": "Kako glasi formula **(12.27)** za $\\overline{R_i}$ pri upisu sa **direktnim** povezivanjem (razvijen oblik)?",
+      "answer": "$$\\overline{R_i} = h + \\frac{8f + z(z + 5)}{2(f + z)}$$\nDobijena zamenom (12.9), (12.5) i (12.6) u (12.26).",
+      "hint": "h plus (8f + z(z+5)) / 2(f+z)."
+    },
+    {
+      "question": "Kako glasi formula **(12.28)** za $\\overline{R_i}$ pri upisu sa **indirektnim** povezivanjem?",
+      "answer": "$$\\overline{R_i} = \\overline{R_n} + 2$$\ngde je $\\overline{R_n}$ dato formulom (12.16). Potrebna su **2 dodatna pristupa**: 1 za upis modifikovanog bloka ili prethodnog prekoračioca + 1 za upis prekoračioca.",
+      "hint": "Neuspešno traženje + samo 2 pristupa (jednostavnije od direktnog)."
+    },
+    {
+      "question": "Kako se vrši **logičko brisanje** sloga u IS datoteci?",
+      "answer": "Svaki slog ima malo **statusno polje** čija vrednost određuje da li je slog aktuelan ili nije. Pri logičkom brisanju, samo se **menja status** sloga. Potreban je $R_d = R_u + 1$ pristup (uspešno traženje + jedan pristup za upis sloga sa izmenjenim statusom).",
+      "hint": "Samo se menja statusno polje - slog fizički ostaje na mestu."
+    },
+    {
+      "question": "Kako glasi formula za broj pristupa pri **brisanju** jednog sloga $R_d$?",
+      "answer": "$$R_d = R_u + 1$$\ngde je $R_u$ broj pristupa za uspešno traženje sloga, plus 1 pristup za upis sloga sa izmenjenim statusom.",
+      "hint": "Nađi slog (Ru) + upiši ga nazad sa izmenjenim statusom (+1)."
+    },
+    {
+      "question": "Kada se lokacija **logički izbrisanog** sloga može upotrebiti za upis novog sloga?",
+      "answer": "Samo ako vrednost ključa novog sloga leži u **strogo određenim granicama**: u bloku podataka - mora biti **manja od najveće** i takva da slog logički pripada tom bloku; u zoni prekoračenja - mora biti **između** vrednosti ključa direktnog prethodnika i direktnog sledbenika izbrisanog sloga.",
+      "hint": "Ključ novog sloga mora tačno 'stati' na mesto izbrisanog u logičkom redosledu."
+    },
+    {
+      "question": "Koliko pristupa je potrebno za **izmenu sadržaja** postojećeg sloga?",
+      "answer": "Nakon **uspešnog traženja** sloga, potreban je **još samo jedan pristup** da bi se modifikovani slog upisao u datoteku. Ukupno: $R_u + 1$.",
+      "hint": "Nađi slog + upiši izmenjenu verziju = Ru + 1."
+    },
+    {
+      "question": "Zašto se **ne vrši fizičko brisanje** slogova u IS datoteci?",
+      "answer": "Fizičko brisanje bi zahtevalo **pomeranje slogova** sa **ažuriranjem lanca prekoračilaca**, što zahteva **veći broj pristupa** datoteci. Logičko brisanje je mnogo jednostavnije i efikasnije.",
+      "hint": "Pomeranje + ažuriranje lanaca = previše pristupa."
+    },
+    {
+      "question": "Od čega se sastoji **reorganizacija** IS datoteke?",
+      "answer": "1. **Sortiranje** aktuelnih slogova primarne zone i zone prekoračenja\n2. **Smeštanje** tako uređenog skupa slogova u **novu primarnu zonu** uz generisanje **novog stabla traženja** i formiranje nove, prazne zone prekoračenja.",
+      "hint": "Sortiraj sve → napravi novu primarnu zonu → novo stablo → prazna zona prekoračenja."
+    },
+    {
+      "question": "Zašto je potrebna **reorganizacija** IS datoteke?",
+      "answer": "Aktivnosti upisa slogova u zonu prekoračenja i logičkog brisanja slogova dovode do **degradacije performansi** traženja slogova i obrade datoteke. Lanci prekoračilaca postaju sve duži, a logički izbrisani slogovi zauzimaju prostor.",
+      "hint": "Degradacija performansi zbog rasta zone prekoračenja i nakupljanja izbrisanih slogova."
+    },
+    {
+      "question": "Na koja dva načina se određuje **interval reorganizacije** IS datoteke?",
+      "answer": "1. **Fiksan** vremenski period (npr. jednom nedeljno ili mesečno)\n2. **Dinamički** - na osnovu stepena popunjenosti zone prekoračenja (npr. kada se popuni do 80% obima, a dimenzionisana je da primi npr. 10% broja slogova primarne zone).",
+      "hint": "Fiksan (kalendarski) ili dinamički (procenat popunjenosti)."
+    },
+    {
+      "question": "Šta je **distribuirani slobodni prostor**?",
+      "answer": "Postupak pri kojem se blokovi podataka pri formiranju datoteke popunjavaju samo **delimično** (npr. 60% ili 80%), čime se obezbeđuje prostor za upis novih slogova. **Produžava** interval vremena između dve reorganizacije.",
+      "hint": "Blokovi se namerno ne popune do kraja - ostavlja se mesta za nove slogove."
+    },
+    {
+      "question": "Koji je **nedostatak** distribuiranog slobodnog prostora?",
+      "answer": "Dovodi do **neekonomičnog korišćenja** memorijskog prostora na eksternoj memorijskoj jedinici, jer je najveći deo distribuiranog slobodnog prostora tokom dobrog dela vremena između dve reorganizacije **prazan**.",
+      "hint": "Prazne lokacije zauzimaju disk a ne koriste se."
+    },
+    {
+      "question": "Kako se u **Cobolu** definiše distribuirani slobodni prostor (Primer 12.19)?",
+      "answer": "Frazom `BLOCK CONTAINS [ceo-broj-1 TO] ceo-broj-2 RECORDS` u naredbi FD. Ako se navedu oba broja, blokovi sadrže `ceo-broj-1` slogova i (`ceo-broj-2` - `ceo-broj-1`) slobodnih lokacija.",
+      "hint": "BLOCK CONTAINS x TO y RECORDS - y je kapacitet, x je popunjeno."
+    },
+    {
+      "question": "Da li se IS datoteka može ažurirati kao sekvencijalna u režimu redosledne obrade?",
+      "answer": "Da, u principu. Ali tada se po završetku ažuriranja **mora generisati novo stablo traženja**, jer granične vrednosti ključa u blokovima primarne zone više nisu usaglašene. Ovakav postupak predstavlja zapravo **reorganizaciju**, a ne ažuriranje.",
+      "hint": "Moguće, ali to je praktično reorganizacija jer se mora obnoviti stablo."
+    },
+    {
+      "question": "Za koje vrste obrade su IS datoteke **posebno pogodne**?",
+      "answer": "IS datoteke su pogodne kada iste podatke treba obrađivati **jedanput u režimu redosledne, a drugi put u režimu direktne obrade**. Intenzivno se koriste u **paketnoj obradi**, a često i u **interaktivnoj daljinskoj** obradi.",
+      "hint": "Isti podaci - dva režima obrade."
+    },
+    {
+      "question": "Kakve su performanse IS datoteke **odmah nakon formiranja**?",
+      "answer": "Odmah nakon formiranja:\n- Performanse **redosledne** obrade praktično **ne zaostaju** za sekvencijalnom datotekom.\n- Performanse **direktne** obrade ne zaostaju značajnije za **rasutom** datotekom.",
+      "hint": "Skoro idealne - blizu sekvencijalne za redoslednu i rasute za direktnu obradu."
+    },
+    {
+      "question": "Koji je **najveći nedostatak** IS organizacije datoteke?",
+      "answer": "**Degradacija performansi** tokom ažuriranja - lanci prekoračilaca mogu postati nepredvidivo dugački. Gornja granica broja prekoračilaca jednog bloka je **ukupni broj prekoračilaca** cele datoteke. Jedino rešenje je **periodična reorganizacija**, koja je za velike datoteke skup posao.",
+      "hint": "Nepredvidivo dugački lanci prekoračilaca → skupa reorganizacija."
+    },
+    {
+      "question": "Kako su **moderne** indeksne datoteke povezane sa principima IS datoteka?",
+      "answer": "Na osnovnoj ideji IS datoteka - brz pristup slučajno odabranom slogu u sekvencijalnoj strukturi korišćenjem **stabla traženja** kao funkcije preslikavanja ključa u adresu - zasnovane su moderne indeksne datoteke sa **B-stablima**.",
+      "hint": "B-stabla su moderna evolucija iste osnovne ideje."
+    },
+    {
+      "question": "Zašto se IS datoteke danas nazivaju i **klasičnim** indeks-sekvencijalnim datotekama?",
+      "answer": "Jer relacioni i objektno-relacioni SUBP ih **retko podržavaju** - imaju više **istorijski značaj**. Fizičke strukture podataka zasnovane na IS principima su se intenzivno koristile u **mrežnim bazama podataka**, ali su danas zamenjene B-stablima.",
+      "hint": "Istorijski značaj - zamenjene B-stablima u modernim SUBP."
+    },
+    {
+      "question": "Objasni **Primer 12.3** korak po korak: upis sloga sa $k(S) = 31$ u datoteku sa slike 12.1.",
+      "answer": "List $A_2^i$ sadrži $(29, A_3^p)$, $(49, A_4^p)$. Pošto je $29 < 31 < 49$, slog pripada bloku $A_3^p$. Blok je pun (sadrži 25, 27, 29 - tri sloga, $f=3$). Pošto je $31 < k_{3(max)} = 29$... zapravo, $31 > 29$, pa $31 > k_{3(max)}$, slog sa ključem 31 ide **direktno u zonu prekoračenja**. Zatim se upisuje i slog $k(S)=47$: pošto je $k_{4(max)}=43$ i $47>43$, i on ide u prekoračenje. Slog $k(S)=71$ ide u blok $A_5^p$ pomeranjem oznake kraja.",
+      "hint": "Primer upisa više slogova - neki idu u blok, neki u prekoračenje."
+    },
+    {
+      "question": "U Primeru 12.7, za datoteku sa slike 12.3 ($B=5$, $\\lceil B/n \\rceil = 3$, $Z=4$), tekući slog $k(S_5)=15$. Koliko pristupa za $k(S_3)=19$? A za $k(S_{17})=71$?",
+      "answer": "Tekući slog je 15, tada $i=2$, $j=1$, $k=0$.\n- Za $k(S_3)=19$: $R = **0**$ pristupa (slog je u istom bloku, sledeći u nizu).\n- Za $k(S_{17})=71$: $R = **9**$ pristupa (mora da prođe kroz sve preostale blokove i prekoračioce).",
+      "hint": "R=0 za slog u istom bloku; R=9 za najudaljeniji slog."
+    },
+    {
+      "question": "U Primeru 12.8, za datoteku sa slike 12.4 ($B=5$, $Z=4$), tekući slog $k(S_{15})=14$, $i=1$, $k=2$. Koliko pristupa za $k(S_5)=19$? A za $k(S_{13})=64$?",
+      "answer": "- Za $k(S_5)=19$: $R = **1**$ pristup.\n- Za $k(S_{13})=64$: $R = **6**$ pristupa.",
+      "hint": "Indirektno povezivanje - manji interval nego direktno."
+    },
+    {
+      "question": "Objasni podatke iz **Primera 12.15**: $N=9000$, $f=10$, $n=50$, $Z=1000$, $\\overline{z}=1$, $h=3$, $\\overline{t}=30$ msek, $N_v^u=2100$, $N_v^n=900$.",
+      "answer": "**Direktno:** $\\overline{R_u}=4{,}0$, $\\overline{R_n}=4{,}0$, $\\overline{R_{uk}}=12000$, $\\overline{T_{uk}}=360$ sek.\n**Indirektno:** $\\overline{R_u}=4{,}09$, $\\overline{R_n}=4{,}18$, $\\overline{R_{uk}}=12351$, $\\overline{T_{uk}}=370{,}53$ sek.\nDirektno je efikasnije za direktnu obradu, ali razlika nije velika.",
+      "hint": "Primer sa realnim brojevima - direktno malo bolje za direktnu obradu."
+    },
+    {
+      "question": "U Primeru 12.16, koliko pristupa je potrebno za upis sloga $k(S_{15})=14$ u IS datoteku sa slike 12.1 (direktno povezivanje)?",
+      "answer": "$R_i = **7**$ pristupa: 4 za neuspešno traženje + 1 za upis modifikovanog bloka $A_3^p$ + 1 za upis sloga $S_6$ u zonu prekoračenja + 1 za upis modifikovanog lista $A_1^i$.",
+      "hint": "4 (traženje) + 1 (blok) + 1 (prekoračilac) + 1 (list) = 7."
+    },
+    {
+      "question": "U Primeru 12.17, koliko pristupa je potrebno za upis sloga $k(S_{14})=31$ sa indirektnim povezivanjem?",
+      "answer": "$R = **6**$ pristupa: 4 za neuspešno traženje + 1 za upis sloga $S_{14}$ u zonu prekoračenja + 1 za upis u primarnu zonu bloka $A_3^p$ sa modifikovanim pokazivačem.",
+      "hint": "4 (traženje) + 1 (prekoračilac) + 1 (modifikovani blok) = 6."
+    },
+    {
+      "question": "Uporedi **sve** odnose efikasnosti između direktnog i indirektnog povezivanja za različite operacije.",
+      "answer": "- **Traženje slučajno odabranog sloga**: *direktno* efikasnije\n- **Traženje logički narednog sloga**: *indirektno* efikasnije\n- **Direktna obrada**: *direktno* efikasnije (jer koristi TSO)\n- **Redosledna obrada**: *indirektno* efikasnije (jer koristi TLN)\n- **Razlike** su uglavnom male pri uobičajenim vrednostima $n$.",
+      "hint": "Direktno za direktnu, indirektno za redoslednu obradu."
+    },
+    {
+      "question": "Kako se u **Cobolu** inicira traženje slučajno odabranog sloga u IS datoteci?",
+      "answer": "Vrednost ključa se postavi u polje ACTUAL KEY, pa se izda naredba:\n```\nREAD ime-datoteke RECORD\n    INVALID KEY imperativna-naredba\n```\nAko je traženje uspešno, slog se postavi u radni prostor. Inače se izvršava INVALID KEY klauzula.",
+      "hint": "READ sa INVALID KEY za slučajno odabrani slog."
+    },
+    {
+      "question": "Kako se u **Cobolu** inicira traženje logički narednog sloga u IS datoteci (redosledna obrada)?",
+      "answer": "ACCESS MODE mora biti SEQUENTIAL, a naredba je:\n```\nREAD ime-datoteke RECORD\n    AT END imperativna-naredba\n```\nMetoda pristupa predaje upravljanje AT END frazi kada naiđe na oznaku kraja datoteke.",
+      "hint": "READ sa AT END za logički naredni slog."
+    },
+    {
+      "question": "Kako se u **Cobolu** vrši brisanje sloga iz IS datoteke?",
+      "answer": "Vrednost ključa se postavi u ACTUAL KEY, pa:\n```\nDELETE ime-sloga\n    INVALID KEY imperativna-naredba\n```\nAko metoda pristupa nađe slog, izbriše ga. Inače izvršava INVALID KEY.",
+      "hint": "DELETE sa INVALID KEY."
+    },
+    {
+      "question": "Kako se u **Cobolu** vrši upis novog sloga u IS datoteku?",
+      "answer": "```\nREAD ime-datoteke RECORD\n    INVALID KEY MOVE novi-slog TO ime-sloga\n    WRITE ime-sloga\n```\nPrvo se traži slog (neuspešno), pa se u INVALID KEY grani upisuje novi slog.",
+      "hint": "Prvo READ (neuspešno), pa WRITE u INVALID KEY grani."
+    },
+    {
+      "question": "Šta sadrži svaki **element lista stabla traženja** kod IS datoteke sa **direktnim** pristupom prekoračiocima?",
+      "answer": "Element lista sadrži **četvorku**: $(k_e, A_e, k_z, A_z)$.\n- $k_e$ = najveća vrednost ključa iz bloka\n- $A_e$ = adresa bloka u primarnoj zoni\n- $k_z$ = najveća vrednost ključa prekoračioca\n- $A_z$ = adresa prekoračioca sa **najmanjom** vrednošću ključa",
+      "hint": "Četiri polja: dva za blok primarne zone, dva za lanac prekoračilaca."
+    },
+    {
+      "question": "Koji su **tri načina pristupa** koje podržava IS metoda pristupa?",
+      "answer": "1. **Sekvencijalni** (SEQUENTIAL)\n2. **Slučajni/direktni** (RANDOM)\n3. **Dinamički** (DYNAMIC)",
+      "hint": "ACCESS MODE IS {SEQUENTIAL | RANDOM | DYNAMIC}."
+    },
+    {
+      "question": "Kako se algoritam traženja u **stablu** odvija?",
+      "answer": "Algoritam se odvija putem **sukcesivnog pristupanja čvorovima** na jednom putu **od korena do lista**. U svakom čvoru se vrši traženje u maloj sekvencijalnoj datoteci, ili metodom **linearnog** ili metodom **binarnog** traženja.",
+      "hint": "Od korena do lista, u svakom čvoru linearno ili binarno traženje."
+    },
+    {
+      "question": "Šta se dešava kod traženja u stablu sa propagacijom **najvećih** vrednosti ako je $a = k_e$ ili $k_{e-1} < a < k_e$?",
+      "answer": "U **oba** slučaja traženje se nastavlja u **podstablu** sa korenom $C(A_e^i)$. Element sa vrednošću $k_e$ ukazuje na podstablo u kojem se može nalaziti slog.",
+      "hint": "Oba slučaja vode u isti podčvor - onaj na koji pokazuje Ae."
+    },
+    {
+      "question": "Gde se nalazi adresa korena stabla traženja?",
+      "answer": "Adresa bloka zone indeksa u kojem se nalazi **koren stabla** nalazi se u **zaglavlju datoteke**.",
+      "hint": "Zaglavlje datoteke čuva adresu korena."
+    },
+    {
+      "question": "Gde se nalazi adresa **krajnjeg levog lista** stabla traženja?",
+      "answer": "Adresa krajnjeg levog lista stabla traženja se nalazi u **zaglavlju datoteke**. Logički naredni listovi ili zauzimaju sukcesivne blokove zone indeksa ili su spregnuti pokazivačima.",
+      "hint": "Takođe u zaglavlju datoteke, kao i koren."
+    },
+    {
+      "question": "Pri redoslednoj obradi IS datoteke, ko vrši **upoređivanje argumenata** traženja i ključa?",
+      "answer": "Upoređivanje argumenta traženja i ključa predstavlja zadatak **programa** (ne metode pristupa). Metoda pristupa čita sukcesivne slogove i kontroliše nailazak na kraj datoteke.",
+      "hint": "Program radi upoređivanje, metoda pristupa radi čitanje."
+    },
+    {
+      "question": "Kako se organizuju slobodne lokacije u zoni prekoračenja pri **formiranju** IS datoteke?",
+      "answer": "Alocira se prazna zona prekoračenja, svi blokovi se sprežu u **lanac slobodnih blokova**, a početak lanca se upisuje u **zaglavlje** zone prekoračenja.",
+      "hint": "Inicijalno: svi blokovi u lancu slobodnih blokova."
+    }
+  ]
+}

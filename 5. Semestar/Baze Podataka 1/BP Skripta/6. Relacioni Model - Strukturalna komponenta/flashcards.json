@@ -1,0 +1,379 @@
+{
+  "cards": [
+    {
+      "question": "Šta je **obeležje** (atribut) u relacionom modelu?",
+      "answer": "**Obeležje (Atribut)** reprezentuje *osobinu* (svojstvo) klase entiteta ili poveznika u realnom sistemu.\n\nPrimer: za studente, obeležja su BRI (broj indeksa), IME, PRZ (prezime), BPI (broj položenih ispita).",
+      "hint": "Razmisli o kolonama u tabeli — svaka kolona je jedno..."
+    },
+    {
+      "question": "Šta je **domen** u relacionom modelu?",
+      "answer": "**Domen** je specifikacija skupa mogućih vrednosti koje neka obeležja mogu da dobiju.\n\nPrimer: domen za ocenu = {5, 6, 7, 8, 9, 10}, domen za pol = {m, ž}.",
+      "hint": "Skup MOGUĆIH vrednosti za neko obeležje"
+    },
+    {
+      "question": "Kako glasi **pravilo pridruživanja domena obeležjima**?",
+      "answer": "Svakom obeležju se **obavezno** pridružuje **tačno jedan** domen.\n\nNe može postojati obeležje bez definisanog skupa mogućih vrednosti.",
+      "hint": "Koliko domena pripada jednom obeležju?"
+    },
+    {
+      "question": "Koji su **primitivni koncepti nivoa intenzije** u RMP?",
+      "answer": "Primitivni koncepti nivoa intenzije su:\n\n1. **Domen**\n2. **Obeležje**\n\nOni opisuju strukturu (šemu), a ne konkretne podatke.",
+      "hint": "Dva koncepta koji opisuju STRUKTURU podataka"
+    },
+    {
+      "question": "Koji je **primitivni koncept nivoa ekstenzije**?",
+      "answer": "Primitivni koncept nivoa ekstenzije je **vrednost**.\n\nVrednost je konkretan podatak, npr. broj 101, string \"Ana\", itd.",
+      "hint": "Konkretni podatak — samo jedan koncept"
+    },
+    {
+      "question": "Kako nastaju **složeni koncepti** strukturalne komponente RMP?",
+      "answer": "Složeni koncepti nastaju **kombinovanjem (strukturiranjem) primitivnih koncepata** korišćenjem definisanih pravila u RMP.\n\nPrimer: torka nastaje kombinovanjem obeležja i vrednosti; relacija nastaje kombinovanjem torki.",
+      "hint": "Primitivni koncepti + pravila RMP = ?"
+    },
+    {
+      "question": "Nabrojte svih **pet koncepata nivoa intenzije** u strukturalnoj komponenti RMP.",
+      "answer": "1. **Domen**\n2. **Obeležje**\n3. **Skup obeležja**\n4. **Šema relacije**\n5. **Šema baze podataka**",
+      "hint": "Od najjednostavnijeg (domen) do najsloženijeg (šema BP)"
+    },
+    {
+      "question": "Nabrojte svih **pet koncepata nivoa ekstenzije** u strukturalnoj komponenti RMP.",
+      "answer": "1. **Vrednost**\n2. **Podatak**\n3. **Torka (N-torka)**\n4. **Relacija**\n5. **Baza podataka**",
+      "hint": "Od najjednostavnijeg (vrednost) do najsloženijeg (baza podataka)"
+    },
+    {
+      "question": "Šta je **torka**?",
+      "answer": "**Torka** reprezentuje jednu pojavu entiteta ili poveznika. Pomoću torke se svakom obeležju iz nekog skupa obeležja dodeljuje konkretna vrednost iz skupa mogućih vrednosti definisanog domenom.\n\nPrimer: jedan red u tabeli Radnik sa svim podacima o jednom radniku.",
+      "hint": "Jedan red u tabeli — pojava jednog entiteta"
+    },
+    {
+      "question": "Kako glasi **formalna definicija torke**?",
+      "answer": "Za $U = \\{A_1, \\ldots, A_n\\}$ i $DOM = \\bigcup_{i=1}^{n} dom(A_i)$:\n\nTorka je preslikavanje:\n\n$$t : U \\rightarrow DOM, \\quad (\\forall A_i \\in U)(t(A_i) \\in dom(A_i))$$\n\nTorka svakom obeležju dodeljuje vrednost iz njegovog domena.",
+      "hint": "Preslikavanje: t : U → DOM"
+    },
+    {
+      "question": "Šta je $DOM$ u definiciji torke?",
+      "answer": "$DOM = \\bigcup_{i=1}^{n} dom(A_i)$\n\nTo je **unija svih domena svih obeležja** — skup svih mogućih vrednosti koje se mogu dodeliti bilo kom obeležju.",
+      "hint": "Unija domena SVIH obeležja"
+    },
+    {
+      "question": "Šta je $Tuple(U)$?",
+      "answer": "$Tuple(U) = \\{t \\mid t: U \\rightarrow DOM\\}$\n\nTo je **skup svih mogućih torki** nad skupom obeležja $U$. Relacija je konačan podskup ovog skupa.",
+      "hint": "SKUP svih mogućih torki nad U"
+    },
+    {
+      "question": "Šta je **restrikcija torke** i kako se označava?",
+      "answer": "**Restrikcija** (skraćenje) torke $t$ na skup obeležja $X \\subseteq U$ (oznaka: $t[X]$) svakom obeležju iz skupa $X$ pridružuje onu vrednost koju je imala polazna torka $t$.\n\nPrimer: ako $t_2 = \\{(MBR, 210), (IME, Aca), (POL, m)\\}$ i $X = \\{MBR, IME\\}$, tada $t_2[X] = \\{(MBR, 210), (IME, Aca)\\}$.",
+      "hint": "Oznaka je t[X] — \"skraćenje\" torke na podskup obeležja"
+    },
+    {
+      "question": "Kako glasi **formalna definicija restrikcije torke**?",
+      "answer": "Za $X \\subseteq U$, $t: U \\rightarrow DOM$:\n\n$$t[X]: X \\rightarrow DOM$$\n$$(\\forall A \\in X)(t[X](A) = t(A))$$\n\nVrednosti se čuvaju — samo se smanjuje skup obeležja.",
+      "hint": "t[X](A) = t(A) za svako A iz X"
+    },
+    {
+      "question": "Šta je **relacija** nad skupom obeležja $U$?",
+      "answer": "**Relacija** nad skupom obeležja $U$ predstavlja **konačan skup torki**. Reprezentuje skup realnih entiteta ili poveznika.\n\nU tabelarnoj reprezentaciji: relacija = kompletan sadržaj tabele.",
+      "hint": "Konačan SKUP torki — cela tabela"
+    },
+    {
+      "question": "Kako glasi **formalna definicija relacije**?",
+      "answer": "$$r(U) \\subseteq \\{t \\mid t: U \\rightarrow DOM\\}, \\quad |r| \\in \\mathbb{N}_0$$\n\nRelacija je konačan podskup skupa svih mogućih torki $Tuple(U)$. Kardinalnost relacije je prirodan broj ili nula.",
+      "hint": "r(U) ⊆ Tuple(U), |r| ∈ ℕ₀"
+    },
+    {
+      "question": "Zašto u relaciji **ne mogu postojati dve identične torke**?",
+      "answer": "Zato što je relacija po definiciji **skup** torki, a u teoriji skupova duplikati nisu dozvoljeni.\n\nAko bi se pojavile dve identične torke, to bi bila ista torka samo dva puta prikazana.",
+      "hint": "Relacija je SKUP — šta ne dozvoljava skup?"
+    },
+    {
+      "question": "Da li je **poredak obeležja** (kolona) bitan u relaciji?",
+      "answer": "**Ne**, poredak obeležja (kolona tabele) **ne utiče** na informacije koje relacija nosi — on je nebitan.\n\nTabela sa kolonama (MBR, IME) i (IME, MBR) nosi iste informacije.",
+      "hint": "Relacija je skup — redosled elemenata u skupu je..."
+    },
+    {
+      "question": "Da li je **poredak torki** u relaciji bitan?",
+      "answer": "**Ne**, poredak torki u relaciji **ne utiče** na informacije — on je nebitan.\n\nNema \"prvog\" ili \"poslednjeg\" reda. Svi su ravnopravni.",
+      "hint": "Isto kao za obeležja — skup nema redosled"
+    },
+    {
+      "question": "Šta u tabelarnom prikazu odgovara **relaciji**, a šta **šemi relacije**?",
+      "answer": "- **Relacija** = kompletan sadržaj tabele (kratko: *tabela*)\n- **Šema relacije** = opis tabele (*definicija tabele*)\n\nŠema kaže KAKVA je tabela, a relacija je KONKRETNA tabela sa podacima.",
+      "hint": "Šema = opis, relacija = sadržaj"
+    },
+    {
+      "question": "Šta je **šema relacije** i kako se formalno zapisuje?",
+      "answer": "**Šema relacije** je imenovani par:\n\n$$N(R, O)$$\n\ngde je:\n- $N$ — naziv šeme relacije\n- $R$ — skup obeležja\n- $O$ — skup ograničenja",
+      "hint": "Imenovani par: N(R, O)"
+    },
+    {
+      "question": "Šta je $N$, $R$ i $O$ u zapisu $N(R, O)$?",
+      "answer": "- $N$ — **naziv** šeme relacije (može biti izostavljen)\n- $R$ — **skup obeležja** šeme relacije\n- $O$ — **skup ograničenja** šeme relacije",
+      "hint": "Naziv, obeležja, ograničenja"
+    },
+    {
+      "question": "Šta je **pojava nad šemom relacije**?",
+      "answer": "Pojava nad šemom relacije $(R, O)$ je **bilo koja relacija $r(R)$** takva da **zadovoljava sva ograničenja** iz skupa $O$.\n\nPrimer: ako šema kaže \"MBR mora biti jedinstven\", svaka relacija koja to poštuje je validna pojava.",
+      "hint": "Relacija koja zadovoljava SVA ograničenja"
+    },
+    {
+      "question": "Kako se šema relacije zapisuje u **početnim fazama projektovanja**?",
+      "answer": "U početnim fazama projektovanja, šema relacije se posmatra kao:\n\n$$N(R, K)$$\n\ngde je $K$ skup ključeva — jer se u ranim fazama ograničenja svode na ključeve.",
+      "hint": "N(R, K) umesto N(R, O)"
+    },
+    {
+      "question": "Šta je $K$ u zapisu $N(R, K)$?",
+      "answer": "$K$ je **skup ključeva** šeme relacije. To je podskup skupa ograničenja $C$ koji je **obavezno zadat** i **neprazan** ($K \\subseteq C$, $K \\neq \\emptyset$).\n\nSvaka šema relacije mora imati bar jedan ključ.",
+      "hint": "Neprazan, obavezan skup KLJUČEVA"
+    },
+    {
+      "question": "Šta je **relaciona šema baze podataka**?",
+      "answer": "**Relaciona šema baze podataka** je (imenovani) par:\n\n$$(S, I)$$\n\ngde je:\n- $S$ — skup šema relacija\n- $I$ — skup međurelacionih ograničenja",
+      "hint": "Par (S, I) — šeme + međurelaciona ograničenja"
+    },
+    {
+      "question": "Kako se **formalno zapisuje** relaciona šema baze podataka?",
+      "answer": "$$(S, I)$$\n\n$$S = \\{(R_i, O_i) \\mid i \\in \\{1, \\ldots, n\\}\\}$$\n\n$S$ je skup šema relacija, a $I$ je skup međurelacionih ograničenja.",
+      "hint": "(S, I) gde je S = {(R₁,O₁), ..., (Rₙ,Oₙ)}"
+    },
+    {
+      "question": "Šta je $S$, a šta $I$ u paru $(S, I)$?",
+      "answer": "- $S$ — **skup šema relacija**: $S = \\{(R_i, O_i) \\mid i \\in \\{1, \\ldots, n\\}\\}$\n- $I$ — **skup međurelacionih ograničenja** (pravila koja važe IZMEĐU različitih relacija)",
+      "hint": "S = šeme relacija, I = pravila između njih"
+    },
+    {
+      "question": "Šta su **međurelaciona ograničenja**?",
+      "answer": "Međurelaciona ograničenja su pravila koja važe **između različitih relacija** (tabela) u bazi podataka.\n\nPrimer: \"radnik ne može biti angažovan na projektu, ako nije zaposlen\" — povezuje tabele Angažovanje i Radnik.",
+      "hint": "Ograničenja IZMEĐU tabela, ne unutar jedne tabele"
+    },
+    {
+      "question": "Šta je **relaciona baza podataka**?",
+      "answer": "**Relaciona baza podataka** je jedna pojava nad zadatom relacionom šemom $(S, I)$. Svakoj šemi relacije iz $S$ odgovara jedna njena pojava, i skup tih relacija mora zadovoljiti sva međurelaciona ograničenja iz $I$.",
+      "hint": "Jedna POJAVA nad šemom (S, I)"
+    },
+    {
+      "question": "Kako glasi **formalna definicija relacione baze podataka**?",
+      "answer": "$$s: S \\rightarrow \\{r_i \\mid i \\in \\{1, \\ldots, n\\}\\}, \\quad (\\forall i)\\ s(R_i, O_i) = r_i$$\n\nPreslikavanje koje svakoj šemi iz $S$ dodeljuje jednu njenu pojavu (relaciju), uz zadovoljenje svih ograničenja iz $I$.",
+      "hint": "Preslikavanje s: S → {r₁, ..., rₙ}"
+    },
+    {
+      "question": "Šta **reprezentuje** baza podataka u smislu realnog sistema?",
+      "answer": "Baza podataka reprezentuje **jedno stanje realnog sistema**.\n\nOna se ažurira jer promene stanja realnog sistema treba da prate odgovarajuće promene podataka u BP.",
+      "hint": "Jedno STANJE realnog sistema"
+    },
+    {
+      "question": "Šta je **nivo intenzije**?",
+      "answer": "**Nivo intenzije** (konteksta) je nivo tipa — opisuje **logičku strukturu obeležja** (šeme).\n\nTo je opis KAKVI podaci mogu postojati, a ne konkretni podaci. Primer: \"tabela Radnik ima kolone MBR, IME, PRZ\".",
+      "hint": "Nivo ŠEME — opis strukture, ne konkretni podaci"
+    },
+    {
+      "question": "Šta je **nivo ekstenzije**?",
+      "answer": "**Nivo ekstenzije** (konkretizacije) je nivo pojave tipa — opisuje **logičku strukturu podataka**, tj. konkretne vrednosti.\n\nPrimer: u tabeli Radnik stoji da je Ana Pap radnik sa MBR=101.",
+      "hint": "Nivo PODATAKA — konkretne vrednosti"
+    },
+    {
+      "question": "Da li je šema BP **statička** ili **dinamička** kategorija?",
+      "answer": "Šema BP je **statička** (sporo promenljiva) kategorija sistema baze podataka.\n\nStruktura tabela i ograničenja se menja retko — npr. jednom godišnje se doda nova kolona.",
+      "hint": "Menja se retko — STATIČKA"
+    },
+    {
+      "question": "Da li je relaciona BP **statička** ili **dinamička** kategorija?",
+      "answer": "Relaciona baza podataka je **dinamička** (stalno promenljiva) kategorija sistema BP.\n\nKonkretni podaci se menjaju svakodnevno — dodaju se novi zapisi, brišu stari, ažuriraju postojeći.",
+      "hint": "Podaci se menjaju stalno — DINAMIČKA"
+    },
+    {
+      "question": "Kada je baza podataka u **formalno konzistentnom** stanju?",
+      "answer": "BP je u formalno konzistentnom stanju ako:\n\n1. Svaka relacija $r_i$ zadovoljava **sva ograničenja** odgovarajuće šeme $(R_i, O_i)$\n2. RBP zadovoljava **sva međurelaciona ograničenja** iz skupa $I$",
+      "hint": "Dva uslova: ograničenja šema + međurelaciona ograničenja"
+    },
+    {
+      "question": "Kada je baza podataka u **suštinski konzistentnom** stanju?",
+      "answer": "BP je u suštinski konzistentnom stanju ako:\n\n1. Se nalazi u **formalno konzistentnom** stanju, **I**\n2. Predstavlja **vernu sliku stanja realnog sistema**\n\nSuštinska konzistentnost je stroži zahtev od formalne.",
+      "hint": "Formalna konzistentnost + verna slika realnog sistema"
+    },
+    {
+      "question": "Koji nivo konzistentnosti može kontrolisati **SUBP**?",
+      "answer": "SUBP može kontrolisati samo **formalnu konzistentnost** — proverava da li su ograničenja zadovoljena.\n\nSUBP **ne može** kontrolisati suštinsku konzistentnost jer ne zna da li podaci odgovaraju realnom svetu. Za to su odgovorni korisnici i poslovni procesi.",
+      "hint": "Samo FORMALNU — suštinsku ne može"
+    },
+    {
+      "question": "Na koliko procenata je u praksi sveden **nivo pojave grešaka** u BP?",
+      "answer": "U praksi, nivo pojave grešaka u bazama podataka sveden je na ispod **2-3%**.",
+      "hint": "Ispod 2-3%"
+    },
+    {
+      "question": "Ko je **Edgar F. Codd** i koji je njegov značaj za relacioni model?",
+      "answer": "Edgar F. Codd je autor relacionog modela podataka. Objavio je čuveni rad **1970. godine**: *\"A Relational Model of Data for Large Shared Data Banks\"* (Communications of the ACM 13(6): 377-387).\n\n1990. je objavio i **12 principa RMP** u knjizi *\"The Relational Model for Data Base Management: Version 2\"*.",
+      "hint": "Rad iz 1970. + 12 principa iz 1990."
+    },
+    {
+      "question": "Koje su **matematičke osnove** relacionog modela podataka?",
+      "answer": "Matematičke osnove RMP su:\n\n1. **Teorija skupova i relacija**\n2. **Predikatski račun I reda**\n\nCodd je insistirao na matematičkim osnovama kao odgovor na \"ad hoc\" razvijene starije modele.",
+      "hint": "Dva stuba: teorija skupova + predikatski račun"
+    },
+    {
+      "question": "Koji su **nedostaci mrežnog i hijerarhijskog modela** podataka?",
+      "answer": "1. **Čvrsta povezanost** programa i fizičke strukture podataka\n2. **Strukturalna kompleksnost**\n3. **Proceduralno orijentisani** jezici za manipulaciju podacima (navigacioni jezici)\n4. **\"Ad hoc\"** razvijeni modeli, bez značajnije upotrebe matematičkih formalizama",
+      "hint": "Čvrsta vezanost, kompleksnost, navigacioni jezici, bez matematike"
+    },
+    {
+      "question": "Šta je **asocijativno adresiranje**?",
+      "answer": "**Asocijativno adresiranje** je pristup podacima u RMP zasnovan na isključivoj upotrebi **simboličkih adresa** (najčešće vrednosti ključa).\n\nSvaki podatak u BP se pronalazi na osnovu: **naziva relacije**, **zadatih obeležja** i **vrednosti ključa**. SUBP prevodi simboličku u relativnu adresu.",
+      "hint": "Simboličke adrese umesto fizičkih — naziv relacije + obeležja + ključ"
+    },
+    {
+      "question": "Na osnovu čega se pronalazi svaki podatak u BP u **relacionom modelu**?",
+      "answer": "Svaki podatak se pronalazi na osnovu tri stvari:\n\n1. **Naziva relacije** (ime tabele)\n2. **Zadatih obeležja** (ime kolone)\n3. **Vrednosti ključa** (koji red)\n\nOvo je asocijativno adresiranje — bez fizičkih adresa.",
+      "hint": "Tri stvari: tabela + kolona + ključ"
+    },
+    {
+      "question": "Šta je **prostiranje ključa**?",
+      "answer": "**Prostiranje ključa** je mehanizam povezivanja podataka u RMP gde se vrednost ključa iz jedne relacije prenosi u drugu relaciju. Ovo uvodi pojam **stranog ključa** i ograničenja referencijalnog integriteta.\n\nPrimer: kolona SFK u tabeli Projektant je preneta vrednost ključa iz tabele Fakultet.",
+      "hint": "Prenos vrednosti ključa iz jedne tabele u drugu → strani ključ"
+    },
+    {
+      "question": "Šta je **strukturalna komponenta** modela podataka?",
+      "answer": "Strukturalna komponenta definiše **primitivne i složene koncepte** — \"gradivne elemente\" modela podataka, kao i pravila za kreiranje složenih koncepata.\n\nSluži za modeliranje **logičke strukture obeležja (LSO)** kao statičke strukture sistema — šeme BP.",
+      "hint": "Gradivni elementi + pravila za njihovo kombinovanje"
+    },
+    {
+      "question": "Šta je **operacijska komponenta** modela podataka?",
+      "answer": "Operacijska komponenta definiše jezike za rad sa podacima:\n\n- **QL** — upitni jezik\n- **DML** — jezik za manipulisanje podacima\n- **DDL** — jezik za definiciju podataka\n\nSluži za modeliranje **dinamike izmene stanja**.",
+      "hint": "QL + DML + DDL — jezici za rad sa podacima"
+    },
+    {
+      "question": "Šta je **integritetna komponenta** modela podataka?",
+      "answer": "Integritetna komponenta definiše **skup tipova ograničenja** (uslova integriteta).\n\nSluži za modeliranje **ograničenja nad podacima** u bazi podataka — šta sme, a šta ne sme da se desi sa podacima.",
+      "hint": "Tipovi ograničenja — pravila koja podaci moraju poštovati"
+    },
+    {
+      "question": "Nabrojte **tri komponente** modela podataka.",
+      "answer": "1. **Strukturalna komponenta** — gradivni elementi, šema\n2. **Operacijska komponenta** — jezici za rad sa podacima (QL, DML, DDL)\n3. **Integritetna komponenta** — tipovi ograničenja",
+      "hint": "Struktura + operacije + integritet"
+    },
+    {
+      "question": "Šta je **Pravilo 0** iz 12 principa RMP?",
+      "answer": "**Pravilo 0** (kvalifikacija sistema): Da bi se sistem kvalifikovao kao RDBMS, mora koristiti svoje **relacione mogućnosti isključivo** za upravljanje bazom podataka.\n\nOvo je osnovno pravilo — sistem mora biti relacioni i kao baza i kao upravljački sistem.",
+      "hint": "Sistem mora koristiti ISKLJUČIVO relacione mogućnosti"
+    },
+    {
+      "question": "Šta kaže **Pravilo 1** (pravilo informacija) iz 12 principa RMP?",
+      "answer": "Sve informacije u bazi podataka moraju biti reprezentovane na **jedan i samo jedan način** — **vrednostima u kolonama redova tabela**.\n\nNema skrivenih informacija u pokazivačima, redosledu, ili fizičkoj strukturi.",
+      "hint": "Jedan i samo jedan način — vrednosti u tabelama"
+    },
+    {
+      "question": "Šta kaže **Pravilo 2** (pravilo garantovanog pristupa)?",
+      "answer": "Svaki podatak mora biti dostupan **bez dvosmislenosti**. Svaka skalarna vrednost se logički adresira navođenjem:\n\n1. **Naziva tabele**\n2. **Naziva kolone**\n3. **Vrednosti primarnog ključa**\n\nOvo je osnova asocijativnog adresiranja.",
+      "hint": "Tabela + kolona + primarni ključ = tačno jedan podatak"
+    },
+    {
+      "question": "Šta kaže **Pravilo 3** (sistematsko tretiranje nula vrednosti)?",
+      "answer": "SUBP mora dozvoliti da svako polje ostane **null** (prazno). Mora podržavati reprezentaciju \"nedostajuće informacije\" koja je:\n\n- **Sistematska**\n- **Različita** od svih regularnih vrednosti\n- **Nezavisna** od tipa podatka",
+      "hint": "NULL mora biti sistematski, različit, nezavisan od tipa"
+    },
+    {
+      "question": "Šta kaže **Pravilo 4** (aktivan online katalog)?",
+      "answer": "Sistem mora podržavati **online relacioni katalog** kome ovlašćeni korisnici mogu pristupiti **istim upitnim jezikom** kojim pristupaju podacima u bazi.\n\nDakle, struktura BP se opisuje i pretražuje na isti način kao i sami podaci.",
+      "hint": "Katalog dostupan istim jezikom kao i podaci"
+    },
+    {
+      "question": "Šta kaže **Pravilo 5** (sveobuhvatan podjezik za podatke)?",
+      "answer": "Sistem mora podržavati bar jedan relacioni jezik koji:\n\n- Ima **linearnu sintaksu**\n- Može se koristiti **interaktivno** i unutar **aplikacija**\n- Podržava: **DDL** (definicija + pogledi), **DML** (ažuriranje + čitanje), **bezbednost i integritet**, **upravljanje transakcijama** (begin, commit, rollback)",
+      "hint": "Jedan jezik za sve: DDL, DML, bezbednost, transakcije"
+    },
+    {
+      "question": "Šta kaže **Pravilo 6** (ažuriranje pogleda)?",
+      "answer": "Svi pogledi koji su **teoretski ažurabilni** moraju biti ažurabilni od strane sistema.\n\nAko je matematički moguće ažurirati pogled, SUBP to mora podržati.",
+      "hint": "Teoretski ažurabilni pogledi → sistem MORA da ih ažurira"
+    },
+    {
+      "question": "Šta kaže **Pravilo 7** (operacije visokog nivoa)?",
+      "answer": "Sistem mora podržavati **set-at-a-time** operatore za unos, ažuriranje i brisanje.\n\nTo znači da se operacije izvršavaju nad **skupovima podataka** (iz više redova/tabela), ne samo nad pojedinačnim redovima.",
+      "hint": "Set-at-a-time — rad sa SKUPOVIMA, ne red po red"
+    },
+    {
+      "question": "Šta kaže **Pravilo 8** (fizička nezavisnost podataka)?",
+      "answer": "Promene na **fizičkom nivou** (kako se podaci skladište — nizovi, povezane liste, itd.) **ne smeju zahtevati** promenu aplikacija zasnovanih na strukturi.\n\nProgram ne treba da zna kako su podaci fizički organizovani.",
+      "hint": "Fizičke promene → aplikacije ostaju NEPROMENJENE"
+    },
+    {
+      "question": "Šta kaže **Pravilo 9** (logička nezavisnost podataka)?",
+      "answer": "Promene na **logičkom nivou** (tabele, kolone, redovi) **ne smeju zahtevati** promenu aplikacija.\n\n**Logička nezavisnost** je teže ostvariva od fizičke nezavisnosti.",
+      "hint": "Logičke promene → aplikacije nepromenjene. TEŽE od fizičke."
+    },
+    {
+      "question": "Šta kaže **Pravilo 10** (nezavisnost integriteta)?",
+      "answer": "Ograničenja integriteta moraju biti specifikovana **odvojeno od aplikativnih programa** i smeštena u **katalog**.\n\nMoguće ih je menjati bez uticaja na postojeće aplikacije.",
+      "hint": "Ograničenja u KATALOGU, ne u programima"
+    },
+    {
+      "question": "Šta kaže **Pravilo 11** (nezavisnost distribucije)?",
+      "answer": "Distribucija delova baze podataka na **različite lokacije** treba da bude **nevidljiva korisnicima**.\n\nPostojeće aplikacije moraju nastaviti da rade i kada se uvede distribuirana verzija i kada se podaci redistribuiraju.",
+      "hint": "Distribucija NEVIDLJIVA korisnicima"
+    },
+    {
+      "question": "Šta kaže **Pravilo 12** (pravilo nesubverzije)?",
+      "answer": "Ako sistem ima jezik **niskog nivoa** (single-record-at-a-time), taj jezik se **ne sme koristiti** za zaobilaženje pravila i ograničenja integriteta definisanih na višem relacionom nivou.\n\nNema \"zadnjih vrata\" za zaobilaženje pravila.",
+      "hint": "Niski nivo NE SME zaobilaziti pravila visokog nivoa"
+    },
+    {
+      "question": "Kakva je razlika između **relacije** i **tabele**?",
+      "answer": "**Relacija** je matematički koncept — konačan skup torki, gde redosled torki i obeležja NIJE bitan, i duplikati NISU dozvoljeni.\n\n**Tabela** je vizuelni prikaz relacije, gde redosled redova i kolona MOŽE izgledati bitan (ali informaciono nije).\n\nRelacija je suština, tabela je prikaz.",
+      "hint": "Relacija = matematika (skup), tabela = vizuelni prikaz"
+    },
+    {
+      "question": "Šta znači zapis $N(R, C)$ i šta je $C$?",
+      "answer": "$N(R, C)$ je **šema relacije** gde:\n\n- $N$ — naziv\n- $R$ — skup obeležja\n- $C$ — **skup ograničenja**, koji obavezno sadrži neprazan podskup ključeva $K \\subseteq C$",
+      "hint": "C je skup OGRANIČENJA, K ⊆ C je skup ključeva"
+    },
+    {
+      "question": "Šta znači da je $K \\subseteq C$ i da je $K$ neprazan?",
+      "answer": "$K$ (skup ključeva) je **podskup** skupa ograničenja $C$, i mora biti **neprazan** — svaka šema relacije mora imati **bar jedan ključ**.\n\nKljučevi su obavezan deo ograničenja — bez njih se ne može jedinstveno identifikovati torka.",
+      "hint": "K je DEO ograničenja i MORA postojati (≠ ∅)"
+    },
+    {
+      "question": "Objasnite kako se koncepti strukturalne komponente RMP grade **od primitivnih ka složenim**, navodeći oba nivoa apstrakcije.",
+      "answer": "**Nivo intenzije:** primitivni su *domen* i *obeležje*, složeni: *skup obeležja* → *šema relacije* → *šema BP*.\n\n**Nivo ekstenzije:** primitivan je *vrednost*, složeni: *podatak* → *torka* → *relacija* → *baza podataka*.\n\nSloženi nastaju **kombinovanjem** primitivnih prema pravilima RMP.",
+      "hint": "Dva nivoa, od jednostavnih ka složenim: domen→šema BP / vrednost→BP"
+    },
+    {
+      "question": "Dati su $U = \\{A, B, C\\}$, $dom(A)=\\{1,2\\}$, $dom(B)=\\{x,y\\}$, $dom(C)=\\{p,q\\}$ i torka $t=\\{(A,1),(B,x),(C,q)\\}$. **Izračunajte** $t[\\{A, C\\}]$.",
+      "answer": "Restrikcija čuva samo obeležja A i C sa originalnim vrednostima:\n\n$$t[\\{A, C\\}] = \\{(A, 1), (C, q)\\}$$\n\nObeležje B i njegova vrednost x su \"odsečeni\".",
+      "hint": "Zadrži samo parove za A i C iz originalne torke"
+    },
+    {
+      "question": "Objasnite razliku između **formalne** i **suštinske konzistentnosti** BP i navedite ko je odgovoran za svaku.",
+      "answer": "**Formalna**: sva ograničenja šema i međurelaciona ograničenja su zadovoljena → odgovoran **SUBP** (automatski proverava).\n\n**Suštinska**: formalna konzistentnost + **verna slika realnog sistema** → odgovorni **korisnici i poslovni procesi** (SUBP ne zna šta se dešava u realnom svetu).",
+      "hint": "SUBP → formalna, ljudi → suštinska"
+    },
+    {
+      "question": "Objasnite koncept **asocijativnog adresiranja** u RMP i uporedite ga sa pristupom kod starijih modela.",
+      "answer": "**Stariji modeli**: fizičke adrese, navigacija pokazivačima, programi moraju znati fizičku strukturu.\n\n**RMP**: asocijativno adresiranje — podatak se pronalazi po **nazivu relacije + obeležjima + vrednosti ključa**. SUBP automatski prevodi simboličku u fizičku adresu. Rezultat: **nezavisnost programa od fizičke organizacije**.",
+      "hint": "Stari: fizičke adrese. RMP: simboličke adrese (ključ)"
+    },
+    {
+      "question": "Zašto je šema BP **statička**, a relaciona BP **dinamička** kategorija? Ilustrujte primerom.",
+      "answer": "**Šema BP** (intenzija) se menja retko — dodavanje nove kolone, novi tip ograničenja. Primer: šema Radnik(MBR, IME, PRZ) ostaje ista godinama.\n\n**Relaciona BP** (ekstenzija) se menja stalno — svaki dan se dodaju, brišu, ažuriraju podaci. Primer: zapošljavanje novog radnika = nova torka.",
+      "hint": "Šema (struktura) = retke promene. Podaci = stalne promene."
+    },
+    {
+      "question": "Data je šema $Letovi(\\{P, A, L\\}, O)$ gde $O$: \"Pilot može leteti samo na jednom tipu aviona\". Da li relacija $\\{(Pop,747,101),(Pop,DC9,102),(Ana,737,103)\\}$ predstavlja **validnu pojavu**?",
+      "answer": "**Nije validna.** Pilot Pop leti na 747 (torka 1) i DC9 (torka 2) — dva različita tipa aviona. Ovo **narušava ograničenje** da pilot može leteti samo na jednom tipu.\n\nDa bi bila validna, Pop bi morao imati isti tip aviona u svim torkama.",
+      "hint": "Pop leti na dva tipa aviona — ograničenje narušeno"
+    },
+    {
+      "question": "Objasnite razliku između **unutarrelacionih** i **međurelacionih** ograničenja na primeru.",
+      "answer": "**Unutarrelaciona** (skup $O_i$): važe unutar jedne šeme. Primer: \"MBR mora biti jedinstven\" u šemi Radnik.\n\n**Međurelaciona** (skup $I$): važe između šema. Primer: \"radnik ne može biti angažovan na projektu ako nije zaposlen\" — povezuje Angažovanje i Radnik.",
+      "hint": "Unutar = jedna tabela (Oᵢ), između = više tabela (I)"
+    },
+    {
+      "question": "Šta je Coddovo **Pravilo 2** (garantovani pristup) i kako se manifestuje u praksi?",
+      "answer": "Svaki podatak dostupan **bez dvosmislenosti** navođenjem: **naziva tabele + naziva kolone + vrednosti primarnog ključa**.\n\nU praksi: tražimo IME iz Radnik gde MBR=101 → postoji **tačno jedan** rezultat. Ovo je osnova asocijativnog adresiranja.",
+      "hint": "Tri koordinate: tabela + kolona + ključ = jedan podatak"
+    },
+    {
+      "question": "Objasnite zašto **redosled torki i obeležja** nemaju uticaj na informacioni sadržaj relacije.",
+      "answer": "Relacija je **skup** torki — u teoriji skupova redosled nije bitan: $\\{a,b\\} = \\{b,a\\}$.\n\nTorka je **preslikavanje** iz obeležja u vrednosti — nebitno kojim redom su obeležja navedena: $\\{(A,1),(B,2)\\} = \\{(B,2),(A,1)\\}$.\n\nTabela sugeriše redosled, ali to je samo prikaz, ne suština.",
+      "hint": "Skup nema redosled, preslikavanje nema redosled"
+    }
+  ]
+}

@@ -1,0 +1,464 @@
+{
+  "cards": [
+    {
+      "question": "Koje tipove ograničenja obuhvata **integritetna komponenta** ER modela podataka?",
+      "answer": "1. **Ograničenje domena**\n2. **Ograničenje vrednosti obeležja**\n3. **Ograničenje pojave tipa**\n4. **Kardinalitet tipa poveznika**\n5. **Ograničenje ključa (integritet tipa)** - za tip entiteta i tip poveznika",
+      "hint": "5 tipova ograničenja - od najnižeg (vrednosti) do najvišeg (veze)"
+    },
+    {
+      "question": "Koji je cilj **integritetne komponente** ER modela?",
+      "answer": "Cilj je definisanje **pravila** (ograničenja) koja čuvaju **smisao i ispravnost** podataka u bazi. ER model pruža relativno dobre mogućnosti za definisanje ograničenja, koja se izražavaju uglavnom **eksplicitno**.",
+      "hint": "Struktura bez pravila nije dovoljna"
+    },
+    {
+      "question": "Šta predstavlja **integritet domena**?",
+      "answer": "**Integritet domena** predstavlja ograničenje svojstveno praktično svim modelima podataka. U opštem slučaju, to je trojka:\n\n$$(\\text{Tip podatka},\\ \\text{Dužina podatka},\\ \\text{Uslov})$$\n\n- **Tip podatka** - definiše vrstu znakova (jedina obavezna komponenta)\n- **Dužina podatka** - maksimalni broj znakova za izražavanje vrednosti\n- **Uslov** - opciona komponenta, može biti regularni izraz ili funkcija",
+      "hint": "Trojka koja kontroliše koje vrednosti uopšte mogu da postoje"
+    },
+    {
+      "question": "Koja je **jedina obavezna** komponenta u trojci ograničenja domena $(\\text{Tip},\\ \\text{Dužina},\\ \\text{Uslov})$?",
+      "answer": "**Tip podatka** je jedina obavezna komponenta. On definiše vrstu znakova putem kojih se izražava vrednost obeležja. Nasleđuju se sva ograničenja, relacije i operacije definisane nad izabranim tipom.",
+      "hint": "Morate bar znati ŠTA je podatak"
+    },
+    {
+      "question": "Šta definiše **tip podatka** u okviru ograničenja domena?",
+      "answer": "**Tip podatka** definiše **vrstu znakova** putem kojih se izražava vrednost obeležja. To je oznaka primitivnog domena ili oznaka prethodno korisnički definisanog domena.",
+      "hint": "Određuje VRSTU vrednosti"
+    },
+    {
+      "question": "Šta izražava **dužina podatka** u okviru ograničenja domena?",
+      "answer": "**Dužina podatka** se izražava putem **maksimalnog broja znakova** koji mogu biti upotrebljeni za izražavanje vrednosti obeležja. Tip i dužina podatka zajedno ograničavaju vrednosti obeležja na tip i broj znakova. Navodi se samo za tipove podataka koji to zahtevaju.",
+      "hint": "Koliko je 'kutija' velika"
+    },
+    {
+      "question": "Šta predstavlja **uslov** kao treća komponenta ograničenja domena?",
+      "answer": "**Uslov** je opciona komponenta ograničenja domena. To je logički uslov koji svaka vrednost domena mora da zadovolji. Može biti:\n- **Regularni izraz** (prost ili složen)\n- **Funkcija** čije argumente predstavljaju neka obeležja\n- **Algoritam**",
+      "hint": "Treća, opciona komponenta - dodatno sužava dozvoljene vrednosti"
+    },
+    {
+      "question": "Kako se **formalno specificira** domen?",
+      "answer": "$$D(\\text{id}(D),\\ \\text{Predef})$$\n\ngde je:\n- $D$ - **naziv** domena\n- $\\text{id}(D)$ - **ograničenje** domena\n- $\\text{Predef}$ - **predefinisana** (podrazumevana) vrednost domena",
+      "hint": "Naziv, ograničenje i podrazumevana vrednost"
+    },
+    {
+      "question": "Šta je $D$, šta je $\\text{id}(D)$, a šta $\\text{Predef}$ u specifikaciji domena $D(\\text{id}(D),\\ \\text{Predef})$?",
+      "answer": "- $D$ - **naziv domena**\n- $\\text{id}(D)$ - **ograničenje domena** (definiše se primenom pravila za specificiranje korisnički definisanog domena)\n- $\\text{Predef}$ - **predefinisana (podrazumevana) vrednost** domena, koja mora da zadovolji ograničenja tipa, dužine i uslova",
+      "hint": "Tri dela specifikacije domena"
+    },
+    {
+      "question": "Kako izgleda ograničenje domena primenom **pravila nasleđivanja**?",
+      "answer": "$$\\text{id}(D) = (\\text{Tip},\\ \\text{Dužina},\\ \\text{Uslov})$$\n\n- **Tip** - oznaka primitivnog ili korisnički definisanog domena (*jedina obavezna komponenta*)\n- **Dužina** - navodi se samo kad tip to zahteva\n- **Uslov** - logički uslov koji svaka vrednost mora da zadovolji\n\nNasleđuju se sva ograničenja, relacije i operacije izabranog tipa.",
+      "hint": "Ista trojka (Tip, Dužina, Uslov) - ključno je nasleđivanje od postojećeg domena"
+    },
+    {
+      "question": "Šta je **Predef** i koji uslov mora da zadovolji?",
+      "answer": "**Predef** je predefinisana (podrazumevana) vrednost domena. Mora da zadovolji **sva ograničenja** tipa, dužine i uslova datog domena. Na primer, za domen DPOZOCENA sa uslovom $d \\geq 6$, Predef je 6.",
+      "hint": "Default vrednost koja mora poštovati SVA pravila domena"
+    },
+    {
+      "question": "Navedite **standardne tipove podataka** sa značenjima dužina.",
+      "answer": "| Tip | Dužina |\n|---|---|\n| **INTEGER** | broj cifara |\n| **REAL** | (cifre ispred zareza, cifre iza zareza) |\n| **CHARACTER** | broj znakova |\n| **LOGICAL** | nema dužinu, vrednosti iz $\\{T, \\bot\\}$ |\n| **DATE** | datumska vrednost |",
+      "hint": "5 tipova: INTEGER, REAL, CHARACTER, LOGICAL, DATE"
+    },
+    {
+      "question": "Šta znači tip podatka **LOGICAL** i koje vrednosti prima?",
+      "answer": "Tip podatka **LOGICAL** ukazuje da je reč o logičkoj promenljivoj koja uzima vrednosti iz skupa $\\{T, \\bot\\}$, tj. **tačno** ili **netačno**.",
+      "hint": "Boolean - dva stanja"
+    },
+    {
+      "question": "Šta znači $\\text{dom}(OCE) = \\{0, 1, \\ldots, 99\\}$ za ograničenje $INTEGER(2)$?",
+      "answer": "Pridruživanje standardnog ograničenja $INTEGER(2)$ domenu $\\text{dom}(OCE)$ ukazuje da obeležje OCE može da primi **bilo koji ceo broj** sa **najviše 2 cifre**, dakle vrednosti od **0 do 99**.",
+      "hint": "INTEGER sa 2 cifre = 0 do 99"
+    },
+    {
+      "question": "Šta znači pridruživanje $\\text{dom}(IME)$ ograničenja $CHARACTER(10)$?",
+      "answer": "Znači da $\\text{dom}(IME)$ može pripadati **bilo koji niz od 10 znakova**. Ograničenje definiše da obeležje IME prima znakovne vrednosti maksimalne dužine 10.",
+      "hint": "String do 10 karaktera"
+    },
+    {
+      "question": "Objasnite primer domena **DPOZOCENA** koji nasleđuje **DOCENA**.",
+      "answer": "**DOCENA** = $((Number, 2, d \\geq 5 \\land d \\leq 10), -)$ → dozvoljava vrednosti $\\{5,6,7,8,9,10\\}$\n\n**DPOZOCENA** = $((DOCENA, -, d \\geq 6), 6)$ → **nasleđuje** DOCENA, ali dodaje uslov $d \\geq 6$ i Predef = 6\n\nEfektivno, DPOZOCENA dozvoljava **samo** $\\{6,7,8,9,10\\}$ jer se kombinuju ograničenja nasleđenog domena ($5 \\leq d \\leq 10$) sa novim uslovom ($d \\geq 6$).",
+      "hint": "Nasleđuje ograničenja roditeljskog domena + dodaje svoja"
+    },
+    {
+      "question": "Šta su **prosti regularni izrazi**?",
+      "answer": "Prosti regularni izrazi se definišu s obzirom na neke **konstante**. Neka je $k$ konstanta iz domena obeležja $A$, a $\\theta$ operator poređenja iz skupa $\\{<, >, \\leq, \\geq, \\neq, =\\}$. Imaju **dve forme**:\n\n1. $(\\theta k)$ - sve vrednosti moraju biti u relaciji $\\theta$ sa konstantom $k$\n2. $(k_1, k_2, \\ldots, k_n)$ - obeležje sme uzimati vrednosti samo iz navedenog skupa",
+      "hint": "Jedan operator poređenja ILI nabrajanje konkretnih vrednosti"
+    },
+    {
+      "question": "Koje **dve forme** mogu imati prosti regularni izrazi?",
+      "answer": "1. $(\\theta k)$ - izraz gde su sve vrednosti obeležja $A$ u relaciji $\\theta$ (operator poređenja) sa konstantom $k$. Primer: $(<11)$\n2. $(k_1, k_2, \\ldots, k_n)$ - izraz koji navodi tačan skup dozvoljenih vrednosti. Primer: $(6, 7, 8, 9, 10)$",
+      "hint": "Poređenje sa konstantom ILI eksplicitno nabrajanje"
+    },
+    {
+      "question": "Šta znači izraz $(\\theta k)$ u prostom regularnom izrazu?",
+      "answer": "Izraz $(\\theta k)$ ukazuje da **sve vrednosti** pridružene obeležju $A$ moraju biti u relaciji $\\theta$ sa konstantom $k$, gde je $\\theta$ operator poređenja iz skupa $\\{<, >, \\leq, \\geq, \\neq, =\\}$.\n\nPrimer: $(<11)$ znači da sve vrednosti moraju biti manje od 11.",
+      "hint": "θ je operator poređenja, k je konstanta"
+    },
+    {
+      "question": "Šta znači izraz $(k_1, k_2, \\ldots, k_n)$ u prostom regularnom izrazu?",
+      "answer": "Izraz $(k_1, k_2, \\ldots, k_n)$ ukazuje da obeležje $A$ sme uzimati vrednosti **isključivo iz skupa** $\\{k_1, k_2, \\ldots, k_n\\}$.\n\nPrimer: $(6, 7, 8, 9, 10)$ znači da OCE može biti samo 6, 7, 8, 9 ili 10.",
+      "hint": "Nabrajanje svih dozvoljenih vrednosti"
+    },
+    {
+      "question": "Šta su **složeni regularni izrazi** i kako se formiraju?",
+      "answer": "Složeni regularni izrazi se **komponuju** od drugih regularnih izraza (prostih ili složenih) njihovim povezivanjem putem **logičkih operatora**:\n- $\\land$ (konjunkcija - I)\n- $\\lor$ (disjunkcija - ILI)\n- $\\neg$ (negacija - NE)\n\nPrimer: $(> 5 \\land < 11)$ ograničava OCE na vrednosti $\\{6, 7, 8, 9, 10\\}$.",
+      "hint": "Kombinacija prostih izraza pomoću ∧, ∨, ¬"
+    },
+    {
+      "question": "Koji **logički operatori** se koriste za formiranje složenih regularnih izraza?",
+      "answer": "- $\\land$ - **konjunkcija** (logičko I)\n- $\\lor$ - **disjunkcija** (logičko ILI)\n- $\\neg$ - **negacija** (logičko NE)",
+      "hint": "Tri osnovna logička operatora"
+    },
+    {
+      "question": "Kako se izražava ograničenje domena kada **regularni izrazi nisu dovoljni**?",
+      "answer": "Kada regularni izrazi nisu dovoljni, koriste se **funkcije** (čije argumente predstavljaju neka obeležja) ili **algoritmi**.\n\nPrimer funkcije: $iznos = kol \\times jed\\_cen$\nPrimer algoritma: AKO JE REGIJA = 'Vojvodina' TADA PTT_BROJ = '2*'",
+      "hint": "Funkcije ili algoritmi za složenija ograničenja"
+    },
+    {
+      "question": "Kako izgleda ograničenje $iznos = kol \\times jed\\_cen$ i šta predstavlja?",
+      "answer": "Ovo je primer **funkcije kao ograničenja domena**. Posmatraju se obeležja $KOL$ (količina), $JED\\_CEN$ (jedinična cena) i $IZNOS$. Ograničenje kaže da $\\text{dom}(IZNOS)$ sme sadržati **samo** vrednosti dobijene množenjem elemenata $\\text{dom}(KOL)$ sa elementima $\\text{dom}(JED\\_CEN)$.",
+      "hint": "Primer 2.21 - funkcija kao ograničenje"
+    },
+    {
+      "question": "Kako se **algoritmom** može izraziti ograničenje za obeležja REGIJA i PTT_BROJ?",
+      "answer": "```\nAKO JE REGIJA = \"Vojvodina\" TADA\n    PTT_BROJ = \"2*\"\nINAČE\nKRAJ AKO.\n```\nZnak `*` predstavlja zamenu za niz bilo kojih znakova. Ovo ograničava da u regiji Vojvodina svi poštanski brojevi **moraju počinjati cifrom 2**.",
+      "hint": "Primer 2.21 - algoritamsko ograničenje sa džoker znakom *"
+    },
+    {
+      "question": "Šta je **nula vrednost**?",
+      "answer": "**Nula vrednost** predstavlja specijalno ograničenje domena. Putem tog ograničenja se specificira da li obeležje može imati **nedefinisanu vrednost**. Nula vrednost **nije** broj 0 - to je oznaka da vrednost **nedostaje**.",
+      "hint": "NULL ≠ 0 - označava nedostajuću vrednost"
+    },
+    {
+      "question": "Koja su **dva najčešća značenja** nula vrednosti?",
+      "answer": "1. **Postojeća, ali nepoznata vrednost** - vrednost postoji u realnom svetu, ali nam nije poznata u trenutku unosa\n2. **Neprimereno svojstvo** - obeležje nema smisla za dati entitet (npr. broj kućnog telefona za osobu koja ga nema)",
+      "hint": "Nepoznata vrednost ILI neprimereno svojstvo"
+    },
+    {
+      "question": "Da li je **nula vrednost** isto što i **broj 0**?",
+      "answer": "**NE.** Nula vrednost ne predstavlja broj 0 niti bilo koju specijalnu vrednost. To je oznaka da vrednost **nedostaje - nije zadata**. Broj 0 jeste regularna vrednost iz domena, dok je nula vrednost izvan domena.",
+      "hint": "NULL ≠ 0, to su potpuno različiti koncepti"
+    },
+    {
+      "question": "Objasnite primer obeležja $K\\_TEL$ i nula vrednosti.",
+      "answer": "Obeležje $K\\_TEL$ (broj kućnog telefona) ilustruje oba značenja nula vrednosti:\n\n1. **Neprimereno svojstvo** - osoba nema telefon kod kuće, pa obeležje nema smisla\n2. **Nepoznata vrednost** - osoba ima telefon, ali broj je u trenutku evidentiranja nepoznat\n\nU oba slučaja koristi se nula vrednost, ali sa **različitim značenjem**.",
+      "hint": "Primer 2.22 - isti NULL, dva različita razloga"
+    },
+    {
+      "question": "Kako se **formalno specificira** obeležje u okviru tipa?",
+      "answer": "Obeležje $A \\in Q$ datog tipa $N$ ima strukturu:\n\n$$(\\text{id}(N, A),\\ \\text{Predef})$$\n\ngde je:\n- $\\text{id}(N, A)$ - **ograničenje vrednosti obeležja**\n- $\\text{Predef}$ - **predefinisana vrednost** obeležja",
+      "hint": "Par: ograničenje + podrazumevana vrednost"
+    },
+    {
+      "question": "Šta je $\\text{id}(N, A)$ i kakvu **strukturu** ima?",
+      "answer": "**Ograničenje vrednosti obeležja** $\\text{id}(N, A)$ definiše se za svako obeležje tipa i ima strukturu:\n\n$$\\text{id}(N, A) = (\\text{Domen},\\ \\text{Null})$$\n\n- **Domen** - oznaka pridruženog domena obeležja\n- **Null** $\\in \\{T, \\bot\\}$ - dozvola ili zabrana nula vrednosti",
+      "hint": "Par (Domen, Null) - obe komponente obavezne"
+    },
+    {
+      "question": "Šta predstavlja komponenta **Domen** u ograničenju vrednosti obeležja?",
+      "answer": "**Domen** je oznaka (naziv) **pridruženog domena** obeležja. To je obavezna komponenta koja povezuje konkretno obeležje sa prethodno definisanim domenom i svim njegovim ograničenjima.",
+      "hint": "Naziv domena koji kontroliše moguće vrednosti"
+    },
+    {
+      "question": "Šta znači $\\text{Null} = T$ a šta $\\text{Null} = \\bot$?",
+      "answer": "- $\\text{Null} = T$ → **dozvola** dodele nula vrednosti obeležju unutar tipa $N$ (obeležje **može** biti prazno)\n- $\\text{Null} = \\bot$ → **zabrana** dodele nula vrednosti obeležju unutar tipa $N$ (obeležje **mora** imati vrednost)",
+      "hint": "T = može biti NULL, ⊥ = ne sme biti NULL"
+    },
+    {
+      "question": "Da li su **Domen** i **Null** obavezne komponente specifikacije obeležja?",
+      "answer": "**Da**, obe su **obavezne** komponente specifikacije ograničenja vrednosti obeležja $\\text{id}(N, A) = (\\text{Domen}, \\text{Null})$.",
+      "hint": "Obe obavezne - moramo znati domen I da li sme biti NULL"
+    },
+    {
+      "question": "Kako se određuje **predefinisana vrednost** obeležja ako nije eksplicitno navedena?",
+      "answer": "Ako se Predef navede, onda je on važeći. U protivnom, važeći je **Predef odgovarajućeg domena**, ili **prvog sledećeg nasleđenog domena** za koji je Predef definisan (prati se lanac nasleđivanja).",
+      "hint": "Kaskadno naviše kroz lanac nasleđivanja"
+    },
+    {
+      "question": "Šta definiše **ograničenje pojave tipa**?",
+      "answer": "**Ograničenje pojave tipa** definiše ograničenja na moguće vrednosti podataka **unutar iste pojave** tipa entiteta ili tipa poveznika. Predstavlja skup ograničenja vrednosti obeležja, kojem je pridodat **logički uslov** koji povezuje vrednosti više obeležja.",
+      "hint": "Kontroliše MEĐUZAVISNOSTI obeležja unutar jedne pojave"
+    },
+    {
+      "question": "Kako izgleda **formalna definicija** ograničenja pojave tipa?",
+      "answer": "$$\\text{id}(N) = (\\{\\text{id}(N, A) \\mid A \\in Q'\\},\\ \\text{Uslov})$$\n\ngde je:\n- $Q'$ - prošireni skup obeležja tipa\n- $\\text{Uslov}$ - logički uslov koji svaka pojava tipa mora da zadovolji\n- Uslov može sadržati bilo koje obeležje iz proširenog skupa $Q'$",
+      "hint": "Skup ograničenja obeležja + logički uslov nad celom pojavom"
+    },
+    {
+      "question": "Šta je $Q'$ (**prošireni skup obeležja**) za tip entiteta, a šta za tip poveznika?",
+      "answer": "- Za **tip entiteta**: $Q' = Q$ (isti kao osnovni skup obeležja)\n- Za **tip poveznika**: $Q' = Q \\cup K_p$, gde je $K_p$ skup obeležja **primarnog ključa** TP\n\nTip poveznika ima prošireni skup jer uključuje i nasleđena obeležja ključa iz povezanih tipova.",
+      "hint": "TE: Q' = Q, TP: Q' = Q ∪ Kp"
+    },
+    {
+      "question": "Šta predstavlja **Uslov** u ograničenju pojave tipa?",
+      "answer": "**Uslov** je logički uslov koji **svaka pojava** tipa mora da zadovolji. Može, u ulozi operanda, da sadrži **bilo koje obeležje** proširenog skupa obeležja datog tipa. U ER modelu mora biti definisana sintaksa za zadavanje logičkih uslova.",
+      "hint": "Logičko pravilo koje važi za svaku pojavu"
+    },
+    {
+      "question": "Objasnite primer ograničenja pojave tipa **Radnik** sa uslovom $ZAN = 'prg' \\Rightarrow BPJZ \\neq \\bot$.",
+      "answer": "Za TE Radnik({MBR, PRZ, IME, ZAN, BPJZ}, {MBR}):\n\nUslov kaže: ako je **zanimanje** radnika *'prg'* (programer), onda **broj programskog jezika** (BPJZ) **ne sme biti nula vrednost**.\n\nObeležje BPJZ ima Null = $T$ (generalno SME biti NULL), ali uslov pojave dodatno ograničava: za programere to polje MORA biti popunjeno.",
+      "hint": "Ako si programer, moraš imati programski jezik upisan"
+    },
+    {
+      "question": "Koja je **razlika** između ograničenja domena, ograničenja vrednosti obeležja i ograničenja pojave tipa?",
+      "answer": "**Ograničenje domena** → kontroliše **tip i opseg** vrednosti (npr. INTEGER, dužina 2, od 5 do 10)\n\n**Ograničenje vrednosti obeležja** → povezuje obeležje sa domenom i definiše **da li sme biti NULL** ($T$ ili $\\bot$)\n\n**Ograničenje pojave tipa** → obuhvata sva ograničenja obeležja + dodaje **logički uslov** koji povezuje **više obeležja** unutar iste pojave",
+      "hint": "Domen → jedno obeležje (tip), Vrednost → jedno obeležje (NULL), Pojava → više obeležja (uslov)"
+    },
+    {
+      "question": "Šta je **kardinalitet tipa poveznika**?",
+      "answer": "**Kardinalitet tipa poveznika** prema povezanom tipu je par $(a, b)$ koji ograničava u koliko pojava tipa poveznika može učestvovati jedna, bilo koja pojava povezanog tipa - **minimalno** ($a$) i **maksimalno** ($b$). Definiše se za svaki povezani tip.",
+      "hint": "Par (a, b) - koliko puta min i max pojava učestvuje u vezi"
+    },
+    {
+      "question": "Kako se **formalno definiše** kardinalitet TP prema povezanom tipu?",
+      "answer": "Kardinalitet je par:\n\n$$(a, b)$$\n\ngde je:\n- $a \\in \\{0, 1\\}$ - **minimalni kardinalitet**\n- $b \\in \\{1, N\\}$, $N \\geq 2$ - **maksimalni kardinalitet**\n\nDefiniše se **za svaki** povezani tip u okviru TP.",
+      "hint": "a ∈ {0,1}, b ∈ {1,N}"
+    },
+    {
+      "question": "Koje vrednosti može uzeti **minimalni kardinalitet** $a$?",
+      "answer": "$a \\in \\{0, 1\\}$\n\n- $a = 0$ - pojava **ne mora** učestvovati u vezi\n- $a = 1$ - pojava **mora** učestvovati u bar jednoj vezi",
+      "hint": "Samo 0 ili 1"
+    },
+    {
+      "question": "Koje vrednosti može uzeti **maksimalni kardinalitet** $b$?",
+      "answer": "$b \\in \\{1, N\\}$, gde je $N \\geq 2$\n\n- $b = 1$ - pojava može učestvovati u **najviše jednoj** vezi\n- $b = N$ - pojava može učestvovati u **više** veza",
+      "hint": "1 ili N (gde je N ≥ 2)"
+    },
+    {
+      "question": "Šta znači $a = 0$ za pojavu povezanog tipa?",
+      "answer": "$a = 0$ znači da se element skupa originala **može preslikati u prazan skup**. Pojava povezanog tipa **ne mora** učestvovati ni u jednoj pojavi tipa poveznika. Preslikavanje je **parcijalno**.",
+      "hint": "Ne mora biti u vezi - opciono učešće"
+    },
+    {
+      "question": "Šta znači $a = 1$ za pojavu povezanog tipa?",
+      "answer": "$a = 1$ znači da se element skupa originala **preslikava u neprazan podskup**. Pojava povezanog tipa **mora** učestvovati u bar jednoj pojavi tipa poveznika. Preslikavanje je **totalno**. Ovo se naziva i **egzistencijalnim ograničenjem**.",
+      "hint": "Mora biti u vezi - obavezno učešće"
+    },
+    {
+      "question": "Šta znači $b = 1$ za pojavu povezanog tipa?",
+      "answer": "$b = 1$ znači da se pojava može povezati sa **najviše jednom** pojavom drugog tipa. Ako je $b_2 = 1$, preslikavanje $R_1: E_1 \\rightarrow \\mathcal{P}(E_2)$ se transformiše u preslikavanje $R: E_1 \\rightarrow E_2$.",
+      "hint": "Najviše jedna veza - ograničenje na jedinstvenost"
+    },
+    {
+      "question": "Šta znači $b = N$ za pojavu povezanog tipa?",
+      "answer": "$b = N$ (gde $1 < N, M \\leq |E|$) znači da se pojava može povezati sa **više** pojava drugog tipa. Kardinalitet $b_2 = N$ ukazuje da može, ali ne mora, postojati bar jedan entitet klase $E_1$ koji je povezan sa više od jednog entiteta klase $E_2$.",
+      "hint": "Može biti u vezi sa više entiteta"
+    },
+    {
+      "question": "Šta je **totalno preslikavanje**?",
+      "answer": "**Totalno preslikavanje** nastaje kada je minimalni kardinalitet $a = 1$, tj. kada je $a_2 = 1$, jer svaki original preslikava u **neprazan** podskup. U realnom sistemu to znači da je **svaki** entitet jedne klase povezan sa **barem jednim** entitetom druge klase.",
+      "hint": "a = 1 → svaki entitet MORA biti u vezi"
+    },
+    {
+      "question": "Šta je **parcijalno preslikavanje**?",
+      "answer": "**Parcijalno preslikavanje** nastaje kada je minimalni kardinalitet $a = 0$. U realnom sistemu to znači da može postojati bar jedan entitet klase koji **nije povezan** ni sa jednim entitetom druge klase.",
+      "hint": "a = 0 → entitet NE MORA biti u vezi"
+    },
+    {
+      "question": "Šta je **egzistencijalno ograničenje**?",
+      "answer": "Slučaj $a_2 = 1$ se naziva **egzistencijalnim ograničenjem**, jer se može tumačiti na sledeći način: da bi entitet $e_1$ **pripadao** skupu $E_1$, mora biti **povezan sa barem jednim** $e_2$ iz $E_2$. Egzistencija entiteta zavisi od postojanja veze.",
+      "hint": "a = 1: da bi entitet POSTOJAO, mora biti u VEZI"
+    },
+    {
+      "question": "Šta označava pojam **prethođenja i sleđenja** u kontekstu kardinaliteta?",
+      "answer": "Minimalnom kardinalitetu $a = 1$ se može dati semantička interpretacija **prethođenja i sleđenja**: ako je $R_1(E_2(1, b_2))$, to znači da entitet $e_2$ iz $E_2$ **mora postojati pre** nego što entitet $e_1$ iz $E_1$ može biti kreiran.\n\nPrimer: radno mesto mora postojati pre nego što se radnik može na njega rasporediti.",
+      "hint": "a = 1 → drugi entitet mora PRVO postojati"
+    },
+    {
+      "question": "Kako se formalno označava **kardinalitet preslikavanja** $R_1$?",
+      "answer": "$$R_1(E_1(a_2, b_2))$$\n\ngde je $a_2$ **minimalni**, a $b_2$ **maksimalni** kardinalitet preslikavanja. Određuje se identifikacijom minimalne i maksimalne brojnosti podskupa skupa $E_2$ u koji se može preslikati bilo koji element skupa $E_1$.",
+      "hint": "R₁(E₁(min, max))"
+    },
+    {
+      "question": "Kako se formalno označava **kardinalitet relacije** $R$?",
+      "answer": "$$R(E_1(a_1, b_1) : E_2(a_2, b_2))$$\n\nObuhvata kardinalitete za **oba smera** relacije - kardinalitet prema $E_1$ i kardinalitet prema $E_2$.",
+      "hint": "R(E₁(a₁,b₁) : E₂(a₂,b₂)) - oba smera"
+    },
+    {
+      "question": "Koje su **tri opšte grupe** maksimalnih kardinaliteta?",
+      "answer": "1. **M : N** (više prema više) - oba maksimalna kardinaliteta > 1\n2. **N : 1** (više prema jedan) - jedan maksimalni = 1, drugi = N\n3. **1 : 1** (jedan prema jedan) - oba maksimalna kardinaliteta = 1\n\nOve grupe direktno utiču na **formiranje ključeva** tipa poveznika.",
+      "hint": "M:N, N:1, 1:1 - utiču na ključeve TP"
+    },
+    {
+      "question": "Opišite semantiku grupe **M:N** (više prema više).",
+      "answer": "Najopštiji slučaj: $R(E_1(a_2, M) : E_2(a_1, N))$\n\nJedan entitet klase $E_1$ može biti u vezi sa **M** ($>1$) entiteta klase $E_2$ i obratno.\n\nPrimer: Radnik **Radi** na Projektu - jedan radnik na više projekata, na jednom projektu više radnika.",
+      "hint": "Oba smera: može biti u vezi sa VIŠE entiteta"
+    },
+    {
+      "question": "Opišite semantiku grupe **N:1** (više prema jedan).",
+      "answer": "Jedan entitet klase $E_1$ može biti u vezi sa **najviše jednim** entitetom klase $E_2$, ali jedan entitet $E_2$ može biti u vezi sa **više** entiteta $E_1$.\n\nPrimer: Radnik **Raspoređen** na Radno_Mesto - radnik na jednom radnom mestu, ali na radnom mestu više radnika.",
+      "hint": "Jedna strana: max 1, druga strana: max N"
+    },
+    {
+      "question": "Opišite semantiku grupe **1:1** (jedan prema jedan).",
+      "answer": "Jedan entitet klase $E_1$ može biti u vezi sa **najviše jednim** entitetom klase $E_2$ **i obratno**.\n\nPrimer: Radnik **Ima** PolisaOsiguranja - jedan radnik ima jednu polisu, jedna polisa pripada jednom radniku.",
+      "hint": "Oba smera: max JEDAN entitet"
+    },
+    {
+      "question": "Koja **tri slučaja** minimalnih kardinaliteta postoje za grupu M:N?",
+      "answer": "1. **$a_1 = 0, a_2 = 0$** - u obe klase mogu postojati entiteti koji nisu ni sa kim povezani\n2. **$a_1 = 1, a_2 = 0$** (ili obrnuto) - svi entiteti jedne klase moraju biti povezani, ali u drugoj mogu postojati nepovezani (egzistencijalna zavisnost jedne klase)\n3. **$a_1 = 1, a_2 = 1$** - svaki entitet obe klase mora biti povezan sa bar jednim entitetom druge klase (**najstrože ograničenje**)",
+      "hint": "(0,0), (1,0)/(0,1), (1,1) - od najblažeg do najstrožeg"
+    },
+    {
+      "question": "Šta znači kardinalitet $(1,1) : (0,N)$ za vezu **Radnik-Raspoređen-Radno_Mesto**?",
+      "answer": "- $(1,1)$ uz Radnik → jedan radnik **mora** biti raspoređen na **tačno jedno** radno mesto (minimum 1, maksimum 1)\n- $(0,N)$ uz Radno_Mesto → na jedno radno mesto **može** biti raspoređeno **više** radnika, ali **ne mora nijedan** (minimum 0, maksimum N)",
+      "hint": "Radnik: obavezno 1 RM, RM: opciono 0-N radnika"
+    },
+    {
+      "question": "Šta znači kardinalitet $(0,M) : (0,N)$ za vezu **Radnik-Radi-Projekat**?",
+      "answer": "- $(0,M)$ uz Radnik → jedan radnik **može** raditi na **više projekata** ili **ni na jednom** (minimum 0, maksimum M)\n- $(0,N)$ uz Projekat → na jednom projektu **može** raditi **više radnika** ili **nijedan** (minimum 0, maksimum N)\n\nOvo je **najslobodnije** M:N ograničenje.",
+      "hint": "Sve opciono - niko ne mora biti u vezi"
+    },
+    {
+      "question": "Koja su **dva postupka** navođenja kardinaliteta u ER dijagramima?",
+      "answer": "1. **Prvi postupak:** Par $(a_i, b_i)$ se upisuje uz tip entiteta $E_j$ (**suprotni** tip, na drugu stranu dijagrama)\n2. **Drugi postupak (naš):** Par $(a_i, b_i)$ se upisuje uz **sam** tip entiteta $N_i$ (na svoju stranu)\n\nNa jugoslovenskom informatičkom prostoru koristi se **drugi postupak**.",
+      "hint": "Kod nas: kardinalitet se piše uz SVOJ tip entiteta"
+    },
+    {
+      "question": "Kako funkcioniše **prvi postupak** navođenja kardinaliteta?",
+      "answer": "Par $(a_i, b_i)$ se upisuje uz tip entiteta $E_j$ (tj. uz **suprotni** tip). Semantika: jedna pojava tipa $E_1$ javlja se kao komponenta u pojava TP minimalno $a_2$ i maksimalno $b_2$ puta, pa se taj par piše uz $E_2$.",
+      "hint": "Kardinalitet jednog tipa se piše kod DRUGOG tipa"
+    },
+    {
+      "question": "Kako funkcioniše **drugi postupak** navođenja kardinaliteta?",
+      "answer": "Par $(a_i, b_i)$ se upisuje uz **sam** tip entiteta $N_i$. Semantika drugog postupka: jedna pojava tipa entiteta $E_1$ javlja se kao prva komponenta u skupu pojava TP minimalno $a_2$ i maksimalno $b_2$ puta, a taj par se piše **uz $E_1$**.",
+      "hint": "Kardinalitet svakog tipa se piše uz NJEGA SAMOG"
+    },
+    {
+      "question": "Koji postupak navođenja kardinaliteta se koristi na **jugoslovenskom informatičkom prostoru**?",
+      "answer": "Koristi se **drugi postupak** - par $(a_i, b_i)$ se upisuje uz tip entiteta $N_i$ (uz sam taj tip). Ovo je u široj upotrebi na jugoslovenskom informatičkom prostoru.",
+      "hint": "Drugi postupak - kardinalitet uz SVOJ tip"
+    },
+    {
+      "question": "Kako se **geometrijskim simbolima** predstavlja minimalni kardinalitet $a = 0$ i $a = 1$?",
+      "answer": "- $a = 0$ → **isprekidani poteg** (crtkana linija) između tipa entiteta i tipa poveznika\n- $a = 1$ → **puna linija** između tipa entiteta i tipa poveznika",
+      "hint": "Crtkano = opciono (0), puno = obavezno (1)"
+    },
+    {
+      "question": "Kako se **geometrijskim simbolima** predstavlja maksimalni kardinalitet $b = 1$ i $b = N$?",
+      "answer": "- $b = N$ → **račvanje** dela potege uz geometrijsku predstavu tipa entiteta (\"račva\" ili \"vilica\")\n- $b = 1$ → poteg **bez račve** na svom kraju (obična linija)",
+      "hint": "Račva = više (N), bez račve = jedan (1)"
+    },
+    {
+      "question": "Šta je **integritet tipa entiteta**?",
+      "answer": "Integritet tipa entiteta se obezbeđuje putem **ključa**. Ključ je **minimalni skup obeležja** koji jednoznačno identifikuje svaku pojavu tipa entiteta. Svaki TE mora posedovati **bar jedan ključ**.",
+      "hint": "Ograničenje ključa - svaki TE mora imati ključ"
+    },
+    {
+      "question": "Šta je **identifikator tipa poveznika**?",
+      "answer": "**Identifikator tipa poveznika** predstavlja niz naziva povezanih tipova $(N_1, N_2, \\ldots, N_m)$, ili neki **neprazan podniz** tog niza. Ključ TP se **izvodi** na osnovu ključeva povezanih tipova i zavisi od grupe kardinaliteta.",
+      "hint": "Niz povezanih tipova ili njegov neprazan podniz"
+    },
+    {
+      "question": "Kako se formira **ključ TP** za grupu **M:N**?",
+      "answer": "Za grupu M:N, ključ TP se formira kao **unija ključeva OBA** povezana tipa.\n\nPrimer: TP Radi(Radnik, Projekat), kardinalitet $(0,M) : (0,N)$\n- Identifikator: (Radnik, Projekat)\n- $K_p = Mbr + Spr$",
+      "hint": "M:N → ključ = ključ₁ + ključ₂"
+    },
+    {
+      "question": "Kako se formira **ključ TP** za grupu **N:1**?",
+      "answer": "Za grupu N:1, ključ TP je ključ onog tipa koji ima maksimalni kardinalitet **$b = 1$**.\n\nPrimer: TP Raspoređen(Radnik, Radno_mesto), kardinalitet $(0,1) : (0,N)$\n- Identifikator: (Radnik)\n- $K_p = Mbr$ (samo ključ Radnika, jer ima $b = 1$)",
+      "hint": "N:1 → ključ = ključ tipa sa strane '1'"
+    },
+    {
+      "question": "Kako se formira **ključ TP** za grupu **1:1**?",
+      "answer": "Za grupu 1:1, **oba** povezana tipa su kandidati za ključ TP (jer oba imaju $b = 1$).\n\nPrimer: TP JeOsiguran(Radnik, PolisaOsiguranja), kardinalitet $(0,1) : (0,1)$\n- Identifikatori: (Radnik) **i** (PolisaOsiguranja)\n- $K_1 = MBR$ i $K_2 = BrPol$",
+      "hint": "1:1 → ključ = ključ BILO KOG od dva tipa"
+    },
+    {
+      "question": "Kako se rešava problem ključa kod **rekurzivnog** tipa poveznika?",
+      "answer": "Kod rekurzivnog TP, isti tip entiteta se javlja u **obe uloge**, pa se obeležja ključa moraju **preimenovati** da bi se razlikovala. Svaka uloga dobija svoje ime za ključno obeležje.\n\nPrimer: TP Sastoji_se(Deo, Deo) → $K_p = DeID + DeIDkom$ (preimenovano obeležje za ulogu komponente)",
+      "hint": "Preimenovanje ključa jer se isti tip javlja dva puta"
+    },
+    {
+      "question": "Dajte primer ključa TP **Radi** za grupu **M:N**.",
+      "answer": "TP Radi(Radnik, Projekat), kardinalitet $(0,M) : (0,N)$\n\n- Identifikator TP: **(Radnik, Projekat)**\n- $K_p = Mbr + Spr$ (ključ Radnika + ključ Projekta)\n\nPošto je M:N, potrebna su oba ključa za jednoznačnu identifikaciju pojave TP.",
+      "hint": "Mbr + Spr jer je M:N"
+    },
+    {
+      "question": "Dajte primer ključa TP **Raspoređen** za grupu **N:1**.",
+      "answer": "TP Raspoređen(Radnik, Radno_mesto), kardinalitet $(0,1) : (0,N)$\n\n- Identifikator TP: **(Radnik)**\n- $K_p = Mbr$ (samo ključ Radnika)\n\nPošto radnik može biti na **najviše jednom** radnom mestu ($b = 1$), sam $Mbr$ je dovoljan za identifikaciju.",
+      "hint": "Samo Mbr jer radnik ima max 1 radno mesto"
+    },
+    {
+      "question": "Dajte primer ključa TP **JeOsiguran** za grupu **1:1**.",
+      "answer": "TP JeOsiguran(Radnik, PolisaOsiguranja), kardinalitet $(0,1) : (0,1)$\n\n- Identifikatori: **(Radnik)** i **(PolisaOsiguranja)**\n- $K_1 = MBR$ i $K_2 = BrPol$\n\nOba su validni ključevi jer obe strane imaju $b = 1$.",
+      "hint": "I MBR i BrPol su validni kandidati"
+    },
+    {
+      "question": "Šta znači **preimenovanje obeležja** kod rekurzivnog TP Sastoji_se?",
+      "answer": "TP Sastoji_se(Deo, Deo), kardinalitet $(0,M) : (0,N)$\n\nPošto se Deo javlja u **dve uloge** (Ima komponente i Je komponenta za), obeležje $DeID$ se mora **preimenovati**:\n- $DeID$ - originalno obeležje (uloga 'ima komponente')\n- $DeIDkom$ - preimenovano obeležje sa semantikom: DeID sa ulogom **komponente ugradnje**\n\n$K_p = DeID + DeIDkom$",
+      "hint": "Isti tip, dve uloge → različita imena za isti ključ"
+    },
+    {
+      "question": "Čime se bavi analiza **karakterističnih struktura** ER modela?",
+      "answer": "Analizira se **semantika** jednog broja karakterističnih struktura ER modela. Polazi se od karakteristične strukture, pa se interpretira kakav treba da bude realni sistem da bi ta ER struktura bila njegov **veran model**. Pošto je preslikavanje **jedan na jedan**, važi i obratno - na osnovu poznavanja karakteristika realnog sistema, bira se odgovarajuća ER struktura.",
+      "hint": "Povezivanje ER struktura sa realnim sistemom - u oba smera"
+    },
+    {
+      "question": "Kako se opisuje najopštiji slučaj kardinaliteta tipa poveznika (**M:N**)?",
+      "answer": "$$R(E_1(a_2, M) : E_2(a_1, N))$$\n\nJavlja se kada u realnom sistemu jedan entitet klase $E_1$ može biti u vezi sa $M$ ($>1$) entiteta klase $E_2$ **i obratno**. Između dva tipa entiteta važi odnos **više-prema-više**.",
+      "hint": "Oba smera: može biti povezan sa VIŠE entiteta"
+    },
+    {
+      "question": "Objasnite **hijerarhiju tri nivoa ograničenja**: ograničenje domena, ograničenje vrednosti obeležja i ograničenje pojave tipa.",
+      "answer": "**Ograničenje domena** definiše koji tip i opseg vrednosti uopšte može postojati (npr. INTEGER, dužina 2, od 5 do 10).\n\n**Ograničenje vrednosti obeležja** povezuje konkretno obeležje sa domenom i dodatno definiše da li obeležje sme primiti nula vrednost (Null = $T$ ili $\\bot$).\n\n**Ograničenje pojave tipa** ide najdalje - obuhvata sva ograničenja vrednosti obeležja, ali im dodaje logički uslov koji povezuje **više obeležja** unutar iste pojave (npr. ako je zanimanje 'programer', onda BPJZ ne sme biti NULL).",
+      "hint": "Domen → Vrednost obeležja → Pojava tipa: svaki nivo nadograđuje prethodni"
+    },
+    {
+      "question": "Za domen **DPOZOCENA** koji nasleđuje **DOCENA**, objasnite kako **pravilo nasleđivanja** funkcioniše i koje su vrednosti dozvoljene.",
+      "answer": "**DOCENA** = $((Number, 2, d \\geq 5 \\land d \\leq 10), -)$ → dozvoljava $\\{5,6,7,8,9,10\\}$\n\n**DPOZOCENA** = $((DOCENA, -, d \\geq 6), 6)$ → nasleđuje DOCENA, dodaje uslov $d \\geq 6$, Predef = 6\n\nKombinacijom ograničenja: $5 \\leq d \\leq 10$ (nasleđeno) + $d \\geq 6$ (novo) → efektivno dozvoljene vrednosti su $\\{6, 7, 8, 9, 10\\}$, podrazumevana vrednost je **6**.",
+      "hint": "Nasleđuje roditelja + dodaje svoje = presek ograničenja"
+    },
+    {
+      "question": "Objasnite razliku između **totalnog** i **parcijalnog** preslikavanja. Dajte primer.",
+      "answer": "**Totalno preslikavanje** ($a = 1$): svaki entitet jedne klase **mora** biti povezan sa bar jednim entitetom druge klase. Primer: Radnik **mora** biti raspoređen na tačno jedno radno mesto - kardinalitet $(1,1)$.\n\n**Parcijalno preslikavanje** ($a = 0$): entitet **ne mora** biti u vezi ni sa jednim entitetom druge klase. Primer: na radnom mestu **ne mora** biti raspoređen nijedan radnik - kardinalitet $(0,N)$.",
+      "hint": "Totalno = obavezno (a=1), Parcijalno = opciono (a=0)"
+    },
+    {
+      "question": "Kako **maksimalni kardinaliteti** utiču na formiranje ključa tipa poveznika? Objasnite za svaku od tri grupe.",
+      "answer": "**M:N** → ključ TP = **unija ključeva oba** povezana tipa (npr. $Mbr + Spr$), jer obe strane mogu imati više veza\n\n**N:1** → ključ TP = ključ tipa sa strane **\"1\"** (npr. samo $Mbr$), jer ta strana ima max jednu vezu\n\n**1:1** → ključ TP = ključ **bilo kog** od dva tipa (npr. $MBR$ ili $BrPol$), jer obe strane imaju $b = 1$",
+      "hint": "M:N = oba, N:1 = strana 1, 1:1 = bilo koji"
+    },
+    {
+      "question": "Šta je **egzistencijalno ograničenje** i kako je povezano sa pojmom **prethođenja i sleđenja**?",
+      "answer": "**Egzistencijalno ograničenje** nastaje kada je $a = 1$ - pojava jednog tipa **ne može postojati** bez veze sa pojavom drugog tipa.\n\nOvo implicira **prethođenje i sleđenje**: entitet $e_2$ iz $E_2$ **mora postojati pre** nego što entitet $e_1$ iz $E_1$ može biti kreiran.\n\nPrimer: radno mesto mora postojati **pre** nego što se radnik može na njega rasporediti.",
+      "hint": "a=1 → ne možeš postojati bez veze → drugi entitet mora biti PRVI"
+    },
+    {
+      "question": "Objasnite **dva postupka** navođenja kardinaliteta na primeru **Radnik-Raspoređen-Radno_Mesto** sa $(1,1) : (0,N)$.",
+      "answer": "**Prvi postupak** ($(a_i, b_i)$ uz suprotni tip $E_j$):\n- Uz Radnik piše $(0,N)$, uz Radno_Mesto piše $(1,1)$\n\n**Drugi postupak - naš** ($(a_i, b_i)$ uz sam tip $N_i$):\n- Uz Radnik piše $(1,1)$ (radnik mora imati tačno 1 RM)\n- Uz Radno_Mesto piše $(0,N)$ (RM može imati 0-N radnika)\n\nKod nas se koristi **drugi postupak**.",
+      "hint": "Prvi: pisanje uz SUPROTNU stranu, Drugi (naš): pisanje uz SVOJU stranu"
+    },
+    {
+      "question": "Objasnite razliku između **prostih** i **složenih** regularnih izraza i dajte primer za svaki.",
+      "answer": "**Prosti** koriste jedan operator poređenja sa konstantom ili nabrajaju dozvoljene vrednosti:\n- $(<11)$ - vrednost mora biti manja od 11\n- $(6, 7, 8, 9, 10)$ - eksplicitno dozvoljene vrednosti\n\n**Složeni** nastaju kombinovanjem prostih (ili drugih složenih) pomoću logičkih operatora $\\land$, $\\lor$, $\\neg$:\n- $(> 5 \\land < 11)$ - vrednosti strogo između 5 i 11\n\nIsti rezultat: $(6,7,8,9,10)$ i $(> 5 \\land < 11)$ daju iste dozvoljene vrednosti.",
+      "hint": "Prosti = jedan uslov, Složeni = kombinacija sa ∧, ∨, ¬"
+    },
+    {
+      "question": "Objasnite **tri slučaja** minimalnih kardinaliteta za grupu **M:N** na primeru **Radnik-Radi-Projekat**.",
+      "answer": "**$a_1 = 0, a_2 = 0$**: mogu postojati radnici koji ne rade ni na jednom projektu **i** projekti na kojima ne radi nijedan radnik.\n\n**$a_1 = 1, a_2 = 0$** (ili obrnuto): svi radnici **moraju** raditi na bar jednom projektu, ali mogu postojati projekti bez radnika (ili obrnuto). Egzistencijalna zavisnost jedne klase.\n\n**$a_1 = 1, a_2 = 1$**: svaki radnik **mora** raditi na bar jednom projektu **i** svaki projekat **mora** imati bar jednog radnika. **Najstrože ograničenje**.",
+      "hint": "(0,0) = slobodno, (1,0) = jedna strana obavezna, (1,1) = obe obavezne"
+    },
+    {
+      "question": "Koja su **četiri pravila** za specificiranje korisnički definisanog domena?",
+      "answer": "1. **Pravilo nasleđivanja** (najčešće korišćeno)\n2. **Pravilo tipa sloga**\n3. **Pravilo tipa skupa** (kolekcije)\n4. **Pravilo tipa izbora**",
+      "hint": "Nasleđivanje, slog, skup, izbor"
+    },
+    {
+      "question": "Navedite specifikacije domena **DPREZIME**, **DDATUM**, **DOCENA** i **DPOZOCENA** iz primera.",
+      "answer": "- **DPREZIME** = $((String, 30, -), -)$ → string do 30 znakova, bez uslova\n- **DDATUM** = $((Date, -, d \\geq '01.01.1900'), -)$ → datum, ne stariji od 1900.\n- **DOCENA** = $((Number, 2, d \\geq 5 \\land d \\leq 10), -)$ → ocene 5-10\n- **DPOZOCENA** = $((DOCENA, -, d \\geq 6), 6)$ → nasleđuje DOCENA, pozitivne ocene 6-10, Predef = 6",
+      "hint": "Četiri konkretna primera specifikacije domena"
+    },
+    {
+      "question": "Navedite ograničenja vrednosti obeležja za TE **Radnik** iz primera u prezentaciji.",
+      "answer": "Za Radnik({MBR, PRZ, IME, ZAN, BPJZ}, {MBR}):\n\n| Obeležje | Domen | Null | Predef |\n|---|---|---|---|\n| MBR | DMBR | $\\bot$ | - |\n| PRZ | DPRZ | $\\bot$ | - |\n| IME | DIME | $\\bot$ | - |\n| ZAN | DZAN | $\\bot$ | - |\n| BPJZ | DBPJZ | $T$ | - |\n\n**Uslov pojave**: $ZAN = 'prg' \\Rightarrow BPJZ \\neq \\bot$",
+      "hint": "Samo BPJZ sme biti NULL, ostali ne smeju"
+    },
+    {
+      "question": "Navedite specifikacije domena za obeležja TE **Radnik** iz primera.",
+      "answer": "| Domen | Tip | Dužina | Uslov | Predef |\n|---|---|---|---|---|\n| DMBR | Number | 4 | $d \\geq 1$ | - |\n| DPRZ | String | 30 | - | - |\n| DIME | String | 15 | - | - |\n| DZAN | String | 3 | - | - |\n| DBPJZ | Number | 2 | $d \\geq 0$ | 0 |",
+      "hint": "Pet domena sa tipovima, dužinama, uslovima i Predef"
+    }
+  ]
+}

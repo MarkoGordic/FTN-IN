@@ -1,0 +1,534 @@
+{
+  "cards": [
+    {
+      "question": "Šta je **B-stablo**?",
+      "answer": "B-stablo je **puno stablo traženja** koje služi kao **gusto popunjeni, dinamički indeks**. Svi listovi su na jednakoj udaljenosti od korena, ima visinu $h$ i rang $r \\geq 2$, a red stabla je $n = 2r + 1$.",
+      "hint": "Razmisli o strukturi koja garantuje balansiranost i jednaku dubinu svih listova."
+    },
+    {
+      "question": "Šta znači da je B-stablo **puno stablo**?",
+      "answer": "To znači da su **svi listovi na jednakoj udaljenosti od korena** - put od korena do bilo kog lista je uvek iste dužine $h$.",
+      "hint": "Svi putevi koren → list imaju istu dužinu."
+    },
+    {
+      "question": "Šta je **rang $r$** B-stabla?",
+      "answer": "Rang $r$ ($r \\geq 2$) je parametar koji uvodi **ograničenje na dozvoljeni broj elemenata u svakom čvoru**: minimalno $r$ (osim korena), maksimalno $2r$.",
+      "hint": "Definiše donju i gornju granicu popunjenosti čvorova."
+    },
+    {
+      "question": "Šta je **red** $n$ B-stabla i kako se izračunava?",
+      "answer": "Red B-stabla je $n = 2r + 1$. Predstavlja **maksimalan broj direktno podređenih čvorova** koje može imati jedan čvor (čvor sa $2r$ elemenata ima $2r + 1$ dece).",
+      "hint": "Maksimalan broj elemenata + 1."
+    },
+    {
+      "question": "Koliko **minimalno** elemenata mora imati svaki čvor B-stabla (osim korena)?",
+      "answer": "Svaki čvor, **izuzev korena**, mora sadržati minimalno **$r$ elemenata**.",
+      "hint": "Polovina maksimalnog kapaciteta."
+    },
+    {
+      "question": "Koliko **maksimalno** elemenata može imati čvor B-stabla?",
+      "answer": "Svaki čvor može sadržati maksimalno **$2r$ elemenata**.",
+      "hint": "Dvostruki rang."
+    },
+    {
+      "question": "Koliko **minimalno** elemenata mora imati **koren** B-stabla?",
+      "answer": "Koren mora sadržati minimalno **1 element**.",
+      "hint": "Koren je izuzetak od pravila o $r$ elemenata."
+    },
+    {
+      "question": "Koliko direktno podređenih čvorova ima čvor sa $m$ elemenata koji **nije list**?",
+      "answer": "Čvor sa $m$ elemenata koji nije list poseduje tačno **$m + 1$ direktno podređenih čvorova**.",
+      "hint": "Jedan pokazivač više nego što ima elemenata."
+    },
+    {
+      "question": "Šta je **element** B-stabla i od čega se sastoji?",
+      "answer": "Element B-stabla je **trojka $(k_e, A_e, P_e)$**, gde je $k_e$ vrednost ključa, $A_e$ pridruženi podatak (adresa sloga u primarnoj zoni), a $P_e$ pokazivač ka podstablu sa većim vrednostima ključa.",
+      "hint": "Trojka: ključ, adresa, pokazivač."
+    },
+    {
+      "question": "Šta predstavlja **$k_e$** u elementu B-stabla?",
+      "answer": "**Vrednost ključa** sloga $S_i$ ($i \\in \\{1, 2, \\ldots, N\\}$) iz primarne zone.",
+      "hint": "Identifikator po kome se pretražuje."
+    },
+    {
+      "question": "Šta predstavlja **$A_e$** u elementu B-stabla?",
+      "answer": "**Pridruženi podatak** - adresa lokacije sloga u primarnoj zoni datoteke.",
+      "hint": "Govori gde se fizički nalazi slog."
+    },
+    {
+      "question": "Šta predstavlja **$P_e$** u elementu B-stabla?",
+      "answer": "**Pokazivač** ka podstablu sa vrednostima ključa **većim** od $k_e$.",
+      "hint": "Ukazuje na 'desno' podstablo tog elementa."
+    },
+    {
+      "question": "Šta predstavlja pokazivač **$P_0$** u čvoru B-stabla?",
+      "answer": "$P_0$ je specijalni pokazivač na početku čvora koji pokazuje na podstablo sa svim vrednostima ključa **manjim od $k_1$** (najmanjeg ključa u tom čvoru).",
+      "hint": "Pokazivač na 'najlevije' podstablo."
+    },
+    {
+      "question": "Navedi **četiri uslova stabla traženja** u B-stablu.",
+      "answer": "1) $(\\forall i)(k_i < k_{i+1})$ - ključevi sortirani rastuće.\n2) $(\\forall k \\in K(P_0))(k < k_1)$ - levo podstablo manje od $k_1$.\n3) $(\\forall k \\in K(P_i))(k_i < k < k_{i+1})$ - međupodstabla između susednih ključeva.\n4) $(\\forall k \\in K(P_m))(k_m < k)$ - desno podstablo veće od $k_m$.",
+      "hint": "Ključevi sortirani + svaki pokazivač vodi ka vrednostima između odgovarajućih granica."
+    },
+    {
+      "question": "Šta je **kompletno** (popunjeno) B-stablo?",
+      "answer": "B-stablo u kome **svi čvorovi** sadrže po **$2r$ elemenata** (maksimalan broj). Stablo ne može biti gušće popunjeno.",
+      "hint": "Svaki čvor je pun do vrha."
+    },
+    {
+      "question": "Šta je **poluprazno** (polupuno) B-stablo?",
+      "answer": "B-stablo u kome svi čvorovi, **osim korena**, sadrže po **$r$ elemenata** (minimum), a koren sadrži samo **1 element**. Stablo ne može biti ređe popunjeno.",
+      "hint": "Svaki čvor na minimumu, koren sa 1 elementom."
+    },
+    {
+      "question": "Kako se izračunava **ukupan broj čvorova kompletnog** B-stabla?",
+      "answer": "$$C^{kp} = \\sum_{i=0}^{h-1}(2r+1)^i = \\frac{(2r+1)^h - 1}{2r}$$",
+      "hint": "Geometrijski red sa količnikom $2r+1$."
+    },
+    {
+      "question": "Kako se izračunava **ukupan broj čvorova polupraznog** B-stabla?",
+      "answer": "$$C^{pp} = 1 + 2\\sum_{i=0}^{h-2}(r+1)^i = 1 + 2 \\cdot \\frac{(r+1)^{h-1} - 1}{r}$$",
+      "hint": "Koren (1) + dva podstabla sa geometrijskim redom količnika $r+1$."
+    },
+    {
+      "question": "Kako se izračunava **minimalna visina** B-stabla?",
+      "answer": "$$h_{min} = \\log_{2r+1}(N+1)$$\n\nIzvodi se iz kompletnog stabla: $N = (2r+1)^h - 1$.",
+      "hint": "Logaritam za osnovu $2r+1$ od $N+1$."
+    },
+    {
+      "question": "Kako se izračunava **maksimalna visina** B-stabla?",
+      "answer": "$$h_{max} = 1 + \\log_{r+1}\\left(\\frac{N+1}{2}\\right)$$\n\nIzvodi se iz polupraznog stabla: $N = 2(r+1)^{h-1} - 1$.",
+      "hint": "Logaritam za osnovu $r+1$ od $(N+1)/2$, plus 1."
+    },
+    {
+      "question": "Navedi formule za **$C_{min}$** i **$C_{max}$** B-stabla.",
+      "answer": "$$C_{min} = \\frac{N}{2r}, \\quad C_{max} = 1 + \\frac{N-1}{r}$$",
+      "hint": "$C_{min}$ za kompletno, $C_{max}$ za poluprazno stablo."
+    },
+    {
+      "question": "Od kojih **zona** se sastoji datoteka sa B-stablom?",
+      "answer": "1) **Zona indeksa** - spregnuta struktura u obliku B-stabla (gusto popunjeni, dinamički indeks).\n2) **Primarna zona** - serijska datoteka.",
+      "hint": "Indeks (B-stablo) + podaci (serijska)."
+    },
+    {
+      "question": "Kakva je struktura **primarne zone** datoteke sa B-stablom?",
+      "answer": "Primarna zona je **serijska datoteka**. Iskorišćavaju se dobre osobine serijske datoteke pri ažuriranju, pod pretpostavkom da se traženja ne vrše direktno u njoj.",
+      "hint": "Serijska struktura, traženja idu kroz B-stablo."
+    },
+    {
+      "question": "Kakva je struktura **zone indeksa** datoteke sa B-stablom?",
+      "answer": "Zona indeksa je **spregnuta struktura** u obliku B-stabla: **gusto popunjeni, dinamički indeks**. Svaka vrednost ključa iz primarne zone propagira se u zonu indeksa. Dinamički se ažurira.",
+      "hint": "B-stablo = gusto + dinamički indeks."
+    },
+    {
+      "question": "Opiši **postupak formiranja** datoteke sa B-stablom.",
+      "answer": "1) Formiranje **primarne zone** (preuzimanje ili učitavanje slogova).\n2) Formiranje **zone indeksa** - upisivanje zaglavlja, inicijalizacija pokazivača, formiranje lanca praznih blokova.\n3) **Sukcesivno čitanje** slogova primarne zone i dinamičko upisivanje elemenata u B-stablo.",
+      "hint": "Tri faze: primarna zona → zaglavlje indeksa → dinamičko punjenje."
+    },
+    {
+      "question": "Šta **prethodi** upisu novog elementa u B-stablo?",
+      "answer": "Upisu prethodi **neuspešno traženje** - traženje koje započinje u korenu, prolazi kroz čvorove prateći pokazivače i završava se u listu gde element ne postoji, ali gde bi trebalo da bude.",
+      "hint": "Prvo se traži i ne nađe, pa se na tom mestu upisuje."
+    },
+    {
+      "question": "Šta se dešava kad se novi element upisuje u **delimično popunjen** list ($m < 2r$)?",
+      "answer": "Element se **upisuje na poziciju zaustavljanja traženja**, a elementi sa većom vrednošću ključa u čvoru pomeraju se za jednu poziciju udesno. Jednostavan slučaj, bez deljenja.",
+      "hint": "Ima mesta - samo ubaci i pomeri ostale."
+    },
+    {
+      "question": "Šta se dešava kad se novi element upisuje u **potpuno popunjen** list ($m = 2r$)?",
+      "answer": "Vrši se **deljenje lista** na dva lista: formira se niz od $2r + 1$ elemenata, prvih $r$ ostaje u levom listu, **srednji** ($r+1$-vi) ide u nadređeni čvor, poslednjih $r$ u novi desni list. Deljenje može kaskadno da se propagira naviše.",
+      "hint": "Nema mesta → podeli na dva i srednji element gurni gore."
+    },
+    {
+      "question": "Opiši postupak **deljenja lista** pri upisu u B-stablo.",
+      "answer": "1) Alocira se **novi desni list**.\n2) U OM se formira uređeni niz od $2r + 1$ elemenata.\n3) Prvih **$r$** elemenata → levi (postojeći) list.\n4) **Srednji** element (pozicija $r+1$) → nadređeni čvor.\n5) Poslednjih **$r$** elemenata → desni (novi) list.\n6) Ako se deli koren → novi koren, visina raste za 1.",
+      "hint": "Niz 2r+1 → leva polovina | srednji gore | desna polovina."
+    },
+    {
+      "question": "Šta se dešava kad se deli **koren** B-stabla?",
+      "answer": "Formira se **novi koren** sa jednim elementom (srednjim iz podeljenog niza), a dva nastala čvora postaju njegovi podređeni. **Visina stabla se povećava za 1.**",
+      "hint": "Jedini način da stablo poraste u visinu."
+    },
+    {
+      "question": "Kako funkcioniše traženje **logički narednog** sloga u B-stablu?",
+      "answer": "Koristi se **modifikovani simetrični postupak prolaska** kroz B-stablo - naizmenično pristupanje listovima i njihovim nadređenim elementima. Vrši se od tekućeg elementa (inicijalno: najmanji ključ u krajnjem levom listu). Uspešno: $a = k_e$. Neuspešno: $k_e > a$ ili kraj desnog lista.",
+      "hint": "Naizmenično listovi ↔ nadređeni čvorovi, od najmanjeg ka najvećem."
+    },
+    {
+      "question": "Kako funkcioniše traženje **slučajno odabranog** sloga u B-stablu?",
+      "answer": "Počinje u **korenu**, nastavlja se u podređenim čvorovima, završava u čvoru gde je element pronađen ili u listu. Na svakom nivou pristupa se **najviše jednom čvoru**. Poredi se $a$ sa $k_e$: jednako → pronađen; manje → levo podstablo; veće → desno podstablo.",
+      "hint": "Od korena naniže, na svakom nivou jedan čvor."
+    },
+    {
+      "question": "Koliki je broj pristupa **$R_u$** pri **uspešnom** traženju sa jednim baferom u OM?",
+      "answer": "$$R_u = h + 1$$\n\n$h$ pristupa čvorovima B-stabla + 1 pristup primarnoj zoni za čitanje sloga.",
+      "hint": "Visina stabla + pristup primarnoj zoni."
+    },
+    {
+      "question": "Koliki je broj pristupa **$R_n$** pri **neuspešnom** traženju sa jednim baferom u OM?",
+      "answer": "$$R_n = h$$\n\nNeuspešno traženje uvek završava u listu, bez pristupa primarnoj zoni.",
+      "hint": "Samo visina stabla, jer nema pristupa primarnoj zoni."
+    },
+    {
+      "question": "Koliki je broj pristupa ako je **celo stablo u operativnoj memoriji**?",
+      "answer": "$R_u = R_n = 0$ pristupa **B-stablu**. Ali za uspešno traženje i dalje treba **1 pristup primarnoj zoni** da bi se slog pročitao.",
+      "hint": "Nula za stablo, ali primarnoj zoni se mora pristupiti."
+    },
+    {
+      "question": "Koliki je broj pristupa pri traženju sa **$h$ bafera** u OM?",
+      "answer": "Uspešno: $0 \\leq R_u \\leq h + 1$.\nNeuspešno: $0 \\leq R_n \\leq h$.\n\nSvakom čvoru se pristupa tačno jedanput jer ceo pristupni put staje u OM.",
+      "hint": "Raspon od 0 do $h+1$ / $h$, zavisno od toga šta je već keširan."
+    },
+    {
+      "question": "Od čega zavisi ukupan broj pristupa **$R_{uk}^v$** kada se B-stablo koristi kao **vodeća** datoteka?",
+      "answer": "Zavisi od: 1) Da li je stablo **kompletno ili poluprazno**. 2) Da li je rezervisano **$h$ bafera ili samo 1** bafer. 3) Da li su sukcesivno traženi slogovi u primarnoj zoni u **fizički susednim lokacijama** ili ne.",
+      "hint": "Tri faktora: popunjenost stabla, broj bafera, fizički raspored slogova."
+    },
+    {
+      "question": "Navedi formulu za **$R_{uk}^v$** (interval) za B-stablo kao **vodeću** datoteku.",
+      "answer": "$$\\left\\lceil \\frac{N}{f} \\right\\rceil + \\left\\lceil \\frac{N}{2r} \\right\\rceil \\leq R_{uk}^v \\leq \\left\\lfloor \\frac{N+1}{r+1} \\right\\rfloor + \\left\\lfloor \\frac{N-r}{r+1} \\right\\rfloor + N$$",
+      "hint": "Donja granica: $h$ bafera, kompletno stablo. Gornja: 1 bafer, poluprazno."
+    },
+    {
+      "question": "Navedi formulu za **$R_{uk}^r$** pri **redoslednoj** obradi datoteke sa B-stablom putem vodeće datoteke.",
+      "answer": "$$\\left\\lceil \\frac{N_v^u}{f} \\right\\rceil + \\left\\lceil \\frac{N}{2r} \\right\\rceil \\leq R_{uk}^r \\leq N_v^u + \\left\\lfloor \\frac{N+1}{r+1} \\right\\rfloor + \\left\\lfloor \\frac{N-r}{r+1} \\right\\rfloor$$\n\n$N_v^u$ - slogovi sa uspešnim traženjem, $N_v^n$ - sa neuspešnim.",
+      "hint": "Slično $R_{uk}^v$ ali sa $N_v^u$ umesto $N$."
+    },
+    {
+      "question": "Kako se računa **očekivani broj pristupa $\\overline{R}$** pri traženju logički narednog sloga?",
+      "answer": "$$\\overline{R} = \\frac{R_{uk}^r}{N_v}$$\n\ngde je $N_v = N_v^u + N_v^n$ ukupan broj slogova vodeće datoteke.",
+      "hint": "Ukupni pristup / ukupan broj slogova vodeće."
+    },
+    {
+      "question": "Navedi formulu za **$R_{uk}^d$** pri **direktnoj** obradi sa B-stablom.",
+      "answer": "$$R_{uk}^d = R_u \\cdot N_v^u + R_n \\cdot N_v^n$$\n\ngde su $R_u$ i $R_n$ brojevi pristupa pri uspešnom i neuspešnom traženju.",
+      "hint": "Uspešno × broj uspešnih + neuspešno × broj neuspešnih."
+    },
+    {
+      "question": "Primer: $N = 10000$, $r = 50$, $h = 4$, 1 bafer, $N_v^u = 2100$, $N_v^n = 900$. Izračunaj **$R_{uk}^d$**.",
+      "answer": "$R_u = h + 1 = 5$, $R_n = h = 4$.\n$$R_{uk}^d = 5 \\cdot 2100 + 4 \\cdot 900 = 10500 + 3600 = **14100**$$",
+      "hint": "Primeni formulu sa $R_u = h+1$ i $R_n = h$."
+    },
+    {
+      "question": "Koliki je **interval broja pristupa pri upisu** novog elementa ($R_i$)?",
+      "answer": "$$R_s + 1 \\leq R_i \\leq 4h$$\n\ngde je $R_s$ broj pristupa pri neuspešnom traženju. Minimum: upis u list bez deljenja. Maksimum: deljenje svih čvorova na putu.",
+      "hint": "Od $R_s + 1$ (bez deljenja) do $4h$ (kaskadno deljenje)."
+    },
+    {
+      "question": "Koliki je **srednji broj pristupa pri upisu** za $N \\gg 1$ i $r \\gg h$?",
+      "answer": "$$\\overline{R}_i \\approx h + 1$$\n\nJer u velikoj većini slučajeva ne dolazi do deljenja.",
+      "hint": "Približno visina + 1, deljenje je retko."
+    },
+    {
+      "question": "Šta je **maksimalan broj pristupa pri upisu** i kako se dobija ($4h$)?",
+      "answer": "Dobija se kada se dele **svi čvorovi** na pristupnom putu od lista do korena, uz 1 bafer: $h$ pristupa do lista + $(h-1)$ čitanja nadređenih + $2h$ upisa novih čvorova + 1 upis novog korena = $4h$.",
+      "hint": "Kompletno kaskadno deljenje: čitanja + upisi novih čvorova."
+    },
+    {
+      "question": "Šta **prethodi** brisanju elementa iz B-stabla?",
+      "answer": "Brisanju prethodi **uspešno traženje** elementa sa vrednošću ključa $k_e$ u B-stablu.",
+      "hint": "Prvo pronađi, pa obriši."
+    },
+    {
+      "question": "U kom slučaju se element može **fizički izbrisati** iz B-stabla?",
+      "answer": "Element se sme fizički izbrisati **jedino ako se nalazi u listu**. Ako je u neterminalnom čvoru, prvo se zamenjuje elementom sa prvom većom vrednošću ključa iz lista.",
+      "hint": "Samo iz listova - inače zamena pa brisanje iz lista."
+    },
+    {
+      "question": "Šta se dešava pri brisanju elementa iz lista sa **$m > r$ elemenata** (ili koren)?",
+      "answer": "Slučaj **(A1)**: Jednostavno **fizičko oslobađanje lokacije** izbrisanog elementa, pomeranje ostalih ulevo. U listu ostaje $m_e - 1 \\geq r$ elemenata.",
+      "hint": "Ima viška - samo obriši i pomeri."
+    },
+    {
+      "question": "Šta se dešava pri brisanju elementa iz lista sa **$m = r$ elemenata** (nije koren)?",
+      "answer": "Slučaj **(A2)**: Fizičko oslobađanje **nije dozvoljeno** (čvor bi imao manje od $r$ elemenata). Dva podslučaja:\n- **(A21)** Postoji sused sa $m_f > r$ → **pozajmljivanje**.\n- **(A22)** Svi susedi imaju $m_f = r$ → **spajanje**.",
+      "hint": "Na minimumu - mora pozajmljivanje ili spajanje."
+    },
+    {
+      "question": "Šta su **susedni čvorovi** u B-stablu? (definicija)",
+      "answer": "Čvorovi $C_e$ i $C_f$ su **susedni** ako imaju zajednički direktno nadređeni čvor $C$ i ako važi:\n$$(\\nexists k \\in K(C))(k_m < k < k_1)$$\nTj. između $k_m$ (max ključ u $C_e$) i $k_1$ (min ključ u $C_f$) ne postoji nijedan drugi ključ u nadređenom čvoru.",
+      "hint": "Dele istog roditelja i nema ključa između njih u roditelju."
+    },
+    {
+      "question": "Šta je tehnika **pozajmljivanja** i kada se primenjuje?",
+      "answer": "Primenjuje se kada čvor nakon brisanja ima $r - 1$ elemenata, ali **bar jedan sused ima $m_f > r$ elemenata**. Elementi se preraspoređuju: element iz nadređenog čvora 'silazi' u osiromašeni čvor, a element iz suseda 'penje' se u nadređeni čvor.",
+      "hint": "Sused bogat → preraspoređivanje preko roditelja."
+    },
+    {
+      "question": "Opiši **postupak pozajmljivanja** u B-stablu (sa desnim susedom).",
+      "answer": "1) U OM se spajaju čvorovi $C_e$ i $C_f$.\n2) Zajednički nadređeni element $(k, A)$ **silazi** u čvor $C_e$.\n3) Odgovarajući element iz $C_f$ **penje** se u nadređeni čvor $C$.\n4) Pokazivači se preraspoređuju.\n\nBroj elemenata oba čvora ostaje $\\geq r$.",
+      "hint": "Silazi-penje: roditelj silazi u osiromašeni, bogatiji sused penje u roditelja."
+    },
+    {
+      "question": "Šta je tehnika **spajanja** i kada se primenjuje?",
+      "answer": "Primenjuje se kada čvor nakon brisanja ima $r - 1$ elemenata i **svi susedi imaju tačno $r$ elemenata**. Dva susedna čvora se spajaju u jedan sa $2r$ elemenata, uz brisanje jednog elementa iz nadređenog čvora.",
+      "hint": "Svi susedi siromašni → spoji dva čvora u jedan."
+    },
+    {
+      "question": "Opiši **postupak spajanja** u B-stablu.",
+      "answer": "1) Formira se u OM niz od $r + (r-1) + 1 = 2r$ elemenata ($r$ iz suseda, $r-1$ iz osiromašenog čvora, 1 iz nadređenog).\n2) Svih **$2r$** elemenata smeštaju se u levi susedni čvor.\n3) Desni čvor se **dealocira**.\n4) Element se **briše iz nadređenog čvora** - može izazvati kaskadno spajanje naviše.",
+      "hint": "2r elemenata u jedan čvor, desni nestaje, brisanje propagira gore."
+    },
+    {
+      "question": "Šta se dešava ako je element za brisanje u **neterminalnom** čvoru?",
+      "answer": "Element se **zamenjuje** elementom sa **prvom većom vrednošću ključa** - to je krajnji levi element u krajnjem levom čvoru desnog podstabla. Zatim se taj element fizički briše iz lista (povratak na slučaj A).",
+      "hint": "Zameni naslednikom iz lista, pa obriši naslednika iz lista."
+    },
+    {
+      "question": "Koliki je **interval broja pristupa pri brisanju** ($R_d$)?",
+      "answer": "$$R_s + 1 \\leq R_d \\leq 4h - 1$$\n\ngde je $R_s$ broj pristupa pri uspešnom traženju. Minimum: brisanje iz lista sa $m > r$. Maksimum: kaskadno spajanje sa proverom jednog suseda.",
+      "hint": "Od $R_s + 1$ do $4h - 1$ (za proveru oba suseda: $5h - 2$)."
+    },
+    {
+      "question": "Koliki je **srednji broj pristupa** pri brisanju jednog elementa?",
+      "answer": "$$\\frac{4(N-1)}{Nr}$$\n\nIzveden iz činjenice da ukupan broj spajanja iznosi $C - 1 = (N-1)/r$, a svako zahteva najviše 4 pristupa.",
+      "hint": "Četiri puta $(N-1)$ podeljeno sa $Nr$."
+    },
+    {
+      "question": "Navedi dve **prednosti** indeksne datoteke sa B-stablom.",
+      "answer": "1) **Ne zahteva postojanje zone prekoračenja** - struktura primarne zone odgovara serijskoj datoteci.\n2) **Maksimalni broj pristupa je tačno definisan** ($\\leq h + 1$), a visina $h$ je proporcionalna $\\log_r N$, pa za praktične vrednosti $h \\leq 5$.",
+      "hint": "Nema prekoračenja + garantovane performanse."
+    },
+    {
+      "question": "Navedi dva **nedostatka** indeksne datoteke sa B-stablom.",
+      "answer": "1) **Nije najpogodnije za redoslednu obradu** - modifikovani simetrični postupak zahteva višestruko pristupanje neterminalnim čvorovima.\n2) **Deljenje favorizuje poluprazno stablo** - naročito pri sekvencijalnom unosu, svi listovi osim krajnjeg desnog postaju poluprazni.",
+      "hint": "Loša redosledna obrada + polupraznost."
+    },
+    {
+      "question": "Zašto **deljenje čvorova** favorizuje poluprazno B-stablo?",
+      "answer": "Jer pri deljenju nastaju dva čvora sa po **$r$ elemenata** (minimalna popunjenost). Posebno pri formiranju iz sekvencijalne ulazne datoteke, svi listovi osim krajnjeg desnog uvek ostaju poluprazni, jer se novi elementi stalno dodaju u krajnji desni list.",
+      "hint": "Deljenje = dva čvora sa minimum; sekvencijalni unos pogoršava."
+    },
+    {
+      "question": "Šta je **B\\*-stablo**?",
+      "answer": "B*-stablo je **strukturalno isto** kao osnovno B-stablo, ali uvodi **tehniku prelivanja** koja ublažava problem favorizacije polupraznog stabla. Ideju su opisali Bayer i McCreight.",
+      "hint": "Isto kao B-stablo + prelivanje."
+    },
+    {
+      "question": "Šta je **tehnika prelivanja** u B\\*-stablu?",
+      "answer": "Kada se upisuje element u **kompletan čvor** $C_e$ ($m = 2r$), a bar jedan sused $C_f$ ima $m_f < 2r$, umesto deljenja vrši se **preraspoređivanje** elemenata: formira se niz od $m_f + 2r + 1 + 1$ elemenata i ravnomerno raspoređuju u oba čvora i nadređeni.",
+      "hint": "Pun čvor ali sused nepun → preraspoređivanje umesto deljenja."
+    },
+    {
+      "question": "Kada se primenjuje **prelivanje** u B\\*-stablu?",
+      "answer": "Kada je čvor $C_e$ u koji se upisuje element **kompletan** ($m = 2r$), a **bar jedan od njegovih susednih čvorova $C_f$** sadrži $m_f < 2r$ elemenata.",
+      "hint": "Čvor pun + sused nepun."
+    },
+    {
+      "question": "Opiši **postupak prelivanja** u B\\*-stablu.",
+      "answer": "1) Formira se niz: svi elementi $C_e$ + novi element + nadređeni element + svi elementi $C_f$.\n2) Prvih $\\lfloor(2r + 2 + m_f)/2\\rfloor$ → čvor $C_e$.\n3) Sledeći element → nadređeni čvor $C$.\n4) Preostalih $\\lfloor(2r + 1 + m_f)/2\\rfloor$ → čvor $C_f$.\n\nRezultat: $m_e \\geq m_f$.",
+      "hint": "Niz svih elemenata → ravnomerna raspodela u dva čvora + jedan u roditelja."
+    },
+    {
+      "question": "Kolika je minimalna popunjenost čvora $C_f$ nakon prelivanja, ako je pre prelivanja $m_f = r$?",
+      "answer": "$$m_f' = \\left\\lfloor \\frac{3r + 1}{2} \\right\\rfloor$$\n\nZnačajno više od minimalnih $r$ elemenata.",
+      "hint": "Približno $1.5r$ - polovina između $r$ i $2r$."
+    },
+    {
+      "question": "Koliku **popunjenost** čvorova favorizuje B\\*-stablo?",
+      "answer": "B*-stablo favorizuje popunjenost od oko **75%** (tri četvrtine kapaciteta), za razliku od 50% (polovina) kod osnovnog B-stabla.",
+      "hint": "75% nasuprot 50% kod osnovnog."
+    },
+    {
+      "question": "Šta se dešava kad se u B\\*-stablu prepuni čvor čija **oba suseda su kompletna**?",
+      "answer": "Dolazi do **deljenja** (kao u osnovnom B-stablu). Deljenjem se ponovo dobijaju čvorovi sa po $r$ elemenata (50% popunjenost). Prelivanje u tom slučaju nije moguće.",
+      "hint": "Ako svi susedi puni → klasično deljenje, tu prelivanje ne pomaže."
+    },
+    {
+      "question": "Šta je **B#-stablo** (B heš stablo)?",
+      "answer": "B#-stablo je varijanta B*-stabla koja **garantuje minimalnu popunjenost od 66%** za sve čvorove na svim nivoima hijerarhije, osim na prva dva. Koristi **distribuirano deljenje** pored prelivanja.",
+      "hint": "B* + distribuirano deljenje → 66% garancija."
+    },
+    {
+      "question": "Koliku **minimalnu popunjenost** garantuje B#-stablo?",
+      "answer": "**66%** (dve trećine kapaciteta) za sve čvorove na svim nivoima, **osim na prva dva nivoa** hijerarhije.",
+      "hint": "Dve trećine, osim korena i prvog nivoa."
+    },
+    {
+      "question": "Šta je tehnika **distribuiranog deljenja**?",
+      "answer": "Primenjuje se kada su čvor $C_e$ **i svi njegovi susedi kompletni**. Umesto deljenja u dva čvora, elementi se **distribuiraju u tri čvora** (dva postojeća + jedan novi).",
+      "hint": "Svi puni → distribucija u TRI čvora umesto dva."
+    },
+    {
+      "question": "Opiši **postupak distribuiranog deljenja** u B#-stablu.",
+      "answer": "Formira se niz od $4r + 2$ elemenata ($2r+1$ iz $C_e$ + 1 nadređeni + $2r$ iz $C_f$):\n1) Prvih $\\lfloor(4r+2)/3\\rfloor$ → $C_e$.\n2) Sledeći → nadređeni čvor $C$.\n3) Narednih $\\lfloor(4r+1)/3\\rfloor$ → $C_f$.\n4) Sledeći → nadređeni čvor $C$.\n5) Poslednjih $\\lfloor 4r/3 \\rfloor$ → novi čvor $C_g$.",
+      "hint": "$4r+2$ elemenata → podeli na trećine sa dva elementa za roditelja."
+    },
+    {
+      "question": "Koliko čvorova **učestvuje** u distribuiranom deljenju?",
+      "answer": "**Tri čvora** na tekućem nivou ($C_e$, $C_f$ i novi $C_g$) plus **nadređeni čvor** $C$ koji prima dva nova elementa.",
+      "hint": "2 postojeća + 1 novi + roditelj."
+    },
+    {
+      "question": "Kada se u B#-stablu koristi **klasično deljenje**?",
+      "answer": "Klasično deljenje se primenjuje **jedino u slučaju kada se prepuni koren stabla**. U svim drugim prilikama koristi se prelivanje ili distribuirano deljenje.",
+      "hint": "Samo za koren - sve ostalo se rešava prelivanjem/distribucijom."
+    },
+    {
+      "question": "Šta je **B⁺-stablo**?",
+      "answer": "B⁺-stablo je **modifikacija osnovnog B-stabla** kod koje se vrednosti ključa svih slogova nalaze u listovima, svi listovi su spregnuti (dvostruko), čvorovi na višim nivoima sadrže najmanje ključeve listova, a vrednosti u neterminalnim čvorovima se ne ponavljaju u nadređenima. Pogodno za traženje logički narednog sloga.",
+      "hint": "SVI ključevi u listovima + listovi spregnuti → efikasna redosledna obrada."
+    },
+    {
+      "question": "Koji **problem** osnovnog B-stabla rešava B⁺-stablo?",
+      "answer": "Rešava problem da je pri traženju logički narednog sloga potrebno pristupati **svim čvorovima stabla** (modifikovani simetrični postupak). Kod B⁺-stabla, traženje logički narednog sloga se vrši **samo u listovima**.",
+      "hint": "Redosledna obrada: B-stablo pristupa svim čvorovima, B⁺ samo listovima."
+    },
+    {
+      "question": "Navedi četiri **strukturalne modifikacije** B⁺-stabla u odnosu na osnovno B-stablo.",
+      "answer": "1) **Vrednosti ključa svih slogova** nalaze se u listovima.\n2) **Svi listovi su spregnuti** - sadrže informaciju o logičkim vezama između slogova.\n3) **Čvorovi na višim nivoima** sadrže najmanje vrednosti ključa iz svakog lista osim krajnjeg levog.\n4) Vrednosti ključa u neterminalnim čvorovima se **ne ponavljaju** u nadređenima (ali se ponavljaju u listovima).",
+      "hint": "Ključevi u listovima, listovi spregnuti, viši nivoi samo navigacija, bez ponavljanja u roditelju."
+    },
+    {
+      "question": "Šta sadrže **listovi** B⁺-stabla?",
+      "answer": "Listovi sadrže parove $(k_e, A_e)$, gde je $A_e$ adresa lokacije sloga u primarnoj zoni. Pokazivači $P_0$ u listovima sadrže adresu lista sa prvom **većom** vrednošću ključa - listovi obrazuju **spregnutu datoteku sa linearnom logičkom strukturom**.",
+      "hint": "Parovi (ključ, adresa) + $P_0$ sprežu listove u lanac."
+    },
+    {
+      "question": "Šta sadrže čvorovi B⁺-stabla na **nivou $h-1$**?",
+      "answer": "Sadrže elemente $(k_e, P_e)$, pri čemu $P_e$ predstavlja adresu direktno podređenog **lista** sa vrednostima ključa **većim ili jednakim** $k_e$. $P_0$ pokazuje na podstablo sa manjim vrednostima.",
+      "hint": "Nivo iznad listova: $(k_e, P_e)$ → list sa $k \\geq k_e$."
+    },
+    {
+      "question": "Šta sadrže čvorovi B⁺-stabla na **nivoima od 1 do $h-2$**?",
+      "answer": "Sadrže parove $(k_e, P_e)$, pri čemu $P_e$ predstavlja adresu direktno podređenog čvora sa **većim** vrednostima ključa od $k_e$. $P_0$ pokazuje na podčvor sa manjim vrednostima.",
+      "hint": "Navigacioni čvorovi - isto kao osnovno B-stablo."
+    },
+    {
+      "question": "Šta predstavlja **$P_0$** u **listovima** B⁺-stabla?",
+      "answer": "$P_0$ u listovima sadrži **adresu lista sa prvom većom vrednošću ključa** (sledećeg lista u logičkom redosledu). Time se listovi povezuju u **spregnutu listu**.",
+      "hint": "Pokazivač na sledeći list → logički lanac."
+    },
+    {
+      "question": "Koji je **format elementa** u B⁺-stablu (za razliku od B-stabla)?",
+      "answer": "Elementi su **dvojke** $(k_e, P_e)$ u neterminalnim čvorovima (nema $A_e$, jer adrese postoje samo u listovima). U listovima su parovi $(k_e, A_e)$.",
+      "hint": "Neterminalni: dvojka bez adrese. Listovi: dvojka sa adresom."
+    },
+    {
+      "question": "Kako se izračunava **minimalna visina** B⁺-stabla?",
+      "answer": "$$h_{min}^+ = 1 + \\log_{2r+1}\\left(\\frac{N}{2r}\\right)$$\n\nIzvodi se iz kompletnog stabla gde listovi sadrže $N = 2r(2r+1)^{h^+-1}$ elemenata.",
+      "hint": "Logaritam od $N/2r$ za osnovu $2r+1$, plus 1."
+    },
+    {
+      "question": "Kako se izračunava **maksimalna visina** B⁺-stabla?",
+      "answer": "$$h_{max}^+ = 2 + \\log_{r+1}\\left(\\frac{N}{2r}\\right)$$\n\nIzvodi se iz polupraznog stabla gde listovi sadrže $N = 2r(r+1)^{h^+-2}$ elemenata.",
+      "hint": "Logaritam od $N/2r$ za osnovu $r+1$, plus 2."
+    },
+    {
+      "question": "Šta je **$\\Delta E$** u kontekstu B⁺-stabla?",
+      "answer": "$\\Delta E$ je razlika između broja elemenata u B⁺-stablu i broja slogova u primarnoj zoni. Uvek je za 1 manja od broja listova. Uzima celobrojne vrednosti:\n$$\\left\\lceil \\frac{N}{2r} \\right\\rceil - 1 \\leq \\Delta E \\leq \\left\\lfloor \\frac{N}{r} \\right\\rfloor - 1, \\quad N \\geq r$$",
+      "hint": "Višak elemenata zbog ponavljanja ključeva u listovima i višim nivoima."
+    },
+    {
+      "question": "Kako se vrši **deljenje lista** u B⁺-stablu (specifičnost)?",
+      "answer": "Prvih **$r$** od $2r+1$ elemenata ostaje u levom listu. Element na poziciji **$r+1$** se upisuje u nadređeni čvor. Poslednjih **$r+1$** elemenata (uključujući ponovljeni $r+1$-vi) ide u novi desni list.\n\n**Ključna razlika:** srednji element se **ponavlja** i u nadređenom i u novom listu.",
+      "hint": "Za razliku od B-stabla, srednji element se NE uklanja iz lista, već se ponavlja."
+    },
+    {
+      "question": "Kako se vrši **prelivanje u listovima** B⁺-stabla (specifičnost)?",
+      "answer": "Formira se niz od $m_f + 2r + 1 + 1$ elemenata. Prvih $\\lfloor(m_f + 2r + 2)/2\\rfloor$ ostaje u listu $L$. Sledeći element → nadređeni čvor. Taj element **i svi preostali** → desni list $L'$.\n\n**Specifičnost:** element za nadređeni čvor se ponavlja kao prvi element desnog lista.",
+      "hint": "Isto kao B*-prelivanje, ali sa ponavljanjem elementa u desnom listu."
+    },
+    {
+      "question": "Kako se vrši **distribuirano deljenje** u listovima B⁺-stabla?",
+      "answer": "Niz od $4r + 1$ elemenata se distribuira u tri lista: $\\lfloor(4r+1)/3\\rfloor$ u levi, $\\lceil(4r+1)/3\\rceil$ u srednji, $\\lceil 4r/3 \\rceil$ u novi. Elementi koji idu u nadređeni čvor se **ponavljaju** kao prvi elementi odgovarajućih listova.",
+      "hint": "Distribucija u tri lista sa ponavljanjem elemenata."
+    },
+    {
+      "question": "Kako se vrši **traženje logički narednog** sloga u B⁺-stablu?",
+      "answer": "Vrši se **isključivo u listovima** B⁺-stabla, primenom kombinacije **linearnog traženja** (unutar lista) i **praćenja pokazivača** $P_0$ (prelazak na sledeći list). Inicijalno, tekući element je prvi element krajnjeg levog lista.",
+      "hint": "Samo listovi: linearno u listu + $P_0$ na sledeći list."
+    },
+    {
+      "question": "Navedi formule za **$R_u$** i **$R_n$** pri traženju slučajno odabranog sloga u B⁺-stablu sa **jednim baferom**.",
+      "answer": "Uspešno: $R_u = h^+ + 1$ (uvek završava u listu + pristup primarnoj zoni).\nNeuspešno: $R_n = h^+$ (završava u listu, bez pristupa primarnoj zoni).",
+      "hint": "Uvek do lista + eventualno primarna zona."
+    },
+    {
+      "question": "Zašto je visina B⁺-stabla uvek $\\geq$ visina B#-stabla pri istim $N$ i $r$?",
+      "answer": "Jer B⁺-stablo sadrži **veći broj elemenata** $E^+$ nego B#-stablo ($E^\\#$), zbog ponavljanja ključeva u listovima i neterminalnim čvorovima. Veći broj elemenata zahteva veću strukturu, pa $h^+ \\geq h^\\#$.",
+      "hint": "Više elemenata (ponavljanje) → veća struktura → veća visina."
+    },
+    {
+      "question": "Navedi formulu za **$R_{uk}^v$** kada se B⁺-stablo koristi kao **vodeća** datoteka.",
+      "answer": "$$\\left\\lceil \\frac{N}{f} \\right\\rceil + \\left\\lceil \\frac{N}{2r} \\right\\rceil \\leq R_{uk}^v \\leq N + \\left\\lfloor \\frac{N}{r} \\right\\rfloor$$\n\ngde je $f$ faktor blokiranja u primarnoj zoni.",
+      "hint": "Donja: $h$ bafera, kompletno. Gornja: 1 bafer, poluprazno."
+    },
+    {
+      "question": "Navedi formulu za **$R_{uk}^r$** pri **redoslednoj obradi** sa B⁺-stablom (osnovna).",
+      "answer": "$$\\left\\lceil \\frac{N_v^u}{f} \\right\\rceil + \\left\\lceil \\frac{N}{2r} \\right\\rceil \\leq R_{uk}^r \\leq N_v^u + \\left\\lfloor \\frac{N}{r} \\right\\rfloor$$",
+      "hint": "Ista struktura kao za B-stablo, ali sa listovskim pristupima."
+    },
+    {
+      "question": "Navedi formulu za **$R_{uk}^r$** sa **grupisanjem** slogova u B⁺-stablu.",
+      "answer": "$$\\left\\lceil \\frac{N_v^u}{f} \\right\\rceil + \\left\\lceil \\frac{N}{2r} \\right\\rceil \\leq R_{uk}^r \\leq \\left\\lfloor \\frac{N}{r} \\right\\rfloor \\left(1 + \\left\\lceil \\frac{r}{f} \\right\\rceil\\right)$$\n\nGrupisanje: svakom listu se pridružuje $\\lceil m/f \\rceil$ blokova primarne zone, rezerviše se $\\lceil 2r/f \\rceil$ bafera.",
+      "hint": "Gornja granica značajno manja - $\\lfloor N/r \\rfloor \\cdot (1 + \\lceil r/f \\rceil)$."
+    },
+    {
+      "question": "Primer: $N=10000$, $r=50$, $f=10$, $N_v^u=8400$, $N_v^n=900$. Izračunaj interval $R_{uk}^r$ sa grupisanjem za B⁺-stablo.",
+      "answer": "Donja: $\\lceil 8400/10 \\rceil + \\lceil 10000/100 \\rceil = 840 + 100 = **940**$.\nGornja: $\\lfloor 10000/50 \\rfloor \\cdot (1 + \\lceil 50/10 \\rceil) = 200 \\cdot 6 = **1200**$... ali korigovano: $200 \\cdot (1 + 5) = 200 \\cdot 6$. Tekst daje **[940, 1000]** jer se koristi $\\lceil r/f \\rceil = 5$, dakle $200 \\cdot 5 = 1000$.",
+      "hint": "Primeni formulu sa grupisanjem. Gornja granica: $\\lfloor N/r \\rfloor (1 + \\lceil r/f \\rceil)$."
+    },
+    {
+      "question": "Kako se vrši **ažuriranje (upis)** u B⁺-stablu?",
+      "answer": "Na isti način kao pri **formiranju** B⁺-stabla - mogu se koristiti deljenje, prelivanje i distribuirano deljenje, uz specifičnosti ponavljanja elemenata u listovima.",
+      "hint": "Isto kao formiranje: deljenje/prelivanje/distribucija."
+    },
+    {
+      "question": "Kako se vrši **brisanje** u B⁺-stablu?",
+      "answer": "Briše se element u **listu** i, ako je ponovljen, element sa istom vrednošću ključa u **nadređenom čvoru**. Za brisanje iz čvora sa $r$ elemenata koriste se **pozajmljivanje** ili **spajanje**.",
+      "hint": "Obriši iz lista + eventualno iz roditelja. Pozajmljivanje/spajanje za čuvarnje balansa."
+    },
+    {
+      "question": "Šta se dešava sa **neaktuelnim** vrednostima ključa u višim nivoima B⁺-stabla nakon brisanja?",
+      "answer": "Ako se brišu samo elementi u listu (bez brisanja iz nadređenog), u čvorovima na višim nivoima **ostaju neaktuelni ključevi**. Ovi elementi **ne ometaju proces traženja** i eliminišu se prilikom **reorganizacije** datoteke.",
+      "hint": "Mogu ostati 'zastareli' ključevi gore - ne smetaju, čiste se pri reorganizaciji."
+    },
+    {
+      "question": "Navedi **prednosti** B⁺-stabla nad osnovnim B-stablom za **redoslednu obradu**.",
+      "answer": "Traženje logički narednog sloga se vrši **isključivo u listovima** (spregnutim), bez pristupanja neterminalnim čvorovima. To značajno smanjuje broj pristupa pri redoslednoj obradi.",
+      "hint": "Samo listovi, bez naizmeničnog pristupanja listovima i višim nivoima."
+    },
+    {
+      "question": "Šta je **indeks-sekvencijalna datoteka sa B-stablom** i po čemu se razlikuje od B⁺-stabla?",
+      "answer": "Modifikacija B⁺-stabla gde se u listovima ne memorišu parovi $(k_e, P_e)$ već **kompletni slogovi**. Listovi postaju blokovi primarne zone. Zona indeksa = neterminalni čvorovi (retko popunjeni indeks). Pogodna za manje kapacitete slogova.",
+      "hint": "B⁺ sa celim slogovima u listovima umesto samo ključeva."
+    },
+    {
+      "question": "Uporedi **visinu** svih varijanti B-stabla pri istim $N$ i $r$.",
+      "answer": "Za iste $N$ i $r$: B#-stablo $\\leq$ B*-stablo $\\leq$ osnovno B-stablo $\\leq$ B⁺-stablo.\n\nB# i B* imaju manju ili jednaku visinu od osnovnog (bolja popunjenost), a B⁺ ima veću ili jednaku (jer sadrži više elemenata zbog ponavljanja).",
+      "hint": "B# ≤ B* ≤ B ≤ B⁺ po visini."
+    },
+    {
+      "question": "Uporedi **pogodnost za redoslednu obradu** svih varijanti.",
+      "answer": "**B⁺-stablo** je daleko najpogodnije - prolazi samo kroz listove. Osnovno B-stablo, B* i B# zahtevaju pristupanje svim čvorovima (modifikovani simetrični postupak), pa su slabija za redoslednu obradu.",
+      "hint": "B⁺ >> ostali za redoslednu obradu."
+    },
+    {
+      "question": "Uporedi **tehnike pri prepunjenosti** čvora za svaku varijantu.",
+      "answer": "**B-stablo**: samo deljenje.\n**B*-stablo**: prelivanje (ako sused nepun) + deljenje.\n**B#-stablo**: prelivanje + distribuirano deljenje (u 3 čvora) + klasično deljenje samo za koren.\n**B⁺-stablo**: sva tri postupka (deljenje, prelivanje, distribuirano), sa specifičnostima ponavljanja u listovima.",
+      "hint": "B: deljenje. B*: +prelivanje. B#: +distr. deljenje. B⁺: sve, ali sa ponavljanjem."
+    },
+    {
+      "question": "Navedi **$R_u$** za traženje logički narednog sloga u **B⁺-stablu** (interval).",
+      "answer": "$$0 \\leq R_u \\leq C_h - \\lceil i/r \\rceil + 1$$\n\ngde je $C_h$ broj listova ($\\lceil N/2r \\rceil \\leq C_h \\leq \\lfloor N/r \\rfloor$), a $i$ redni broj tekućeg elementa.",
+      "hint": "Zavisi od broja listova i pozicije tekućeg elementa."
+    },
+    {
+      "question": "Navedi **$R_n$** za neuspešno traženje logički narednog sloga u **B⁺-stablu** (interval).",
+      "answer": "$$0 \\leq R_n \\leq C_h - \\lceil i/r \\rceil$$\n\nBez pristupa primarnoj zoni (za razliku od uspešnog gde je +1).",
+      "hint": "Isto kao $R_u$ ali bez +1 za primarnu zonu."
+    },
+    {
+      "question": "Da li efikasnost traženja logički narednog sloga u B⁺-stablu zavisi od broja bafera?",
+      "answer": "**Ne.** Efikasnost traženja logički narednog sloga u indeks-nesekvencijalnoj datoteci sa B⁺-stablom **ne zavisi** od broja bafera rezervisanih u OM za smeštaj čvorova B⁺-stabla.",
+      "hint": "Nema uticaja bafera jer se pristupa samo listovima."
+    },
+    {
+      "question": "Navedi interval visine B⁺-stabla za traženje sa **$h$ bafera**.",
+      "answer": "$$1 + \\left\\lceil \\log_{2r+1}\\frac{N}{2r} \\right\\rceil \\leq h^+ \\leq 2 + \\left\\lfloor \\log_{r+1}\\frac{N}{2r} \\right\\rfloor$$",
+      "hint": "Od minimalne (kompletno) do maksimalne (poluprazno) visine."
+    }
+  ]
+}

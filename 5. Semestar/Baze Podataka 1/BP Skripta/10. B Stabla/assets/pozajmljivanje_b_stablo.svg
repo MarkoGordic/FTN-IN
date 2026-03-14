@@ -1,0 +1,181 @@
+<svg width="680" viewBox="0 0 680 940" xmlns="http://www.w3.org/2000/svg" style="background:#fff">
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+</defs>
+<style>
+  .th { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 14px; font-weight: 600; }
+  .ts { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 12px; font-weight: 400; }
+  .tl { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; font-weight: 500; }
+</style>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- STEP 1: BEFORE                              -->
+<!-- ═══════════════════════════════════════════ -->
+<text class="th" x="40" y="24" fill="#0F6E56">① Polazno stanje (r = 2)</text>
+<text class="ts" x="40" y="42" fill="#888780">Treba obrisati ključ 07 iz čvora C<tspan font-size="10" dy="2">e</tspan></text>
+
+<!-- Parent C -->
+<text class="ts" x="340" y="62" text-anchor="middle" fill="#5F5E5A">nadređeni čvor C</text>
+<rect x="228" y="72" width="224" height="38" rx="6" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="0.5"/>
+<line x1="308" y1="72" x2="308" y2="110" stroke="#B4B2A9" stroke-width="0.5"/>
+<line x1="372" y1="72" x2="372" y2="110" stroke="#B4B2A9" stroke-width="0.5"/>
+<text class="th" x="268" y="91" text-anchor="middle" dominant-baseline="central" fill="#444441">...</text>
+<text class="th" x="340" y="91" text-anchor="middle" dominant-baseline="central" fill="#444441">10</text>
+<text class="th" x="420" y="91" text-anchor="middle" dominant-baseline="central" fill="#444441">...</text>
+
+<!-- Edges -->
+<line x1="308" y1="110" x2="172" y2="150" stroke="#888780" stroke-width="0.5" marker-end="url(#arrow)"/>
+<line x1="372" y1="110" x2="478" y2="150" stroke="#888780" stroke-width="0.5" marker-end="url(#arrow)"/>
+
+<!-- Ce: [05 | 07] -->
+<rect x="108" y="156" width="96" height="36" rx="6" fill="#E1F5EE" stroke="#5DCAA5" stroke-width="0.5"/>
+<line x1="156" y1="156" x2="156" y2="192" stroke="#5DCAA5" stroke-width="0.5"/>
+<text class="th" x="132" y="174" text-anchor="middle" dominant-baseline="central" fill="#085041">05</text>
+<!-- 07 marked for deletion -->
+<rect x="156" y="156" width="48" height="36" rx="0" fill="#FCEBEB" stroke="#E24B4A" stroke-width="1.2"/>
+<text class="th" x="180" y="174" text-anchor="middle" dominant-baseline="central" fill="#791F1F">07</text>
+<line x1="162" y1="162" x2="198" y2="186" stroke="#E24B4A" stroke-width="1.5"/>
+<line x1="198" y1="162" x2="162" y2="186" stroke="#E24B4A" stroke-width="1.5"/>
+<text class="ts" x="156" y="206" text-anchor="middle" fill="#444441">C<tspan font-size="10" dy="2">e</tspan><tspan dy="-2">  (m</tspan><tspan font-size="10" dy="2">e</tspan><tspan dy="-2"> = 2)</tspan></text>
+
+<!-- Cf: [15 | 20 | 25] -->
+<rect x="416" y="156" width="144" height="36" rx="6" fill="#E1F5EE" stroke="#5DCAA5" stroke-width="0.5"/>
+<line x1="464" y1="156" x2="464" y2="192" stroke="#5DCAA5" stroke-width="0.5"/>
+<line x1="512" y1="156" x2="512" y2="192" stroke="#5DCAA5" stroke-width="0.5"/>
+<text class="th" x="440" y="174" text-anchor="middle" dominant-baseline="central" fill="#085041">15</text>
+<text class="th" x="488" y="174" text-anchor="middle" dominant-baseline="central" fill="#085041">20</text>
+<text class="th" x="536" y="174" text-anchor="middle" dominant-baseline="central" fill="#085041">25</text>
+<text class="ts" x="488" y="206" text-anchor="middle" fill="#444441">C<tspan font-size="10" dy="2">f</tspan><tspan dy="-2">  (m = 3)</tspan></text>
+
+<!-- ═══════════ Divider ═══════════ -->
+<line x1="40" y1="228" x2="640" y2="228" stroke="#B4B2A9" stroke-width="0.5" stroke-dasharray="3 3" opacity="0.3"/>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- STEP 2: AFTER DELETION - PROBLEM            -->
+<!-- ═══════════════════════════════════════════ -->
+<text class="th" x="40" y="250" fill="#A32D2D">② Nakon brisanja 07: čvor C<tspan font-size="12" dy="2">e</tspan><tspan dy="-2"> ima premalo elemenata</tspan></text>
+<text class="ts" x="40" y="268" fill="#888780">m<tspan font-size="10" dy="2">e</tspan><tspan dy="-2"> = r - 1 = 1, a minimum je r = 2.  Ali sused C</tspan><tspan font-size="10" dy="2">f</tspan><tspan dy="-2"> ima m = 3 > r → pozajmljivanje!</tspan></text>
+
+<!-- Parent C -->
+<rect x="228" y="286" width="224" height="38" rx="6" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="0.5"/>
+<line x1="308" y1="286" x2="308" y2="324" stroke="#B4B2A9" stroke-width="0.5"/>
+<line x1="372" y1="286" x2="372" y2="324" stroke="#B4B2A9" stroke-width="0.5"/>
+<text class="th" x="268" y="305" text-anchor="middle" dominant-baseline="central" fill="#444441">...</text>
+<text class="th" x="340" y="305" text-anchor="middle" dominant-baseline="central" fill="#444441">10</text>
+<text class="th" x="420" y="305" text-anchor="middle" dominant-baseline="central" fill="#444441">...</text>
+
+<line x1="308" y1="324" x2="152" y2="366" stroke="#888780" stroke-width="0.5" marker-end="url(#arrow)"/>
+<line x1="372" y1="324" x2="478" y2="366" stroke="#888780" stroke-width="0.5" marker-end="url(#arrow)"/>
+
+<!-- Ce: [05] - PROBLEM -->
+<rect x="120" y="372" width="48" height="36" rx="6" fill="#FCEBEB" stroke="#E24B4A" stroke-width="1"/>
+<text class="th" x="144" y="390" text-anchor="middle" dominant-baseline="central" fill="#791F1F">05</text>
+<text class="ts" x="144" y="422" text-anchor="middle" fill="#A32D2D">m<tspan font-size="10" dy="2">e</tspan><tspan dy="-2"> = 1 &lt; r = 2</tspan></text>
+
+<!-- Cf: [15 | 20 | 25] unchanged -->
+<rect x="416" y="372" width="144" height="36" rx="6" fill="#E1F5EE" stroke="#5DCAA5" stroke-width="0.5"/>
+<line x1="464" y1="372" x2="464" y2="408" stroke="#5DCAA5" stroke-width="0.5"/>
+<line x1="512" y1="372" x2="512" y2="408" stroke="#5DCAA5" stroke-width="0.5"/>
+<text class="th" x="440" y="390" text-anchor="middle" dominant-baseline="central" fill="#085041">15</text>
+<text class="th" x="488" y="390" text-anchor="middle" dominant-baseline="central" fill="#085041">20</text>
+<text class="th" x="536" y="390" text-anchor="middle" dominant-baseline="central" fill="#085041">25</text>
+<text class="ts" x="488" y="422" text-anchor="middle" fill="#0F6E56">m = 3 > r → višak</text>
+
+<!-- ═══════════ Divider ═══════════ -->
+<line x1="40" y1="448" x2="640" y2="448" stroke="#B4B2A9" stroke-width="0.5" stroke-dasharray="3 3" opacity="0.3"/>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- STEP 3: ROTATION                            -->
+<!-- ═══════════════════════════════════════════ -->
+<text class="th" x="40" y="470" fill="#854F0B">③ Rotacija: element silazi iz C, element se penje iz C<tspan font-size="12" dy="2">f</tspan></text>
+<text class="ts" x="40" y="488" fill="#888780">Ključ 10 silazi iz nadređenog u C<tspan font-size="10" dy="2">e</tspan><tspan dy="-2">, a ključ 15 se penje iz C</tspan><tspan font-size="10" dy="2">f</tspan><tspan dy="-2"> u nadređeni čvor</tspan></text>
+
+<!-- Parent C: with 10 highlighted -->
+<rect x="228" y="506" width="224" height="38" rx="6" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="0.5"/>
+<line x1="308" y1="506" x2="308" y2="544" stroke="#B4B2A9" stroke-width="0.5"/>
+<line x1="372" y1="506" x2="372" y2="544" stroke="#B4B2A9" stroke-width="0.5"/>
+<text class="th" x="268" y="525" text-anchor="middle" dominant-baseline="central" fill="#444441">...</text>
+<text class="th" x="420" y="525" text-anchor="middle" dominant-baseline="central" fill="#444441">...</text>
+<!-- 10 highlighted amber -->
+<rect x="308" y="506" width="64" height="38" rx="0" fill="#FAEEDA" stroke="#EF9F27" stroke-width="1.2"/>
+<text class="th" x="340" y="525" text-anchor="middle" dominant-baseline="central" fill="#633806">10</text>
+
+<!-- Faded edges -->
+<line x1="308" y1="544" x2="166" y2="600" stroke="#888780" stroke-width="0.3" opacity="0.3"/>
+<line x1="372" y1="544" x2="478" y2="600" stroke="#888780" stroke-width="0.3" opacity="0.3"/>
+
+<!-- Ce: [05 | ___] waiting -->
+<rect x="108" y="606" width="96" height="36" rx="6" fill="#FCEBEB" stroke="#E24B4A" stroke-width="0.5" stroke-dasharray="3 2"/>
+<line x1="156" y1="606" x2="156" y2="642" stroke="#E24B4A" stroke-width="0.3" stroke-dasharray="3 2"/>
+<text class="th" x="132" y="624" text-anchor="middle" dominant-baseline="central" fill="#791F1F">05</text>
+<text class="ts" x="180" y="624" text-anchor="middle" dominant-baseline="central" fill="#B4B2A9">?</text>
+
+<!-- Cf: with 15 highlighted -->
+<rect x="416" y="606" width="144" height="36" rx="6" fill="#E1F5EE" stroke="#5DCAA5" stroke-width="0.5"/>
+<line x1="464" y1="606" x2="464" y2="642" stroke="#5DCAA5" stroke-width="0.5"/>
+<line x1="512" y1="606" x2="512" y2="642" stroke="#5DCAA5" stroke-width="0.5"/>
+<text class="th" x="488" y="624" text-anchor="middle" dominant-baseline="central" fill="#085041">20</text>
+<text class="th" x="536" y="624" text-anchor="middle" dominant-baseline="central" fill="#085041">25</text>
+<!-- 15 highlighted amber -->
+<rect x="416" y="606" width="48" height="36" rx="0" fill="#FAEEDA" stroke="#EF9F27" stroke-width="1.2"/>
+<text class="th" x="440" y="624" text-anchor="middle" dominant-baseline="central" fill="#633806">15</text>
+
+<!-- ARROW: 10 descends -->
+<path d="M320 544 C300 564 220 580 175 600" fill="none" stroke="#BA7517" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#arrow)"/>
+<text class="tl" x="230" y="568" text-anchor="middle" fill="#854F0B">10 silazi u C<tspan font-size="9" dy="2">e</tspan></text>
+
+<!-- ARROW: 15 ascends -->
+<path d="M440 606 C440 580 400 560 372 544" fill="none" stroke="#BA7517" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#arrow)"/>
+<text class="tl" x="430" y="568" text-anchor="middle" fill="#854F0B">15 se penje u C</text>
+
+<!-- ═══════════ Divider ═══════════ -->
+<line x1="40" y1="666" x2="640" y2="666" stroke="#B4B2A9" stroke-width="0.5" stroke-dasharray="3 3" opacity="0.3"/>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- STEP 4: FINAL STATE                         -->
+<!-- ═══════════════════════════════════════════ -->
+<text class="th" x="40" y="688" fill="#534AB7">④ Konačno stanje: B-stablo svojstvo očuvano</text>
+
+<!-- Parent C: [... | 15 | ...] -->
+<rect x="228" y="706" width="224" height="38" rx="6" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="0.5"/>
+<line x1="308" y1="706" x2="308" y2="744" stroke="#B4B2A9" stroke-width="0.5"/>
+<line x1="372" y1="706" x2="372" y2="744" stroke="#B4B2A9" stroke-width="0.5"/>
+<text class="th" x="268" y="725" text-anchor="middle" dominant-baseline="central" fill="#444441">...</text>
+<text class="th" x="420" y="725" text-anchor="middle" dominant-baseline="central" fill="#444441">...</text>
+<!-- 15 now in parent -->
+<rect x="308" y="706" width="64" height="38" rx="0" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="0.8"/>
+<text class="th" x="340" y="725" text-anchor="middle" dominant-baseline="central" fill="#3C3489">15</text>
+
+<line x1="308" y1="744" x2="172" y2="790" stroke="#888780" stroke-width="0.5" marker-end="url(#arrow)"/>
+<line x1="372" y1="744" x2="478" y2="790" stroke="#888780" stroke-width="0.5" marker-end="url(#arrow)"/>
+
+<!-- Ce: [05 | 10] -->
+<rect x="108" y="796" width="96" height="36" rx="6" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="0.5"/>
+<line x1="156" y1="796" x2="156" y2="832" stroke="#AFA9EC" stroke-width="0.5"/>
+<text class="th" x="132" y="814" text-anchor="middle" dominant-baseline="central" fill="#3C3489">05</text>
+<text class="th" x="180" y="814" text-anchor="middle" dominant-baseline="central" fill="#3C3489">10</text>
+<text class="ts" x="156" y="846" text-anchor="middle" fill="#534AB7">C<tspan font-size="10" dy="2">e</tspan><tspan dy="-2">: m = r = 2 ✓</tspan></text>
+
+<!-- Cf: [20 | 25] -->
+<rect x="436" y="796" width="96" height="36" rx="6" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="0.5"/>
+<line x1="484" y1="796" x2="484" y2="832" stroke="#AFA9EC" stroke-width="0.5"/>
+<text class="th" x="460" y="814" text-anchor="middle" dominant-baseline="central" fill="#3C3489">20</text>
+<text class="th" x="508" y="814" text-anchor="middle" dominant-baseline="central" fill="#3C3489">25</text>
+<text class="ts" x="484" y="846" text-anchor="middle" fill="#534AB7">C<tspan font-size="10" dy="2">f</tspan><tspan dy="-2">: m = r = 2 ✓</tspan></text>
+
+<!-- Final verification -->
+<text class="ts" x="340" y="878" text-anchor="middle" fill="#888780">{05, 10}  &lt;  15  &lt;  {20, 25}     ✓  uređenost očuvana</text>
+
+<!-- Legend -->
+<rect x="108" y="904" width="14" height="14" rx="2" fill="#FAEEDA" stroke="#EF9F27" stroke-width="0.5"/>
+<text class="ts" x="128" y="916" fill="#633806">element u pokretu</text>
+
+<rect x="276" y="904" width="14" height="14" rx="2" fill="#FCEBEB" stroke="#E24B4A" stroke-width="0.5"/>
+<text class="ts" x="296" y="916" fill="#791F1F">brisanje / nedostatak</text>
+
+<rect x="460" y="904" width="14" height="14" rx="2" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="0.5"/>
+<text class="ts" x="480" y="916" fill="#3C3489">konačna pozicija</text>
+
+</svg>

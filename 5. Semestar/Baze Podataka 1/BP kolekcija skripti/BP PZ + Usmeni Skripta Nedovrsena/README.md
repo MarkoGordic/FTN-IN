@@ -1,17 +1,5 @@
 ![banner](./banner.png)
 
-> [!WARNING]
-> **DOKUMENT JE JOŠ UVEK U IZRADI I PODLOŽAN JE PROMENAMA.**
-> Sadržaj se aktivno dopunjuje, ispravlja i unapređuje. Struktura, formulacije i primeri mogu biti izmenjeni bez prethodne najave. Dokument koristiti kao **radnu verziju** i uvek ga uporediti sa zvaničnim materijalima sa predavanja i vežbi.
-
-## Autori
-- **IN 37/2023:** _Marko Gordić_
-- **IN 16/2023:** _Sanja Štetin_
-- **IN 19/2023:** _Nikola Radosavljev_
-
-**Predmetni profesor:** Slavica Kordić
-**Asistent:** Miroslav Tomić 
-
 ## Napomene
 
 > [!Caution]

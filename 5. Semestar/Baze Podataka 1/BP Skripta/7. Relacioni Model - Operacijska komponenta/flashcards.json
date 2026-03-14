@@ -1,0 +1,279 @@
+{
+  "cards": [
+    {
+      "question": "Šta je **operacijska komponenta** relacionog modela podataka?",
+      "answer": "Operacijska komponenta definiše **skup jezika i operacija** za rad sa podacima u bazi podataka - za njihovo pretraživanje, dodavanje, brisanje i modifikovanje, kao i za upravljanje šemom BP.",
+      "hint": "Tri vrste jezika: DML, DDL, QL"
+    },
+    {
+      "question": "Koja su **tri dela** (jezika) operacijske komponente RMP?",
+      "answer": "1. **Jezik za manipulaciju podacima** (DML - Data Manipulation Language)\n2. **Jezik za definiciju podataka** (DDL - Data Definition Language)\n3. **Upitni jezik** (QL - Query Language)",
+      "hint": "Jedan menja podatke, drugi menja strukturu, treći čita podatke"
+    },
+    {
+      "question": "Šta je **jezik za manipulaciju podacima** (DML)?",
+      "answer": "DML definiše **operacije za ažuriranje relacija**: dodavanje nove torke (*Add*), brisanje postojeće torke (*Delete*) i modifikacija podataka postojeće torke (*Update*).",
+      "hint": "Tri osnovne operacije nad podacima u tabelama"
+    },
+    {
+      "question": "Koje **tri operacije** obuhvata DML?",
+      "answer": "1. **Dodavanje nove torke** (*Add*) - unos novog reda\n2. **Brisanje postojeće torke** (*Delete*) - uklanjanje reda\n3. **Modifikacija podataka postojeće torke** (*Update*) - izmena vrednosti u postojećem redu",
+      "hint": "Add, Delete, Update"
+    },
+    {
+      "question": "Šta je **jezik za definiciju podataka** (DDL)?",
+      "answer": "DDL definiše **operacije za upravljanje šemom baze podataka** - kreiranje, brisanje i modifikovanje delova šeme BP. Dok DML menja podatke u tabelama, DDL menja **same tabele** (njihovu strukturu).",
+      "hint": "Menja strukturu, ne podatke"
+    },
+    {
+      "question": "Šta je **upitni jezik** (QL)?",
+      "answer": "Upitni jezik definiše **operacije za izražavanje upita** nad jednom relacijom ili skupom relacija. Cilj je **pružanje podataka na uvid korisniku** - postavljamo pitanje bazi, a ona vraća odgovor.",
+      "hint": "Čitanje podataka, ne menjanje"
+    },
+    {
+      "question": "Od čega se **sastoji** upitni jezik?",
+      "answer": "Upitni jezik sačinjavaju:\n- **Operatori** za izražavanje upita\n- **Pravila za formiranje operanada** upita (izraza)\n- **Pravila za primenu** tih operatora",
+      "hint": "Tri komponente: operatori, operandi, pravila primene"
+    },
+    {
+      "question": "Koje su **dve vrste teoretskih upitnih jezika** u relacionom modelu?",
+      "answer": "1. **Relaciona algebra** - zasnovana na teoriji skupova i skupovnih operacija\n2. **Relacioni račun** - zasnovan na predikatskom računu I reda (postoji u dve varijante: nad torkama i nad domenima)",
+      "hint": "Jedna je skupovska, druga je predikatska"
+    },
+    {
+      "question": "Na čemu je zasnovana **relaciona algebra**?",
+      "answer": "Relaciona algebra je zasnovana na **teoriji skupova i skupovnih operacija**. Ona opisuje *kako* doći do rezultata - zadaje se niz operacija koje treba izvršiti (proceduralan pristup).",
+      "hint": "Skupovne operacije: unija, presek, razlika + specijalizovane"
+    },
+    {
+      "question": "Na čemu je zasnovan **relacioni račun**?",
+      "answer": "Relacioni račun je zasnovan na **predikatskom računu I reda**. On opisuje *šta* želimo da dobijemo, ne kako (deklarativan pristup).",
+      "hint": "Predikatski račun I reda, deklarativan"
+    },
+    {
+      "question": "Koje su **dve varijante** relacionog računa?",
+      "answer": "1. **Relacioni račun nad torkama**\n2. **Relacioni račun nad domenima**",
+      "hint": "Razlika je u osnovnoj varijabli - torke ili domeni"
+    },
+    {
+      "question": "Na čemu je zasnovan **SQL**?",
+      "answer": "SQL (Structured Query Language) je zasnovan na **relacionom računu nad torkama**. On je **deklarativan** i radi sa skupovima podataka (torki).",
+      "hint": "Relacioni račun nad torkama, deklarativan pristup"
+    },
+    {
+      "question": "Koji je **osnovni oblik** SQL naredbe za upite?",
+      "answer": "```sql\nSELECT <lista obeležja>\nFROM <lista relacija>\nWHERE <logički izraz>\n```",
+      "hint": "Tri ključne reči: SELECT, FROM, WHERE"
+    },
+    {
+      "question": "Koje su **osnovne skupovne operacije** nad relacijama?",
+      "answer": "1. **Unija** ($r \\cup s$)\n2. **Presek** ($r \\cap s$)\n3. **Razlika** ($r - s$)",
+      "hint": "Tri standardne skupovne operacije"
+    },
+    {
+      "question": "Koji je **uslov** za primenu skupovnih operacija (unije, preseka, razlike) na dve relacije?",
+      "answer": "Obe relacije moraju biti definisane nad **istim skupom obeležja** $R$. Inače operacije nisu definisane.",
+      "hint": "Iste kolone u obe tabele"
+    },
+    {
+      "question": "Kako glasi **formalna definicija unije** relacija?",
+      "answer": "$r(R) \\cup s(R) = \\{t \\mid t \\in r \\lor t \\in s\\}$\n\nUnija sadrži sve torke koje se nalaze u $r$, u $s$, ili u obe relacije.",
+      "hint": "Torke iz r ILI iz s, bez duplikata"
+    },
+    {
+      "question": "Kako glasi **formalna definicija preseka** relacija?",
+      "answer": "$r(R) \\cap s(R) = \\{t \\mid t \\in r \\land t \\in s\\}$\n\nPresek sadrži samo one torke koje se nalaze **i u $r$ i u $s$**.",
+      "hint": "Torke iz r I iz s istovremeno"
+    },
+    {
+      "question": "Kako glasi **formalna definicija razlike** relacija?",
+      "answer": "$r(R) - s(R) = \\{t \\mid t \\in r \\land t \\notin s\\}$\n\nRazlika sadrži torke koje su u $r$, ali **nisu** u $s$.",
+      "hint": "Torke iz r koje NISU u s"
+    },
+    {
+      "question": "Da li je **razlika** relacija komutativna operacija?",
+      "answer": "**Ne**, razlika je **nekomutativna**: $r - s \\neq s - r$. Unija i presek jesu komutativne i asocijativne.",
+      "hint": "r - s daje različit rezultat od s - r"
+    },
+    {
+      "question": "Šta je **selekcija** torki iz relacije?",
+      "answer": "Selekcija omogućava **izbor (selektovanje) torki** relacije po nekom kriterijumu. Bira **redove** iz tabele koji zadovoljavaju zadatu logičku formulu $F$.",
+      "hint": "Filtriranje redova po uslovu - σ"
+    },
+    {
+      "question": "Kako glasi **formalna definicija selekcije**?",
+      "answer": "$\\sigma_F(r(R)) = \\{t \\in r \\mid F(t)\\}$\n\nGde je $\\sigma$ operator selekcije, $F$ logička formula, $r(R)$ relacija. Biće selektovane samo torke za koje je $F$ **tačna**.",
+      "hint": "σ_F(r) - sigma sa formulom F nad relacijom r"
+    },
+    {
+      "question": "Šta predstavlja simbol $\\sigma$ u selekciji?",
+      "answer": "$\\sigma$ (sigma) je **operator selekcije**. U indeksu se piše logička formula $F$ koja predstavlja kriterijum po kojem se torke biraju.",
+      "hint": "Grčko slovo sigma - operator za filtriranje redova"
+    },
+    {
+      "question": "Šta je **formula $F$** u selekciji?",
+      "answer": "Formula $F$ je **logički izraz** (uslov, kriterijum) po kojem se torke selektuju. Biće selektovane samo one torke za koje je formula $F$ tačna. Npr. $PLT > 5000$, ili $PLT > 4000 \\land SPR = 11$.",
+      "hint": "Logički uslov koji torka mora zadovoljiti"
+    },
+    {
+      "question": "Šta je **projekcija** (restrikcija) relacije?",
+      "answer": "Projekcija omogućava **izdvajanje vrednosti pojedinih kolona** iz relacije - to je projektovanje relacije na podskup skupa obeležja. Bira **kolone**, za razliku od selekcije koja bira redove.",
+      "hint": "Bira kolone, ne redove - π"
+    },
+    {
+      "question": "Kako glasi **formalna definicija projekcije**?",
+      "answer": "Za $X \\subseteq R$:\n\n$\\pi_X(r(R)) = \\{t[X] \\mid t \\in r(R)\\}$\n\nGde je $\\pi$ operator projekcije, $X$ podskup skupa obeležja na koji projektujemo, $t[X]$ restrikcija torke na skup obeležja $X$.",
+      "hint": "π_X(r) - pi sa skupom obeležja X nad relacijom r"
+    },
+    {
+      "question": "Šta predstavlja simbol $\\pi$ u projekciji?",
+      "answer": "$\\pi$ (pi) je **operator projekcije**. U indeksu se piše skup obeležja $X$ na koji se relacija projektuje.",
+      "hint": "Grčko slovo pi - operator za izdvajanje kolona"
+    },
+    {
+      "question": "Šta se dešava sa **duplikatima** pri projekciji?",
+      "answer": "Projekcija **eliminiše duplikate**, jer je rezultat projekcije relacija, a relacija je po definiciji **skup** torki - u skupu ne mogu postojati identični elementi. Broj torki u rezultatu je uvek $\\leq$ broju torki u polaznoj relaciji.",
+      "hint": "Relacija je skup, a u skupu nema duplikata"
+    },
+    {
+      "question": "Kako se **kombinuju** selekcija i projekcija u izrazu relacione algebre?",
+      "answer": "Selekcija se piše *unutra* (kao argument), a projekcija *spolja*: $\\pi_X(\\sigma_F(r))$. Čita se iznutra ka spolja: **prvo selektuj** torke po uslovu $F$, **pa projektuj** rezultat na obeležja $X$.",
+      "hint": "π spolja, σ unutra: π_X(σ_F(r))"
+    },
+    {
+      "question": "Šta je **prirodni spoj** (natural join) relacija?",
+      "answer": "Prirodni spoj je operacija **spajanja torki** različitih relacija **po osnovu istih vrednosti zajedničkih obeležja**. Automatski pronalazi zajednička obeležja i spaja torke koje imaju iste vrednosti za ta obeležja.",
+      "hint": "Spajanje po zajedničkim kolonama - ⋈"
+    },
+    {
+      "question": "Kako glasi **formalna definicija prirodnog spoja**?",
+      "answer": "$r(R) \\bowtie s(S) = \\{t \\in Tuple(R \\cup S) \\mid t[R] \\in r \\land t[S] \\in s\\}$\n\nGde je $\\bowtie$ operator prirodnog spoja, $Tuple(R \\cup S)$ skup svih mogućih torki nad unijom skupova obeležja.",
+      "hint": "Torke čija R-restrikcija je u r i čija S-restrikcija je u s"
+    },
+    {
+      "question": "Po čemu se vrši spajanje torki kod **prirodnog spoja**?",
+      "answer": "Spajanje se vrši po osnovu **istih vrednosti zajedničkih obeležja** ($R \\cap S$). Torke iz $r$ i $s$ se spajaju samo ako imaju identične vrednosti na svim obeležjima koja se pojavljuju u obe relacije.",
+      "hint": "Zajednička obeležja moraju imati iste vrednosti"
+    },
+    {
+      "question": "Šta se dešava sa torkama koje **nemaju parnjaka** u drugoj relaciji pri prirodnom spoju?",
+      "answer": "Torke koje nemaju parnjaka u drugoj relaciji **se gube** - ne pojavljuju se u rezultatu prirodnog spoja. Npr. ako radnik nije angažovan ni na jednom projektu, njegova torka se neće pojaviti u spoju sa tabelom angažovanja.",
+      "hint": "Bez parnjaka = bez pojavljivanja u rezultatu"
+    },
+    {
+      "question": "Šta je **Dekartov proizvod** relacija?",
+      "answer": "Dekartov proizvod formira **sve moguće kombinacije** torki iz dve relacije. Svaka torka iz $r$ se kombinuje sa svakom torkom iz $s$. Uslov: $R \\cap S = \\emptyset$ (relacije nemaju zajednička obeležja).",
+      "hint": "Sve kombinacije - m × n torki u rezultatu"
+    },
+    {
+      "question": "Kako glasi **formalna definicija** Dekartovog proizvoda?",
+      "answer": "$r(R) \\times s(S) = \\{t \\in Tuple(R \\cup S) \\mid t[R] \\in r \\land t[S] \\in s\\}$\n\ngde je $R \\cap S = \\emptyset$.",
+      "hint": "Isto kao prirodni spoj, ali bez zajedničkih obeležja"
+    },
+    {
+      "question": "Koliko torki ima rezultat Dekartovog proizvoda ako prva relacija ima $m$, a druga $n$ torki?",
+      "answer": "Rezultat ima $m \\times n$ torki. Na primer, dve relacije sa po 1000 redova daju **1.000.000 kombinacija**.",
+      "hint": "Proizvod kardinalnosti - brzo eksplodira"
+    },
+    {
+      "question": "Šta je **theta spajanje** relacija?",
+      "answer": "Theta spajanje je **selektovanje torki po nekom kriterijumu iz Dekartovog proizvoda** relacija. Formalno: $r(R) \\bowtie_F s(S) = \\sigma_F(r \\times s)$. Prvo se napravi Dekartov proizvod, pa se zadrže samo torke koje zadovoljavaju formulu $F$.",
+      "hint": "Dekartov proizvod + selekcija po formuli F"
+    },
+    {
+      "question": "Kako glasi **formalna definicija** theta spajanja?",
+      "answer": "$r(R) \\bowtie_F s(S) = \\sigma_F(r \\times s)$\n\nGde je $\\bowtie_F$ operator theta spajanja, $F$ logička formula (uslov), a $r \\times s$ Dekartov proizvod.",
+      "hint": "σ_F(r × s) - selekcija nad Dekartovim proizvodom"
+    },
+    {
+      "question": "Koja je **veza** između theta spajanja i Dekartovog proizvoda?",
+      "answer": "Theta spajanje je **Dekartov proizvod praćen selekcijom**: $r \\bowtie_F s = \\sigma_F(r \\times s)$. Prvo se formiraju sve moguće kombinacije torki, a zatim se zadrže samo one koje zadovoljavaju uslov $F$.",
+      "hint": "Theta spoj = Dekartov proizvod + filtriranje"
+    },
+    {
+      "question": "Koja je **razlika** između prirodnog spoja i theta spajanja?",
+      "answer": "**Prirodni spoj** automatski spaja po **jednakosti zajedničkih obeležja**. **Theta spajanje** koristi **proizvoljnu formulu** $F$ za uslov spajanja - to može biti $<$, $>$, $\\leq$, $\\neq$, ili bilo koji drugi logički uslov.",
+      "hint": "Prirodni: jednakost zajedničkih obeležja. Theta: proizvoljni uslov."
+    },
+    {
+      "question": "Šta se dešava kada relacije u prirodnom spoju **nemaju zajednička obeležja**?",
+      "answer": "Kada je $R \\cap S = \\emptyset$, prirodni spoj se svodi na **Dekartov proizvod** - svaka torka iz $r$ se kombinuje sa svakom torkom iz $s$.",
+      "hint": "Nema zajedničkih obeležja = Dekartov proizvod"
+    },
+    {
+      "question": "Koja je **ključna osobina** svih operacija relacione algebre u pogledu tipa rezultata?",
+      "answer": "Rezultat svake operacije relacione algebre je **relacija** (svojstvo **zatvorenosti**). To znači da rezultat jedne operacije može biti operand (ulaz) druge operacije, što omogućava **kompoziciju operacija**.",
+      "hint": "Zatvorenost - ulaz relacija, izlaz relacija"
+    },
+    {
+      "question": "Zašto je bitno da rezultat operacije relacione algebre bude relacija?",
+      "answer": "Zahvaljujući **zatvorenosti**, rezultat jedne operacije može biti **ulaz druge operacije**. To omogućava gradnju složenih izraza kompozicijom, npr. $\\pi_{IME}(\\sigma_{PLT>4000}(Radnik \\bowtie Radproj))$.",
+      "hint": "Omogućava ugnježđivanje operacija - f(g(x))"
+    },
+    {
+      "question": "Kako se u SQL-u izražava **selekcija** ($\\sigma$)?",
+      "answer": "Selekcija se u SQL-u izražava klauzulom **WHERE**: `WHERE <logički izraz>`. Npr. $\\sigma_{PLT>5000}(r)$ odgovara `WHERE PLT > 5000`.",
+      "hint": "WHERE klauzula"
+    },
+    {
+      "question": "Kako se u SQL-u izražava **projekcija** ($\\pi$)?",
+      "answer": "Projekcija se u SQL-u izražava klauzulom **SELECT** sa listom obeležja: `SELECT <lista obeležja>`. Npr. $\\pi_{IME+PRZ}$ odgovara `SELECT IME, PRZ`.",
+      "hint": "SELECT sa listom kolona"
+    },
+    {
+      "question": "Kako se u SQL-u izražava **prirodni spoj** ($\\bowtie$)?",
+      "answer": "Prirodni spoj se u SQL-u izražava sa **NATURAL JOIN**: `FROM Tabela1 NATURAL JOIN Tabela2`. Alternativno, eksplicitnim uslovom jednakosti u WHERE klauzuli: `FROM T1, T2 WHERE T1.kljuc = T2.kljuc`.",
+      "hint": "NATURAL JOIN ili eksplicitni uslov u WHERE"
+    },
+    {
+      "question": "Koje su **specijalizovane operacije** relacione algebre (pored skupovnih)?",
+      "answer": "Specijalizovane operacije su:\n- **Selekcija** ($\\sigma$) - izbor torki po uslovu\n- **Projekcija** ($\\pi$) - izdvajanje kolona\n- **Prirodni spoj** ($\\bowtie$) - spajanje po zajedničkim obeležjima\n- **Dekartov proizvod** ($\\times$) - sve kombinacije torki\n- **Theta spajanje** ($\\bowtie_F$) - Dekartov proizvod sa selekcijom",
+      "hint": "σ, π, ⋈, ×, ⋈_F"
+    },
+    {
+      "question": "Koja operacija relacione algebre se koristi za upite tipa 'radnici koji **ne** rade na projektu X'?",
+      "answer": "Koristi se operacija **razlike** ($r - s$). Iz skupa svih radnika oduzimamo one koji se pojavljuju u spoju sa tabelom angažovanja za projekat X. Razlika je jedini način da u relacionoj algebri izrazimo **negaciju**.",
+      "hint": "Razlika - jedina operacija za 'oni koji nisu'"
+    },
+    {
+      "question": "Dat je primer: prikazati radnike čija je plata veća od 5000 iz relacije $r(MBR, IME, POL, SPR, PLT)$ sa torkama (101, Ana, ž, 11, 3400), (102, Aca, m, 14, 4200), (110, Ivo, m, 11, 7000), (111, Olja, ž, 11, 7200). Zapiši izraz i rezultat.",
+      "answer": "Izraz: $\\sigma_{PLT > 5000}(r)$\n\nRezultat sadrži samo torke gde je PLT > 5000:\n- (110, Ivo, m, 11, **7000**)\n- (111, Olja, ž, 11, **7200**)\n\nAna (3400) i Aca (4200) ne zadovoljavaju uslov.",
+      "hint": "Selekcija sa uslovom PLT > 5000, ostaju Ivo i Olja"
+    },
+    {
+      "question": "Kako se zapisuje upit 'prikazati MBR i IME radnika sa PLT > 4000 koji rade na projektu 11' u relacionoj algebri?",
+      "answer": "$\\pi_{MBR+IME}(\\sigma_{PLT > 4000 \\land SPR = 11}(r))$\n\nPrvo se selekcijom biraju torke koje zadovoljavaju **oba** uslova (konjunkcija $\\land$), zatim se projekcijom izdvajaju samo kolone MBR i IME.",
+      "hint": "Kombinacija σ (unutra) i π (spolja) sa konjunkcijom uslova"
+    },
+    {
+      "question": "U primeru pilota sa relacijom $r(P, A, L)$ sa torkama (Aca, 747, 101), (Ivo, 737, 101), (Aca, 747, 102), (Ana, DC9, 110) - koliko torki ima $\\pi_{PA}(r)$ i zašto?",
+      "answer": "Rezultat ima **3 torke**: (Aca, 747), (Ivo, 737), (Ana, DC9). Aca se pojavljuje dva puta u polaznoj relaciji (letovi 101 i 102), ali projekcija **eliminiše duplikate** jer je relacija skup.",
+      "hint": "Duplikat (Aca, 747) se eliminiše - relacija je skup"
+    },
+    {
+      "question": "U primeru sa relacijama $r(A,B,C)$ i $s(B,C,D)$ - zašto se torka $(a1, b2, c2)$ iz $r$ **ne pojavljuje** u prirodnom spoju $r \\bowtie s$?",
+      "answer": "Zato što u relaciji $s$ ne postoji torka sa vrednostima $B=b2$ i $C=c2$. Prirodni spoj zahteva poklapanje vrednosti **svih** zajedničkih obeležja ($B$ i $C$). Torke bez parnjaka u drugoj relaciji **se gube**.",
+      "hint": "Nema parnjaka u s za kombinaciju B=b2, C=c2"
+    },
+    {
+      "question": "Objasnite primer theta spajanja sa redom vožnje: $r \\bowtie_{DBG < PBG} s$.",
+      "answer": "Relacija $r$ (Niš-Beograd): polasci i dolasci. Relacija $s$ (Beograd-NS): polasci i dolasci. Uslov $DBG < PBG$ znači da **dolazak u BG mora biti pre polaska za NS**. Prvo se formira Dekartov proizvod (sve kombinacije), pa se zadržavaju samo varijante gde putnik stiže pre nego što mu sledeći voz krene.",
+      "hint": "Dekartov proizvod + uslov DBG < PBG za smislene itinerere"
+    },
+    {
+      "question": "Kako se zapisuje upit 'šifre i nazivi projekata na kojima radi Ivan Tasić' koristeći tri relacije: *radnik*, *radproj*, *projekat*?",
+      "answer": "$\\pi_{Spr+Nap}(\\sigma_{Ime='Ivan' \\land Prz='Tasić'}(radnik) \\bowtie radproj \\bowtie projekat)$\n\nPrvo selektujemo Ivana Tasića iz radnika, pa spajamo sa radproj (da dobijemo projekte), pa sa projekat (da dobijemo nazive).",
+      "hint": "Selekcija → spoj sa radproj → spoj sa projekat → projekcija"
+    },
+    {
+      "question": "Kako se zapisuje upit 'projekti na kojima ne radi nijedan radnik' u relacionoj algebri?",
+      "answer": "$projekat - \\pi_{Spr+Ruk+Nap+Nar}(projekat \\bowtie radproj)$\n\nOd svih projekata oduzimamo one koji se pojavljuju u spoju sa radproj (tj. one na kojima **neko radi**). Ostaju samo projekti bez angažovanih radnika.",
+      "hint": "Razlika: svi projekti MINUS projekti sa radnicima"
+    },
+    {
+      "question": "Koja su dva **ekvivalentna načina** da se zapiše upit koji kombinuje selekciju i spoj? Koji je efikasniji?",
+      "answer": "Način 1 (efikasniji): $\\pi_{MBR+IME}(\\sigma_{SPR=11}(Radproj) \\bowtie Radnik)$ - **prvo selekcija, pa spoj**\nNačin 2: $\\pi_{MBR+IME}(\\sigma_{SPR=11}(Radproj \\bowtie Radnik))$ - **prvo spoj, pa selekcija**\n\nPrvi je efikasniji jer sužava skup torki pre skupe operacije spajanja.",
+      "hint": "Selekcija pre spoja smanjuje broj torki za obradu"
+    }
+  ]
+}
